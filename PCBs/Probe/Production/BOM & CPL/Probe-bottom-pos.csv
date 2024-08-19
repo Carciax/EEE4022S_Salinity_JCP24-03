@@ -1,0 +1,10 @@
+Ref,Val,Package,PosX,PosY,Rot,Side
+"J1","Au+1","Au_Electrode",118.750000,-94.250000,90.000000,bottom
+"J2","Au+2","Au_Electrode",115.625000,-94.250000,-90.000000,bottom
+"J3","Ti+","PinHeader_1x01_P2.54mm_Vertical",140.125000,-94.125000,0.000000,bottom
+"J4","Au-1","Au_Electrode",131.500000,-94.250000,-90.000000,bottom
+"J5","Au-2","Au_Electrode",103.125000,-94.250000,90.000000,bottom
+"J6","Ti-1","PinHeader_1x01_P2.54mm_Vertical",135.125000,-94.125000,0.000000,bottom
+"J7","Ti-2","PinHeader_1x01_P2.54mm_Vertical",145.224998,-94.125000,0.000000,bottom
+"J8","Debug","PinSocket_1x04_P2.54mm_Vertical",140.500000,-52.750000,90.000000,bottom
+"J9","RS485","PinSocket_1x04_P2.54mm_Vertical",128.550000,-52.725000,90.000000,bottom
