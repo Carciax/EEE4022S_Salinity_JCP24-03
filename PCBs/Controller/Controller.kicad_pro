@@ -509,8 +509,8 @@
       "gencad": "",
       "idf": "",
       "netlist": "",
-      "plot": "",
-      "pos_files": "",
+      "plot": "Production/Gerbers",
+      "pos_files": "Production/BOM & CPL/",
       "specctra_dsn": "",
       "step": "",
       "svg": "",
@@ -520,13 +520,13 @@
   },
   "schematic": {
     "annotate_start_num": 0,
-    "bom_export_filename": "",
+    "bom_export_filename": "Production/BOM & CPL/BOM.csv",
     "bom_fmt_presets": [],
     "bom_fmt_settings": {
-      "field_delimiter": ",",
+      "field_delimiter": ";",
       "keep_line_breaks": false,
       "keep_tabs": false,
-      "name": "CSV",
+      "name": "---",
       "ref_delimiter": ",",
       "ref_range_delimiter": "",
       "string_delimiter": "\""
@@ -578,7 +578,7 @@
           "show": false
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "JLC Part no.",
           "name": "JLC Part no.",
           "show": true

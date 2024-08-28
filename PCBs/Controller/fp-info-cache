@@ -1,11 +1,11 @@
-23044777862284796
+23044780806543278
 4022S
 Au_Electrode
 
 
 0
-1
-1
+3
+2
 4022S
 ERD2xxxS
 
@@ -14,19 +14,19 @@ ERD2xxxS
 6
 6
 4022S
-Finger_01
+Gold_electrode_finger
 
 
 0
-1
-1
+3
+2
 4022S
-Pad_20x20_mm
+Gold_electrode_pad
 
 
 0
-1
-1
+6
+2
 4022S
 Push_Button_SPDT
 

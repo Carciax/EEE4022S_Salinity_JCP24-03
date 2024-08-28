@@ -1,0 +1,10 @@
+Layers: 2
+Dimensions: 92x62mm
+PCB Qty: 5
+
+PCB Assembly: Yes
+Assembly Side: Top
+PCBA Qty: 2
+Confirm Parts Placement: Yes
+
+Expected: $29.63 or $31.63

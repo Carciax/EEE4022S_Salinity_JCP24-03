@@ -1,0 +1,9 @@
+Layers: 2
+Dimensions: 28x40mm
+
+PCB Qty: 5
+PCB Thickness: 1.6
+Surface Finish: ENIG
+Gold Thickness: 1 U"
+Gold Fingers: No
+PCB Assembly: No

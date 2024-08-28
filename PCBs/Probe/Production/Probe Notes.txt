@@ -1,0 +1,9 @@
+Layers: 4
+Dimensions: 50x50mm
+PCB Qty: 5
+PCB Assembly: Yes
+Assembly Side: Top
+PCBA Qty: 2
+Confirm Parts Placement: Yes
+
+Expected: $52.11 or $57.11

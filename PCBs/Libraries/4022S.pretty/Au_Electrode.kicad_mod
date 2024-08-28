@@ -68,8 +68,8 @@
 	)
 	(attr smd)
 	(fp_rect
-		(start -4 -1.1)
-		(end 4 1.1)
+		(start -5.2 -1.1)
+		(end 5.2 1.1)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -79,8 +79,8 @@
 		(uuid "50059501-0ed3-434f-940d-c4a807467325")
 	)
 	(fp_rect
-		(start -4.25 -3.75)
-		(end 4.25 1.5)
+		(start -5.5 -3.75)
+		(end 5.5 1.5)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -102,10 +102,24 @@
 		)
 	)
 	(pad "1" smd rect
-		(at 0 -2.6)
-		(size 5 2)
+		(at 0 -2.5)
+		(size 2 2)
 		(layers "F.Cu" "F.Paste" "F.Mask")
 		(thermal_bridge_angle 45)
-		(uuid "cf52d383-e3da-4282-8012-38285c70a9ce")
+		(uuid "31c69908-cd17-44ea-ab93-f568e3beb456")
+	)
+	(pad "2" smd rect
+		(at -3 -2.5)
+		(size 2 2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(uuid "d9e113b5-8e88-452d-9e19-a094da9c45f7")
+	)
+	(pad "2" smd rect
+		(at 3 -2.5)
+		(size 2 2)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(uuid "967db3f8-02be-45d3-98d6-48e91b62ce6c")
 	)
 )
