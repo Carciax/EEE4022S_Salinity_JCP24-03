@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.20)  27 JUL 2024 12:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.20)  9 SEP 2024 15:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -928,78 +928,7 @@ Package tocbibind Info: The document has chapter divisions on input line 50.
 
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
-)) (/usr/local/texlive/2021/texmf-dist/tex/latex/standalone/standalone.sty
-Package: standalone 2018/03/26 v1.3a Package to include TeX sub-files with prea
-mbles
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/tools/shellesc.sty
-Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 77.
-)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/currfile/currfile.sty
-Package: currfile 2020/09/29 v0.7d Provides the file path elements of the curre
-nt input file
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/filehook/filehook.sty
-Package: filehook 2020/09/29 v0.8a Hooks for input files
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/filehook/filehook-2020.sty
-Package: filehook-2020 2020/09/29 v0.8a Hooks for input files
-))
-\c@currfiledepth=\count379
-)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/gincltex/gincltex.sty
-(/usr/local/texlive/2021/texmf-dist/tex/latex/svn-prov/svn-prov.sty
-Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
-)
-Package: gincltex 2011/09/04 v0.3 Include external LaTeX files like graphics
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/adjustbox/adjustbox.sty
-Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/adjustbox/adjcalc.sty
-Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
--ends (calc, etex, pgfmath)
-)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/adjustbox/trimclip.sty
-Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/collectbox/collectbox.sty
-Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
-\collectedbox=\box75
-)
-\tc@llx=\dimen274
-\tc@lly=\dimen275
-\tc@urx=\dimen276
-\tc@ury=\dimen277
-Package trimclip Info: Using driver 'tc-pdftex.def'.
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/adjustbox/tc-pdftex.def
-File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
-))
-\adjbox@Width=\dimen278
-\adjbox@Height=\dimen279
-\adjbox@Depth=\dimen280
-\adjbox@Totalheight=\dimen281
-\adjbox@pwidth=\dimen282
-\adjbox@pheight=\dimen283
-\adjbox@pdepth=\dimen284
-\adjbox@ptotalheight=\dimen285
-
-(/usr/local/texlive/2021/texmf-dist/tex/latex/varwidth/varwidth.sty
-Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
-\@vwid@box=\box76
-\sift@deathcycles=\count380
-\@vwid@loff=\dimen286
-\@vwid@roff=\dimen287
-))
-\gincltex@box=\box77
-)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/filemod/filemod-expmin.sty
-Package: filemod-expmin 2011/09/19 v1.2 Get and compare file modification times
- (expandable; minimal)
-))
-(./FrontMatter/Glossary.tex)
+)) (./FrontMatter/Glossary.tex)
 (/Users/cameronclark/Documents/UCT/EEE4022S/EEE4022S_Salinity_JCP24-03/Report/M
 ain.aux)
 \openout1 = `Main.aux'.
@@ -1059,21 +988,29 @@ LaTeX Font Info:    ... okay on input line 7.
 
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count381
-\scratchdimen=\dimen288
-\scratchbox=\box78
-\nofMPsegments=\count382
-\nofMParguments=\count383
+\scratchcounter=\count379
+\scratchdimen=\dimen274
+\scratchbox=\box75
+\nofMPsegments=\count380
+\nofMParguments=\count381
 \everyMPshowfont=\toks49
-\MPscratchCnt=\count384
-\MPscratchDim=\dimen289
-\MPnumerator=\count385
-\makeMPintoPDFobject=\count386
+\MPscratchCnt=\count382
+\MPscratchDim=\dimen275
+\MPnumerator=\count383
+\makeMPintoPDFobject=\count384
 \everyMPtoPDFconversion=\toks50
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
@@ -1091,7 +1028,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count387
+\c@section@level=\count385
 )
 LaTeX Info: Redefining \ref on input line 7.
 LaTeX Info: Redefining \pageref on input line 7.
@@ -1129,7 +1066,7 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-\c@lstlisting=\count388
+\c@lstlisting=\count386
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
 
@@ -1212,7 +1149,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 
 (./FrontMatter/Title.tex
-<FrontMatter/UCT_logo.png, id=52, 1554.80875pt x 1578.89874pt>
+<FrontMatter/UCT_logo.png, id=4, 1554.80875pt x 1578.89874pt>
 File: FrontMatter/UCT_logo.png Graphic file (type png)
 <use FrontMatter/UCT_logo.png>
 Package pdftex.def Info: FrontMatter/UCT_logo.png  used on input line 14.
@@ -1223,126 +1160,58 @@ Package pdftex.def Info: FrontMatter/UCT_logo.png  used on input line 14.
 cameronclark/Documents/UCT/EEE4022S/EEE4022S_Salinity_JCP24-03/Report/FrontMatt
 er/UCT_logo.png>]
 
-LaTeX Warning: File `../signature.jpg' not found on input line 21.
+./FrontMatter/Declaration.tex:23: LaTeX Error: File `../Figures/signature' not 
+found.
 
-
-./FrontMatter/Declaration.tex:21: Package pdftex.def Error: File `../signature.
-jpg' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
+See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.21 ...cs[width=0.3\linewidth]{../signature.jpg}}
+l.23 ...idth=0.3\linewidth]{../Figures/signature}}
                                                   \hfill\makebox[2.0in]{\tod...
 
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
-LaTeX Font Info:    Trying to load font information for T1+DejaVuSansMono-TLF o
-n input line 21.
-(/usr/local/texlive/2021/texmf-dist/tex/latex/dejavu/T1DejaVuSansMono-TLF.fd
-File: T1DejaVuSansMono-TLF.fd 2011/06/01 Font definitions for T1/DejaVuSansMono
--TLF.
-)
-LaTeX Font Info:    Font shape `T1/DejaVuSansMono-TLF/m/n' will be
-(Font)              scaled to size 8.76003pt on input line 21.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `DejaVuSansMono-TLF' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-)
-(./FrontMatter/Acknowledgements.tex [2
+) (./FrontMatter/Acknowledgements.tex
 
-]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 7.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 7.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 7.
-) (./FrontMatter/Abstract.tex [3
+./FrontMatter/Acknowledgements.tex:1: LaTeX Error: Can be used only in preamble
+.
 
-])
-[4
-
-]
-(/Users/cameronclark/Documents/UCT/EEE4022S/EEE4022S_Salinity_JCP24-03/Report/M
-ain.toc)
-\tf@toc=\write4
-\openout4 = `Main.toc'.
-
- [5
-
-]
-(/Users/cameronclark/Documents/UCT/EEE4022S/EEE4022S_Salinity_JCP24-03/Report/M
-ain.lof)
-\tf@lof=\write5
-\openout5 = `Main.lof'.
-
- [6
-
-]
-
-Package glossaries Warning: Empty glossary for \printnoidxglossary[type={main}]
-. Rerun may be required (or you may have forgotten to use commands like \gls) o
-n input line 19.
-
-[7
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1 \documentclass
+                  [class=report,11pt,crop=false]{standalone}
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
 
 
-] (./Chapters/Introduction.tex
-Chapter 1.
-[1
+! LaTeX Error: File `../Style/ChapterStyle.tex' not found.
 
-]) (./Chapters/Literature.tex [2]
-Chapter 2.
-) (./Chapters/Conclusions.tex [3
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: tex)
 
-]
-Chapter 3.
-) (./Chapters/Recommendations.tex [4
+Enter file name: 
+./FrontMatter/Acknowledgements.tex:2: Emergency stop.
+<read *> 
+         
+l.2 \input{../Style/ChapterStyle.tex}
+                                     ^^M
+*** (cannot \read from terminal in nonstop modes)
 
-]
-Chapter 4.
-) [5
-
-]
-(/Users/cameronclark/Documents/UCT/EEE4022S/EEE4022S_Salinity_JCP24-03/Report/M
-ain.bbl
-
-LaTeX Warning: Empty `thebibliography' environment on input line 24.
-
-) [6
-
-]
-(/Users/cameronclark/Documents/UCT/EEE4022S/EEE4022S_Salinity_JCP24-03/Report/M
-ain.aux)
-Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 719809DA813AB8C70C848EE911C746E0;1436.
- ) 
+ 
 Here is how much of TeX's memory you used:
- 30160 strings out of 478994
- 538146 string characters out of 5858184
- 1254446 words of memory out of 5000000
- 46864 multiletter control sequences out of 15000+600000
- 490589 words of font info for 152 fonts, out of 8000000 for 9000
+ 28596 strings out of 478994
+ 509888 string characters out of 5858184
+ 1066785 words of memory out of 5000000
+ 45500 multiletter control sequences out of 15000+600000
+ 442834 words of font info for 83 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,11n,119p,1072b,919s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/
-texlive/2021/texmf-dist/fonts/enc/dvips/dejavu/dejavumono_t1-type1.enc}</usr/lo
-cal/texlive/2021/texmf-dist/fonts/type1/public/dejavu/DejaVuSansMono.pfb></usr/
-local/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texl
-ive/2021/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2021/t
-exmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2021/texmf-dist/f
-onts/type1/public/lm/lmr12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/
-public/lm/lmr17.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public/lm/l
-mri10.pfb>
-Output written on /Users/cameronclark/Documents/UCT/EEE4022S/EEE4022S_Salinity_
-JCP24-03/Report/Main.pdf (13 pages, 297369 bytes).
-PDF statistics:
- 173 PDF objects out of 1000 (max. 8388607)
- 147 compressed objects within 2 object streams
- 35 named destinations out of 1000 (max. 500000)
- 52838 words of extra memory for PDF output out of 61914 (max. 10000000)
-
+ 122i,5n,119p,1072b,832s stack positions out of 5000i,500n,10000p,200000b,80000s
+./FrontMatter/Acknowledgements.tex:2:  ==> Fatal error occurred, no output PDF 
+file produced!

@@ -20,6 +20,7 @@
 "C19";"10n";"~";"Capacitor_SMD:C_0402_1005Metric";"1";"C15195";"False";"0,0012"
 "C20";"10n";"~";"Capacitor_SMD:C_0402_1005Metric";"1";"C15195";"False";"0,0012"
 "C21";"10n";"~";"Capacitor_SMD:C_0402_1005Metric";"1";"C15195";"False";"0,0012"
+"C22";"10u";"~";"Capacitor_SMD:C_0603_1608Metric";"1";"C19702";"False";"0,0048"
 "D1";"GREEN";"~";"LED_SMD:LED_0805_2012Metric";"1";"C2297";"False";"0,0095"
 "D2";"RED";"~";"LED_SMD:LED_0603_1608Metric";"1";"C2286";"False";"0,0053"
 "J1";"Au+";"~";"4022S:Au_Electrode";"1";"";"";""
