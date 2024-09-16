@@ -70,13 +70,8 @@
 \usepackage{makecell}
 \usepackage{transparent}
 
-% Tables
-\usepackage{tabularray}
-\NewColumnType{C}{>{\centering\arraybackslash}X}
-\NewColumnType{q}[1]{>{\centering\arraybackslash}p{#1}}
-
 % SI units
-\usepackage{siunitx}
+%\usepackage{siunitx}
 
 % Microtype goodness
 \usepackage{microtype}
@@ -128,9 +123,9 @@
 \usepackage{subcaption}
 
 % Glossary package
-\usepackage{glossaries}
-% \usepackage{glossaries-extra}
-% \setabbreviationstyle[acronym]{long-short}
+% \usepackage[acronym]{glossaries}
+\usepackage{glossaries-extra}
+\setabbreviationstyle[acronym]{long-short}
 
 % For Proofs & Theorems
 \usepackage{amsthm}
@@ -139,8 +134,6 @@
 \usepackage{amssymb}
 \usepackage{mathrsfs}
 \usepackage{mathtools}
-\usepackage{textcomp}
-\usepackage{gensymb}
 
 % For algorithms
 \usepackage[]{algorithm2e}
@@ -156,6 +149,9 @@
 
 % Add LoF, Bib, etc. to ToC
 \usepackage[nottoc]{tocbibind}
+
+% SI
+\usepackage{siunitx}
 
 % For removing some whitespace in Chapter headings etc
 \usepackage{etoolbox}

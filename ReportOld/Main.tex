@@ -1,8 +1,8 @@
 \documentclass[11pt]{report}
 \input{Style/ChapterStyle}
+%\usepackage{standalone} % Best loaded last in the preamble
 
 \input{FrontMatter/Glossary}
-\input{FrontMatter/Commands}
 
 \begin{document}
 
@@ -11,12 +11,12 @@
 \input{FrontMatter/Declaration}
 \input{FrontMatter/Acknowledgements}
 \input{FrontMatter/Abstract}
-\glsresetall%
+\glsresetall
 
 \tableofcontents
 \listoffigures
 
-\printglossary[type=\acronymtype,nonumberlist,title={Abbreviations}]
+\printnoidxglossary[type=\acronymtype,nonumberlist,title={Abbreviations}]
 \newpage
 
 \pagenumbering{arabic}
