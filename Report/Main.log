@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.12)  16 SEP 2024 10:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.12)  22 SEP 2024 22:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -364,7 +364,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip66
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 60.
+Package hyperref Info: Option `colorlinks' set `true' on input line 61.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
 \csq@reset=\count314
@@ -621,11 +621,9 @@ Package caption Info: New subtype `subfigure' on input line 238.
 \c@subfigure=\count370
 Package caption Info: New subtype `subtable' on input line 238.
 \c@subtable=\count371
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/glossaries/base/glossaries.sty
-Package: glossaries 2023/09/29 v4.53 (NLCT)
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/glossaries-extra/glossaries-extra.sty
+Package: glossaries-extra 2023/09/29 v1.53 (NLCT)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
  (/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2024/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks32
@@ -633,7 +631,11 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 )
 \XKV@depth=\count372
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+Package: glossaries 2023/09/29 v4.53 (NLCT)
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
 Package: mfirstuc 2022/10/14 v2.08 (NLCT)
 \@glsmfirst=\toks34
 \@glsmrest=\toks35
@@ -693,9 +695,7 @@ Package: fp-eval 1995/04/03
 \@dtl@foreach@level=\count391
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/tracklang/tracklang.sty
 Package: tracklang 2022/12/13 v1.6.1 (NLCT) Track Languages
- (/usr/local/texlive/2024/texmf-dist/tex/generic/tracklang/tracklang.tex)) (/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator.sty
-Package: translator 2021-05-31 v1.12d Easy translation of strings in LaTeX
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/glossaries-english/glossaries-english.ldf
+ (/usr/local/texlive/2024/texmf-dist/tex/generic/tracklang/tracklang.tex)) (/usr/local/texlive/2024/texmf-dist/tex/latex/glossaries-english/glossaries-english.ldf
 File: glossaries-english.ldf 2014/11/23 v1.0
 )
 \gls@level=\count392
@@ -755,17 +755,27 @@ Package: supertabular 2020/02/02 v4.1g the supertabular environment
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty
 Package: glossary-tree 2023/09/29 v4.53 (NLCT)
 \glstreeindent=\skip82
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
+))
+\@glsxtr@leveloffset=\count399
+\glsxtrresourcecount=\count400
+\@glsxtrnewgls@inner=\count401
+\glsshortpltok=\toks43
+\glslongpltok=\toks44
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/glossaries-extra/glossaries-extra-abbrstyles.def
+File: glossaries-extra-abbrstyles.def 2023/06/28 v1.52 (NLCT)
+)
+\mglselementindex=\count402
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/amscls/amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks43
-\thm@bodyfont=\toks44
-\thm@headfont=\toks45
-\thm@notefont=\toks46
-\thm@headpunct=\toks47
+\thm@style=\toks45
+\thm@bodyfont=\toks46
+\thm@headfont=\toks47
+\thm@notefont=\toks48
+\thm@headpunct=\toks49
 \thm@preskip=\skip83
 \thm@postskip=\skip84
 \thm@headsep=\skip85
-\dth@everypar=\toks48
+\dth@everypar=\toks50
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -782,20 +792,20 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 Package: mathtools 2024/03/11 v1.30 mathematical typesetting tools
  (/usr/local/texlive/2024/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2023/07/08 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count399
-\calc@Bcount=\count400
+\calc@Acount=\count403
+\calc@Bcount=\count404
 \calc@Adimen=\dimen295
 \calc@Bdimen=\dimen296
 \calc@Askip=\skip86
 \calc@Bskip=\skip87
 LaTeX Info: Redefining \setlength on input line 80.
 LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count401
+\calc@Ccount=\count405
 \calc@Cskip=\skip88
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/mathtools/mhsetup.sty
 Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
 )
-\g_MT_multlinerow_int=\count402
+\g_MT_multlinerow_int=\count406
 \l_MT_multwidth_dim=\dimen297
 \origjot=\skip89
 \l_MT_shortvdotswithinadjustabove_dim=\dimen298
@@ -812,11 +822,11 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 Package: gensymb 2022/10/17 v1.0.2 (KJH)
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count403
+\c@AlgoLine=\count407
 \algocf@hangindent=\skip90
  (/usr/local/texlive/2024/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty
 Package: ifoddpage 2022/10/18 v1.2 Conditionals for odd/even page detection
-\c@checkoddpage=\count404
+\c@checkoddpage=\count408
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/relsize/relsize.sty
 Package: relsize 2013/03/29 ver 4.1
 )
@@ -850,14 +860,14 @@ Package: relsize 2013/03/29 ver 4.1
 \algoheightrule=\skip106
 \algotitleheightruledefault=\skip107
 \algotitleheightrule=\skip108
-\c@algocfline=\count405
-\c@algocfproc=\count406
-\c@algocf=\count407
+\c@algocfline=\count409
+\c@algocfproc=\count410
+\c@algocf=\count411
 \algocf@algoframe=\box104
 \algocf@algobox=\box105
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/footmisc/footmisc.sty
 Package: footmisc 2023/07/05 v6.0f a miscellany of footnote facilities
-\FN@temptoken=\toks49
+\FN@temptoken=\toks51
 \footnotemargin=\dimen311
 \@outputbox@depth=\dimen312
 Package footmisc Info: Declaring symbol style bringhurst on input line 696.
@@ -873,27 +883,27 @@ Package tocbibind Info: The document has chapter divisions on input line 50.
 
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
-)) (./FrontMatter/Glossary.tex) (./FrontMatter/Commands.tex) (./Main.aux)
+)) (./FrontMatter/Commands.tex) (./FrontMatter/Glossary.tex) (./Main.aux)
 \openout1 = `Main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
+LaTeX Font Info:    ... okay on input line 8.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -931,17 +941,17 @@ LaTeX Font Info:    ... okay on input line 7.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count408
+\scratchcounter=\count412
 \scratchdimen=\dimen313
 \scratchbox=\box106
-\nofMPsegments=\count409
-\nofMParguments=\count410
-\everyMPshowfont=\toks50
-\MPscratchCnt=\count411
+\nofMPsegments=\count413
+\nofMParguments=\count414
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count415
 \MPscratchDim=\dimen314
-\MPnumerator=\count412
-\makeMPintoPDFobject=\count413
-\everyMPtoPDFconversion=\toks51
+\MPnumerator=\count416
+\makeMPintoPDFobject=\count417
+\everyMPtoPDFconversion=\toks53
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
  (/usr/local/texlive/2024/texmf-dist/tex/latex/grfext/grfext.sty
@@ -954,12 +964,12 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 7.
+Package hyperref Info: Link coloring ON on input line 8.
  (./Main.out) (./Main.out)
 \@outlinefile=\write3
 \openout3 = `Main.out'.
 
-Package csquotes Info: Making character " active on input line 7.
+Package csquotes Info: Making character " active on input line 8.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
  (/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
@@ -967,27 +977,27 @@ Package: xparse 2024-02-18 L3 Experimental document command parser
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 7.
-LaTeX Info: Redefining \microtypecontext on input line 7.
-Package microtype Info: Applying patch `item' on input line 7.
-Package microtype Info: Applying patch `toc' on input line 7.
-Package microtype Info: Applying patch `eqnum' on input line 7.
-Package microtype Info: Applying patch `footnote' on input line 7.
-Package microtype Info: Applying patch `verbatim' on input line 7.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 8.
+LaTeX Info: Redefining \microtypecontext on input line 8.
+Package microtype Info: Applying patch `item' on input line 8.
+Package microtype Info: Applying patch `toc' on input line 8.
+Package microtype Info: Applying patch `eqnum' on input line 8.
+Package microtype Info: Applying patch `footnote' on input line 8.
+Package microtype Info: Applying patch `verbatim' on input line 8.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 7.
+LaTeX Info: Redefining \showhyphens on input line 8.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-\c@lstlisting=\count414
+\c@lstlisting=\count418
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: longtable package is loaded.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/caption/ltcaption.sty
@@ -997,17 +1007,17 @@ Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \symgns@font=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/lmr/m/n --> TS1/lmr/b/n on input line 7.
-Package gensymb Info: Math companion symbols declared on input line 7.
-LaTeX Info: Redefining \degree on input line 7.
-LaTeX Info: Redefining \celsius on input line 7.
-Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 7.
-LaTeX Info: Redefining \ohm on input line 7.
-Package gensymb Info: Using \textohm for \ohm on input line 7.
-LaTeX Info: Redefining \micro on input line 7.
-Package gensymb Info: Using \textmu for \micro on input line 7.
+(Font)                  TS1/lmr/m/n --> TS1/lmr/b/n on input line 8.
+Package gensymb Info: Math companion symbols declared on input line 8.
+LaTeX Info: Redefining \degree on input line 8.
+LaTeX Info: Redefining \celsius on input line 8.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 8.
+LaTeX Info: Redefining \ohm on input line 8.
+Package gensymb Info: Using \textohm for \ohm on input line 8.
+LaTeX Info: Redefining \micro on input line 8.
+Package gensymb Info: Using \textmu for \micro on input line 8.
  (./FrontMatter/Title.tex
-<FrontMatter/UCT_logo.png, id=96, 1554.80875pt x 1578.89874pt>
+<FrontMatter/UCT_logo.png, id=176, 1554.80875pt x 1578.89874pt>
 File: FrontMatter/UCT_logo.png Graphic file (type png)
 <use FrontMatter/UCT_logo.png>
 Package pdftex.def Info: FrontMatter/UCT_logo.png  used on input line 14.
@@ -1015,7 +1025,7 @@ Package pdftex.def Info: FrontMatter/UCT_logo.png  used on input line 14.
 ) (./FrontMatter/Declaration.tex [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./FrontMatter/UCT_logo.png>]
-<Figures/Signature.png, id=106, 335.2525pt x 235.88126pt>
+<Figures/Signature.png, id=186, 335.2525pt x 235.88126pt>
 File: Figures/Signature.png Graphic file (type png)
 <use Figures/Signature.png>
 Package pdftex.def Info: Figures/Signature.png  used on input line 23.
@@ -1027,70 +1037,62 @@ Package pdftex.def Info: Figures/Signature.png  used on input line 23.
 ]) [4
 
 ] (./Main.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 4.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 4.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 4.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 5.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 4.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 5.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 4.
+(Font)              <10.95> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 4.
+(Font)              <8> on input line 5.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 4.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+(Font)              <6> on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 4.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 5.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4.
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
+) [5
+
+])
 \tf@toc=\write4
 \openout4 = `Main.toc'.
 
- [5
-
-] (./Main.lof)
+ [6] (./Main.lof)
 \tf@lof=\write5
 \openout5 = `Main.lof'.
 
- (./Main.gls [6
 
-]
+Using TeX to sort glossary entries---this may take a while
+[7
 
-Package glossaries Warning: Glossary entry `PSU' has not been defined on input line 8.
-
-
-Package glossaries Warning: Glossary entry `PSU' has not been defined on input line 8.
-
-
-Package glossaries Warning: Glossary entry `PSU' has not been defined on input line 8.
-
-) [7
+] [8
 
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (./Chapters/Introduction.tex
@@ -1099,21 +1101,18 @@ Chapter 1.
 
 ]) (./Chapters/Literature.tex [2]
 Chapter 2.
-<Figures/ocean_salinity_temperature_quantity.png, id=193, 647.41875pt x 433.62pt>
+<Figures/ocean_salinity_temperature_quantity.png, id=304, 647.41875pt x 433.62pt>
 File: Figures/ocean_salinity_temperature_quantity.png Graphic file (type png)
 <use Figures/ocean_salinity_temperature_quantity.png>
 Package pdftex.def Info: Figures/ocean_salinity_temperature_quantity.png  used on input line 13.
 (pdftex.def)             Requested size: 362.77264pt x 242.9711pt.
 [3
 
-{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./Figures/ocean_salinity_temperature_quantity.png>] [4]
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./Figures/ocean_salinity_temperature_quantity.png>] [4] [5]
 Chapter 3.
-[5
+[6
 
-]
-
-LaTeX Warning: Reference `eq:pss-78-full' on page 6 undefined on input line 98.
-
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1122,69 +1121,67 @@ LaTeX Warning: Reference `eq:pss-78-full' on page 6 undefined on input line 98.
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
-[6{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
-
-LaTeX Warning: Reference `eq:pss-78' on page 7 undefined on input line 127.
-
-) (./Chapters/Conclusions.tex [7]
+ [7]) (./Chapters/Methodology.tex [8]
 Chapter 4.
-) (./Chapters/Recommendations.tex [8
+[9
 
 ]
+<Figures/GoldElectrode.png, id=435, 617.30624pt x 833.1125pt>
+File: Figures/GoldElectrode.png Graphic file (type png)
+<use Figures/GoldElectrode.png>
+Package pdftex.def Info: Figures/GoldElectrode.png  used on input line 58.
+(pdftex.def)             Requested size: 241.84843pt x 326.3999pt.
+ [10] [11 <./Figures/GoldElectrode.png>]) (./Chapters/Conclusions.tex [12]
 Chapter 5.
-) [9
+) (./Chapters/Recommendations.tex [13
+
+]
+Chapter 6.
+) [14
 
 ] (./Main.bbl
-Underfull \hbox (badness 3735) in paragraph at lines 54--56
+Underfull \hbox (badness 1762) in paragraph at lines 59--61
+[]\T1/lmr/m/n/10.95 (+20) S.-B. Sci-en-tific, ``Con-ver-sion of pres-sure to depth,'' 2024. [On-
+ []
+
+
+Underfull \hbox (badness 2961) in paragraph at lines 59--61
 \T1/lmr/m/n/10.95 (+20) line]. Avail-able: [][]$https : / / www . google . com / url ? sa = t & rct = j & q = &esrc = s & source =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--56
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
 \T1/lmr/m/n/10.95 (+20) web & cd = &ved = 2ahUKEwij6ebU1sCIAxXPiv0HHXDELasQFnoECCMQAQ & url = https %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--56
+Underfull \hbox (badness 10000) in paragraph at lines 59--61
 \T1/lmr/m/n/10.95 (+20) 3A % 2F % 2Fwww . seabird . com % 2Fasset-[]get . download . jsa % 3Fid % 3D54627861710 & usg =
  []
 
-) [10
+[15
 
-] (./Main.aux)
+]) [16] (./Main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 52B7CF77D861AF45B8F2D1ACC1B55B5B;4298.
+(rerunfilecheck)             Checksum: 062295FD615C9FC298A8121B31D543CC;8393.
  ) 
 Here is how much of TeX's memory you used:
- 33524 strings out of 474116
- 653140 string characters out of 5743682
- 1960187 words of memory out of 5000000
- 55131 multiletter control sequences out of 15000+600000
- 620777 words of font info for 149 fonts, out of 8000000 for 9000
+ 36336 strings out of 474116
+ 712195 string characters out of 5743682
+ 1969187 words of memory out of 5000000
+ 57833 multiletter control sequences out of 15000+600000
+ 637637 words of font info for 192 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,11n,113p,2423b,1371s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{glo:ctd} has been referenced but does not exist, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{glo:psu} has been referenced but does not exist, replaced by a fixed one
-
+ 114i,11n,110p,2495b,1197s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on Main.pdf (17 pages, 641095 bytes).
+Output written on Main.pdf (24 pages, 675705 bytes).
 PDF statistics:
- 393 PDF objects out of 1000 (max. 8388607)
- 329 compressed objects within 4 object streams
- 75 named destinations out of 1000 (max. 500000)
- 41160 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 575 PDF objects out of 1000 (max. 8388607)
+ 499 compressed objects within 5 object streams
+ 109 named destinations out of 1000 (max. 500000)
+ 55661 words of extra memory for PDF output out of 61914 (max. 10000000)
 

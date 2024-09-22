@@ -1,8 +1,9 @@
 \documentclass[11pt]{report}
 \input{Style/ChapterStyle}
 
-\input{FrontMatter/Glossary}
 \input{FrontMatter/Commands}
+% \loadglsentries{FrontMatter/Glossary}
+\input{FrontMatter/Glossary}
 
 \begin{document}
 
@@ -11,18 +12,19 @@
 \input{FrontMatter/Declaration}
 \input{FrontMatter/Acknowledgements}
 \input{FrontMatter/Abstract}
-\glsresetall%
 
 \tableofcontents
 \listoffigures
+\glsresetall%
 
-\printglossary[type=\acronymtype,nonumberlist,title={Abbreviations}]
+\printnoidxglossary[type=\acronymtype,nonumberlist,title={Abbreviations}]
 \newpage
 
 \pagenumbering{arabic}
 
 \input{Chapters/Introduction}
 \input{Chapters/Literature}
+\input{Chapters/Methodology}
 \input{Chapters/Conclusions}
 \input{Chapters/Recommendations}
 

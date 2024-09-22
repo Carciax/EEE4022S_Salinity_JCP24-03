@@ -51,6 +51,7 @@
 % Hyperlinks & References
 \usepackage{hyperref}
 \definecolor{linkColour}{RGB}{77,71,179}
+% \definecolor{linkColour}{RGB}{0,0,0}
 \hypersetup{
     colorlinks=true,
     linkcolor=linkColour,
@@ -128,9 +129,10 @@
 \usepackage{subcaption}
 
 % Glossary package
-\usepackage{glossaries}
-% \usepackage{glossaries-extra}
-% \setabbreviationstyle[acronym]{long-short}
+% \usepackage[acronyms]{glossaries}
+% \setacronymstyle{long-short}
+\usepackage{glossaries-extra}
+\setabbreviationstyle[acronym]{long-short}
 
 % For Proofs & Theorems
 \usepackage{amsthm}

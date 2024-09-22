@@ -1,24 +1,44 @@
 \babel@toc {english}{}\relax 
-\contentsline {chapter}{List of Figures}{vi}{chapter*.5}%
+\contentsline {chapter}{List of Figures}{vii}{chapter*.5}%
+\contentsline {chapter}{Abbreviations}{viii}{section*.6}%
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Objectives}{1}{section.1.2}%
-\contentsline {section}{\numberline {1.3}System Requirements}{2}{section.1.3}%
+\contentsline {section}{\numberline {1.3}System Requirements}{1}{section.1.3}%
 \contentsline {section}{\numberline {1.4}Scope \& Limitations}{2}{section.1.4}%
 \contentsline {section}{\numberline {1.5}Report Outline}{2}{section.1.5}%
 \contentsline {chapter}{\numberline {2}Literature Review}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}A Brief History of Salinity}{3}{section.2.1}%
-\contentsline {section}{\numberline {2.2}The Uses of Salinity Measurements}{4}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Salinity Measurement Methods}{4}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Salinity Measurement Devices}{4}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Theory Development}{5}{chapter.3}%
-\contentsline {section}{\numberline {3.1}The Calculation of Salinity}{5}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}The Salinity and Chlorinity Relationship}{5}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}The Salinity and Conductivity Relationship}{5}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Electrical Characteristics of Salt Water}{7}{section.3.2}%
-\contentsline {section}{\numberline {3.3}External Factors Affecting Electrical Characteristics of Salt Water}{7}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Electrical Fringing in Concductive Materials}{7}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Electromagnetic Interference of Salt Water}{7}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Conclusions}{8}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Recommendations}{9}{chapter.5}%
-\contentsline {chapter}{Bibliography}{10}{chapter*.9}%
+\contentsline {section}{\numberline {2.2}Salinity Measurement Methods and Devices}{4}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Salinity from Chlorinity}{4}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Salinity from Conductivity}{5}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Salinity from Density}{5}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Salinity from Microwaves}{5}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Salinity from Satellite Remote Sensing}{5}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Salinity from Interferometry}{5}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Salinity from Electromagnetic Induction}{5}{subsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.2.8}Salinity from Refractive Index}{5}{subsection.2.2.8}%
+\contentsline {section}{\numberline {2.3}Salinity Measurement Devices}{5}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Theory Development}{6}{chapter.3}%
+\contentsline {section}{\numberline {3.1}The Calculation of Salinity}{6}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}The Salinity and Chlorinity Relationship}{6}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}The Salinity and Conductivity Relationship}{6}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Electrical Characteristics of Salt Water}{8}{section.3.2}%
+\contentsline {section}{\numberline {3.3}External Factors Affecting Electrical Characteristics of Salt Water}{8}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Electrical Fringing in Concductive Materials}{8}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Electromagnetic Interference of Salt Water}{8}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Methodology}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Device Design}{9}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Salinity Measurement Method}{9}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Conductivity Probe Material}{9}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Conductivity Probe Design}{10}{subsection.4.1.3}%
+\contentsline {subsection}{\numberline {4.1.4}Conductivity Measurement and Calibration}{11}{subsection.4.1.4}%
+\contentsline {subsection}{\numberline {4.1.5}Accounting for Electrical Fringing}{12}{subsection.4.1.5}%
+\contentsline {subsection}{\numberline {4.1.6}Accounting for Unkown Resistivity of Salt Water}{12}{subsection.4.1.6}%
+\contentsline {subsection}{\numberline {4.1.7}Salinity Calculation and Display}{12}{subsection.4.1.7}%
+\contentsline {subsection}{\numberline {4.1.8}Temperature and Depth Measurement}{12}{subsection.4.1.8}%
+\contentsline {subsection}{\numberline {4.1.9}Controller and Data Logging}{12}{subsection.4.1.9}%
+\contentsline {section}{\numberline {4.2}Device Coding}{12}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Conclusions}{13}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Recommendations}{14}{chapter.6}%
+\contentsline {chapter}{Bibliography}{15}{chapter*.10}%
