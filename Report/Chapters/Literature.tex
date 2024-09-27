@@ -11,29 +11,29 @@ This is a dimensionless quantity was expressed in \gls{ppt} or $g.kg^{-1}$ where
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.75\textwidth]{Figures/ocean_salinity_temperature_quantity}
-    \caption{Histogram showing the volume of ocean water relative to temperature and salinity bins. The highest peak corresponds to a volume of 26 million cubic kilometers of ocean water~\cite{worthington_ocean_graphs_1981}.}
+    \caption{Histogram showing the volume of ocean water relative to temperature and salinity bins. The highest peak corresponds to a volume of 26 million cubic kilometres of ocean water~\cite{worthington_ocean_graphs_1981}.}
     \label{fig:ocean_salinity_temperature_quantity} %chktex 24
 \end{figure}
-The probelm with this definition of salinity lay with its testibility.
+The problem with this definition of salinity lay with its testability.
 Trying to obtain the mass of the dissolved material through evaporation removed certain compounds making this method almost impossible to achieve~\cite{sverdrup_ocean_physics_and_chemistry_1942} and thus salinity needed to be redefined in a way that was easily and reliably testable.
 The next definition of salinity related it to the amount of chlorine present in the water, or the chlorinity of the water.
 Thus, in 1969, salinity was redefined to be directly proportional to the chlorinity of the water~\cite{stewart_introduction_to_physical_oceanography_2004}.
-The calculation of salinity from chlorinity is further discussed in~\refsec{subsec:the-salinity-chlorinity-relationship}.
+The calculation of salinity from chlorinity is further discussed in~\refsec{subsec:salinity-from-chlorinity}.
 
-Around the same time as the salinity-chlorinity relationship was established, oceanographers had begun experiementing with the use of conductivity to measure salinity.
+Around the same time as the salinity-chlorinity relationship was established, oceanographers had begun experimenting with the use of conductivity to measure salinity.
 Conductivity was found to be more precise and significantly easier to measure than the titration required to measure chlorinity~\cite{lewis_salinity_definition_and_calculation_1978}.
-In 1978, the Practical Salinity Scale was established and salinity was updated to be related to conductivity which is the current defintion of salinity\cite{lewis_salinity_definition_and_calculation_1978}.
+In 1978, the Practical Salinity Scale was established and salinity was updated to be related to conductivity which is the current definition of salinity\cite{lewis_salinity_definition_and_calculation_1978}.
 This relation also included terms for temperature and depth as these affect the conductivity of an electrolyte solution~\cite{zheng_electrical_conductivity_of_ocean_2017}.
 
 The Practical Salinity Scale uses its own dimensionless units of salinity which are not interchangeable with \gls{ppt} in the current definition of salinity.
 Although the Practical Salinity Scale is sometimes given in \gls{psu}, it is more technically correct to refer to it as a certain Practical Salinity `on the Practical Salinity Scale PSS-78'~\cite{lewis_salinity_definition_and_calculation_1978}.
-The calculation of salinity from conductivity is further discussed in~\refsec{subsec:the-salinity-conductivity-relationship}.
+The calculation of salinity from conductivity is further discussed in~\refsec{sec:salinity-conductivity-relationship}.
 
 % \section{The Uses of Salinity Measurements}\label{sec:the-uses-of-salinity-measurements}
 % oceanography, speciation, conservation, habitation, water quality (drinking, agriculture, industrial), aquaculture, desalination.
 % antarctic ice.
 
-\section{Salinity Measurement Methods and Devices}\label{sec:salinity-measurement-techniques}
+\section{Salinity Measurement Methods}\label{sec:salinity-measurement-techniques}
 
 Salinity has had a long history of being measured using a variety of methods with varying degrees of accuracy.
 Currently, the most common method of measuring salinity is through the use of a \gls{ctd} which is a device that measures the conductivity, temperature, and depth of a sample of water.
@@ -43,7 +43,7 @@ Currently, the most common method of measuring salinity is through the use of a 
 
 The chemical composition of ocean water with a salinity of 35\gls{ppt} contains 19.35\gls{ppt} of Chlorine and 10.77\gls{ppt} of Sodium with the following ions only accounting for a total of just above 3\gls{ppt} of the total dissolved solids in the water~\cite{britannica_seawater_encyclopaedia_2024}.
 This allowed oceanographers to estimate that the salinity of ocean water was directly proportional to the amount of chlorine in the water.
-The chlorinity of a solution had an established definition which was `the mass of silver required to precipitatecompletely the halogens in $0.328\ 523\ 4 kg$ of the ocean-water sample'~\cite{wooster_redefinition_of_salinity_1969} which could be tested to a degree of accuracy using titration.
+The chlorinity of a solution had an established definition which was `the mass of silver required to precipitate completely the halogens in $0.328\ 523\ 4 kg$ of the ocean-water sample'~\cite{wooster_redefinition_of_salinity_1969} which could be tested to a degree of accuracy using titration.
 In 1969, an accurate relationship between these was established by~\refref{wooster_redefinition_of_salinity_1969} and thus salinity $S$ was redefined using chlorinity $Cl$ as shown in~\refeqn{eq:salinity-chlorinity}.
 \begin{equation}\label{eq:salinity-chlorinity}
     S (\text{\gls{ppt}}) = 1.80655 \times~Cl (\text{\gls{ppt}})
@@ -52,20 +52,47 @@ In 1969, an accurate relationship between these was established by~\refref{woost
 
 \subsection{Salinity from Conductivity}\label{subsec:salinity-from-conductivity}
 
+The conductivity of a liquid is a measure of the ability of the water to conduct an electrical current which is related to the number of free electrons present in the liquid which is in turn related to the number of ions present in the liquid.
+In the case of salt water, the ions present are from the dissolved salts in the water which are how salinity is quantified.
+The relationship between salinity and conductivity takes into account all the ions present in the water and thus was a more apt measure of salinity than chlorinity which is why salinity was redefined in terms of salinity.
+Calculating salinity from conductivity was however not as straight forward requiring several equations which are discussed in~\refsec{sec:salinity-conductivity-relationship}.
+\textit{accuracy achieved?, device?, limitations?}
+
 \subsection{Salinity from Density}
 
-\subsection{Salinity from Microwaves}
+The density of pure water varies with temperature and is considered to be approximately $1000 kg.m^{-3}$ at $4\degree C$~\cite{USGS_water_density_2018}.
+The concept of measuring salinity with density is based on the fact that the density of water increases with the amount of denser matter, for example, dissolved salts added to the water which in turn relates to salinity.
+The relationship between salinity and density can be estimated to be linear by \refeqn{eq:salininty-density} where $\rho$ is the density of the water, $\rho_0$ is the density of pure water, $k$ is a proportionality constant, and $S$ is the salinity of the water~\cite{kjerfve_salinity_measurement_overview_1983}\cite{uow_oceanography_research_1966}.
+\begin{equation}\label{eq:salinity-density}
+    \rho = \rho_0(1 + kS)
+\end{equation}
+This relationship was further refined by~\refref{schmidt_density_salinity_relation_2018} which included temperature variation in the relationship.
+\refref{schmidt_density_salinity_relation_2018} also claimed that the relationship between salinity and density was a better measure of salinity than conductivity as the standard potassium chloride solution used to calibrate the conductivity meters did not account for the other ions commonly present in salt water while the density of the water did.
+\textit{accuracy achieved?, device?, limitations?} 
+%https://www.sciencedirect.com/science/article/abs/pii/0198014981901229
 
-\subsection{Salinity from Satellite Remote Sensing}
+\subsection{Salinity from Microwave Radiation}
+
+Microwave radiation interacts with salt water in unique ways.
+Different temperature molecules in the water scatter microwaves differently and the pressure of the water can also affect this, but the most significant effect on the microwave radiation is from the presence of dissolved salts in the water which absorb and scatter the microwaves in detectable ways~\cite{swift_considerations_for_microwave_salinity_1983}.
+The relationship between salinity and microwave radiation is complicated but since microwave radiation does not require direct contact with the water, it is possible to measure the salinity of a sample of water from a far distance including from space~\cite{gabarro_microwave_salinity_2004}
+
+This has allowed for the development of satellites that can measure the salinity which have been used to develop global salinity maps as shown in \reffig{}.
+%https://www.geeksforgeeks.org/salinity-of-ocean-water-factors-horizontals-and-vertical-distribution/
+The data measured using this method is reported to be accurate to within 0.1\gls{psu}~\cite{yueh_microwave_salinity_error_sources_2001}, but this method requires multiple different readings to be taken in order to account for the different factors that affect the microwave radiation including \gls{sst}, surface air pressure, surface air temperature, faraday rotation, and surface wind speed~\cite{yueh_microwave_salinity_error_sources_2001}.
 
 \subsection{Salinity from Interferometry}
 
+
+
 \subsection{Salinity from Electromagnetic Induction}
+
+
 
 \subsection{Salinity from Refractive Index}
 
 \section{Salinity Measurement Devices}\label{sec:salinity-measurement-devices}
-CTDs, refractometers, conductivity meters, salinometers.
+% CTDs, refractometers, conductivity meters, salinometers.
 
 % ----------------------------------------------------
 % Theory Development
@@ -73,15 +100,11 @@ CTDs, refractometers, conductivity meters, salinometers.
 
 \chapter{Theory Development}\label{ch:theory-development}
 
-\section{The Calculation of Salinity}\label{sec:the-calculation-of-salinity}
-
-\subsection{The Salinity and Chlorinity Relationship}\label{subsec:the-salinity-chlorinity-relationship}
-
-\subsection{The Salinity and Conductivity Relationship}\label{subsec:the-salinity-conductivity-relationship}
+\section{The Calculation of Salinity From Conductivity}\label{sec:salinity-conductivity-relationship}
 
 Salinity meters that use electrical conductivity are commonly known as \gls{ctd}s which stands for \gls{ctd}.
-As depth is a measurement derived from pressure, CTp is the prefered designation when performing calculations.
-This allows for the conductivity of a sample of water to be denoted by $C(S, T, p)$ where conductivity is a functon of salinity $S$, temperature $T$, and pressure $p$ which is the convention in oceanography~\cite{lewis_salinity_definition_and_calculation_1978}.
+As depth is a measurement derived from pressure, CTp is the preferred designation when performing calculations.
+This allows for the conductivity of a sample of water to be denoted by $C(S, T, p)$ where conductivity is a function of salinity $S$, temperature $T$, and pressure $p$ which is the convention in oceanography~\cite{lewis_salinity_definition_and_calculation_1978}.
 
 Pressure in the salinity equation is taken relative to sea level where $p = 0 dbar$ is equivalent to an absolute pressure of $P = 101\ 325 Pa$.
 Using decibars (dbar) for pressure is a common practice in oceanography as it is a unit of pressure that is equal to roughly one meter of water depth~\cite{seabird_dbar_to_depth_2024}.
@@ -93,14 +116,14 @@ When $K_{15}$ is not equal to 1, the Practical Salinity $S_p$ can be calculated 
 \begin{equation}\label{eq:pss-78-k15}
     S_p = \sum_{i=0}^{5} a_i {(K_{15})}^{i/2}~~~~\text{where}~~~~K_{15} = \frac{C(S_p, 15\degree C, 0)}{C(35, 15\degree C, 0)}
 \end{equation}
-All the coefficients for the salinity-conductivity equations, including $a_i$, are given in~\reftab{tab:pss-78-coefficients}.
+All the coefficients for the salinity-conductivity equations, including $a_i$, are given in~\reftbl{tab:pss-78-coefficients}.
 
 To calculate the salinity of a sample of water that is not at $15\degree C$ and $0 dbar$, the conductivity ratio of the sample can be expanded into the product of three ratios which are labelled $R_p$, $R_t$, and $r_t$ respectively.
 The conductivity measurement taken in the field $C(S_p, t, p)$ is related to the conductivity of the standard solution $C(S_p, 15\degree C, 0)$ which the device is calibrated with and is represented by $R$ in \refeqn{eq:pss-78-full-ratio}.~\cite{ioc_teos_2010}
 \begin{equation}\label{eq:pss-78-full-ratio}
     R = \lfrac{C(S_p, t, p)}{C(S_p, 15\degree C, 0)} = \lfrac{C(S_p, t, p)}{C(S_p, t, 0)} \cdot \lfrac{C(S_p, t, 0)}{C(35, t, 0)} \cdot \lfrac{C(35, t, 0)}{C(35, 15\degree C, 0)} = R_p R_t r_t
 \end{equation}
-In order the calculate the salinity of the sample $R_t$ must be found which takes a similar for to $K_{15}$.
+In order to calculate the salinity of the sample $R_t$ must be found which takes a similar for to $K_{15}$.
 $r_t$ is first calculated using the temperature of the sample 
 \begin{equation}\label{eq:pss-78-rt}
     r_t = \sum_{i=0}^{4} c_i {(t)}^i
@@ -156,7 +179,7 @@ PSU vs TSD vs conductivity vs resistivity, salinity equation, capacitance of sal
 
 \section{External Factors Affecting Electrical Characteristics of Salt Water}\label{sec:external-factors-affecting-electrical-characteristics-of-salt-water}
 
-\section{Electrical Fringing in Concductive Materials}
+\section{Electrical Fringing in Conductive Materials}
 
 \section{Electromagnetic Interference of Salt Water}
 
