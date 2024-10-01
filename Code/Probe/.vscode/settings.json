@@ -1,0 +1,18 @@
+{
+    "cortex-debug.armToolchainPath": "/opt/local/bin",
+    "cortex-debug.openocdPath": "/usr/local/bin/openocd",
+    "cortex-debug.variableUseNaturalFormat": false,
+    "files.associations": {
+        "*.tc": "java",
+        "usart.h": "c",
+        "conductivity.h": "c",
+        "resistance.h": "c",
+        "main.h": "c",
+        "salinity.h": "c",
+        "voltage.h": "c",
+        "math.h": "c",
+        "bit": "c",
+        "cmath": "c",
+        "*.tcc": "c"
+    }
+}

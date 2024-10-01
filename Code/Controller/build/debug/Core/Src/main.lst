@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
   31:Core/Src/main.c **** /* Private typedef -----------------------------------------------------------*/
   32:Core/Src/main.c **** /* USER CODE BEGIN PTD */
   33:Core/Src/main.c **** 
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 2
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 2
 
 
   34:Core/Src/main.c **** /* USER CODE END PTD */
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
   88:Core/Src/main.c **** {
   89:Core/Src/main.c ****     /* USER CODE BEGIN 1 */
   90:Core/Src/main.c **** 
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 3
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 3
 
 
   91:Core/Src/main.c ****     /* USER CODE END 1 */
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  145:Core/Src/main.c ****      * in the RCC_OscInitTypeDef structure.
  146:Core/Src/main.c ****      */
  147:Core/Src/main.c ****     RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 4
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 4
 
 
  148:Core/Src/main.c ****     RCC_OscInitStruct.HSIState = RCC_HSI_ON;
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  184:Core/Src/main.c **** }
   44              		.loc 1 184 1 is_stmt 0 view .LVU3
   45              		@ sp needed
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 5
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 5
 
 
   46 0012 10BD     		pop	{r4, pc}
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
   95              		.loc 1 191 17 view .LVU14
   96 001c A361     		str	r3, [r4, #24]
  192:Core/Src/main.c ****     HAL_Delay(DIGIT_DELAY);
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 6
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 6
 
 
   97              		.loc 1 192 5 is_stmt 1 view .LVU15
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  134 0046 DB00     		lsls	r3, r3, #3
  135 0048 1343     		orrs	r3, r2
  196:Core/Src/main.c ****     HAL_Delay(DIGIT_DELAY);
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 7
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 7
 
 
  136              		.loc 1 196 17 view .LVU26
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  180              		.align	1
  181              		.global	HAL_TIM_PeriodElapsedCallback
  182              		.syntax unified
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 8
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 8
 
 
  183              		.code	16
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  224 0018 8900     		lsls	r1, r1, #2
  225 001a FFF7FEFF 		bl	__aeabi_uidivmod
  226              	.LVL18:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 9
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 9
 
 
  227 001e 2180     		strh	r1, [r4]
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
   15:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
   16:Drivers/CMSIS/Include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
   17:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 10
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 10
 
 
   18:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
   72:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
   73:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
   74:Drivers/CMSIS/Include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 11
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 11
 
 
   75:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  129:Drivers/CMSIS/Include/cmsis_gcc.h **** __STATIC_FORCEINLINE void __enable_irq(void)
  130:Drivers/CMSIS/Include/cmsis_gcc.h **** {
  131:Drivers/CMSIS/Include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 12
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 12
 
 
  132:Drivers/CMSIS/Include/cmsis_gcc.h **** }
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  295              		.loc 1 140 24 is_stmt 0 view .LVU59
  296 0004 3022     		movs	r2, #48
  297 0006 0021     		movs	r1, #0
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 13
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 13
 
 
  298 0008 08A8     		add	r0, sp, #32
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  158:Core/Src/main.c ****     RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
  337              		.loc 1 158 33 is_stmt 0 view .LVU75
  338 0038 0723     		movs	r3, #7
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 14
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 14
 
 
  339 003a 0493     		str	r3, [sp, #16]
@@ -838,7 +838,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  376 0062 15B0     		add	sp, sp, #84
  377              		@ sp needed
  378 0064 00BD     		pop	{pc}
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 15
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 15
 
 
  379              	.L18:
@@ -898,7 +898,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  426              	.LVL32:
  113:Core/Src/main.c **** 
  427              		.loc 1 113 5 view .LVU102
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 16
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 16
 
 
  428 0016 FFF7FEFF 		bl	MX_TIM6_Init
@@ -958,7 +958,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  478 0000 3F065B4F 		.ascii	"?\006[Ofm}\007\177o"
  478      666D7D07 
  478      7F6F
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 17
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 17
 
 
  479              		.global	digit_masks
@@ -985,32 +985,32 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 1
  502              		.file 15 "Core/Inc/spi.h"
  503              		.file 16 "Core/Inc/gpio.h"
  504              		.file 17 "<built-in>"
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s 			page 18
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:19     .text.MX_NVIC_Init:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:24     .text.MX_NVIC_Init:00000000 MX_NVIC_Init
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:53     .text.display_number:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:59     .text.display_number:00000000 display_number
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:174    .text.display_number:00000078 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:477    .rodata.number_masks:00000000 number_masks
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:180    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:186    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:233    .text.HAL_TIM_PeriodElapsedCallback:00000024 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:470    .bss.depth_count:00000000 depth_count
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:239    .text.Error_Handler:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:245    .text.Error_Handler:00000000 Error_Handler
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:277    .text.SystemClock_Config:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:283    .text.SystemClock_Config:00000000 SystemClock_Config
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:395    .text.main:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:401    .text.main:00000000 main
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:460    .text.main:0000003c $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:467    .bss.depth_count:00000000 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:474    .rodata.number_masks:00000000 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:484    .rodata.digit_masks:00000000 digit_masks
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoDmEmO.s:481    .rodata.digit_masks:00000000 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:19     .text.MX_NVIC_Init:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:24     .text.MX_NVIC_Init:00000000 MX_NVIC_Init
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:53     .text.display_number:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:59     .text.display_number:00000000 display_number
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:174    .text.display_number:00000078 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:477    .rodata.number_masks:00000000 number_masks
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:180    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:186    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:233    .text.HAL_TIM_PeriodElapsedCallback:00000024 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:470    .bss.depth_count:00000000 depth_count
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:239    .text.Error_Handler:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:245    .text.Error_Handler:00000000 Error_Handler
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:277    .text.SystemClock_Config:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:283    .text.SystemClock_Config:00000000 SystemClock_Config
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:395    .text.main:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:401    .text.main:00000000 main
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:460    .text.main:0000003c $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:467    .bss.depth_count:00000000 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:474    .rodata.number_masks:00000000 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:484    .rodata.digit_masks:00000000 digit_masks
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc2tA9QY.s:481    .rodata.digit_masks:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority

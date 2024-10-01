@@ -57,12 +57,12 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define SW_Shield__Au__Pin GPIO_PIN_13
-#define SW_Shield__Au__GPIO_Port GPIOC
-#define SW_Shield__Au_C14_Pin GPIO_PIN_14
-#define SW_Shield__Au_C14_GPIO_Port GPIOC
-#define SW_Shield__Au_C15_Pin GPIO_PIN_15
-#define SW_Shield__Au_C15_GPIO_Port GPIOC
+#define SW_Shield1_Au2_Pin GPIO_PIN_13
+#define SW_Shield1_Au2_GPIO_Port GPIOC
+#define SW_Shield2_Au1_Pin GPIO_PIN_14
+#define SW_Shield2_Au1_GPIO_Port GPIOC
+#define SW_Shield2_Au2_Pin GPIO_PIN_15
+#define SW_Shield2_Au2_GPIO_Port GPIOC
 #define SW_R1_100_Pin GPIO_PIN_0
 #define SW_R1_100_GPIO_Port GPIOC
 #define SW_R1_1k_Pin GPIO_PIN_1
@@ -79,44 +79,46 @@ void Error_Handler(void);
 #define Amp_GPIO_Port GPIOA
 #define Signal_Pin GPIO_PIN_3
 #define Signal_GPIO_Port GPIOA
-#define Au__Pin GPIO_PIN_4
-#define Au__GPIO_Port GPIOA
-#define Au_A5_Pin GPIO_PIN_5
-#define Au_A5_GPIO_Port GPIOA
-#define Ti__Pin GPIO_PIN_6
-#define Ti__GPIO_Port GPIOA
-#define Ti_A7_Pin GPIO_PIN_7
-#define Ti_A7_GPIO_Port GPIOA
-#define SW_R1_Au__Pin GPIO_PIN_4
-#define SW_R1_Au__GPIO_Port GPIOC
-#define SW_R1_Au_C5_Pin GPIO_PIN_5
-#define SW_R1_Au_C5_GPIO_Port GPIOC
-#define Calibration_Pin GPIO_PIN_0
-#define Calibration_GPIO_Port GPIOB
+#define Au1_Pin GPIO_PIN_4
+#define Au1_GPIO_Port GPIOA
+#define Au2_Pin GPIO_PIN_5
+#define Au2_GPIO_Port GPIOA
+#define Ti1_Pin GPIO_PIN_6
+#define Ti1_GPIO_Port GPIOA
+#define Ti2_Pin GPIO_PIN_7
+#define Ti2_GPIO_Port GPIOA
+#define SW_R1_Au1_Pin GPIO_PIN_4
+#define SW_R1_Au1_GPIO_Port GPIOC
+#define SW_R1_Au2_Pin GPIO_PIN_5
+#define SW_R1_Au2_GPIO_Port GPIOC
+#define Calib_Pin GPIO_PIN_0
+#define Calib_GPIO_Port GPIOB
 #define LED_Red_Pin GPIO_PIN_1
 #define LED_Red_GPIO_Port GPIOB
 #define LED_Green_Pin GPIO_PIN_2
 #define LED_Green_GPIO_Port GPIOB
-#define SW_R1_Ti__Pin GPIO_PIN_6
-#define SW_R1_Ti__GPIO_Port GPIOC
-#define SW_R1_Ti_C7_Pin GPIO_PIN_7
-#define SW_R1_Ti_C7_GPIO_Port GPIOC
-#define SW_Au__GND_Pin GPIO_PIN_8
-#define SW_Au__GND_GPIO_Port GPIOC
-#define SW_Au__GNDC9_Pin GPIO_PIN_9
-#define SW_Au__GNDC9_GPIO_Port GPIOC
-#define SW_Ti__GND_Pin GPIO_PIN_10
-#define SW_Ti__GND_GPIO_Port GPIOC
-#define SW_Ti__GNDC11_Pin GPIO_PIN_11
-#define SW_Ti__GNDC11_GPIO_Port GPIOC
-#define SW_Shield__Au_C12_Pin GPIO_PIN_12
-#define SW_Shield__Au_C12_GPIO_Port GPIOC
+#define SW_R1_Ti1_Pin GPIO_PIN_6
+#define SW_R1_Ti1_GPIO_Port GPIOC
+#define SW_R1_Ti2_Pin GPIO_PIN_7
+#define SW_R1_Ti2_GPIO_Port GPIOC
+#define SW_Au1_GND_Pin GPIO_PIN_8
+#define SW_Au1_GND_GPIO_Port GPIOC
+#define SW_Au2_GND_Pin GPIO_PIN_9
+#define SW_Au2_GND_GPIO_Port GPIOC
+#define SW_Ti1_GND_Pin GPIO_PIN_10
+#define SW_Ti1_GND_GPIO_Port GPIOC
+#define SW_Ti2_GND_Pin GPIO_PIN_11
+#define SW_Ti2_GND_GPIO_Port GPIOC
+#define SW_Shield1_Au1_Pin GPIO_PIN_12
+#define SW_Shield1_Au1_GPIO_Port GPIOC
 #define RS485_UART_Pin GPIO_PIN_6
 #define RS485_UART_GPIO_Port GPIOB
 #define RS485_DE_Pin GPIO_PIN_7
 #define RS485_DE_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
+#define Pressure_ADDR (0xda << 1)
+
 
 /* USER CODE END Private defines */
 

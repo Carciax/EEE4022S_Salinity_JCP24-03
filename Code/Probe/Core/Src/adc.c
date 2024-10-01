@@ -45,9 +45,10 @@ void MX_ADC1_Init(void)
   hadc1.Instance = ADC1;
   hadc1.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
   hadc1.Init.Resolution = ADC_RESOLUTION_12B;
-  hadc1.Init.ScanConvMode = DISABLE;
+  hadc1.Init.ScanConvMode = ENABLE;
   hadc1.Init.ContinuousConvMode = DISABLE;
-  hadc1.Init.DiscontinuousConvMode = DISABLE;
+  hadc1.Init.DiscontinuousConvMode = ENABLE;
+  hadc1.Init.NbrOfDiscConversion = 1;
   hadc1.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc1.Init.ExternalTrigConv = ADC_SOFTWARE_START;
   hadc1.Init.DataAlign = ADC_DATAALIGN_RIGHT;
@@ -100,15 +101,15 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     PB0     ------> ADC1_IN8
     */
     GPIO_InitStruct.Pin = Unbuff_DAC_Pin|DAC_Pin|Amp_Pin|Signal_Pin
-                          |Au__Pin|Au_A5_Pin|Ti__Pin|Ti_A7_Pin;
+                          |Au1_Pin|Au2_Pin|Ti1_Pin|Ti2_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-    GPIO_InitStruct.Pin = Calibration_Pin;
+    GPIO_InitStruct.Pin = Calib_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(Calibration_GPIO_Port, &GPIO_InitStruct);
+    HAL_GPIO_Init(Calib_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE BEGIN ADC1_MspInit 1 */
 
@@ -139,9 +140,9 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
     PB0     ------> ADC1_IN8
     */
     HAL_GPIO_DeInit(GPIOA, Unbuff_DAC_Pin|DAC_Pin|Amp_Pin|Signal_Pin
-                          |Au__Pin|Au_A5_Pin|Ti__Pin|Ti_A7_Pin);
+                          |Au1_Pin|Au2_Pin|Ti1_Pin|Ti2_Pin);
 
-    HAL_GPIO_DeInit(Calibration_GPIO_Port, Calibration_Pin);
+    HAL_GPIO_DeInit(Calib_GPIO_Port, Calib_Pin);
 
   /* USER CODE BEGIN ADC1_MspDeInit 1 */
 

@@ -32,7 +32,14 @@
 
 /* USER CODE END 1 */
 
-/** Configure pins
+/** Configure pins as
+        * Analog
+        * Input
+        * Output
+        * EVENT_OUT
+        * EXTI
+        * Free pins are configured automatically as Analog (this feature is enabled through
+        * the Code Generation settings)
 */
 void MX_GPIO_Init(void)
 {
@@ -47,10 +54,10 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, SW_Shield__Au__Pin|SW_Shield__Au_C14_Pin|SW_Shield__Au_C15_Pin|SW_R1_100_Pin
-                          |SW_R1_1k_Pin|SW_R1_10k_Pin|SW_R1_Calib_Pin|SW_R1_Au__Pin
-                          |SW_R1_Au_C5_Pin|SW_R1_Ti__Pin|SW_R1_Ti_C7_Pin|SW_Au__GND_Pin
-                          |SW_Au__GNDC9_Pin|SW_Ti__GND_Pin|SW_Ti__GNDC11_Pin|SW_Shield__Au_C12_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, SW_Shield1_Au2_Pin|SW_Shield2_Au1_Pin|SW_Shield2_Au2_Pin|SW_R1_100_Pin
+                          |SW_R1_1k_Pin|SW_R1_10k_Pin|SW_R1_Calib_Pin|SW_R1_Au1_Pin
+                          |SW_R1_Au2_Pin|SW_R1_Ti1_Pin|SW_R1_Ti2_Pin|SW_Au1_GND_Pin
+                          |SW_Au2_GND_Pin|SW_Ti1_GND_Pin|SW_Ti2_GND_Pin|SW_Shield1_Au1_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED_Red_Pin|LED_Green_Pin|RS485_DE_Pin, GPIO_PIN_RESET);
@@ -59,10 +66,10 @@ void MX_GPIO_Init(void)
                            PCPin PCPin PCPin PCPin
                            PCPin PCPin PCPin PCPin
                            PCPin PCPin PCPin PCPin */
-  GPIO_InitStruct.Pin = SW_Shield__Au__Pin|SW_Shield__Au_C14_Pin|SW_Shield__Au_C15_Pin|SW_R1_100_Pin
-                          |SW_R1_1k_Pin|SW_R1_10k_Pin|SW_R1_Calib_Pin|SW_R1_Au__Pin
-                          |SW_R1_Au_C5_Pin|SW_R1_Ti__Pin|SW_R1_Ti_C7_Pin|SW_Au__GND_Pin
-                          |SW_Au__GNDC9_Pin|SW_Ti__GND_Pin|SW_Ti__GNDC11_Pin|SW_Shield__Au_C12_Pin;
+  GPIO_InitStruct.Pin = SW_Shield1_Au2_Pin|SW_Shield2_Au1_Pin|SW_Shield2_Au2_Pin|SW_R1_100_Pin
+                          |SW_R1_1k_Pin|SW_R1_10k_Pin|SW_R1_Calib_Pin|SW_R1_Au1_Pin
+                          |SW_R1_Au2_Pin|SW_R1_Ti1_Pin|SW_R1_Ti2_Pin|SW_Au1_GND_Pin
+                          |SW_Au2_GND_Pin|SW_Ti1_GND_Pin|SW_Ti2_GND_Pin|SW_Shield1_Au1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -90,9 +97,9 @@ void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PA8 PA9 PA10 PA11
-                           PA12 PA13 PA14 PA15 */
+                           PA12 PA15 */
   GPIO_InitStruct.Pin = GPIO_PIN_8|GPIO_PIN_9|GPIO_PIN_10|GPIO_PIN_11
-                          |GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15;
+                          |GPIO_PIN_12|GPIO_PIN_15;
   GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
