@@ -13,6 +13,7 @@
         "math.h": "c",
         "bit": "c",
         "cmath": "c",
-        "*.tcc": "c"
+        "*.tcc": "c",
+        "i2c.h": "c"
     }
 }

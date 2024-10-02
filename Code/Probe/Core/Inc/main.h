@@ -117,9 +117,20 @@ void Error_Handler(void);
 #define RS485_DE_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-#define Pressure_ADDR (0xda << 1)
+#define Pressure_device_addr (0x6d << 1)
 
+#define Pressure_mem_addr_request 0x0A
+#define Pressure_mem_addr_pressure 0x0B
+#define Pressure_mem_addr_temperature 0x0F
+#define Pressure_mem_addr_status 0x13
 
+#define Pressure_request_pressure 0x6
+#define Pressure_request_temperature 0x4
+
+#define Pressure_status_finished 0x1
+
+#define PASCALS_AT_SEA_LEVEL 101325
+#define PASCALS_PER_DECIBAR 10000
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus
