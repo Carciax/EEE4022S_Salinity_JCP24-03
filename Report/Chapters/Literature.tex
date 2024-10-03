@@ -81,15 +81,22 @@ This has allowed for the development of satellites that can measure the salinity
 %https://www.geeksforgeeks.org/salinity-of-ocean-water-factors-horizontals-and-vertical-distribution/
 The data measured using this method is reported to be accurate to within 0.1\gls{psu}~\cite{yueh_microwave_salinity_error_sources_2001}, but this method requires multiple different readings to be taken in order to account for the different factors that affect the microwave radiation including \gls{sst}, surface air pressure, surface air temperature, faraday rotation, and surface wind speed~\cite{yueh_microwave_salinity_error_sources_2001}.
 
+\subsection{Salinity from Refractive Index}
+
+Salt water interacts with the entire electromagnetic spectrum including visible light where it refracts or scatters the light in a way that is dependent on the temperature, pressure, and more importantly the salinity of the water.
+The relationship between salinity and refractive index is complex requiring a 27 term equation which relates the refractive index of the water, its pressure, and its temperature to its salinity.
+The refractive index equation is defined a range of $500-700nm$ in wave length, $0-30\degree C$ in temperature, and $0-40$ on the Practical Salinity Scale PSS-78, and $0-11000 dbar$ in pressure.~\cite{millard_index_of_refraction_algorithm_1990}
+The equations holds an accuracy of $0.4-80$ \gls{ppm} on the Practical Salinity Scale PSS-78, decreasing with increasing pressure. 
+
+A refractometer is the device that is used to measure the refractive index of the water, and due to only needing a small amount of the sample, these devices can be quite compact.
+There are a few researches who have developed compact refractometers which have dimensions of $22.5mm \times 22.5mm \times 120mm$~\cite{malarde_compact_refractometer_2008} and $40mm \times 40mm \times 70mm$~\cite{tengesdal_compact_refractometer_2012} which achieved accuracies of 2 and 83 \gls{ppt} Practical Salinity Scale PSS-78 respectively.
+
 \subsection{Salinity from Interferometry}
 
 
 
 \subsection{Salinity from Electromagnetic Induction}
 
-
-
-\subsection{Salinity from Refractive Index}
 
 \section{Salinity Measurement Devices}\label{sec:salinity-measurement-devices}
 % CTDs, refractometers, conductivity meters, salinometers.
@@ -178,11 +185,11 @@ In order to correctly calculate the salinity, the temperatures should be convert
 \section{Electrical Characteristics of Salt Water}\label{sec:electrical-characteristics-of-salt-water}
 PSU vs TSD vs conductivity vs resistivity, salinity equation, capacitance of salt water, non-constant conductivity vs voltage.
 
-\section{External Factors Affecting Electrical Characteristics of Salt Water}\label{sec:external-factors-affecting-electrical-characteristics-of-salt-water}
+% \section{External Factors Affecting Electrical Characteristics of Salt Water}\label{sec:external-factors-affecting-electrical-characteristics-of-salt-water}
 
 \section{Electrical Fringing in Conductive Materials}
 
-\section{Electromagnetic Interference of Salt Water}
+% \section{Electromagnetic Interference of Salt Water}
 
 % ----------------------------------------------------
 %current CTDs

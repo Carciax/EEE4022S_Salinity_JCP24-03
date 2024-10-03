@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 1
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,1131 +20,1242 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 1
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
   19              		.file 1 "Core/Src/voltage.c"
-  20              		.section	.text.dac_write,"ax",%progbits
+  20              		.section	.text.us_delay,"ax",%progbits
   21              		.align	1
-  22              		.global	dac_write
+  22              		.global	us_delay
   23              		.syntax unified
   24              		.thumb
   25              		.thumb_func
-  27              	dac_write:
+  27              	us_delay:
   28              	.LVL0:
-  29              	.LFB224:
+  29              	.LFB221:
    1:Core/Src/voltage.c **** /* Includes ------------------------------------------------------------------*/
    2:Core/Src/voltage.c **** #include "voltage.h"
-   3:Core/Src/voltage.c **** 
-   4:Core/Src/voltage.c **** /* Private variables ---------------------------------------------------------*/
-   5:Core/Src/voltage.c **** 
-   6:Core/Src/voltage.c **** /* Private user code ---------------------------------------------------------*/
-   7:Core/Src/voltage.c **** void resistance_init (void)
-   8:Core/Src/voltage.c **** {
-   9:Core/Src/voltage.c ****     dac_init();
-  10:Core/Src/voltage.c ****     // adc_set_channel(ADC_CHANNEL_SIGNAL);
-  11:Core/Src/voltage.c ****     adc_set_channel(ADC_CHANNEL_AMP);
-  12:Core/Src/voltage.c ****     reset_muxs();
+   3:Core/Src/voltage.c **** /* Private variables ---------------------------------------------------------*/
+   4:Core/Src/voltage.c **** 
+   5:Core/Src/voltage.c **** /* Private user code ---------------------------------------------------------*/
+   6:Core/Src/voltage.c **** void voltage_init (void)
+   7:Core/Src/voltage.c **** {
+   8:Core/Src/voltage.c ****     dac_init();
+   9:Core/Src/voltage.c ****     // adc_set_channel(ADC_CHANNEL_SIGNAL);
+  10:Core/Src/voltage.c ****     adc_set_channel(ADC_CHANNEL_AMP);
+  11:Core/Src/voltage.c ****     reset_muxs();
+  12:Core/Src/voltage.c ****     HAL_TIM_Base_Start(&htim10);
   13:Core/Src/voltage.c **** }
   14:Core/Src/voltage.c **** 
-  15:Core/Src/voltage.c **** void dac_init (void)
+  15:Core/Src/voltage.c **** void us_delay(uint16_t micro_s)
   16:Core/Src/voltage.c **** {
-  17:Core/Src/voltage.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, DAC_device_addr, 2, 1000) != HAL_OK)
-  18:Core/Src/voltage.c ****     {
-  19:Core/Src/voltage.c ****         Error_Handler();
-  20:Core/Src/voltage.c ****     }
-  21:Core/Src/voltage.c ****     // Reset the DAC
-  22:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_trigger, DAC_trigger_reset | DAC_trigger_config_reset);
-  23:Core/Src/voltage.c ****     // Power up DAC
-  24:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_general_config, DAC_general_config_pdn_power_up);
-  25:Core/Src/voltage.c **** }
-  26:Core/Src/voltage.c **** 
-  27:Core/Src/voltage.c **** void dac_drain (void)
-  28:Core/Src/voltage.c **** {
-  29:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_dac_data, 0x0000);
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 2
-
-
-  30:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_general_config, DAC_general_config_pdn_power_down_10k);
-  31:Core/Src/voltage.c ****     HAL_Delay(10);
-  32:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_general_config, DAC_general_config_pdn_power_up);
-  33:Core/Src/voltage.c **** }
-  34:Core/Src/voltage.c **** 
-  35:Core/Src/voltage.c **** void dac_set_voltage (uint16_t voltage)
-  36:Core/Src/voltage.c **** {
-  37:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_dac_data, voltage << 2);
-  38:Core/Src/voltage.c **** }
-  39:Core/Src/voltage.c **** 
-  40:Core/Src/voltage.c **** void dac_write (uint16_t memory_addr, uint16_t data)
-  41:Core/Src/voltage.c **** {
-  30              		.loc 1 41 1 view -0
+  30              		.loc 1 16 1 view -0
   31              		.cfi_startproc
-  32              		@ args = 0, pretend = 0, frame = 8
+  32              		@ args = 0, pretend = 0, frame = 0
   33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		.loc 1 41 1 is_stmt 0 view .LVU1
-  35 0000 00B5     		push	{lr}
-  36              		.cfi_def_cfa_offset 4
-  37              		.cfi_offset 14, -4
-  38 0002 87B0     		sub	sp, sp, #28
-  39              		.cfi_def_cfa_offset 32
-  40 0004 0246     		mov	r2, r0
-  42:Core/Src/voltage.c ****     uint8_t buf[2] = {0};
-  41              		.loc 1 42 5 is_stmt 1 view .LVU2
-  42              		.loc 1 42 13 is_stmt 0 view .LVU3
-  43 0006 0023     		movs	r3, #0
-  44 0008 ADF81430 		strh	r3, [sp, #20]	@ movhi
-  43:Core/Src/voltage.c ****     buf[0] = data >> 8;
-  45              		.loc 1 43 5 is_stmt 1 view .LVU4
-  46              		.loc 1 43 12 is_stmt 0 view .LVU5
-  47 000c 0B0A     		lsrs	r3, r1, #8
-  48 000e 8DF81430 		strb	r3, [sp, #20]
-  44:Core/Src/voltage.c ****     buf[1] = data & 0xff;
-  49              		.loc 1 44 5 is_stmt 1 view .LVU6
-  50              		.loc 1 44 12 is_stmt 0 view .LVU7
-  51 0012 8DF81510 		strb	r1, [sp, #21]
-  45:Core/Src/voltage.c ****     if (HAL_I2C_Mem_Write(&hi2c1, DAC_device_addr, memory_addr, 1, buf, 2, 1000) != HAL_OK)
-  52              		.loc 1 45 5 is_stmt 1 view .LVU8
-  53              		.loc 1 45 9 is_stmt 0 view .LVU9
-  54 0016 4FF47A73 		mov	r3, #1000
-  55 001a 0293     		str	r3, [sp, #8]
-  56 001c 0223     		movs	r3, #2
-  57 001e 0193     		str	r3, [sp, #4]
-  58 0020 05AB     		add	r3, sp, #20
-  59 0022 0093     		str	r3, [sp]
-  60 0024 0123     		movs	r3, #1
-  61 0026 9021     		movs	r1, #144
-  62              	.LVL1:
-  63              		.loc 1 45 9 view .LVU10
-  64 0028 0448     		ldr	r0, .L5
-  65              	.LVL2:
-  66              		.loc 1 45 9 view .LVU11
-  67 002a FFF7FEFF 		bl	HAL_I2C_Mem_Write
-  68              	.LVL3:
-  69              		.loc 1 45 8 discriminator 1 view .LVU12
-  70 002e 10B9     		cbnz	r0, .L4
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 3
+  34              		@ link register save eliminated.
+  17:Core/Src/voltage.c ****     //Requires a timer running at 1Mhz
+  18:Core/Src/voltage.c **** 	__HAL_TIM_SET_COUNTER(&htim10,0);  // set the counter value a 0
+  35              		.loc 1 18 2 view .LVU1
+  36 0000 034B     		ldr	r3, .L3
+  37 0002 1A68     		ldr	r2, [r3]
+  38 0004 0023     		movs	r3, #0
+  39 0006 5362     		str	r3, [r2, #36]
+  19:Core/Src/voltage.c **** 	while (__HAL_TIM_GET_COUNTER(&htim10) < micro_s);  // wait for the counter to reach the us input i
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 2
 
 
-  71              	.L1:
-  46:Core/Src/voltage.c ****     {
-  47:Core/Src/voltage.c ****         Error_Handler();
-  48:Core/Src/voltage.c ****     }
-  49:Core/Src/voltage.c **** }
-  72              		.loc 1 49 1 view .LVU13
-  73 0030 07B0     		add	sp, sp, #28
-  74              		.cfi_remember_state
-  75              		.cfi_def_cfa_offset 4
-  76              		@ sp needed
-  77 0032 5DF804FB 		ldr	pc, [sp], #4
-  78              	.L4:
-  79              		.cfi_restore_state
-  47:Core/Src/voltage.c ****     }
-  80              		.loc 1 47 9 is_stmt 1 view .LVU14
-  81 0036 FFF7FEFF 		bl	Error_Handler
-  82              	.LVL4:
-  83              		.loc 1 49 1 is_stmt 0 view .LVU15
-  84 003a F9E7     		b	.L1
-  85              	.L6:
-  86              		.align	2
-  87              	.L5:
-  88 003c 00000000 		.word	hi2c1
-  89              		.cfi_endproc
-  90              	.LFE224:
-  92              		.section	.text.dac_init,"ax",%progbits
-  93              		.align	1
-  94              		.global	dac_init
-  95              		.syntax unified
-  96              		.thumb
-  97              		.thumb_func
-  99              	dac_init:
- 100              	.LFB221:
-  16:Core/Src/voltage.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, DAC_device_addr, 2, 1000) != HAL_OK)
- 101              		.loc 1 16 1 is_stmt 1 view -0
- 102              		.cfi_startproc
- 103              		@ args = 0, pretend = 0, frame = 0
- 104              		@ frame_needed = 0, uses_anonymous_args = 0
- 105 0000 08B5     		push	{r3, lr}
- 106              		.cfi_def_cfa_offset 8
- 107              		.cfi_offset 3, -8
- 108              		.cfi_offset 14, -4
-  17:Core/Src/voltage.c ****     {
- 109              		.loc 1 17 5 view .LVU17
-  17:Core/Src/voltage.c ****     {
- 110              		.loc 1 17 9 is_stmt 0 view .LVU18
- 111 0002 4FF47A73 		mov	r3, #1000
- 112 0006 0222     		movs	r2, #2
- 113 0008 9021     		movs	r1, #144
- 114 000a 0848     		ldr	r0, .L11
- 115 000c FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
- 116              	.LVL5:
-  17:Core/Src/voltage.c ****     {
- 117              		.loc 1 17 8 discriminator 1 view .LVU19
- 118 0010 48B9     		cbnz	r0, .L10
- 119              	.L8:
-  22:Core/Src/voltage.c ****     // Power up DAC
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 4
-
-
- 120              		.loc 1 22 5 is_stmt 1 view .LVU20
- 121 0012 4FF40271 		mov	r1, #520
- 122 0016 D320     		movs	r0, #211
- 123 0018 FFF7FEFF 		bl	dac_write
- 124              	.LVL6:
-  24:Core/Src/voltage.c **** }
- 125              		.loc 1 24 5 view .LVU21
- 126 001c 0021     		movs	r1, #0
- 127 001e D120     		movs	r0, #209
- 128 0020 FFF7FEFF 		bl	dac_write
- 129              	.LVL7:
-  25:Core/Src/voltage.c **** 
- 130              		.loc 1 25 1 is_stmt 0 view .LVU22
- 131 0024 08BD     		pop	{r3, pc}
- 132              	.L10:
-  19:Core/Src/voltage.c ****     }
- 133              		.loc 1 19 9 is_stmt 1 view .LVU23
- 134 0026 FFF7FEFF 		bl	Error_Handler
- 135              	.LVL8:
- 136 002a F2E7     		b	.L8
- 137              	.L12:
- 138              		.align	2
- 139              	.L11:
- 140 002c 00000000 		.word	hi2c1
- 141              		.cfi_endproc
- 142              	.LFE221:
- 144              		.section	.text.dac_drain,"ax",%progbits
- 145              		.align	1
- 146              		.global	dac_drain
- 147              		.syntax unified
- 148              		.thumb
- 149              		.thumb_func
- 151              	dac_drain:
- 152              	.LFB222:
-  28:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_dac_data, 0x0000);
- 153              		.loc 1 28 1 view -0
- 154              		.cfi_startproc
- 155              		@ args = 0, pretend = 0, frame = 0
- 156              		@ frame_needed = 0, uses_anonymous_args = 0
- 157 0000 08B5     		push	{r3, lr}
- 158              		.cfi_def_cfa_offset 8
- 159              		.cfi_offset 3, -8
- 160              		.cfi_offset 14, -4
-  29:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_general_config, DAC_general_config_pdn_power_down_10k);
- 161              		.loc 1 29 5 view .LVU25
- 162 0002 0021     		movs	r1, #0
- 163 0004 2120     		movs	r0, #33
- 164 0006 FFF7FEFF 		bl	dac_write
- 165              	.LVL9:
-  30:Core/Src/voltage.c ****     HAL_Delay(10);
- 166              		.loc 1 30 5 view .LVU26
- 167 000a 0821     		movs	r1, #8
- 168 000c D120     		movs	r0, #209
- 169 000e FFF7FEFF 		bl	dac_write
- 170              	.LVL10:
+  40              		.loc 1 19 2 view .LVU2
+  41              	.L2:
+  42              		.loc 1 19 40 discriminator 1 view .LVU3
+  43              		.loc 1 19 9 is_stmt 0 discriminator 1 view .LVU4
+  44 0008 536A     		ldr	r3, [r2, #36]
+  45              		.loc 1 19 40 discriminator 1 view .LVU5
+  46 000a 8342     		cmp	r3, r0
+  47 000c FCD3     		bcc	.L2
+  20:Core/Src/voltage.c **** }
+  48              		.loc 1 20 1 view .LVU6
+  49 000e 7047     		bx	lr
+  50              	.L4:
+  51              		.align	2
+  52              	.L3:
+  53 0010 00000000 		.word	htim10
+  54              		.cfi_endproc
+  55              	.LFE221:
+  57              		.section	.text.dac_write,"ax",%progbits
+  58              		.align	1
+  59              		.global	dac_write
+  60              		.syntax unified
+  61              		.thumb
+  62              		.thumb_func
+  64              	dac_write:
+  65              	.LVL1:
+  66              	.LFB225:
+  21:Core/Src/voltage.c **** 
+  22:Core/Src/voltage.c **** void dac_init (void)
+  23:Core/Src/voltage.c **** {
+  24:Core/Src/voltage.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, DAC_device_addr, 2, 1000) != HAL_OK)
+  25:Core/Src/voltage.c ****     {
+  26:Core/Src/voltage.c ****         Error_Handler();
+  27:Core/Src/voltage.c ****     }
+  28:Core/Src/voltage.c ****     // Reset the DAC
+  29:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_trigger, DAC_trigger_reset | DAC_trigger_config_reset);
+  30:Core/Src/voltage.c ****     // Power up DAC
   31:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_general_config, DAC_general_config_pdn_power_up);
- 171              		.loc 1 31 5 view .LVU27
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 5
-
-
- 172 0012 0A20     		movs	r0, #10
- 173 0014 FFF7FEFF 		bl	HAL_Delay
- 174              	.LVL11:
   32:Core/Src/voltage.c **** }
- 175              		.loc 1 32 5 view .LVU28
- 176 0018 0021     		movs	r1, #0
- 177 001a D120     		movs	r0, #209
- 178 001c FFF7FEFF 		bl	dac_write
- 179              	.LVL12:
   33:Core/Src/voltage.c **** 
- 180              		.loc 1 33 1 is_stmt 0 view .LVU29
- 181 0020 08BD     		pop	{r3, pc}
- 182              		.cfi_endproc
- 183              	.LFE222:
- 185              		.section	.text.dac_set_voltage,"ax",%progbits
- 186              		.align	1
- 187              		.global	dac_set_voltage
- 188              		.syntax unified
- 189              		.thumb
- 190              		.thumb_func
- 192              	dac_set_voltage:
- 193              	.LVL13:
- 194              	.LFB223:
-  36:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_dac_data, voltage << 2);
- 195              		.loc 1 36 1 is_stmt 1 view -0
- 196              		.cfi_startproc
- 197              		@ args = 0, pretend = 0, frame = 0
- 198              		@ frame_needed = 0, uses_anonymous_args = 0
-  36:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_dac_data, voltage << 2);
- 199              		.loc 1 36 1 is_stmt 0 view .LVU31
- 200 0000 08B5     		push	{r3, lr}
- 201              		.cfi_def_cfa_offset 8
- 202              		.cfi_offset 3, -8
- 203              		.cfi_offset 14, -4
-  37:Core/Src/voltage.c **** }
- 204              		.loc 1 37 5 is_stmt 1 view .LVU32
- 205 0002 8100     		lsls	r1, r0, #2
- 206 0004 89B2     		uxth	r1, r1
- 207 0006 2120     		movs	r0, #33
- 208              	.LVL14:
-  37:Core/Src/voltage.c **** }
- 209              		.loc 1 37 5 is_stmt 0 view .LVU33
- 210 0008 FFF7FEFF 		bl	dac_write
- 211              	.LVL15:
-  38:Core/Src/voltage.c **** 
- 212              		.loc 1 38 1 view .LVU34
- 213 000c 08BD     		pop	{r3, pc}
- 214              		.cfi_endproc
- 215              	.LFE223:
- 217              		.section	.text.adc_set_channel,"ax",%progbits
- 218              		.align	1
- 219              		.global	adc_set_channel
- 220              		.syntax unified
- 221              		.thumb
- 222              		.thumb_func
- 224              	adc_set_channel:
- 225              	.LVL16:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 6
+  34:Core/Src/voltage.c **** void dac_drain (void)
+  35:Core/Src/voltage.c **** {
+  36:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_dac_data, 0x0000);
+  37:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_general_config, DAC_general_config_pdn_power_down_10k);
+  38:Core/Src/voltage.c ****     HAL_Delay(10);
+  39:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_general_config, DAC_general_config_pdn_power_up);
+  40:Core/Src/voltage.c **** }
+  41:Core/Src/voltage.c **** 
+  42:Core/Src/voltage.c **** void dac_set_voltage (uint16_t voltage)
+  43:Core/Src/voltage.c **** {
+  44:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_dac_data, voltage << 2);
+  45:Core/Src/voltage.c **** }
+  46:Core/Src/voltage.c **** 
+  47:Core/Src/voltage.c **** void dac_write (uint16_t memory_addr, uint16_t data)
+  48:Core/Src/voltage.c **** {
+  67              		.loc 1 48 1 is_stmt 1 view -0
+  68              		.cfi_startproc
+  69              		@ args = 0, pretend = 0, frame = 8
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 3
 
 
- 226              	.LFB225:
-  50:Core/Src/voltage.c **** 
-  51:Core/Src/voltage.c **** void adc_set_channel (ADC_Channel channel)
-  52:Core/Src/voltage.c **** {
- 227              		.loc 1 52 1 is_stmt 1 view -0
- 228              		.cfi_startproc
- 229              		@ args = 0, pretend = 0, frame = 16
- 230              		@ frame_needed = 0, uses_anonymous_args = 0
- 231              		.loc 1 52 1 is_stmt 0 view .LVU36
- 232 0000 00B5     		push	{lr}
- 233              		.cfi_def_cfa_offset 4
- 234              		.cfi_offset 14, -4
- 235 0002 85B0     		sub	sp, sp, #20
- 236              		.cfi_def_cfa_offset 24
-  53:Core/Src/voltage.c ****     ADC_ChannelConfTypeDef sConfig = {channel, 1, ADC_SAMPLETIME_3CYCLES, 0};
- 237              		.loc 1 53 5 is_stmt 1 view .LVU37
- 238              		.loc 1 53 28 is_stmt 0 view .LVU38
- 239 0004 0090     		str	r0, [sp]
- 240 0006 0123     		movs	r3, #1
- 241 0008 0193     		str	r3, [sp, #4]
- 242 000a 0023     		movs	r3, #0
- 243 000c 0293     		str	r3, [sp, #8]
- 244 000e 0393     		str	r3, [sp, #12]
-  54:Core/Src/voltage.c ****     if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
- 245              		.loc 1 54 5 is_stmt 1 view .LVU39
- 246              		.loc 1 54 9 is_stmt 0 view .LVU40
- 247 0010 6946     		mov	r1, sp
- 248 0012 0548     		ldr	r0, .L21
- 249              	.LVL17:
- 250              		.loc 1 54 9 view .LVU41
- 251 0014 FFF7FEFF 		bl	HAL_ADC_ConfigChannel
- 252              	.LVL18:
- 253              		.loc 1 54 8 discriminator 1 view .LVU42
- 254 0018 10B9     		cbnz	r0, .L20
- 255              	.L17:
-  55:Core/Src/voltage.c ****     {
-  56:Core/Src/voltage.c ****         Error_Handler();
-  57:Core/Src/voltage.c ****     }
-  58:Core/Src/voltage.c **** }
- 256              		.loc 1 58 1 view .LVU43
- 257 001a 05B0     		add	sp, sp, #20
- 258              		.cfi_remember_state
- 259              		.cfi_def_cfa_offset 4
- 260              		@ sp needed
- 261 001c 5DF804FB 		ldr	pc, [sp], #4
- 262              	.L20:
- 263              		.cfi_restore_state
-  56:Core/Src/voltage.c ****     }
- 264              		.loc 1 56 9 is_stmt 1 view .LVU44
- 265 0020 FFF7FEFF 		bl	Error_Handler
- 266              	.LVL19:
- 267              		.loc 1 58 1 is_stmt 0 view .LVU45
- 268 0024 F9E7     		b	.L17
- 269              	.L22:
- 270 0026 00BF     		.align	2
- 271              	.L21:
- 272 0028 00000000 		.word	hadc1
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 7
+  70              		@ frame_needed = 0, uses_anonymous_args = 0
+  71              		.loc 1 48 1 is_stmt 0 view .LVU8
+  72 0000 00B5     		push	{lr}
+  73              		.cfi_def_cfa_offset 4
+  74              		.cfi_offset 14, -4
+  75 0002 87B0     		sub	sp, sp, #28
+  76              		.cfi_def_cfa_offset 32
+  77 0004 0246     		mov	r2, r0
+  49:Core/Src/voltage.c ****     uint8_t buf[2] = {0};
+  78              		.loc 1 49 5 is_stmt 1 view .LVU9
+  79              		.loc 1 49 13 is_stmt 0 view .LVU10
+  80 0006 0023     		movs	r3, #0
+  81 0008 ADF81430 		strh	r3, [sp, #20]	@ movhi
+  50:Core/Src/voltage.c ****     buf[0] = data >> 8;
+  82              		.loc 1 50 5 is_stmt 1 view .LVU11
+  83              		.loc 1 50 12 is_stmt 0 view .LVU12
+  84 000c 0B0A     		lsrs	r3, r1, #8
+  85 000e 8DF81430 		strb	r3, [sp, #20]
+  51:Core/Src/voltage.c ****     buf[1] = data & 0xff;
+  86              		.loc 1 51 5 is_stmt 1 view .LVU13
+  87              		.loc 1 51 12 is_stmt 0 view .LVU14
+  88 0012 8DF81510 		strb	r1, [sp, #21]
+  52:Core/Src/voltage.c ****     if (HAL_I2C_Mem_Write(&hi2c1, DAC_device_addr, memory_addr, 1, buf, 2, 1000) != HAL_OK)
+  89              		.loc 1 52 5 is_stmt 1 view .LVU15
+  90              		.loc 1 52 9 is_stmt 0 view .LVU16
+  91 0016 4FF47A73 		mov	r3, #1000
+  92 001a 0293     		str	r3, [sp, #8]
+  93 001c 0223     		movs	r3, #2
+  94 001e 0193     		str	r3, [sp, #4]
+  95 0020 05AB     		add	r3, sp, #20
+  96 0022 0093     		str	r3, [sp]
+  97 0024 0123     		movs	r3, #1
+  98 0026 9021     		movs	r1, #144
+  99              	.LVL2:
+ 100              		.loc 1 52 9 view .LVU17
+ 101 0028 0448     		ldr	r0, .L9
+ 102              	.LVL3:
+ 103              		.loc 1 52 9 view .LVU18
+ 104 002a FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 105              	.LVL4:
+ 106              		.loc 1 52 8 discriminator 1 view .LVU19
+ 107 002e 10B9     		cbnz	r0, .L8
+ 108              	.L5:
+  53:Core/Src/voltage.c ****     {
+  54:Core/Src/voltage.c ****         Error_Handler();
+  55:Core/Src/voltage.c ****     }
+  56:Core/Src/voltage.c **** }
+ 109              		.loc 1 56 1 view .LVU20
+ 110 0030 07B0     		add	sp, sp, #28
+ 111              		.cfi_remember_state
+ 112              		.cfi_def_cfa_offset 4
+ 113              		@ sp needed
+ 114 0032 5DF804FB 		ldr	pc, [sp], #4
+ 115              	.L8:
+ 116              		.cfi_restore_state
+  54:Core/Src/voltage.c ****     }
+ 117              		.loc 1 54 9 is_stmt 1 view .LVU21
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 4
 
 
- 273              		.cfi_endproc
- 274              	.LFE225:
- 276              		.section	.text.adc_average,"ax",%progbits
- 277              		.align	1
- 278              		.global	adc_average
- 279              		.syntax unified
- 280              		.thumb
- 281              		.thumb_func
- 283              	adc_average:
- 284              	.LVL20:
- 285              	.LFB226:
-  59:Core/Src/voltage.c **** 
-  60:Core/Src/voltage.c **** uint16_t adc_average (uint16_t adc_samples)
-  61:Core/Src/voltage.c **** {
- 286              		.loc 1 61 1 is_stmt 1 view -0
- 287              		.cfi_startproc
- 288              		@ args = 0, pretend = 0, frame = 0
- 289              		@ frame_needed = 0, uses_anonymous_args = 0
- 290              		.loc 1 61 1 is_stmt 0 view .LVU47
- 291 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
- 292              		.cfi_def_cfa_offset 24
- 293              		.cfi_offset 3, -24
- 294              		.cfi_offset 4, -20
- 295              		.cfi_offset 5, -16
- 296              		.cfi_offset 6, -12
- 297              		.cfi_offset 7, -8
- 298              		.cfi_offset 14, -4
- 299 0002 0746     		mov	r7, r0
-  62:Core/Src/voltage.c ****     uint32_t sum = 0;
- 300              		.loc 1 62 5 is_stmt 1 view .LVU48
- 301              	.LVL21:
-  63:Core/Src/voltage.c ****     for (uint16_t i = 0; i < adc_samples; i++)
- 302              		.loc 1 63 5 view .LVU49
- 303              	.LBB2:
- 304              		.loc 1 63 10 view .LVU50
- 305              		.loc 1 63 19 is_stmt 0 view .LVU51
- 306 0004 0024     		movs	r4, #0
- 307              	.LBE2:
-  62:Core/Src/voltage.c ****     uint32_t sum = 0;
- 308              		.loc 1 62 14 view .LVU52
- 309 0006 2646     		mov	r6, r4
- 310              	.LBB3:
- 311              		.loc 1 63 5 view .LVU53
- 312 0008 0EE0     		b	.L24
- 313              	.LVL22:
- 314              	.L25:
-  64:Core/Src/voltage.c ****     {
-  65:Core/Src/voltage.c ****         HAL_ADC_Start(&hadc1);
- 315              		.loc 1 65 9 is_stmt 1 view .LVU54
- 316 000a 0A4D     		ldr	r5, .L27
- 317 000c 2846     		mov	r0, r5
- 318 000e FFF7FEFF 		bl	HAL_ADC_Start
- 319              	.LVL23:
-  66:Core/Src/voltage.c ****         HAL_ADC_PollForConversion(&hadc1, 1000);
- 320              		.loc 1 66 9 view .LVU55
- 321 0012 4FF47A71 		mov	r1, #1000
- 322 0016 2846     		mov	r0, r5
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 8
+ 118 0036 FFF7FEFF 		bl	Error_Handler
+ 119              	.LVL5:
+ 120              		.loc 1 56 1 is_stmt 0 view .LVU22
+ 121 003a F9E7     		b	.L5
+ 122              	.L10:
+ 123              		.align	2
+ 124              	.L9:
+ 125 003c 00000000 		.word	hi2c1
+ 126              		.cfi_endproc
+ 127              	.LFE225:
+ 129              		.section	.text.dac_init,"ax",%progbits
+ 130              		.align	1
+ 131              		.global	dac_init
+ 132              		.syntax unified
+ 133              		.thumb
+ 134              		.thumb_func
+ 136              	dac_init:
+ 137              	.LFB222:
+  23:Core/Src/voltage.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, DAC_device_addr, 2, 1000) != HAL_OK)
+ 138              		.loc 1 23 1 is_stmt 1 view -0
+ 139              		.cfi_startproc
+ 140              		@ args = 0, pretend = 0, frame = 0
+ 141              		@ frame_needed = 0, uses_anonymous_args = 0
+ 142 0000 08B5     		push	{r3, lr}
+ 143              		.cfi_def_cfa_offset 8
+ 144              		.cfi_offset 3, -8
+ 145              		.cfi_offset 14, -4
+  24:Core/Src/voltage.c ****     {
+ 146              		.loc 1 24 5 view .LVU24
+  24:Core/Src/voltage.c ****     {
+ 147              		.loc 1 24 9 is_stmt 0 view .LVU25
+ 148 0002 4FF47A73 		mov	r3, #1000
+ 149 0006 0222     		movs	r2, #2
+ 150 0008 9021     		movs	r1, #144
+ 151 000a 0848     		ldr	r0, .L15
+ 152 000c FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
+ 153              	.LVL6:
+  24:Core/Src/voltage.c ****     {
+ 154              		.loc 1 24 8 discriminator 1 view .LVU26
+ 155 0010 48B9     		cbnz	r0, .L14
+ 156              	.L12:
+  29:Core/Src/voltage.c ****     // Power up DAC
+ 157              		.loc 1 29 5 is_stmt 1 view .LVU27
+ 158 0012 4FF40271 		mov	r1, #520
+ 159 0016 D320     		movs	r0, #211
+ 160 0018 FFF7FEFF 		bl	dac_write
+ 161              	.LVL7:
+  31:Core/Src/voltage.c **** }
+ 162              		.loc 1 31 5 view .LVU28
+ 163 001c 0021     		movs	r1, #0
+ 164 001e D120     		movs	r0, #209
+ 165 0020 FFF7FEFF 		bl	dac_write
+ 166              	.LVL8:
+  32:Core/Src/voltage.c **** 
+ 167              		.loc 1 32 1 is_stmt 0 view .LVU29
+ 168 0024 08BD     		pop	{r3, pc}
+ 169              	.L14:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 5
 
 
- 323 0018 FFF7FEFF 		bl	HAL_ADC_PollForConversion
- 324              	.LVL24:
-  67:Core/Src/voltage.c ****         sum += HAL_ADC_GetValue(&hadc1);
- 325              		.loc 1 67 9 view .LVU56
- 326              		.loc 1 67 16 is_stmt 0 view .LVU57
- 327 001c 2846     		mov	r0, r5
- 328 001e FFF7FEFF 		bl	HAL_ADC_GetValue
- 329              	.LVL25:
- 330              		.loc 1 67 13 discriminator 1 view .LVU58
- 331 0022 0644     		add	r6, r6, r0
- 332              	.LVL26:
-  63:Core/Src/voltage.c ****     {
- 333              		.loc 1 63 44 is_stmt 1 discriminator 3 view .LVU59
- 334 0024 0134     		adds	r4, r4, #1
- 335              	.LVL27:
-  63:Core/Src/voltage.c ****     {
- 336              		.loc 1 63 44 is_stmt 0 discriminator 3 view .LVU60
- 337 0026 A4B2     		uxth	r4, r4
- 338              	.LVL28:
- 339              	.L24:
-  63:Core/Src/voltage.c ****     {
- 340              		.loc 1 63 28 is_stmt 1 discriminator 1 view .LVU61
- 341 0028 BC42     		cmp	r4, r7
- 342 002a EED3     		bcc	.L25
- 343              	.LBE3:
-  68:Core/Src/voltage.c ****     }
-  69:Core/Src/voltage.c ****     return (uint16_t)sum / adc_samples;
- 344              		.loc 1 69 5 view .LVU62
- 345              		.loc 1 69 12 is_stmt 0 view .LVU63
- 346 002c B6B2     		uxth	r6, r6
- 347              	.LVL29:
-  70:Core/Src/voltage.c **** }
- 348              		.loc 1 70 1 view .LVU64
- 349 002e B6FBF7F0 		udiv	r0, r6, r7
- 350 0032 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 351              	.LVL30:
- 352              	.L28:
- 353              		.loc 1 70 1 view .LVU65
- 354              		.align	2
- 355              	.L27:
- 356 0034 00000000 		.word	hadc1
- 357              		.cfi_endproc
- 358              	.LFE226:
- 360              		.section	.text.reset_muxs,"ax",%progbits
- 361              		.align	1
- 362              		.global	reset_muxs
- 363              		.syntax unified
- 364              		.thumb
- 365              		.thumb_func
- 367              	reset_muxs:
- 368              	.LFB227:
-  71:Core/Src/voltage.c **** 
-  72:Core/Src/voltage.c **** void reset_muxs (void)
-  73:Core/Src/voltage.c **** {
- 369              		.loc 1 73 1 is_stmt 1 view -0
- 370              		.cfi_startproc
- 371              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 9
+  26:Core/Src/voltage.c ****     }
+ 170              		.loc 1 26 9 is_stmt 1 view .LVU30
+ 171 0026 FFF7FEFF 		bl	Error_Handler
+ 172              	.LVL9:
+ 173 002a F2E7     		b	.L12
+ 174              	.L16:
+ 175              		.align	2
+ 176              	.L15:
+ 177 002c 00000000 		.word	hi2c1
+ 178              		.cfi_endproc
+ 179              	.LFE222:
+ 181              		.section	.text.dac_drain,"ax",%progbits
+ 182              		.align	1
+ 183              		.global	dac_drain
+ 184              		.syntax unified
+ 185              		.thumb
+ 186              		.thumb_func
+ 188              	dac_drain:
+ 189              	.LFB223:
+  35:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_dac_data, 0x0000);
+ 190              		.loc 1 35 1 view -0
+ 191              		.cfi_startproc
+ 192              		@ args = 0, pretend = 0, frame = 0
+ 193              		@ frame_needed = 0, uses_anonymous_args = 0
+ 194 0000 08B5     		push	{r3, lr}
+ 195              		.cfi_def_cfa_offset 8
+ 196              		.cfi_offset 3, -8
+ 197              		.cfi_offset 14, -4
+  36:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_general_config, DAC_general_config_pdn_power_down_10k);
+ 198              		.loc 1 36 5 view .LVU32
+ 199 0002 0021     		movs	r1, #0
+ 200 0004 2120     		movs	r0, #33
+ 201 0006 FFF7FEFF 		bl	dac_write
+ 202              	.LVL10:
+  37:Core/Src/voltage.c ****     HAL_Delay(10);
+ 203              		.loc 1 37 5 view .LVU33
+ 204 000a 0821     		movs	r1, #8
+ 205 000c D120     		movs	r0, #209
+ 206 000e FFF7FEFF 		bl	dac_write
+ 207              	.LVL11:
+  38:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_general_config, DAC_general_config_pdn_power_up);
+ 208              		.loc 1 38 5 view .LVU34
+ 209 0012 0A20     		movs	r0, #10
+ 210 0014 FFF7FEFF 		bl	HAL_Delay
+ 211              	.LVL12:
+  39:Core/Src/voltage.c **** }
+ 212              		.loc 1 39 5 view .LVU35
+ 213 0018 0021     		movs	r1, #0
+ 214 001a D120     		movs	r0, #209
+ 215 001c FFF7FEFF 		bl	dac_write
+ 216              	.LVL13:
+  40:Core/Src/voltage.c **** 
+ 217              		.loc 1 40 1 is_stmt 0 view .LVU36
+ 218 0020 08BD     		pop	{r3, pc}
+ 219              		.cfi_endproc
+ 220              	.LFE223:
+ 222              		.section	.text.dac_set_voltage,"ax",%progbits
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 6
 
 
- 372              		@ frame_needed = 0, uses_anonymous_args = 0
- 373              		@ link register save eliminated.
-  74:Core/Src/voltage.c ****     GPIOSW->BSRR = 0xffff << 16;
- 374              		.loc 1 74 5 view .LVU67
- 375              		.loc 1 74 18 is_stmt 0 view .LVU68
- 376 0000 014B     		ldr	r3, .L30
- 377 0002 024A     		ldr	r2, .L30+4
- 378 0004 9A61     		str	r2, [r3, #24]
-  75:Core/Src/voltage.c **** }
- 379              		.loc 1 75 1 view .LVU69
- 380 0006 7047     		bx	lr
- 381              	.L31:
- 382              		.align	2
- 383              	.L30:
- 384 0008 00080240 		.word	1073874944
- 385 000c 0000FFFF 		.word	-65536
- 386              		.cfi_endproc
- 387              	.LFE227:
- 389              		.section	.text.resistance_init,"ax",%progbits
- 390              		.align	1
- 391              		.global	resistance_init
- 392              		.syntax unified
- 393              		.thumb
- 394              		.thumb_func
- 396              	resistance_init:
- 397              	.LFB220:
-   8:Core/Src/voltage.c ****     dac_init();
- 398              		.loc 1 8 1 is_stmt 1 view -0
- 399              		.cfi_startproc
- 400              		@ args = 0, pretend = 0, frame = 0
- 401              		@ frame_needed = 0, uses_anonymous_args = 0
- 402 0000 08B5     		push	{r3, lr}
- 403              		.cfi_def_cfa_offset 8
- 404              		.cfi_offset 3, -8
- 405              		.cfi_offset 14, -4
-   9:Core/Src/voltage.c ****     // adc_set_channel(ADC_CHANNEL_SIGNAL);
- 406              		.loc 1 9 5 view .LVU71
- 407 0002 FFF7FEFF 		bl	dac_init
- 408              	.LVL31:
-  11:Core/Src/voltage.c ****     reset_muxs();
- 409              		.loc 1 11 5 view .LVU72
- 410 0006 0220     		movs	r0, #2
- 411 0008 FFF7FEFF 		bl	adc_set_channel
- 412              	.LVL32:
-  12:Core/Src/voltage.c **** }
- 413              		.loc 1 12 5 view .LVU73
- 414 000c FFF7FEFF 		bl	reset_muxs
- 415              	.LVL33:
-  13:Core/Src/voltage.c **** 
- 416              		.loc 1 13 1 is_stmt 0 view .LVU74
- 417 0010 08BD     		pop	{r3, pc}
- 418              		.cfi_endproc
- 419              	.LFE220:
- 421              		.section	.text.measure_calib_voltage,"ax",%progbits
- 422              		.align	1
- 423              		.global	measure_calib_voltage
- 424              		.syntax unified
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 10
+ 223              		.align	1
+ 224              		.global	dac_set_voltage
+ 225              		.syntax unified
+ 226              		.thumb
+ 227              		.thumb_func
+ 229              	dac_set_voltage:
+ 230              	.LVL14:
+ 231              	.LFB224:
+  43:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_dac_data, voltage << 2);
+ 232              		.loc 1 43 1 is_stmt 1 view -0
+ 233              		.cfi_startproc
+ 234              		@ args = 0, pretend = 0, frame = 0
+ 235              		@ frame_needed = 0, uses_anonymous_args = 0
+  43:Core/Src/voltage.c ****     dac_write(DAC_mem_addr_dac_data, voltage << 2);
+ 236              		.loc 1 43 1 is_stmt 0 view .LVU38
+ 237 0000 08B5     		push	{r3, lr}
+ 238              		.cfi_def_cfa_offset 8
+ 239              		.cfi_offset 3, -8
+ 240              		.cfi_offset 14, -4
+  44:Core/Src/voltage.c **** }
+ 241              		.loc 1 44 5 is_stmt 1 view .LVU39
+ 242 0002 8100     		lsls	r1, r0, #2
+ 243 0004 89B2     		uxth	r1, r1
+ 244 0006 2120     		movs	r0, #33
+ 245              	.LVL15:
+  44:Core/Src/voltage.c **** }
+ 246              		.loc 1 44 5 is_stmt 0 view .LVU40
+ 247 0008 FFF7FEFF 		bl	dac_write
+ 248              	.LVL16:
+  45:Core/Src/voltage.c **** 
+ 249              		.loc 1 45 1 view .LVU41
+ 250 000c 08BD     		pop	{r3, pc}
+ 251              		.cfi_endproc
+ 252              	.LFE224:
+ 254              		.section	.text.adc_set_channel,"ax",%progbits
+ 255              		.align	1
+ 256              		.global	adc_set_channel
+ 257              		.syntax unified
+ 258              		.thumb
+ 259              		.thumb_func
+ 261              	adc_set_channel:
+ 262              	.LVL17:
+ 263              	.LFB226:
+  57:Core/Src/voltage.c **** 
+  58:Core/Src/voltage.c **** void adc_set_channel (ADC_Channel channel)
+  59:Core/Src/voltage.c **** {
+ 264              		.loc 1 59 1 is_stmt 1 view -0
+ 265              		.cfi_startproc
+ 266              		@ args = 0, pretend = 0, frame = 16
+ 267              		@ frame_needed = 0, uses_anonymous_args = 0
+ 268              		.loc 1 59 1 is_stmt 0 view .LVU43
+ 269 0000 00B5     		push	{lr}
+ 270              		.cfi_def_cfa_offset 4
+ 271              		.cfi_offset 14, -4
+ 272 0002 85B0     		sub	sp, sp, #20
+ 273              		.cfi_def_cfa_offset 24
+  60:Core/Src/voltage.c ****     ADC_ChannelConfTypeDef sConfig = {channel, 1, ADC_SAMPLETIME_3CYCLES, 0};
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 7
 
 
- 425              		.thumb
- 426              		.thumb_func
- 428              	measure_calib_voltage:
- 429              	.LVL34:
- 430              	.LFB228:
-  76:Core/Src/voltage.c **** 
-  77:Core/Src/voltage.c **** uint16_t measure_calib_voltage (uint16_t adc_samples) {
- 431              		.loc 1 77 55 is_stmt 1 view -0
- 432              		.cfi_startproc
- 433              		@ args = 0, pretend = 0, frame = 0
- 434              		@ frame_needed = 0, uses_anonymous_args = 0
- 435              		.loc 1 77 55 is_stmt 0 view .LVU76
- 436 0000 10B5     		push	{r4, lr}
- 437              		.cfi_def_cfa_offset 8
- 438              		.cfi_offset 4, -8
- 439              		.cfi_offset 14, -4
-  78:Core/Src/voltage.c ****     GPIOSW->BSRR = SW_R1_Calib_Pin;
- 440              		.loc 1 78 5 is_stmt 1 view .LVU77
- 441              		.loc 1 78 18 is_stmt 0 view .LVU78
- 442 0002 044C     		ldr	r4, .L36
- 443 0004 0823     		movs	r3, #8
- 444 0006 A361     		str	r3, [r4, #24]
-  79:Core/Src/voltage.c ****     uint16_t adc_val = adc_average(adc_samples);
- 445              		.loc 1 79 5 is_stmt 1 view .LVU79
- 446              		.loc 1 79 24 is_stmt 0 view .LVU80
- 447 0008 FFF7FEFF 		bl	adc_average
- 448              	.LVL35:
-  80:Core/Src/voltage.c ****     GPIOSW->BSRR = SW_R1_Calib_Pin << 16;
- 449              		.loc 1 80 5 is_stmt 1 view .LVU81
- 450              		.loc 1 80 18 is_stmt 0 view .LVU82
- 451 000c 4FF40023 		mov	r3, #524288
- 452 0010 A361     		str	r3, [r4, #24]
-  81:Core/Src/voltage.c ****     return adc_val;
- 453              		.loc 1 81 5 is_stmt 1 view .LVU83
+ 274              		.loc 1 60 5 is_stmt 1 view .LVU44
+ 275              		.loc 1 60 28 is_stmt 0 view .LVU45
+ 276 0004 0090     		str	r0, [sp]
+ 277 0006 0123     		movs	r3, #1
+ 278 0008 0193     		str	r3, [sp, #4]
+ 279 000a 0023     		movs	r3, #0
+ 280 000c 0293     		str	r3, [sp, #8]
+ 281 000e 0393     		str	r3, [sp, #12]
+  61:Core/Src/voltage.c ****     if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+ 282              		.loc 1 61 5 is_stmt 1 view .LVU46
+ 283              		.loc 1 61 9 is_stmt 0 view .LVU47
+ 284 0010 6946     		mov	r1, sp
+ 285 0012 0548     		ldr	r0, .L25
+ 286              	.LVL18:
+ 287              		.loc 1 61 9 view .LVU48
+ 288 0014 FFF7FEFF 		bl	HAL_ADC_ConfigChannel
+ 289              	.LVL19:
+ 290              		.loc 1 61 8 discriminator 1 view .LVU49
+ 291 0018 10B9     		cbnz	r0, .L24
+ 292              	.L21:
+  62:Core/Src/voltage.c ****     {
+  63:Core/Src/voltage.c ****         Error_Handler();
+  64:Core/Src/voltage.c ****     }
+  65:Core/Src/voltage.c **** }
+ 293              		.loc 1 65 1 view .LVU50
+ 294 001a 05B0     		add	sp, sp, #20
+ 295              		.cfi_remember_state
+ 296              		.cfi_def_cfa_offset 4
+ 297              		@ sp needed
+ 298 001c 5DF804FB 		ldr	pc, [sp], #4
+ 299              	.L24:
+ 300              		.cfi_restore_state
+  63:Core/Src/voltage.c ****     }
+ 301              		.loc 1 63 9 is_stmt 1 view .LVU51
+ 302 0020 FFF7FEFF 		bl	Error_Handler
+ 303              	.LVL20:
+ 304              		.loc 1 65 1 is_stmt 0 view .LVU52
+ 305 0024 F9E7     		b	.L21
+ 306              	.L26:
+ 307 0026 00BF     		.align	2
+ 308              	.L25:
+ 309 0028 00000000 		.word	hadc1
+ 310              		.cfi_endproc
+ 311              	.LFE226:
+ 313              		.section	.text.adc_average,"ax",%progbits
+ 314              		.align	1
+ 315              		.global	adc_average
+ 316              		.syntax unified
+ 317              		.thumb
+ 318              		.thumb_func
+ 320              	adc_average:
+ 321              	.LVL21:
+ 322              	.LFB227:
+  66:Core/Src/voltage.c **** 
+  67:Core/Src/voltage.c **** uint16_t adc_average (uint16_t adc_samples)
+  68:Core/Src/voltage.c **** {
+ 323              		.loc 1 68 1 is_stmt 1 view -0
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 8
+
+
+ 324              		.cfi_startproc
+ 325              		@ args = 0, pretend = 0, frame = 0
+ 326              		@ frame_needed = 0, uses_anonymous_args = 0
+ 327              		.loc 1 68 1 is_stmt 0 view .LVU54
+ 328 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 329              		.cfi_def_cfa_offset 24
+ 330              		.cfi_offset 3, -24
+ 331              		.cfi_offset 4, -20
+ 332              		.cfi_offset 5, -16
+ 333              		.cfi_offset 6, -12
+ 334              		.cfi_offset 7, -8
+ 335              		.cfi_offset 14, -4
+ 336 0002 0746     		mov	r7, r0
+  69:Core/Src/voltage.c ****     uint32_t sum = 0;
+ 337              		.loc 1 69 5 is_stmt 1 view .LVU55
+ 338              	.LVL22:
+  70:Core/Src/voltage.c ****     for (uint16_t i = 0; i < adc_samples; i++)
+ 339              		.loc 1 70 5 view .LVU56
+ 340              	.LBB2:
+ 341              		.loc 1 70 10 view .LVU57
+ 342              		.loc 1 70 19 is_stmt 0 view .LVU58
+ 343 0004 0024     		movs	r4, #0
+ 344              	.LBE2:
+  69:Core/Src/voltage.c ****     uint32_t sum = 0;
+ 345              		.loc 1 69 14 view .LVU59
+ 346 0006 2646     		mov	r6, r4
+ 347              	.LBB3:
+ 348              		.loc 1 70 5 view .LVU60
+ 349 0008 0EE0     		b	.L28
+ 350              	.LVL23:
+ 351              	.L29:
+  71:Core/Src/voltage.c ****     {
+  72:Core/Src/voltage.c ****         HAL_ADC_Start(&hadc1);
+ 352              		.loc 1 72 9 is_stmt 1 view .LVU61
+ 353 000a 0A4D     		ldr	r5, .L31
+ 354 000c 2846     		mov	r0, r5
+ 355 000e FFF7FEFF 		bl	HAL_ADC_Start
+ 356              	.LVL24:
+  73:Core/Src/voltage.c ****         HAL_ADC_PollForConversion(&hadc1, 1000);
+ 357              		.loc 1 73 9 view .LVU62
+ 358 0012 4FF47A71 		mov	r1, #1000
+ 359 0016 2846     		mov	r0, r5
+ 360 0018 FFF7FEFF 		bl	HAL_ADC_PollForConversion
+ 361              	.LVL25:
+  74:Core/Src/voltage.c ****         sum += HAL_ADC_GetValue(&hadc1);
+ 362              		.loc 1 74 9 view .LVU63
+ 363              		.loc 1 74 16 is_stmt 0 view .LVU64
+ 364 001c 2846     		mov	r0, r5
+ 365 001e FFF7FEFF 		bl	HAL_ADC_GetValue
+ 366              	.LVL26:
+ 367              		.loc 1 74 13 discriminator 1 view .LVU65
+ 368 0022 0644     		add	r6, r6, r0
+ 369              	.LVL27:
+  70:Core/Src/voltage.c ****     {
+ 370              		.loc 1 70 44 is_stmt 1 discriminator 3 view .LVU66
+ 371 0024 0134     		adds	r4, r4, #1
+ 372              	.LVL28:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 9
+
+
+  70:Core/Src/voltage.c ****     {
+ 373              		.loc 1 70 44 is_stmt 0 discriminator 3 view .LVU67
+ 374 0026 A4B2     		uxth	r4, r4
+ 375              	.LVL29:
+ 376              	.L28:
+  70:Core/Src/voltage.c ****     {
+ 377              		.loc 1 70 28 is_stmt 1 discriminator 1 view .LVU68
+ 378 0028 BC42     		cmp	r4, r7
+ 379 002a EED3     		bcc	.L29
+ 380              	.LBE3:
+  75:Core/Src/voltage.c ****     }
+  76:Core/Src/voltage.c ****     return (uint16_t)sum / adc_samples;
+ 381              		.loc 1 76 5 view .LVU69
+ 382              		.loc 1 76 12 is_stmt 0 view .LVU70
+ 383 002c B6B2     		uxth	r6, r6
+ 384              	.LVL30:
+  77:Core/Src/voltage.c **** }
+ 385              		.loc 1 77 1 view .LVU71
+ 386 002e B6FBF7F0 		udiv	r0, r6, r7
+ 387 0032 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 388              	.LVL31:
+ 389              	.L32:
+ 390              		.loc 1 77 1 view .LVU72
+ 391              		.align	2
+ 392              	.L31:
+ 393 0034 00000000 		.word	hadc1
+ 394              		.cfi_endproc
+ 395              	.LFE227:
+ 397              		.section	.text.reset_muxs,"ax",%progbits
+ 398              		.align	1
+ 399              		.global	reset_muxs
+ 400              		.syntax unified
+ 401              		.thumb
+ 402              		.thumb_func
+ 404              	reset_muxs:
+ 405              	.LFB228:
+  78:Core/Src/voltage.c **** 
+  79:Core/Src/voltage.c **** void reset_muxs (void)
+  80:Core/Src/voltage.c **** {
+ 406              		.loc 1 80 1 is_stmt 1 view -0
+ 407              		.cfi_startproc
+ 408              		@ args = 0, pretend = 0, frame = 0
+ 409              		@ frame_needed = 0, uses_anonymous_args = 0
+ 410              		@ link register save eliminated.
+  81:Core/Src/voltage.c ****     GPIOSW->BSRR = 0xffff << 16;
+ 411              		.loc 1 81 5 view .LVU74
+ 412              		.loc 1 81 18 is_stmt 0 view .LVU75
+ 413 0000 014B     		ldr	r3, .L34
+ 414 0002 024A     		ldr	r2, .L34+4
+ 415 0004 9A61     		str	r2, [r3, #24]
   82:Core/Src/voltage.c **** }
- 454              		.loc 1 82 1 is_stmt 0 view .LVU84
- 455 0012 10BD     		pop	{r4, pc}
- 456              	.L37:
- 457              		.align	2
- 458              	.L36:
- 459 0014 00080240 		.word	1073874944
- 460              		.cfi_endproc
- 461              	.LFE228:
- 463              		.section	.text.measure_pin_voltage,"ax",%progbits
- 464              		.align	1
- 465              		.global	measure_pin_voltage
- 466              		.syntax unified
- 467              		.thumb
- 468              		.thumb_func
- 470              	measure_pin_voltage:
- 471              	.LVL36:
- 472              	.LFB229:
+ 416              		.loc 1 82 1 view .LVU76
+ 417 0006 7047     		bx	lr
+ 418              	.L35:
+ 419              		.align	2
+ 420              	.L34:
+ 421 0008 00080240 		.word	1073874944
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 10
+
+
+ 422 000c 0000FFFF 		.word	-65536
+ 423              		.cfi_endproc
+ 424              	.LFE228:
+ 426              		.section	.text.voltage_init,"ax",%progbits
+ 427              		.align	1
+ 428              		.global	voltage_init
+ 429              		.syntax unified
+ 430              		.thumb
+ 431              		.thumb_func
+ 433              	voltage_init:
+ 434              	.LFB220:
+   7:Core/Src/voltage.c ****     dac_init();
+ 435              		.loc 1 7 1 is_stmt 1 view -0
+ 436              		.cfi_startproc
+ 437              		@ args = 0, pretend = 0, frame = 0
+ 438              		@ frame_needed = 0, uses_anonymous_args = 0
+ 439 0000 08B5     		push	{r3, lr}
+ 440              		.cfi_def_cfa_offset 8
+ 441              		.cfi_offset 3, -8
+ 442              		.cfi_offset 14, -4
+   8:Core/Src/voltage.c ****     // adc_set_channel(ADC_CHANNEL_SIGNAL);
+ 443              		.loc 1 8 5 view .LVU78
+ 444 0002 FFF7FEFF 		bl	dac_init
+ 445              	.LVL32:
+  10:Core/Src/voltage.c ****     reset_muxs();
+ 446              		.loc 1 10 5 view .LVU79
+ 447 0006 0220     		movs	r0, #2
+ 448 0008 FFF7FEFF 		bl	adc_set_channel
+ 449              	.LVL33:
+  11:Core/Src/voltage.c ****     HAL_TIM_Base_Start(&htim10);
+ 450              		.loc 1 11 5 view .LVU80
+ 451 000c FFF7FEFF 		bl	reset_muxs
+ 452              	.LVL34:
+  12:Core/Src/voltage.c **** }
+ 453              		.loc 1 12 5 view .LVU81
+ 454 0010 0148     		ldr	r0, .L38
+ 455 0012 FFF7FEFF 		bl	HAL_TIM_Base_Start
+ 456              	.LVL35:
+  13:Core/Src/voltage.c **** 
+ 457              		.loc 1 13 1 is_stmt 0 view .LVU82
+ 458 0016 08BD     		pop	{r3, pc}
+ 459              	.L39:
+ 460              		.align	2
+ 461              	.L38:
+ 462 0018 00000000 		.word	htim10
+ 463              		.cfi_endproc
+ 464              	.LFE220:
+ 466              		.section	.text.measure_dac_voltage,"ax",%progbits
+ 467              		.align	1
+ 468              		.global	measure_dac_voltage
+ 469              		.syntax unified
+ 470              		.thumb
+ 471              		.thumb_func
+ 473              	measure_dac_voltage:
+ 474              	.LVL36:
+ 475              	.LFB229:
   83:Core/Src/voltage.c **** 
-  84:Core/Src/voltage.c **** uint16_t measure_pin_voltage (Direction direction, Electrode_Type electrode, uint16_t adc_samples)
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 11
+
+
+  84:Core/Src/voltage.c **** uint16_t measure_dac_voltage (uint16_t adc_samples)
   85:Core/Src/voltage.c **** {
- 473              		.loc 1 85 1 is_stmt 1 view -0
- 474              		.cfi_startproc
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 11
+ 476              		.loc 1 85 1 is_stmt 1 view -0
+ 477              		.cfi_startproc
+ 478              		@ args = 0, pretend = 0, frame = 0
+ 479              		@ frame_needed = 0, uses_anonymous_args = 0
+ 480              		.loc 1 85 1 is_stmt 0 view .LVU84
+ 481 0000 38B5     		push	{r3, r4, r5, lr}
+ 482              		.cfi_def_cfa_offset 16
+ 483              		.cfi_offset 3, -16
+ 484              		.cfi_offset 4, -12
+ 485              		.cfi_offset 5, -8
+ 486              		.cfi_offset 14, -4
+ 487 0002 0446     		mov	r4, r0
+  86:Core/Src/voltage.c ****     GPIOSW->BSRR = SW_R1_Calib_Pin;
+ 488              		.loc 1 86 5 is_stmt 1 view .LVU85
+ 489              		.loc 1 86 18 is_stmt 0 view .LVU86
+ 490 0004 064D     		ldr	r5, .L42
+ 491 0006 0823     		movs	r3, #8
+ 492 0008 AB61     		str	r3, [r5, #24]
+  87:Core/Src/voltage.c ****     us_delay(VOLTAGE_SETTLE_TIME);
+ 493              		.loc 1 87 5 is_stmt 1 view .LVU87
+ 494 000a 1420     		movs	r0, #20
+ 495              	.LVL37:
+ 496              		.loc 1 87 5 is_stmt 0 view .LVU88
+ 497 000c FFF7FEFF 		bl	us_delay
+ 498              	.LVL38:
+  88:Core/Src/voltage.c ****     uint16_t adc_val = adc_average(adc_samples);
+ 499              		.loc 1 88 5 is_stmt 1 view .LVU89
+ 500              		.loc 1 88 24 is_stmt 0 view .LVU90
+ 501 0010 2046     		mov	r0, r4
+ 502 0012 FFF7FEFF 		bl	adc_average
+ 503              	.LVL39:
+  89:Core/Src/voltage.c ****     GPIOSW->BSRR = SW_R1_Calib_Pin << 16;
+ 504              		.loc 1 89 5 is_stmt 1 view .LVU91
+ 505              		.loc 1 89 18 is_stmt 0 view .LVU92
+ 506 0016 4FF40023 		mov	r3, #524288
+ 507 001a AB61     		str	r3, [r5, #24]
+  90:Core/Src/voltage.c ****     return adc_val;
+ 508              		.loc 1 90 5 is_stmt 1 view .LVU93
+  91:Core/Src/voltage.c **** }
+ 509              		.loc 1 91 1 is_stmt 0 view .LVU94
+ 510 001c 38BD     		pop	{r3, r4, r5, pc}
+ 511              	.LVL40:
+ 512              	.L43:
+ 513              		.loc 1 91 1 view .LVU95
+ 514 001e 00BF     		.align	2
+ 515              	.L42:
+ 516 0020 00080240 		.word	1073874944
+ 517              		.cfi_endproc
+ 518              	.LFE229:
+ 520              		.section	.text.measure_calib_voltage,"ax",%progbits
+ 521              		.align	1
+ 522              		.global	measure_calib_voltage
+ 523              		.syntax unified
+ 524              		.thumb
+ 525              		.thumb_func
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 12
 
 
- 475              		@ args = 0, pretend = 0, frame = 0
- 476              		@ frame_needed = 0, uses_anonymous_args = 0
- 477              		.loc 1 85 1 is_stmt 0 view .LVU86
- 478 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
- 479              		.cfi_def_cfa_offset 24
- 480              		.cfi_offset 4, -24
- 481              		.cfi_offset 5, -20
- 482              		.cfi_offset 6, -16
- 483              		.cfi_offset 7, -12
- 484              		.cfi_offset 8, -8
- 485              		.cfi_offset 14, -4
- 486 0004 0C46     		mov	r4, r1
- 487 0006 1546     		mov	r5, r2
-  86:Core/Src/voltage.c ****     uint16_t adc_forward_val = 0, adc_reverse_val = 0;
- 488              		.loc 1 86 5 is_stmt 1 view .LVU87
- 489              	.LVL37:
-  87:Core/Src/voltage.c **** 
-  88:Core/Src/voltage.c ****     switch (direction)
- 490              		.loc 1 88 5 view .LVU88
- 491 0008 0646     		mov	r6, r0
- 492 000a 28B3     		cbz	r0, .L46
- 493 000c 0128     		cmp	r0, #1
- 494 000e 3FD1     		bne	.L47
-  89:Core/Src/voltage.c ****     {
-  90:Core/Src/voltage.c ****     case BIDIRECTIONAL:
-  91:Core/Src/voltage.c ****         switch (electrode)
- 495              		.loc 1 91 9 view .LVU89
- 496 0010 21B1     		cbz	r1, .L41
- 497 0012 0129     		cmp	r1, #1
- 498 0014 11D0     		beq	.L42
- 499 0016 0027     		movs	r7, #0
- 500 0018 3846     		mov	r0, r7
- 501              	.LVL38:
- 502              		.loc 1 91 9 is_stmt 0 view .LVU90
- 503 001a 3BE0     		b	.L40
- 504              	.LVL39:
- 505              	.L41:
-  92:Core/Src/voltage.c ****         {
-  93:Core/Src/voltage.c ****         case Au:
-  94:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Au1_GND_Pin;
- 506              		.loc 1 94 13 is_stmt 1 view .LVU91
- 507              		.loc 1 94 26 is_stmt 0 view .LVU92
- 508 001c DFF88880 		ldr	r8, .L50
- 509 0020 4FF49073 		mov	r3, #288
- 510 0024 C8F81830 		str	r3, [r8, #24]
-  95:Core/Src/voltage.c ****             adc_reverse_val = adc_average(adc_samples);
- 511              		.loc 1 95 13 is_stmt 1 view .LVU93
- 512              		.loc 1 95 31 is_stmt 0 view .LVU94
- 513 0028 1046     		mov	r0, r2
- 514              	.LVL40:
- 515              		.loc 1 95 31 view .LVU95
- 516 002a FFF7FEFF 		bl	adc_average
- 517              	.LVL41:
- 518              		.loc 1 95 31 view .LVU96
- 519 002e 0746     		mov	r7, r0
- 520              	.LVL42:
-  96:Core/Src/voltage.c ****             GPIOSW->BSRR = (SW_R1_Au2_Pin | SW_Au1_GND_Pin) << 16;
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 12
+ 527              	measure_calib_voltage:
+ 528              	.LVL41:
+ 529              	.LFB230:
+  92:Core/Src/voltage.c **** 
+  93:Core/Src/voltage.c **** uint16_t measure_calib_voltage (uint16_t adc_samples) {
+ 530              		.loc 1 93 55 is_stmt 1 view -0
+ 531              		.cfi_startproc
+ 532              		@ args = 0, pretend = 0, frame = 0
+ 533              		@ frame_needed = 0, uses_anonymous_args = 0
+ 534              		.loc 1 93 55 is_stmt 0 view .LVU97
+ 535 0000 38B5     		push	{r3, r4, r5, lr}
+ 536              		.cfi_def_cfa_offset 16
+ 537              		.cfi_offset 3, -16
+ 538              		.cfi_offset 4, -12
+ 539              		.cfi_offset 5, -8
+ 540              		.cfi_offset 14, -4
+ 541 0002 0446     		mov	r4, r0
+  94:Core/Src/voltage.c ****     GPIOSW->BSRR = SW_R1_Calib_Pin;
+ 542              		.loc 1 94 5 is_stmt 1 view .LVU98
+ 543              		.loc 1 94 18 is_stmt 0 view .LVU99
+ 544 0004 064D     		ldr	r5, .L46
+ 545 0006 0823     		movs	r3, #8
+ 546 0008 AB61     		str	r3, [r5, #24]
+  95:Core/Src/voltage.c ****     us_delay(VOLTAGE_SETTLE_TIME);
+ 547              		.loc 1 95 5 is_stmt 1 view .LVU100
+ 548 000a 1420     		movs	r0, #20
+ 549              	.LVL42:
+ 550              		.loc 1 95 5 is_stmt 0 view .LVU101
+ 551 000c FFF7FEFF 		bl	us_delay
+ 552              	.LVL43:
+  96:Core/Src/voltage.c ****     uint16_t adc_val = adc_average(adc_samples);
+ 553              		.loc 1 96 5 is_stmt 1 view .LVU102
+ 554              		.loc 1 96 24 is_stmt 0 view .LVU103
+ 555 0010 2046     		mov	r0, r4
+ 556 0012 FFF7FEFF 		bl	adc_average
+ 557              	.LVL44:
+  97:Core/Src/voltage.c ****     GPIOSW->BSRR = SW_R1_Calib_Pin << 16;
+ 558              		.loc 1 97 5 is_stmt 1 view .LVU104
+ 559              		.loc 1 97 18 is_stmt 0 view .LVU105
+ 560 0016 4FF40023 		mov	r3, #524288
+ 561 001a AB61     		str	r3, [r5, #24]
+  98:Core/Src/voltage.c ****     return adc_val;
+ 562              		.loc 1 98 5 is_stmt 1 view .LVU106
+  99:Core/Src/voltage.c **** }
+ 563              		.loc 1 99 1 is_stmt 0 view .LVU107
+ 564 001c 38BD     		pop	{r3, r4, r5, pc}
+ 565              	.LVL45:
+ 566              	.L47:
+ 567              		.loc 1 99 1 view .LVU108
+ 568 001e 00BF     		.align	2
+ 569              	.L46:
+ 570 0020 00080240 		.word	1073874944
+ 571              		.cfi_endproc
+ 572              	.LFE230:
+ 574              		.section	.text.measure_pin_voltage,"ax",%progbits
+ 575              		.align	1
+ 576              		.global	measure_pin_voltage
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 13
 
 
- 521              		.loc 1 96 13 is_stmt 1 view .LVU97
- 522              		.loc 1 96 26 is_stmt 0 view .LVU98
- 523 0030 4FF09073 		mov	r3, #18874368
- 524 0034 C8F81830 		str	r3, [r8, #24]
-  97:Core/Src/voltage.c ****             break;
- 525              		.loc 1 97 13 is_stmt 1 view .LVU99
- 526 0038 0FE0     		b	.L39
- 527              	.LVL43:
- 528              	.L42:
-  98:Core/Src/voltage.c ****         case Ti:
-  99:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Ti2_Pin | SW_Ti1_GND_Pin;
- 529              		.loc 1 99 13 view .LVU100
- 530              		.loc 1 99 26 is_stmt 0 view .LVU101
- 531 003a DFF86C80 		ldr	r8, .L50
- 532 003e 4FF49063 		mov	r3, #1152
- 533 0042 C8F81830 		str	r3, [r8, #24]
- 100:Core/Src/voltage.c ****             adc_reverse_val = adc_average(adc_samples);
- 534              		.loc 1 100 13 is_stmt 1 view .LVU102
- 535              		.loc 1 100 31 is_stmt 0 view .LVU103
- 536 0046 1046     		mov	r0, r2
- 537              	.LVL44:
- 538              		.loc 1 100 31 view .LVU104
- 539 0048 FFF7FEFF 		bl	adc_average
- 540              	.LVL45:
- 541              		.loc 1 100 31 view .LVU105
- 542 004c 0746     		mov	r7, r0
- 543              	.LVL46:
- 101:Core/Src/voltage.c ****             GPIOSW->BSRR = (SW_R1_Ti2_Pin | SW_Ti1_GND_Pin) << 16;
- 544              		.loc 1 101 13 is_stmt 1 view .LVU106
- 545              		.loc 1 101 26 is_stmt 0 view .LVU107
- 546 004e 4FF09063 		mov	r3, #75497472
- 547 0052 C8F81830 		str	r3, [r8, #24]
- 102:Core/Src/voltage.c ****             break;
- 548              		.loc 1 102 13 is_stmt 1 view .LVU108
- 549 0056 00E0     		b	.L39
- 550              	.LVL47:
- 551              	.L46:
-  88:Core/Src/voltage.c ****     {
- 552              		.loc 1 88 5 is_stmt 0 view .LVU109
- 553 0058 0027     		movs	r7, #0
- 554              	.LVL48:
- 555              	.L39:
- 103:Core/Src/voltage.c ****         }
- 104:Core/Src/voltage.c ****     case UNIDIRECTIONAL:
- 105:Core/Src/voltage.c ****         switch (electrode)
- 556              		.loc 1 105 9 is_stmt 1 view .LVU110
- 557 005a 1CB1     		cbz	r4, .L43
- 558 005c 012C     		cmp	r4, #1
- 559 005e 0CD0     		beq	.L44
-  88:Core/Src/voltage.c ****     {
- 560              		.loc 1 88 5 is_stmt 0 view .LVU111
- 561 0060 0020     		movs	r0, #0
- 562 0062 17E0     		b	.L40
- 563              	.L43:
- 106:Core/Src/voltage.c ****         {
- 107:Core/Src/voltage.c ****         case Au:
- 108:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Au1_Pin | SW_Au2_GND_Pin;
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 13
+ 577              		.syntax unified
+ 578              		.thumb
+ 579              		.thumb_func
+ 581              	measure_pin_voltage:
+ 582              	.LVL46:
+ 583              	.LFB231:
+ 100:Core/Src/voltage.c **** 
+ 101:Core/Src/voltage.c **** uint16_t measure_pin_voltage (Direction direction, Electrode_Type electrode, uint16_t adc_samples)
+ 102:Core/Src/voltage.c **** {
+ 584              		.loc 1 102 1 is_stmt 1 view -0
+ 585              		.cfi_startproc
+ 586              		@ args = 0, pretend = 0, frame = 0
+ 587              		@ frame_needed = 0, uses_anonymous_args = 0
+ 588              		.loc 1 102 1 is_stmt 0 view .LVU110
+ 589 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 590              		.cfi_def_cfa_offset 24
+ 591              		.cfi_offset 4, -24
+ 592              		.cfi_offset 5, -20
+ 593              		.cfi_offset 6, -16
+ 594              		.cfi_offset 7, -12
+ 595              		.cfi_offset 8, -8
+ 596              		.cfi_offset 14, -4
+ 597 0004 0C46     		mov	r4, r1
+ 598 0006 1546     		mov	r5, r2
+ 103:Core/Src/voltage.c ****     uint16_t adc_forward_val = 0, adc_reverse_val = 0;
+ 599              		.loc 1 103 5 is_stmt 1 view .LVU111
+ 600              	.LVL47:
+ 104:Core/Src/voltage.c **** 
+ 105:Core/Src/voltage.c ****     switch (direction)
+ 601              		.loc 1 105 5 view .LVU112
+ 602 0008 0646     		mov	r6, r0
+ 603 000a 58B3     		cbz	r0, .L56
+ 604 000c 0128     		cmp	r0, #1
+ 605 000e 4BD1     		bne	.L57
+ 106:Core/Src/voltage.c ****     {
+ 107:Core/Src/voltage.c ****     case BIDIRECTIONAL:
+ 108:Core/Src/voltage.c ****         switch (electrode)
+ 606              		.loc 1 108 9 view .LVU113
+ 607 0010 21B1     		cbz	r1, .L51
+ 608 0012 0129     		cmp	r1, #1
+ 609 0014 14D0     		beq	.L52
+ 610 0016 0027     		movs	r7, #0
+ 611 0018 3846     		mov	r0, r7
+ 612              	.LVL48:
+ 613              		.loc 1 108 9 is_stmt 0 view .LVU114
+ 614 001a 47E0     		b	.L50
+ 615              	.LVL49:
+ 616              	.L51:
+ 109:Core/Src/voltage.c ****         {
+ 110:Core/Src/voltage.c ****         case Au:
+ 111:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Au1_GND_Pin;
+ 617              		.loc 1 111 13 is_stmt 1 view .LVU115
+ 618              		.loc 1 111 26 is_stmt 0 view .LVU116
+ 619 001c DFF8A080 		ldr	r8, .L60
+ 620 0020 4FF49073 		mov	r3, #288
+ 621 0024 C8F81830 		str	r3, [r8, #24]
+ 112:Core/Src/voltage.c ****             us_delay(VOLTAGE_SETTLE_TIME);
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 14
 
 
- 564              		.loc 1 108 13 is_stmt 1 view .LVU112
- 565              		.loc 1 108 26 is_stmt 0 view .LVU113
- 566 0064 104C     		ldr	r4, .L50
- 567              	.LVL49:
- 568              		.loc 1 108 26 view .LVU114
- 569 0066 4FF40473 		mov	r3, #528
- 570 006a A361     		str	r3, [r4, #24]
- 109:Core/Src/voltage.c ****             adc_forward_val = adc_average(adc_samples);
- 571              		.loc 1 109 13 is_stmt 1 view .LVU115
- 572              		.loc 1 109 31 is_stmt 0 view .LVU116
- 573 006c 2846     		mov	r0, r5
- 574 006e FFF7FEFF 		bl	adc_average
- 575              	.LVL50:
- 110:Core/Src/voltage.c ****             GPIOSW->BSRR = (SW_R1_Au1_Pin | SW_Au2_GND_Pin) << 16;
- 576              		.loc 1 110 13 is_stmt 1 view .LVU117
- 577              		.loc 1 110 26 is_stmt 0 view .LVU118
- 578 0072 4FF00473 		mov	r3, #34603008
- 579 0076 A361     		str	r3, [r4, #24]
- 111:Core/Src/voltage.c ****             break;
- 580              		.loc 1 111 13 is_stmt 1 view .LVU119
- 581 0078 0CE0     		b	.L40
- 582              	.LVL51:
- 583              	.L44:
- 112:Core/Src/voltage.c ****         case Ti:
- 113:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Ti1_Pin | SW_Ti2_GND_Pin;
- 584              		.loc 1 113 13 view .LVU120
- 585              		.loc 1 113 26 is_stmt 0 view .LVU121
- 586 007a 0B4C     		ldr	r4, .L50
- 587 007c 4FF40463 		mov	r3, #2112
- 588 0080 A361     		str	r3, [r4, #24]
- 114:Core/Src/voltage.c ****             adc_forward_val = adc_average(adc_samples);
- 589              		.loc 1 114 13 is_stmt 1 view .LVU122
- 590              		.loc 1 114 31 is_stmt 0 view .LVU123
- 591 0082 2846     		mov	r0, r5
- 592 0084 FFF7FEFF 		bl	adc_average
- 593              	.LVL52:
- 115:Core/Src/voltage.c ****             GPIOSW->BSRR = (SW_R1_Ti1_Pin | SW_Ti2_GND_Pin) << 16;
- 594              		.loc 1 115 13 is_stmt 1 view .LVU124
- 595              		.loc 1 115 26 is_stmt 0 view .LVU125
- 596 0088 4FF00463 		mov	r3, #138412032
- 597 008c A361     		str	r3, [r4, #24]
- 116:Core/Src/voltage.c ****             break;
- 598              		.loc 1 116 13 is_stmt 1 view .LVU126
- 599 008e 01E0     		b	.L40
- 600              	.LVL53:
- 601              	.L47:
-  88:Core/Src/voltage.c ****     {
- 602              		.loc 1 88 5 is_stmt 0 view .LVU127
- 603 0090 0027     		movs	r7, #0
- 604 0092 3846     		mov	r0, r7
- 605              	.LVL54:
- 606              	.L40:
- 117:Core/Src/voltage.c ****         }
- 118:Core/Src/voltage.c ****         break;
- 119:Core/Src/voltage.c ****     }
- 120:Core/Src/voltage.c **** 
- 121:Core/Src/voltage.c ****     if (direction == BIDIRECTIONAL) {
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 14
+ 622              		.loc 1 112 13 is_stmt 1 view .LVU117
+ 623 0028 1420     		movs	r0, #20
+ 624              	.LVL50:
+ 625              		.loc 1 112 13 is_stmt 0 view .LVU118
+ 626 002a FFF7FEFF 		bl	us_delay
+ 627              	.LVL51:
+ 113:Core/Src/voltage.c ****             adc_reverse_val = adc_average(adc_samples);
+ 628              		.loc 1 113 13 is_stmt 1 view .LVU119
+ 629              		.loc 1 113 31 is_stmt 0 view .LVU120
+ 630 002e 2846     		mov	r0, r5
+ 631 0030 FFF7FEFF 		bl	adc_average
+ 632              	.LVL52:
+ 633 0034 0746     		mov	r7, r0
+ 634              	.LVL53:
+ 114:Core/Src/voltage.c ****             GPIOSW->BSRR = (SW_R1_Au2_Pin | SW_Au1_GND_Pin) << 16;
+ 635              		.loc 1 114 13 is_stmt 1 view .LVU121
+ 636              		.loc 1 114 26 is_stmt 0 view .LVU122
+ 637 0036 4FF09073 		mov	r3, #18874368
+ 638 003a C8F81830 		str	r3, [r8, #24]
+ 115:Core/Src/voltage.c ****             break;
+ 639              		.loc 1 115 13 is_stmt 1 view .LVU123
+ 640 003e 12E0     		b	.L49
+ 641              	.LVL54:
+ 642              	.L52:
+ 116:Core/Src/voltage.c ****         case Ti:
+ 117:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Ti2_Pin | SW_Ti1_GND_Pin;
+ 643              		.loc 1 117 13 view .LVU124
+ 644              		.loc 1 117 26 is_stmt 0 view .LVU125
+ 645 0040 DFF87C80 		ldr	r8, .L60
+ 646 0044 4FF49063 		mov	r3, #1152
+ 647 0048 C8F81830 		str	r3, [r8, #24]
+ 118:Core/Src/voltage.c ****             us_delay(VOLTAGE_SETTLE_TIME);
+ 648              		.loc 1 118 13 is_stmt 1 view .LVU126
+ 649 004c 1420     		movs	r0, #20
+ 650              	.LVL55:
+ 651              		.loc 1 118 13 is_stmt 0 view .LVU127
+ 652 004e FFF7FEFF 		bl	us_delay
+ 653              	.LVL56:
+ 119:Core/Src/voltage.c ****             adc_reverse_val = adc_average(adc_samples);
+ 654              		.loc 1 119 13 is_stmt 1 view .LVU128
+ 655              		.loc 1 119 31 is_stmt 0 view .LVU129
+ 656 0052 2846     		mov	r0, r5
+ 657 0054 FFF7FEFF 		bl	adc_average
+ 658              	.LVL57:
+ 659 0058 0746     		mov	r7, r0
+ 660              	.LVL58:
+ 120:Core/Src/voltage.c ****             GPIOSW->BSRR = (SW_R1_Ti2_Pin | SW_Ti1_GND_Pin) << 16;
+ 661              		.loc 1 120 13 is_stmt 1 view .LVU130
+ 662              		.loc 1 120 26 is_stmt 0 view .LVU131
+ 663 005a 4FF09063 		mov	r3, #75497472
+ 664 005e C8F81830 		str	r3, [r8, #24]
+ 121:Core/Src/voltage.c ****             break;
+ 665              		.loc 1 121 13 is_stmt 1 view .LVU132
+ 666 0062 00E0     		b	.L49
+ 667              	.LVL59:
+ 668              	.L56:
+ 105:Core/Src/voltage.c ****     {
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 15
 
 
- 607              		.loc 1 121 5 is_stmt 1 view .LVU128
- 608              		.loc 1 121 8 is_stmt 0 view .LVU129
- 609 0094 012E     		cmp	r6, #1
- 610 0096 01D0     		beq	.L49
- 611              	.LVL55:
- 612              	.L45:
- 122:Core/Src/voltage.c ****         return (adc_forward_val + adc_reverse_val) / 2;
- 123:Core/Src/voltage.c ****     }
- 124:Core/Src/voltage.c ****     return adc_forward_val;
- 125:Core/Src/voltage.c **** }
- 613              		.loc 1 125 1 view .LVU130
- 614 0098 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
- 615              	.LVL56:
- 616              	.L49:
- 122:Core/Src/voltage.c ****         return (adc_forward_val + adc_reverse_val) / 2;
- 617              		.loc 1 122 9 is_stmt 1 view .LVU131
- 122:Core/Src/voltage.c ****         return (adc_forward_val + adc_reverse_val) / 2;
- 618              		.loc 1 122 33 is_stmt 0 view .LVU132
- 619 009c 3844     		add	r0, r0, r7
- 620              	.LVL57:
- 122:Core/Src/voltage.c ****         return (adc_forward_val + adc_reverse_val) / 2;
- 621              		.loc 1 122 52 view .LVU133
- 622 009e 00EBD070 		add	r0, r0, r0, lsr #31
- 623 00a2 C0F34F00 		ubfx	r0, r0, #1, #16
- 624 00a6 F7E7     		b	.L45
- 625              	.L51:
- 626              		.align	2
- 627              	.L50:
- 628 00a8 00080240 		.word	1073874944
- 629              		.cfi_endproc
- 630              	.LFE229:
- 632              		.section	.text.measure_voltage_sweep,"ax",%progbits
- 633              		.align	1
- 634              		.global	measure_voltage_sweep
- 635              		.syntax unified
- 636              		.thumb
- 637              		.thumb_func
- 639              	measure_voltage_sweep:
- 640              	.LVL58:
- 641              	.LFB230:
- 126:Core/Src/voltage.c **** 
- 127:Core/Src/voltage.c **** void measure_voltage_sweep (VoltageSample_TypeDef* samples, Direction direction, R1_Type r1, Electr
- 128:Core/Src/voltage.c **** {
- 642              		.loc 1 128 1 is_stmt 1 view -0
- 643              		.cfi_startproc
- 644              		@ args = 16, pretend = 0, frame = 8
- 645              		@ frame_needed = 0, uses_anonymous_args = 0
- 646              		.loc 1 128 1 is_stmt 0 view .LVU135
- 647 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
- 648              		.cfi_def_cfa_offset 36
- 649              		.cfi_offset 4, -36
- 650              		.cfi_offset 5, -32
- 651              		.cfi_offset 6, -28
- 652              		.cfi_offset 7, -24
- 653              		.cfi_offset 8, -20
- 654              		.cfi_offset 9, -16
- 655              		.cfi_offset 10, -12
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 15
+ 669              		.loc 1 105 5 is_stmt 0 view .LVU133
+ 670 0064 0027     		movs	r7, #0
+ 671              	.LVL60:
+ 672              	.L49:
+ 122:Core/Src/voltage.c ****         }
+ 123:Core/Src/voltage.c ****     case UNIDIRECTIONAL:
+ 124:Core/Src/voltage.c ****         switch (electrode)
+ 673              		.loc 1 124 9 is_stmt 1 view .LVU134
+ 674 0066 1CB1     		cbz	r4, .L53
+ 675 0068 012C     		cmp	r4, #1
+ 676 006a 0FD0     		beq	.L54
+ 105:Core/Src/voltage.c ****     {
+ 677              		.loc 1 105 5 is_stmt 0 view .LVU135
+ 678 006c 0020     		movs	r0, #0
+ 679 006e 1DE0     		b	.L50
+ 680              	.L53:
+ 125:Core/Src/voltage.c ****         {
+ 126:Core/Src/voltage.c ****         case Au:
+ 127:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Au1_Pin | SW_Au2_GND_Pin;
+ 681              		.loc 1 127 13 is_stmt 1 view .LVU136
+ 682              		.loc 1 127 26 is_stmt 0 view .LVU137
+ 683 0070 134C     		ldr	r4, .L60
+ 684              	.LVL61:
+ 685              		.loc 1 127 26 view .LVU138
+ 686 0072 4FF40473 		mov	r3, #528
+ 687 0076 A361     		str	r3, [r4, #24]
+ 128:Core/Src/voltage.c ****             us_delay(VOLTAGE_SETTLE_TIME);
+ 688              		.loc 1 128 13 is_stmt 1 view .LVU139
+ 689 0078 1420     		movs	r0, #20
+ 690 007a FFF7FEFF 		bl	us_delay
+ 691              	.LVL62:
+ 129:Core/Src/voltage.c ****             adc_forward_val = adc_average(adc_samples);
+ 692              		.loc 1 129 13 view .LVU140
+ 693              		.loc 1 129 31 is_stmt 0 view .LVU141
+ 694 007e 2846     		mov	r0, r5
+ 695 0080 FFF7FEFF 		bl	adc_average
+ 696              	.LVL63:
+ 130:Core/Src/voltage.c ****             GPIOSW->BSRR = (SW_R1_Au1_Pin | SW_Au2_GND_Pin) << 16;
+ 697              		.loc 1 130 13 is_stmt 1 view .LVU142
+ 698              		.loc 1 130 26 is_stmt 0 view .LVU143
+ 699 0084 4FF00473 		mov	r3, #34603008
+ 700 0088 A361     		str	r3, [r4, #24]
+ 131:Core/Src/voltage.c ****             break;
+ 701              		.loc 1 131 13 is_stmt 1 view .LVU144
+ 702 008a 0FE0     		b	.L50
+ 703              	.LVL64:
+ 704              	.L54:
+ 132:Core/Src/voltage.c ****         case Ti:
+ 133:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Ti1_Pin | SW_Ti2_GND_Pin;
+ 705              		.loc 1 133 13 view .LVU145
+ 706              		.loc 1 133 26 is_stmt 0 view .LVU146
+ 707 008c 0C4C     		ldr	r4, .L60
+ 708 008e 4FF40463 		mov	r3, #2112
+ 709 0092 A361     		str	r3, [r4, #24]
+ 134:Core/Src/voltage.c ****             us_delay(VOLTAGE_SETTLE_TIME);
+ 710              		.loc 1 134 13 is_stmt 1 view .LVU147
+ 711 0094 1420     		movs	r0, #20
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 16
 
 
- 656              		.cfi_offset 11, -8
- 657              		.cfi_offset 14, -4
- 658 0004 83B0     		sub	sp, sp, #12
- 659              		.cfi_def_cfa_offset 48
- 660 0006 8046     		mov	r8, r0
- 661 0008 0191     		str	r1, [sp, #4]
- 662 000a 1446     		mov	r4, r2
- 663 000c 9A46     		mov	r10, r3
- 664 000e BDF83050 		ldrh	r5, [sp, #48]
- 665 0012 BDF838B0 		ldrh	fp, [sp, #56]
- 666 0016 BDF83C70 		ldrh	r7, [sp, #60]
- 129:Core/Src/voltage.c ****     uint16_t dac_voltage = dac_start;
- 667              		.loc 1 129 5 is_stmt 1 view .LVU136
- 668              	.LVL59:
- 130:Core/Src/voltage.c ****     uint16_t dac_step = (dac_stop - dac_start) / num_samples;
- 669              		.loc 1 130 5 view .LVU137
- 670              		.loc 1 130 35 is_stmt 0 view .LVU138
- 671 001a BDF83490 		ldrh	r9, [sp, #52]
- 672 001e A9EB0509 		sub	r9, r9, r5
- 673              		.loc 1 130 48 view .LVU139
- 674 0022 99FBFBF9 		sdiv	r9, r9, fp
- 675              		.loc 1 130 14 view .LVU140
- 676 0026 1FFA89F9 		uxth	r9, r9
- 677              	.LVL60:
- 131:Core/Src/voltage.c **** 
- 132:Core/Src/voltage.c ****     reset_muxs();
- 678              		.loc 1 132 5 is_stmt 1 view .LVU141
- 679 002a FFF7FEFF 		bl	reset_muxs
- 680              	.LVL61:
- 133:Core/Src/voltage.c ****     dac_drain();
- 681              		.loc 1 133 5 view .LVU142
- 682 002e FFF7FEFF 		bl	dac_drain
- 683              	.LVL62:
- 134:Core/Src/voltage.c **** 
- 135:Core/Src/voltage.c ****     switch (r1)
- 684              		.loc 1 135 5 view .LVU143
- 685 0032 012C     		cmp	r4, #1
- 686 0034 07D0     		beq	.L53
- 687 0036 022C     		cmp	r4, #2
- 688 0038 09D0     		beq	.L54
- 689 003a 14B9     		cbnz	r4, .L55
- 136:Core/Src/voltage.c ****     {
- 137:Core/Src/voltage.c ****     case R1_100:
- 138:Core/Src/voltage.c ****         GPIOSW->BSRR = SW_R1_100_Pin;
- 690              		.loc 1 138 9 view .LVU144
- 691              		.loc 1 138 22 is_stmt 0 view .LVU145
- 692 003c 1A4B     		ldr	r3, .L59
- 693 003e 0122     		movs	r2, #1
- 694 0040 9A61     		str	r2, [r3, #24]
- 695              	.LVL63:
+ 712 0096 FFF7FEFF 		bl	us_delay
+ 713              	.LVL65:
+ 135:Core/Src/voltage.c ****             adc_forward_val = adc_average(adc_samples);
+ 714              		.loc 1 135 13 view .LVU148
+ 715              		.loc 1 135 31 is_stmt 0 view .LVU149
+ 716 009a 2846     		mov	r0, r5
+ 717 009c FFF7FEFF 		bl	adc_average
+ 718              	.LVL66:
+ 136:Core/Src/voltage.c ****             GPIOSW->BSRR = (SW_R1_Ti1_Pin | SW_Ti2_GND_Pin) << 16;
+ 719              		.loc 1 136 13 is_stmt 1 view .LVU150
+ 720              		.loc 1 136 26 is_stmt 0 view .LVU151
+ 721 00a0 4FF00463 		mov	r3, #138412032
+ 722 00a4 A361     		str	r3, [r4, #24]
+ 137:Core/Src/voltage.c ****             break;
+ 723              		.loc 1 137 13 is_stmt 1 view .LVU152
+ 724 00a6 01E0     		b	.L50
+ 725              	.LVL67:
+ 726              	.L57:
+ 105:Core/Src/voltage.c ****     {
+ 727              		.loc 1 105 5 is_stmt 0 view .LVU153
+ 728 00a8 0027     		movs	r7, #0
+ 729 00aa 3846     		mov	r0, r7
+ 730              	.LVL68:
+ 731              	.L50:
+ 138:Core/Src/voltage.c ****         }
  139:Core/Src/voltage.c ****         break;
- 696              		.loc 1 139 9 is_stmt 1 view .LVU146
- 697              	.L55:
- 128:Core/Src/voltage.c ****     uint16_t dac_voltage = dac_start;
- 698              		.loc 1 128 1 is_stmt 0 view .LVU147
- 699 0042 0024     		movs	r4, #0
- 700              	.LVL64:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 16
+ 140:Core/Src/voltage.c ****     }
+ 141:Core/Src/voltage.c **** 
+ 142:Core/Src/voltage.c ****     if (direction == BIDIRECTIONAL) {
+ 732              		.loc 1 142 5 is_stmt 1 view .LVU154
+ 733              		.loc 1 142 8 is_stmt 0 view .LVU155
+ 734 00ac 012E     		cmp	r6, #1
+ 735 00ae 01D0     		beq	.L59
+ 736              	.LVL69:
+ 737              	.L55:
+ 143:Core/Src/voltage.c ****         return (adc_forward_val + adc_reverse_val) / 2;
+ 144:Core/Src/voltage.c ****     }
+ 145:Core/Src/voltage.c ****     return adc_forward_val;
+ 146:Core/Src/voltage.c **** }
+ 738              		.loc 1 146 1 view .LVU156
+ 739 00b0 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 740              	.LVL70:
+ 741              	.L59:
+ 143:Core/Src/voltage.c ****         return (adc_forward_val + adc_reverse_val) / 2;
+ 742              		.loc 1 143 9 is_stmt 1 view .LVU157
+ 143:Core/Src/voltage.c ****         return (adc_forward_val + adc_reverse_val) / 2;
+ 743              		.loc 1 143 33 is_stmt 0 view .LVU158
+ 744 00b4 3844     		add	r0, r0, r7
+ 745              	.LVL71:
+ 143:Core/Src/voltage.c ****         return (adc_forward_val + adc_reverse_val) / 2;
+ 746              		.loc 1 143 52 view .LVU159
+ 747 00b6 00EBD070 		add	r0, r0, r0, lsr #31
+ 748 00ba C0F34F00 		ubfx	r0, r0, #1, #16
+ 749 00be F7E7     		b	.L55
+ 750              	.L61:
+ 751              		.align	2
+ 752              	.L60:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 17
 
 
- 128:Core/Src/voltage.c ****     uint16_t dac_voltage = dac_start;
- 701              		.loc 1 128 1 view .LVU148
- 702 0044 26E0     		b	.L56
- 703              	.LVL65:
- 704              	.L53:
- 140:Core/Src/voltage.c ****     case R1_1k:
- 141:Core/Src/voltage.c ****         GPIOSW->BSRR = SW_R1_1k_Pin;
- 705              		.loc 1 141 9 is_stmt 1 view .LVU149
- 706              		.loc 1 141 22 is_stmt 0 view .LVU150
- 707 0046 184B     		ldr	r3, .L59
- 708 0048 0222     		movs	r2, #2
- 709 004a 9A61     		str	r2, [r3, #24]
- 710              	.LVL66:
- 142:Core/Src/voltage.c ****         break;
- 711              		.loc 1 142 9 is_stmt 1 view .LVU151
- 712 004c F9E7     		b	.L55
- 713              	.LVL67:
- 714              	.L54:
- 143:Core/Src/voltage.c ****     case R1_10k:
- 144:Core/Src/voltage.c ****         GPIOSW->BSRR = SW_R1_10k_Pin;
- 715              		.loc 1 144 9 view .LVU152
- 716              		.loc 1 144 22 is_stmt 0 view .LVU153
- 717 004e 164B     		ldr	r3, .L59
- 718 0050 0422     		movs	r2, #4
- 719 0052 9A61     		str	r2, [r3, #24]
- 720              	.LVL68:
- 145:Core/Src/voltage.c ****         break;
- 721              		.loc 1 145 9 is_stmt 1 view .LVU154
- 722 0054 F5E7     		b	.L55
- 723              	.LVL69:
- 724              	.L57:
- 725              	.LBB4:
- 146:Core/Src/voltage.c ****     }
+ 753 00c0 00080240 		.word	1073874944
+ 754              		.cfi_endproc
+ 755              	.LFE231:
+ 757              		.section	.text.measure_voltage_sweep,"ax",%progbits
+ 758              		.align	1
+ 759              		.global	measure_voltage_sweep
+ 760              		.syntax unified
+ 761              		.thumb
+ 762              		.thumb_func
+ 764              	measure_voltage_sweep:
+ 765              	.LVL72:
+ 766              	.LFB232:
  147:Core/Src/voltage.c **** 
- 148:Core/Src/voltage.c ****     for (uint16_t i = 0; i < num_samples; i++) {
- 149:Core/Src/voltage.c ****         dac_set_voltage(dac_voltage);
- 726              		.loc 1 149 9 view .LVU155
- 727 0056 2846     		mov	r0, r5
- 728 0058 FFF7FEFF 		bl	dac_set_voltage
- 729              	.LVL70:
- 150:Core/Src/voltage.c **** 
- 151:Core/Src/voltage.c ****         samples[i].dac_input = dac_voltage;
- 730              		.loc 1 151 9 view .LVU156
- 731              		.loc 1 151 16 is_stmt 0 view .LVU157
- 732 005c 08EBC406 		add	r6, r8, r4, lsl #3
- 733              		.loc 1 151 30 view .LVU158
- 734 0060 28F83450 		strh	r5, [r8, r4, lsl #3]	@ movhi
+ 148:Core/Src/voltage.c **** void measure_voltage_sweep (VoltageSample_TypeDef* samples, Direction direction, R1_Type r1, Electr
+ 149:Core/Src/voltage.c **** {
+ 767              		.loc 1 149 1 is_stmt 1 view -0
+ 768              		.cfi_startproc
+ 769              		@ args = 16, pretend = 0, frame = 8
+ 770              		@ frame_needed = 0, uses_anonymous_args = 0
+ 771              		.loc 1 149 1 is_stmt 0 view .LVU161
+ 772 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 773              		.cfi_def_cfa_offset 36
+ 774              		.cfi_offset 4, -36
+ 775              		.cfi_offset 5, -32
+ 776              		.cfi_offset 6, -28
+ 777              		.cfi_offset 7, -24
+ 778              		.cfi_offset 8, -20
+ 779              		.cfi_offset 9, -16
+ 780              		.cfi_offset 10, -12
+ 781              		.cfi_offset 11, -8
+ 782              		.cfi_offset 14, -4
+ 783 0004 83B0     		sub	sp, sp, #12
+ 784              		.cfi_def_cfa_offset 48
+ 785 0006 8046     		mov	r8, r0
+ 786 0008 0191     		str	r1, [sp, #4]
+ 787 000a 1446     		mov	r4, r2
+ 788 000c 9A46     		mov	r10, r3
+ 789 000e BDF83050 		ldrh	r5, [sp, #48]
+ 790 0012 BDF838B0 		ldrh	fp, [sp, #56]
+ 791 0016 BDF83C70 		ldrh	r7, [sp, #60]
+ 150:Core/Src/voltage.c ****     uint16_t dac_voltage = dac_start;
+ 792              		.loc 1 150 5 is_stmt 1 view .LVU162
+ 793              	.LVL73:
+ 151:Core/Src/voltage.c ****     uint16_t dac_step = (dac_stop - dac_start) / num_samples;
+ 794              		.loc 1 151 5 view .LVU163
+ 795              		.loc 1 151 35 is_stmt 0 view .LVU164
+ 796 001a BDF83490 		ldrh	r9, [sp, #52]
+ 797 001e A9EB0509 		sub	r9, r9, r5
+ 798              		.loc 1 151 48 view .LVU165
+ 799 0022 99FBFBF9 		sdiv	r9, r9, fp
+ 800              		.loc 1 151 14 view .LVU166
+ 801 0026 1FFA89F9 		uxth	r9, r9
+ 802              	.LVL74:
  152:Core/Src/voltage.c **** 
- 153:Core/Src/voltage.c ****         adc_set_channel(ADC_CHANNEL_DAC);
- 735              		.loc 1 153 9 is_stmt 1 view .LVU159
- 736 0064 0120     		movs	r0, #1
- 737 0066 FFF7FEFF 		bl	adc_set_channel
- 738              	.LVL71:
- 154:Core/Src/voltage.c ****         samples[i].dac_output = adc_average(adc_samples);
- 739              		.loc 1 154 9 view .LVU160
- 740              		.loc 1 154 33 is_stmt 0 view .LVU161
- 741 006a 3846     		mov	r0, r7
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 17
+ 153:Core/Src/voltage.c ****     reset_muxs();
+ 803              		.loc 1 153 5 is_stmt 1 view .LVU167
+ 804 002a FFF7FEFF 		bl	reset_muxs
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 18
 
 
- 742 006c FFF7FEFF 		bl	adc_average
- 743              	.LVL72:
- 744              		.loc 1 154 31 discriminator 1 view .LVU162
- 745 0070 7080     		strh	r0, [r6, #2]	@ movhi
+ 805              	.LVL75:
+ 154:Core/Src/voltage.c ****     dac_drain();
+ 806              		.loc 1 154 5 view .LVU168
+ 807 002e FFF7FEFF 		bl	dac_drain
+ 808              	.LVL76:
  155:Core/Src/voltage.c **** 
- 156:Core/Src/voltage.c ****         adc_set_channel(ADC_CHANNEL_AMP);
- 746              		.loc 1 156 9 is_stmt 1 view .LVU163
- 747 0072 0220     		movs	r0, #2
- 748 0074 FFF7FEFF 		bl	adc_set_channel
- 749              	.LVL73:
- 157:Core/Src/voltage.c ****         samples[i].calib = measure_calib_voltage(adc_samples);
- 750              		.loc 1 157 9 view .LVU164
- 751              		.loc 1 157 28 is_stmt 0 view .LVU165
- 752 0078 3846     		mov	r0, r7
- 753 007a FFF7FEFF 		bl	measure_calib_voltage
- 754              	.LVL74:
- 755              		.loc 1 157 26 discriminator 1 view .LVU166
- 756 007e B080     		strh	r0, [r6, #4]	@ movhi
- 158:Core/Src/voltage.c **** 
- 159:Core/Src/voltage.c ****         samples[i].measurement = measure_pin_voltage(direction, electrode, adc_samples);
- 757              		.loc 1 159 9 is_stmt 1 view .LVU167
- 758              		.loc 1 159 34 is_stmt 0 view .LVU168
- 759 0080 3A46     		mov	r2, r7
- 760 0082 5146     		mov	r1, r10
- 761 0084 0198     		ldr	r0, [sp, #4]
- 762 0086 FFF7FEFF 		bl	measure_pin_voltage
- 763              	.LVL75:
- 764              		.loc 1 159 32 discriminator 1 view .LVU169
- 765 008a F080     		strh	r0, [r6, #6]	@ movhi
- 160:Core/Src/voltage.c **** 
- 161:Core/Src/voltage.c ****         dac_voltage += dac_step;
- 766              		.loc 1 161 9 is_stmt 1 view .LVU170
- 767              		.loc 1 161 21 is_stmt 0 view .LVU171
- 768 008c 4D44     		add	r5, r5, r9
- 769              	.LVL76:
- 770              		.loc 1 161 21 view .LVU172
- 771 008e ADB2     		uxth	r5, r5
- 772              	.LVL77:
- 148:Core/Src/voltage.c ****         dac_set_voltage(dac_voltage);
- 773              		.loc 1 148 44 is_stmt 1 discriminator 3 view .LVU173
- 774 0090 0134     		adds	r4, r4, #1
- 775              	.LVL78:
- 148:Core/Src/voltage.c ****         dac_set_voltage(dac_voltage);
- 776              		.loc 1 148 44 is_stmt 0 discriminator 3 view .LVU174
- 777 0092 A4B2     		uxth	r4, r4
- 778              	.LVL79:
- 779              	.L56:
- 148:Core/Src/voltage.c ****         dac_set_voltage(dac_voltage);
- 780              		.loc 1 148 28 is_stmt 1 discriminator 1 view .LVU175
- 781 0094 5C45     		cmp	r4, fp
- 782 0096 DED3     		bcc	.L57
- 148:Core/Src/voltage.c ****         dac_set_voltage(dac_voltage);
- 783              		.loc 1 148 28 is_stmt 0 discriminator 1 view .LVU176
- 784              	.LBE4:
- 162:Core/Src/voltage.c ****     }
- 163:Core/Src/voltage.c **** 
- 164:Core/Src/voltage.c ****     reset_muxs();
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 18
+ 156:Core/Src/voltage.c ****     switch (r1)
+ 809              		.loc 1 156 5 view .LVU169
+ 810 0032 012C     		cmp	r4, #1
+ 811 0034 07D0     		beq	.L63
+ 812 0036 022C     		cmp	r4, #2
+ 813 0038 09D0     		beq	.L64
+ 814 003a 14B9     		cbnz	r4, .L65
+ 157:Core/Src/voltage.c ****     {
+ 158:Core/Src/voltage.c ****     case R1_100:
+ 159:Core/Src/voltage.c ****         GPIOSW->BSRR = SW_R1_100_Pin;
+ 815              		.loc 1 159 9 view .LVU170
+ 816              		.loc 1 159 22 is_stmt 0 view .LVU171
+ 817 003c 1A4B     		ldr	r3, .L69
+ 818 003e 0122     		movs	r2, #1
+ 819 0040 9A61     		str	r2, [r3, #24]
+ 820              	.LVL77:
+ 160:Core/Src/voltage.c ****         break;
+ 821              		.loc 1 160 9 is_stmt 1 view .LVU172
+ 822              	.L65:
+ 149:Core/Src/voltage.c ****     uint16_t dac_voltage = dac_start;
+ 823              		.loc 1 149 1 is_stmt 0 view .LVU173
+ 824 0042 0024     		movs	r4, #0
+ 825              	.LVL78:
+ 149:Core/Src/voltage.c ****     uint16_t dac_voltage = dac_start;
+ 826              		.loc 1 149 1 view .LVU174
+ 827 0044 26E0     		b	.L66
+ 828              	.LVL79:
+ 829              	.L63:
+ 161:Core/Src/voltage.c ****     case R1_1k:
+ 162:Core/Src/voltage.c ****         GPIOSW->BSRR = SW_R1_1k_Pin;
+ 830              		.loc 1 162 9 is_stmt 1 view .LVU175
+ 831              		.loc 1 162 22 is_stmt 0 view .LVU176
+ 832 0046 184B     		ldr	r3, .L69
+ 833 0048 0222     		movs	r2, #2
+ 834 004a 9A61     		str	r2, [r3, #24]
+ 835              	.LVL80:
+ 163:Core/Src/voltage.c ****         break;
+ 836              		.loc 1 163 9 is_stmt 1 view .LVU177
+ 837 004c F9E7     		b	.L65
+ 838              	.LVL81:
+ 839              	.L64:
+ 164:Core/Src/voltage.c ****     case R1_10k:
+ 165:Core/Src/voltage.c ****         GPIOSW->BSRR = SW_R1_10k_Pin;
+ 840              		.loc 1 165 9 view .LVU178
+ 841              		.loc 1 165 22 is_stmt 0 view .LVU179
+ 842 004e 164B     		ldr	r3, .L69
+ 843 0050 0422     		movs	r2, #4
+ 844 0052 9A61     		str	r2, [r3, #24]
+ 845              	.LVL82:
+ 166:Core/Src/voltage.c ****         break;
+ 846              		.loc 1 166 9 is_stmt 1 view .LVU180
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 19
 
 
- 785              		.loc 1 164 5 is_stmt 1 view .LVU177
- 786 0098 FFF7FEFF 		bl	reset_muxs
- 787              	.LVL80:
- 165:Core/Src/voltage.c ****     dac_drain();
- 788              		.loc 1 165 5 view .LVU178
- 789 009c FFF7FEFF 		bl	dac_drain
- 790              	.LVL81:
- 166:Core/Src/voltage.c **** }
- 791              		.loc 1 166 1 is_stmt 0 view .LVU179
- 792 00a0 03B0     		add	sp, sp, #12
- 793              		.cfi_def_cfa_offset 36
- 794              		@ sp needed
- 795 00a2 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
- 796              	.LVL82:
- 797              	.L60:
- 798              		.loc 1 166 1 view .LVU180
- 799 00a6 00BF     		.align	2
- 800              	.L59:
- 801 00a8 00080240 		.word	1073874944
- 802              		.cfi_endproc
- 803              	.LFE230:
- 805              		.section	.text.transmit_sample_data_readable,"ax",%progbits
- 806              		.align	1
- 807              		.global	transmit_sample_data_readable
- 808              		.syntax unified
- 809              		.thumb
- 810              		.thumb_func
- 812              	transmit_sample_data_readable:
- 813              	.LVL83:
- 814              	.LFB231:
- 167:Core/Src/voltage.c **** 
- 168:Core/Src/voltage.c **** void transmit_sample_data_readable (VoltageSample_TypeDef *samples, uint16_t num_samples)
- 169:Core/Src/voltage.c **** {
- 815              		.loc 1 169 1 is_stmt 1 view -0
- 816              		.cfi_startproc
- 817              		@ args = 0, pretend = 0, frame = 0
- 818              		@ frame_needed = 0, uses_anonymous_args = 0
- 819              		@ link register save eliminated.
- 170:Core/Src/voltage.c **** }
- 820              		.loc 1 170 1 view .LVU182
- 821 0000 7047     		bx	lr
- 822              		.cfi_endproc
- 823              	.LFE231:
- 825              		.section	.text.transmit_sample_data_binary,"ax",%progbits
- 826              		.align	1
- 827              		.global	transmit_sample_data_binary
- 828              		.syntax unified
- 829              		.thumb
- 830              		.thumb_func
- 832              	transmit_sample_data_binary:
- 833              	.LVL84:
- 834              	.LFB232:
+ 847 0054 F5E7     		b	.L65
+ 848              	.LVL83:
+ 849              	.L67:
+ 850              	.LBB4:
+ 167:Core/Src/voltage.c ****     }
+ 168:Core/Src/voltage.c **** 
+ 169:Core/Src/voltage.c ****     for (uint16_t i = 0; i < num_samples; i++) {
+ 170:Core/Src/voltage.c ****         dac_set_voltage(dac_voltage);
+ 851              		.loc 1 170 9 view .LVU181
+ 852 0056 2846     		mov	r0, r5
+ 853 0058 FFF7FEFF 		bl	dac_set_voltage
+ 854              	.LVL84:
  171:Core/Src/voltage.c **** 
- 172:Core/Src/voltage.c **** void transmit_sample_data_binary (VoltageSample_TypeDef *samples, uint16_t num_samples)
- 173:Core/Src/voltage.c **** {
- 835              		.loc 1 173 1 view -0
- 836              		.cfi_startproc
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 19
+ 172:Core/Src/voltage.c ****         samples[i].dac_input = dac_voltage;
+ 855              		.loc 1 172 9 view .LVU182
+ 856              		.loc 1 172 16 is_stmt 0 view .LVU183
+ 857 005c 08EBC406 		add	r6, r8, r4, lsl #3
+ 858              		.loc 1 172 30 view .LVU184
+ 859 0060 28F83450 		strh	r5, [r8, r4, lsl #3]	@ movhi
+ 173:Core/Src/voltage.c **** 
+ 174:Core/Src/voltage.c ****         adc_set_channel(ADC_CHANNEL_DAC);
+ 860              		.loc 1 174 9 is_stmt 1 view .LVU185
+ 861 0064 0120     		movs	r0, #1
+ 862 0066 FFF7FEFF 		bl	adc_set_channel
+ 863              	.LVL85:
+ 175:Core/Src/voltage.c ****         samples[i].dac_output = measure_dac_voltage(adc_samples);
+ 864              		.loc 1 175 9 view .LVU186
+ 865              		.loc 1 175 33 is_stmt 0 view .LVU187
+ 866 006a 3846     		mov	r0, r7
+ 867 006c FFF7FEFF 		bl	measure_dac_voltage
+ 868              	.LVL86:
+ 869              		.loc 1 175 31 discriminator 1 view .LVU188
+ 870 0070 7080     		strh	r0, [r6, #2]	@ movhi
+ 176:Core/Src/voltage.c **** 
+ 177:Core/Src/voltage.c ****         adc_set_channel(ADC_CHANNEL_AMP);
+ 871              		.loc 1 177 9 is_stmt 1 view .LVU189
+ 872 0072 0220     		movs	r0, #2
+ 873 0074 FFF7FEFF 		bl	adc_set_channel
+ 874              	.LVL87:
+ 178:Core/Src/voltage.c ****         samples[i].calib = measure_calib_voltage(adc_samples);
+ 875              		.loc 1 178 9 view .LVU190
+ 876              		.loc 1 178 28 is_stmt 0 view .LVU191
+ 877 0078 3846     		mov	r0, r7
+ 878 007a FFF7FEFF 		bl	measure_calib_voltage
+ 879              	.LVL88:
+ 880              		.loc 1 178 26 discriminator 1 view .LVU192
+ 881 007e B080     		strh	r0, [r6, #4]	@ movhi
+ 179:Core/Src/voltage.c **** 
+ 180:Core/Src/voltage.c ****         samples[i].measurement = measure_pin_voltage(direction, electrode, adc_samples);
+ 882              		.loc 1 180 9 is_stmt 1 view .LVU193
+ 883              		.loc 1 180 34 is_stmt 0 view .LVU194
+ 884 0080 3A46     		mov	r2, r7
+ 885 0082 5146     		mov	r1, r10
+ 886 0084 0198     		ldr	r0, [sp, #4]
+ 887 0086 FFF7FEFF 		bl	measure_pin_voltage
+ 888              	.LVL89:
+ 889              		.loc 1 180 32 discriminator 1 view .LVU195
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 20
 
 
- 837              		@ args = 0, pretend = 0, frame = 0
- 838              		@ frame_needed = 0, uses_anonymous_args = 0
- 839              		@ link register save eliminated.
- 174:Core/Src/voltage.c **** }...
- 840              		.loc 1 174 1 view .LVU184
- 841 0000 7047     		bx	lr
- 842              		.cfi_endproc
- 843              	.LFE232:
- 845              		.text
- 846              	.Letext0:
- 847              		.file 2 "/opt/local/arm-none-eabi/include/machine/_default_types.h"
- 848              		.file 3 "/opt/local/arm-none-eabi/include/sys/_stdint.h"
- 849              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
- 850              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 851              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 852              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 853              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
- 854              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 855              		.file 10 "Core/Inc/i2c.h"
- 856              		.file 11 "Core/Inc/adc.h"
- 857              		.file 12 "Core/Inc/voltage.h"
- 858              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 859              		.file 14 "Core/Inc/main.h"
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s 			page 20
+ 890 008a F080     		strh	r0, [r6, #6]	@ movhi
+ 181:Core/Src/voltage.c **** 
+ 182:Core/Src/voltage.c ****         dac_voltage += dac_step;
+ 891              		.loc 1 182 9 is_stmt 1 view .LVU196
+ 892              		.loc 1 182 21 is_stmt 0 view .LVU197
+ 893 008c 4D44     		add	r5, r5, r9
+ 894              	.LVL90:
+ 895              		.loc 1 182 21 view .LVU198
+ 896 008e ADB2     		uxth	r5, r5
+ 897              	.LVL91:
+ 169:Core/Src/voltage.c ****         dac_set_voltage(dac_voltage);
+ 898              		.loc 1 169 44 is_stmt 1 discriminator 3 view .LVU199
+ 899 0090 0134     		adds	r4, r4, #1
+ 900              	.LVL92:
+ 169:Core/Src/voltage.c ****         dac_set_voltage(dac_voltage);
+ 901              		.loc 1 169 44 is_stmt 0 discriminator 3 view .LVU200
+ 902 0092 A4B2     		uxth	r4, r4
+ 903              	.LVL93:
+ 904              	.L66:
+ 169:Core/Src/voltage.c ****         dac_set_voltage(dac_voltage);
+ 905              		.loc 1 169 28 is_stmt 1 discriminator 1 view .LVU201
+ 906 0094 5C45     		cmp	r4, fp
+ 907 0096 DED3     		bcc	.L67
+ 169:Core/Src/voltage.c ****         dac_set_voltage(dac_voltage);
+ 908              		.loc 1 169 28 is_stmt 0 discriminator 1 view .LVU202
+ 909              	.LBE4:
+ 183:Core/Src/voltage.c ****     }
+ 184:Core/Src/voltage.c **** 
+ 185:Core/Src/voltage.c ****     reset_muxs();
+ 910              		.loc 1 185 5 is_stmt 1 view .LVU203
+ 911 0098 FFF7FEFF 		bl	reset_muxs
+ 912              	.LVL94:
+ 186:Core/Src/voltage.c ****     dac_drain();
+ 913              		.loc 1 186 5 view .LVU204
+ 914 009c FFF7FEFF 		bl	dac_drain
+ 915              	.LVL95:
+ 187:Core/Src/voltage.c **** }...
+ 916              		.loc 1 187 1 is_stmt 0 view .LVU205
+ 917 00a0 03B0     		add	sp, sp, #12
+ 918              		.cfi_def_cfa_offset 36
+ 919              		@ sp needed
+ 920 00a2 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 921              	.LVL96:
+ 922              	.L70:
+ 923              		.loc 1 187 1 view .LVU206
+ 924 00a6 00BF     		.align	2
+ 925              	.L69:
+ 926 00a8 00080240 		.word	1073874944
+ 927              		.cfi_endproc
+ 928              	.LFE232:
+ 930              		.text
+ 931              	.Letext0:
+ 932              		.file 2 "/opt/local/arm-none-eabi/include/machine/_default_types.h"
+ 933              		.file 3 "/opt/local/arm-none-eabi/include/sys/_stdint.h"
+ 934              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
+ 935              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 936              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 21
+
+
+ 937              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 938              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
+ 939              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 940              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 941              		.file 11 "Core/Inc/adc.h"
+ 942              		.file 12 "Core/Inc/i2c.h"
+ 943              		.file 13 "Core/Inc/tim.h"
+ 944              		.file 14 "Core/Inc/voltage.h"
+ 945              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 946              		.file 16 "Core/Inc/main.h"
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s 			page 22
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 voltage.c
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:21     .text.dac_write:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:27     .text.dac_write:00000000 dac_write
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:88     .text.dac_write:0000003c $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:93     .text.dac_init:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:99     .text.dac_init:00000000 dac_init
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:140    .text.dac_init:0000002c $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:145    .text.dac_drain:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:151    .text.dac_drain:00000000 dac_drain
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:186    .text.dac_set_voltage:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:192    .text.dac_set_voltage:00000000 dac_set_voltage
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:218    .text.adc_set_channel:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:224    .text.adc_set_channel:00000000 adc_set_channel
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:272    .text.adc_set_channel:00000028 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:277    .text.adc_average:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:283    .text.adc_average:00000000 adc_average
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:356    .text.adc_average:00000034 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:361    .text.reset_muxs:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:367    .text.reset_muxs:00000000 reset_muxs
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:384    .text.reset_muxs:00000008 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:390    .text.resistance_init:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:396    .text.resistance_init:00000000 resistance_init
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:422    .text.measure_calib_voltage:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:428    .text.measure_calib_voltage:00000000 measure_calib_voltage
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:459    .text.measure_calib_voltage:00000014 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:464    .text.measure_pin_voltage:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:470    .text.measure_pin_voltage:00000000 measure_pin_voltage
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:628    .text.measure_pin_voltage:000000a8 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:633    .text.measure_voltage_sweep:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:639    .text.measure_voltage_sweep:00000000 measure_voltage_sweep
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:801    .text.measure_voltage_sweep:000000a8 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:806    .text.transmit_sample_data_readable:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:812    .text.transmit_sample_data_readable:00000000 transmit_sample_data_readable
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:826    .text.transmit_sample_data_binary:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccU1PuEd.s:832    .text.transmit_sample_data_binary:00000000 transmit_sample_data_binary
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:21     .text.us_delay:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:27     .text.us_delay:00000000 us_delay
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:53     .text.us_delay:00000010 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:58     .text.dac_write:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:64     .text.dac_write:00000000 dac_write
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:125    .text.dac_write:0000003c $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:130    .text.dac_init:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:136    .text.dac_init:00000000 dac_init
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:177    .text.dac_init:0000002c $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:182    .text.dac_drain:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:188    .text.dac_drain:00000000 dac_drain
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:223    .text.dac_set_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:229    .text.dac_set_voltage:00000000 dac_set_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:255    .text.adc_set_channel:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:261    .text.adc_set_channel:00000000 adc_set_channel
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:309    .text.adc_set_channel:00000028 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:314    .text.adc_average:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:320    .text.adc_average:00000000 adc_average
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:393    .text.adc_average:00000034 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:398    .text.reset_muxs:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:404    .text.reset_muxs:00000000 reset_muxs
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:421    .text.reset_muxs:00000008 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:427    .text.voltage_init:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:433    .text.voltage_init:00000000 voltage_init
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:462    .text.voltage_init:00000018 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:467    .text.measure_dac_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:473    .text.measure_dac_voltage:00000000 measure_dac_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:516    .text.measure_dac_voltage:00000020 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:521    .text.measure_calib_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:527    .text.measure_calib_voltage:00000000 measure_calib_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:570    .text.measure_calib_voltage:00000020 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:575    .text.measure_pin_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:581    .text.measure_pin_voltage:00000000 measure_pin_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:753    .text.measure_pin_voltage:000000c0 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:758    .text.measure_voltage_sweep:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:764    .text.measure_voltage_sweep:00000000 measure_voltage_sweep
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccR3IXgf.s:926    .text.measure_voltage_sweep:000000a8 $d
 
 UNDEFINED SYMBOLS
+htim10
 HAL_I2C_Mem_Write
 Error_Handler
 hi2c1
@@ -1155,3 +1266,4 @@ hadc1
 HAL_ADC_Start
 HAL_ADC_PollForConversion
 HAL_ADC_GetValue
+HAL_TIM_Base_Start

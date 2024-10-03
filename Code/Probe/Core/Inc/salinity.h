@@ -3,6 +3,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "i2c.h"
 #include "voltage.h"
 #include "math.h"
 /* Private defines -----------------------------------------------------------*/
@@ -44,6 +45,9 @@
 
 #define CALIBRATION_RESISTANCE 5
 
+#define PASCALS_AT_SEA_LEVEL 101325
+#define PASCALS_PER_DECIBAR 0.0001
+
 /* Private typedef -----------------------------------------------------------*/
 
 typedef struct {
@@ -55,5 +59,7 @@ typedef struct {
 double calculate_salinity(double conductivity, double temperature, double pressure);
 double calculate_conductivity(Electrode_Type electrode, ResistanceSample_TypeDef* samples, uint16_t num_samples);
 void calculate_resistance(VoltageSample_TypeDef* voltage_samples, ResistanceSample_TypeDef* reistance_samples, uint16_t num_samples);
+double measure_temperature(void);
+double measure_pressure(void); 
 
 #endif // __SALINITY_H

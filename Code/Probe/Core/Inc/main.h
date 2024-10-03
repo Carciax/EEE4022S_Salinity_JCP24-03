@@ -129,8 +129,13 @@ void Error_Handler(void);
 
 #define Pressure_status_finished 0x1
 
-#define PASCALS_AT_SEA_LEVEL 101325
-#define PASCALS_PER_DECIBAR 10000
+#define NUM_SAMPLES 10
+#define VOLTAGE_START 256
+#define VOLTAGE_END (512 + 256)
+#define ADC_SAMPLES 5
+
+#define PACKET_START "Packet Start\n"
+#define PACKET_END "Packet End\n\n"
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

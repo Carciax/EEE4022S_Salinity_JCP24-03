@@ -1,6 +1,5 @@
 /* Includes ------------------------------------------------------------------*/
 #include "salinity.h"
-
 /* Private variables ---------------------------------------------------------*/
 
 /* Private user code ---------------------------------------------------------*/
@@ -43,6 +42,88 @@ void calculate_resistance(VoltageSample_TypeDef *voltage_samples, ResistanceSamp
     for (uint16_t i = 0; i < num_samples; i++)
     {
         reistance_samples[i].voltage = voltage_samples[i].dac_output;
-        reistance_samples[i].resistance = voltage_samples[i].measurement / voltage_samples[i].calib * CALIBRATION_RESISTANCE;
+        reistance_samples[i].resistance = (double) voltage_samples[i].measurement / voltage_samples[i].calib * CALIBRATION_RESISTANCE;
     }
+}
+
+/**
+ * @brief Measures temperature
+ *
+ * @return double: temperature value in degrees Celsius
+ */
+double measure_temperature(void)
+{
+    if (HAL_I2C_IsDeviceReady(&hi2c1, Pressure_device_addr, 1, 1000) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    // Request temperature
+    uint8_t request = Pressure_request_temperature;
+    if (HAL_I2C_Mem_Write(&hi2c1, Pressure_device_addr, Pressure_mem_addr_request, 1, &request, 1, 1000) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    // Wait for measurement
+    uint8_t status = 0;
+    do
+    {
+        if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_status, 1, &status, 1, 1000) != HAL_OK)
+        {
+            Error_Handler();
+        }
+        HAL_Delay(100);
+    } while ((status & Pressure_status_finished) == 0);
+
+    uint8_t buf[2];
+    if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_temperature, 1, buf, 2, 1000) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    uint16_t temperature = (buf[0] << 8) | buf[1];
+
+    return ((double)temperature) * 0.1f;
+}
+
+/**
+ * @brief Measures pressure
+ * @return double: pressure value in decibars corrected to 0 deibars at 0 meters above sea level
+ */
+double measure_pressure(void)
+{
+    if (HAL_I2C_IsDeviceReady(&hi2c1, Pressure_device_addr, 1, 1000) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    // Request pressure
+    uint8_t request = Pressure_request_pressure;
+    if (HAL_I2C_Mem_Write(&hi2c1, Pressure_device_addr, Pressure_mem_addr_request, 1, &request, 1, 1000) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    // Wait for measurement
+    uint8_t status = 0;
+    do
+    {
+        if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_status, 1, &status, 1, 1000) != HAL_OK)
+        {
+            Error_Handler();
+        }
+        HAL_Delay(100);
+    } while ((status & Pressure_status_finished) == 0);
+
+    uint8_t buf[4];
+
+    if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_pressure, 1, buf, 4, 1000) != HAL_OK)
+    {
+        Error_Handler();
+    }
+
+    uint32_t pressure = (buf[0] << 24) | (buf[1] << 16) | (buf[2] << 8) | buf[3];
+    
+    return ((double) pressure - PASCALS_AT_SEA_LEVEL) * PASCALS_PER_DECIBAR;
 }

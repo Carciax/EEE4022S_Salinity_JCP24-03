@@ -83,6 +83,7 @@ Core/Src/salinity.c \
 Core/Src/stm32f4xx_hal_msp.c \
 Core/Src/stm32f4xx_it.c \
 Core/Src/system_stm32f4xx.c \
+Core/Src/tim.c \
 Core/Src/usart.c \
 Core/Src/voltage.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c \

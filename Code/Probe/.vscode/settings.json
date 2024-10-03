@@ -1,7 +1,7 @@
 {
     "cortex-debug.armToolchainPath": "/opt/local/bin",
     "cortex-debug.openocdPath": "/usr/local/bin/openocd",
-    "cortex-debug.variableUseNaturalFormat": false,
+    "cortex-debug.variableUseNaturalFormat": true,
     "files.associations": {
         "*.tc": "java",
         "usart.h": "c",
@@ -15,5 +15,6 @@
         "cmath": "c",
         "*.tcc": "c",
         "i2c.h": "c"
-    }
+    },
+    "cmake.sourceDirectory": "/Users/cameronclark/Documents/UCT/EEE4022S/EEE4022S_Salinity_JCP24-03/Code/Probe/Drivers/CMSIS/DSP/Source/ControllerFunctions"
 }

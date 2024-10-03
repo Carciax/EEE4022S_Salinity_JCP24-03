@@ -1,15 +1,22 @@
 /* Includes ------------------------------------------------------------------*/
 #include "voltage.h"
-
 /* Private variables ---------------------------------------------------------*/
 
 /* Private user code ---------------------------------------------------------*/
-void resistance_init (void)
+void voltage_init (void)
 {
     dac_init();
     // adc_set_channel(ADC_CHANNEL_SIGNAL);
     adc_set_channel(ADC_CHANNEL_AMP);
     reset_muxs();
+    HAL_TIM_Base_Start(&htim10);
+}
+
+void us_delay(uint16_t micro_s)
+{
+    //Requires a timer running at 1Mhz
+	__HAL_TIM_SET_COUNTER(&htim10,0);  // set the counter value a 0
+	while (__HAL_TIM_GET_COUNTER(&htim10) < micro_s);  // wait for the counter to reach the us input in the parameter
 }
 
 void dac_init (void)
@@ -74,8 +81,18 @@ void reset_muxs (void)
     GPIOSW->BSRR = 0xffff << 16;
 }
 
+uint16_t measure_dac_voltage (uint16_t adc_samples)
+{
+    GPIOSW->BSRR = SW_R1_Calib_Pin;
+    us_delay(VOLTAGE_SETTLE_TIME);
+    uint16_t adc_val = adc_average(adc_samples);
+    GPIOSW->BSRR = SW_R1_Calib_Pin << 16;
+    return adc_val;
+}
+
 uint16_t measure_calib_voltage (uint16_t adc_samples) {
     GPIOSW->BSRR = SW_R1_Calib_Pin;
+    us_delay(VOLTAGE_SETTLE_TIME);
     uint16_t adc_val = adc_average(adc_samples);
     GPIOSW->BSRR = SW_R1_Calib_Pin << 16;
     return adc_val;
@@ -92,11 +109,13 @@ uint16_t measure_pin_voltage (Direction direction, Electrode_Type electrode, uin
         {
         case Au:
             GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Au1_GND_Pin;
+            us_delay(VOLTAGE_SETTLE_TIME);
             adc_reverse_val = adc_average(adc_samples);
             GPIOSW->BSRR = (SW_R1_Au2_Pin | SW_Au1_GND_Pin) << 16;
             break;
         case Ti:
             GPIOSW->BSRR = SW_R1_Ti2_Pin | SW_Ti1_GND_Pin;
+            us_delay(VOLTAGE_SETTLE_TIME);
             adc_reverse_val = adc_average(adc_samples);
             GPIOSW->BSRR = (SW_R1_Ti2_Pin | SW_Ti1_GND_Pin) << 16;
             break;
@@ -106,11 +125,13 @@ uint16_t measure_pin_voltage (Direction direction, Electrode_Type electrode, uin
         {
         case Au:
             GPIOSW->BSRR = SW_R1_Au1_Pin | SW_Au2_GND_Pin;
+            us_delay(VOLTAGE_SETTLE_TIME);
             adc_forward_val = adc_average(adc_samples);
             GPIOSW->BSRR = (SW_R1_Au1_Pin | SW_Au2_GND_Pin) << 16;
             break;
         case Ti:
             GPIOSW->BSRR = SW_R1_Ti1_Pin | SW_Ti2_GND_Pin;
+            us_delay(VOLTAGE_SETTLE_TIME);
             adc_forward_val = adc_average(adc_samples);
             GPIOSW->BSRR = (SW_R1_Ti1_Pin | SW_Ti2_GND_Pin) << 16;
             break;
@@ -151,7 +172,7 @@ void measure_voltage_sweep (VoltageSample_TypeDef* samples, Direction direction,
         samples[i].dac_input = dac_voltage;
 
         adc_set_channel(ADC_CHANNEL_DAC);
-        samples[i].dac_output = adc_average(adc_samples);
+        samples[i].dac_output = measure_dac_voltage(adc_samples);
 
         adc_set_channel(ADC_CHANNEL_AMP);
         samples[i].calib = measure_calib_voltage(adc_samples);
@@ -163,12 +184,4 @@ void measure_voltage_sweep (VoltageSample_TypeDef* samples, Direction direction,
 
     reset_muxs();
     dac_drain();
-}
-
-void transmit_sample_data_readable (VoltageSample_TypeDef *samples, uint16_t num_samples)
-{
-}
-
-void transmit_sample_data_binary (VoltageSample_TypeDef *samples, uint16_t num_samples)
-{
 }
