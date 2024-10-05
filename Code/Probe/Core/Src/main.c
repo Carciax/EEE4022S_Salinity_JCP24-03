@@ -29,6 +29,7 @@
 #include "voltage.h"
 #include "salinity.h"
 #include "RS485.h"
+#include "ProbeConfiguration.h"
 #include <stdio.h>
 #include <string.h>
 /* USER CODE END Includes */
@@ -40,7 +41,9 @@ typedef enum
     TASK_NONE = 0x00,
     TASK_MEASURE_TEMPERATURE = 0x01,
     TASK_MEASURE_DEPTH = 0x02,
-    TASK_MEASURE_SALINITY = 0x03,
+    TASK_MEASURE_RESISTANCE = 0x03,
+    TASK_MEASURE_CONDUCTIVITY = 0x04,
+    TASK_MEASURE_SALINITY = 0x05,
 } Task;
 
 typedef enum
@@ -67,15 +70,19 @@ typedef enum
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+uint8_t current_value = 0;
+
 Task current_task = TASK_NONE;
-RS485_Command command = 0;
+uint8_t rx_buffer[CONFIG_PACKET_SIZE];
 RS485_Status status = STATUS_IDLE;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
 void rs485_transmit(uint8_t *data, uint16_t size);
+void rs485_transmit_double(double value);
 void rs485_receive_IT(void);
 void transmit_sample_data_readable(void *samples, uint16_t num_samples, Sample_Type sample_type);
 void transmit_sample_data_binary(void *samples, uint16_t num_samples, Sample_Type sample_type);
@@ -119,6 +126,9 @@ int main(void)
     MX_USART1_UART_Init();
     MX_USART6_UART_Init();
     MX_TIM10_Init();
+
+    /* Initialize interrupts */
+    MX_NVIC_Init();
     /* USER CODE BEGIN 2 */
 
     voltage_init();
@@ -134,70 +144,122 @@ int main(void)
 
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
+    double pressure, temperature, resistance, conductivity, salinity;
+    VoltageSample_TypeDef voltage_samples[NUM_SAMPLES];
+    ResistanceSample_TypeDef resistance_samples[NUM_SAMPLES];
+    rs485_receive_IT();
+    // uint8_t buf[1];
+    // HAL_GPIO_WritePin(RS485_DE_GPIO_Port, RS485_DE_Pin, GPIO_PIN_RESET);
+    // HAL_HalfDuplex_EnableReceiver(&huart1);
+    // HAL_UART_Receive(&huart1, buf, 1, HAL_MAX_DELAY);
+    // __NOP();
     while (1)
     {
-        HAL_UART_Transmit(&huart6, (uint8_t *)PACKET_START, sizeof(PACKET_START), 1000);
+        // HAL_UART_Transmit(&huart6, (uint8_t *)PACKET_START, sizeof(PACKET_START), 1000);
 
-        VoltageSample_TypeDef votlage_samples[NUM_SAMPLES];
-        measure_voltage_sweep(votlage_samples, BIDIRECTIONAL, R1_100, Ti, VOLTAGE_START, VOLTAGE_END, NUM_SAMPLES, ADC_SAMPLES);
-        transmit_sample_data_readable(votlage_samples, NUM_SAMPLES, SAMPLE_VOLTAGE);
+        // VoltageSample_TypeDef votlage_samples[NUM_SAMPLES];
+        // measure_voltage_sweep(votlage_samples, BIDIRECTIONAL, R1_100, Ti, VOLTAGE_START, VOLTAGE_END, NUM_SAMPLES, ADC_SAMPLES);
+        // transmit_sample_data_readable(votlage_samples, NUM_SAMPLES, SAMPLE_VOLTAGE);
 
-        ResistanceSample_TypeDef resistance_samples[NUM_SAMPLES];
-        calculate_resistance(votlage_samples, resistance_samples, NUM_SAMPLES);
-        transmit_sample_data_readable(resistance_samples, NUM_SAMPLES, SAMPLE_RESISTANCE);
+        // ResistanceSample_TypeDef resistance_samples[NUM_SAMPLES];
+        // calculate_resistance(votlage_samples, resistance_samples, NUM_SAMPLES);
+        // transmit_sample_data_readable(resistance_samples, NUM_SAMPLES, SAMPLE_RESISTANCE);
 
-        double conductivity = calculate_conductivity(Au, resistance_samples, NUM_SAMPLES);
-        transmit_sample_data_readable(&conductivity, 1, VALUE_CONDUCTIVITY);
+        // double conductivity = calculate_conductivity(Au_Shielded, resistance_samples, NUM_SAMPLES);
+        // transmit_sample_data_readable(&conductivity, 1, VALUE_CONDUCTIVITY);
 
-        double temperature = measure_temperature();
-        transmit_sample_data_readable(&temperature, 1, VALUE_TEMPERATURE);
+        // double temperature = measure_temperature();
+        // transmit_sample_data_readable(&temperature, 1, VALUE_TEMPERATURE);
 
-        double pressure = measure_pressure();
-        transmit_sample_data_readable(&pressure, 1, VALUE_PRESSURE);
+        // double pressure = measure_pressure();
+        // transmit_sample_data_readable(&pressure, 1, VALUE_PRESSURE);
 
-        HAL_UART_Transmit(&huart6, (uint8_t *)PACKET_END, sizeof(PACKET_END), 1000);
+        // double salinity = calculate_salinity(conductivity, temperature, pressure);
+        // transmit_sample_data_readable(&salinity, 1, VALUE_SALINITY);
 
-        HAL_Delay(5000);
-        // switch (current_task)
-        // {
-        // case TASK_NONE:
-        //     // __WFI();
-        //     break;
-        // case TASK_MEASURE_TEMPERATURE:
-        //     current_task = TASK_NONE;
-        //     double temperature = measure_temperature();
-        //     HAL_UART_Abort_IT(&huart1);
-        //     rs485_transmit((uint8_t *)&temperature, 8);
-        //     rs485_receive_IT();
-        //     break;
-        // case TASK_MEASURE_DEPTH:
-        //     current_task = TASK_NONE;
-        //     double pressure = measure_pressure();
-        //     HAL_UART_Abort_IT(&huart1);
-        //     rs485_transmit((uint8_t *)&pressure, 8);
-        //     rs485_receive_IT();
-        //     break;
-        // case TASK_MEASURE_SALINITY:
-        //     current_task = TASK_NONE;
+        // HAL_UART_Transmit(&huart6, (uint8_t *)PACKET_END, sizeof(PACKET_END), 1000);
 
-        //     VoltageSample_TypeDef voltage_samples[NUM_SAMPLES];
-        //     measure_voltage_sweep(voltage_samples, BIDIRECTIONAL, R1_100, Au, 0, 1 << 9, NUM_SAMPLES, 2);
+        // HAL_Delay(5000);
 
-        //     ResistanceSample_TypeDef resistance_samples[NUM_SAMPLES];
-        //     calculate_resistance(voltage_samples, resistance_samples, NUM_SAMPLES);
+        switch (current_task)
+        {
+        case TASK_NONE:
+            // __WFI();
+            break;
+        case TASK_MEASURE_TEMPERATURE:
+            status = STATUS_BUSY;
+            current_task = TASK_NONE;
 
-        //     double conductivity = calculate_conductivity(Au, resistance_samples, 10);
+            temperature = measure_temperature();
+            HAL_UART_Abort_IT(&huart1);
+            rs485_transmit_double(temperature);
 
-        //     double temperature = measure_temperature();
-        //     double pressure = measure_pressure();
+            status = STATUS_IDLE;
+            rs485_receive_IT();
+            break;
+        case TASK_MEASURE_DEPTH:
+            status = STATUS_BUSY;
+            current_task = TASK_NONE;
 
-        //     double salinity = calculate_salinity(conductivity, temperature, pressure);
+            pressure = measure_pressure();
+            HAL_UART_Abort_IT(&huart1);
+            rs485_transmit_double(pressure);
 
-        //     HAL_UART_Abort_IT(&huart1);
-        //     rs485_transmit((uint8_t *)&salinity, 8);
-        //     rs485_receive_IT();
-        //     break;
-        // }
+            status = STATUS_IDLE;
+            rs485_receive_IT();
+            break;
+        case TASK_MEASURE_RESISTANCE:
+            status = STATUS_BUSY;
+            current_task = TASK_NONE;
+
+            VoltageSample_TypeDef voltage_samples[NUM_SAMPLES];
+            measure_voltage_sweep(voltage_samples, BIDIRECTIONAL, R1_100, Au, 0, 1 << 9, NUM_SAMPLES, 2);
+
+            ResistanceSample_TypeDef resistance_samples[NUM_SAMPLES];
+            calculate_resistance(voltage_samples, resistance_samples, NUM_SAMPLES);
+
+            resistance = calculate_average_resistance(resistance_samples, NUM_SAMPLES);
+
+            HAL_UART_Abort_IT(&huart1);
+            rs485_transmit_double(resistance);
+
+            status = STATUS_IDLE;
+            rs485_receive_IT();
+            break;
+        case TASK_MEASURE_CONDUCTIVITY:
+            status = STATUS_BUSY;
+            current_task = TASK_NONE;
+
+            measure_voltage_sweep(voltage_samples, BIDIRECTIONAL, R1_100, Au, 0, 1 << 9, NUM_SAMPLES, 2);
+            calculate_resistance(voltage_samples, resistance_samples, NUM_SAMPLES);
+
+            conductivity = calculate_conductivity(Au, resistance_samples, 10);
+
+            HAL_UART_Abort_IT(&huart1);
+            rs485_transmit_double(conductivity);
+
+            status = STATUS_IDLE;
+            rs485_receive_IT();
+            break;
+        case TASK_MEASURE_SALINITY:
+            status = STATUS_BUSY;
+            current_task = TASK_NONE;
+
+            measure_voltage_sweep(voltage_samples, BIDIRECTIONAL, R1_100, Au, 0, 1 << 9, NUM_SAMPLES, 2);
+            calculate_resistance(voltage_samples, resistance_samples, NUM_SAMPLES);
+
+            conductivity = calculate_conductivity(Au, resistance_samples, 10);
+            temperature = measure_temperature();
+            pressure = measure_pressure();
+
+            salinity = calculate_salinity(conductivity, temperature, pressure);
+            HAL_UART_Abort_IT(&huart1);
+            rs485_transmit_double(salinity);
+
+            status = STATUS_IDLE;
+            rs485_receive_IT();
+            break;
+        }
         /* USER CODE END WHILE */
 
         /* USER CODE BEGIN 3 */
@@ -245,13 +307,28 @@ void SystemClock_Config(void)
     }
 }
 
+/**
+ * @brief NVIC Configuration.
+ * @retval None
+ */
+static void MX_NVIC_Init(void)
+{
+    /* USART1_IRQn interrupt configuration */
+    HAL_NVIC_SetPriority(USART1_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(USART1_IRQn);
+    /* USART6_IRQn interrupt configuration */
+    HAL_NVIC_SetPriority(USART6_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(USART6_IRQn);
+}
+
 /* USER CODE BEGIN 4 */
 
-void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart)
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
+    HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
     if (huart->Instance == USART1)
     {
-        switch (command)
+        switch ((RS485_Command)rx_buffer[0])
         {
         case COMMAND_GET_STATUS:
             rs485_transmit((uint8_t *)&status, 1);
@@ -265,12 +342,25 @@ void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart)
             current_task = TASK_MEASURE_DEPTH;
             rs485_receive_IT();
             break;
+        case COMMAND_GET_RESISTANCE:
+            current_task = TASK_MEASURE_RESISTANCE;
+            rs485_receive_IT();
+            break;
+        case COMMAND_GET_CONDUCTIVITY:
+            current_task = TASK_MEASURE_CONDUCTIVITY;
+            rs485_receive_IT();
+            break;
         case COMMAND_GET_SALINITY:
             current_task = TASK_MEASURE_SALINITY;
             rs485_receive_IT();
             break;
         case COMMAND_RESET:
             NVIC_SystemReset();
+            break;
+        default:
+            uint8_t response = RESPONSE_NACK;
+            rs485_transmit(&response, 1);
+            rs485_receive_IT();
         }
     }
 }
@@ -278,15 +368,105 @@ void HAL_UART_RxHalfCpltCallback(UART_HandleTypeDef *huart)
 void rs485_transmit(uint8_t *data, uint16_t size)
 {
     HAL_GPIO_WritePin(RS485_DE_GPIO_Port, RS485_DE_Pin, GPIO_PIN_SET);
-    HAL_HalfDuplex_EnableTransmitter(&huart1);
-    HAL_UART_Transmit(&huart1, data, size, 1000);
+    if (HAL_HalfDuplex_EnableTransmitter(&huart1) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    if (HAL_UART_Transmit(&huart1, data, size, 1000) != HAL_OK)
+    {
+        Error_Handler();
+    }
+}
+
+void rs485_transmit_double(double value)
+{
+    if ((value >= 1000) | (value <= -100))
+    {
+        uint8_t digits[3] = {NEGATIVE_SIGN, NEGATIVE_SIGN, NEGATIVE_SIGN};
+        return rs485_transmit(digits, DATA_PACKET_SIZE);
+    }
+
+    uint8_t digits[3];
+
+    if (value == 0)
+    {
+        digits[0] = DECIMAL_POINT;
+        digits[1] = 0;
+        digits[2] = 0;
+    }
+    else if (value > 0)
+    {
+        int8_t log_value = (int8_t)log10(value);
+        if (log_value > 0)
+        {
+            value = value * pow(10, -log_value);
+        }
+
+        digits[0] = (uint8_t)value;
+        value = fmod(value, 1) * 10;
+        digits[1] = (uint8_t)value;
+        value = fmod(value, 1) * 10;
+        digits[2] = (uint8_t)round(value);
+
+        if (log_value > 0)
+        {
+            if (log_value < 2)
+            {
+                digits[log_value] |= DECIMAL_POINT;
+            }
+        }
+        else
+        {
+
+            digits[0] |= DECIMAL_POINT;
+        }
+    }
+    else
+    {
+        value = -value;
+        int8_t log_value = (int8_t)log10(value) + 1;
+        if (log_value > 0)
+        {
+            value = value * pow(10, -log_value);
+        }
+        else if (log_value == 0)
+        {
+            value = value / 10;
+        }
+
+        digits[0] = NEGATIVE_SIGN;
+        value = fmod(value, 1) * 10;
+        digits[1] = (uint8_t)value;
+        value = fmod(value, 1) * 10;
+        digits[2] = (uint8_t)round(value);
+
+        if (log_value > 0)
+        {
+            if (log_value < 2)
+            {
+                digits[log_value] |= DECIMAL_POINT;
+            }
+        }
+        else
+        {
+            digits[1] |= DECIMAL_POINT;
+        }
+    }
+
+    return rs485_transmit(digits, DATA_PACKET_SIZE);
 }
 
 void rs485_receive_IT(void)
 {
     HAL_GPIO_WritePin(RS485_DE_GPIO_Port, RS485_DE_Pin, GPIO_PIN_RESET);
-    HAL_HalfDuplex_EnableReceiver(&huart1);
-    HAL_UART_Receive_IT(&huart1, &command, 1);
+    if (HAL_HalfDuplex_EnableReceiver(&huart1) != HAL_OK)
+    {
+        Error_Handler();
+    }
+    if (HAL_UART_Receive_IT(&huart1, rx_buffer, 1) != HAL_OK)
+    {
+        Error_Handler();
+    }
 }
 
 void transmit_sample_data_readable(void *samples, uint16_t num_samples, Sample_Type sample_type)
@@ -298,7 +478,7 @@ void transmit_sample_data_readable(void *samples, uint16_t num_samples, Sample_T
         for (uint16_t i = 0; i < num_samples; i++)
         {
             char buf[128];
-            sprintf(buf, "DAC Input: %.2f, DAC Output: %.2f, Calib: %.3f, Measurement: %.3f\n", (float)voltage_samples[i].dac_input / 1024 * 3.3, (float)voltage_samples[i].dac_output / 4096 * 3.3, (float)voltage_samples[i].calib / 4096 * 3.3, (float)voltage_samples[i].measurement / 4096 * 3.3);
+            sprintf(buf, "DAC Input: %.2f, DAC Output: %.2f, Calib x 11: %.3f, Measurement x 11: %.3f\n", (float)voltage_samples[i].dac_input / 1024 * 3.3, (float)voltage_samples[i].dac_output / 4096 * 3.3, (float)voltage_samples[i].calib / 4096 * 3.3, (float)voltage_samples[i].measurement / 4096 * 3.3);
             HAL_UART_Transmit(&huart6, (uint8_t *)buf, strlen(buf), 1000);
         }
         break;
@@ -325,7 +505,7 @@ void transmit_sample_data_readable(void *samples, uint16_t num_samples, Sample_T
         for (uint16_t i = 0; i < num_samples; i++)
         {
             char buf[64];
-            sprintf(buf, "Temperature: %.2f\n", temperature_values[i]);
+            sprintf(buf, "Temperature: %.1f\n", temperature_values[i]);
             HAL_UART_Transmit(&huart6, (uint8_t *)buf, strlen(buf), 1000);
         }
         break;
@@ -366,7 +546,7 @@ void Error_Handler(void)
     /* User can add his own implementation to report the HAL error return state */
     __disable_irq();
     HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
-    RS485_Status status = STATUS_ERROR;
+    status = STATUS_ERROR;
     rs485_transmit((uint8_t *)&status, 1);
     while (1)
     {

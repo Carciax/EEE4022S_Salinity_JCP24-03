@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccyi3rUZ.s 			page 1
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccIw048e.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccyi3rUZ.s 			page 1
   30:Core/Src/stm32f0xx_hal_msp.c **** 
   31:Core/Src/stm32f0xx_hal_msp.c **** /* USER CODE END TD */
   32:Core/Src/stm32f0xx_hal_msp.c **** 
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccyi3rUZ.s 			page 2
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccIw048e.s 			page 2
 
 
   33:Core/Src/stm32f0xx_hal_msp.c **** /* Private define ------------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccyi3rUZ.s 			page 1
   43              		.loc 1 70 3 view .LVU4
   44 000c 9969     		ldr	r1, [r3, #24]
   45 000e 0A40     		ands	r2, r1
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccyi3rUZ.s 			page 3
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccIw048e.s 			page 3
 
 
   46 0010 0092     		str	r2, [sp]
@@ -166,13 +166,13 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccyi3rUZ.s 			page 1
   81              		.file 2 "/opt/local/arm-none-eabi/include/machine/_default_types.h"
   82              		.file 3 "/opt/local/arm-none-eabi/include/sys/_stdint.h"
   83              		.file 4 "Drivers/CMSIS/Device/ST/STM32F0xx/Include/stm32f030x8.h"
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccyi3rUZ.s 			page 4
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccIw048e.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f0xx_hal_msp.c
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccyi3rUZ.s:19     .text.HAL_MspInit:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccyi3rUZ.s:25     .text.HAL_MspInit:00000000 HAL_MspInit
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccyi3rUZ.s:75     .text.HAL_MspInit:0000002c $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccIw048e.s:19     .text.HAL_MspInit:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccIw048e.s:25     .text.HAL_MspInit:00000000 HAL_MspInit
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccIw048e.s:75     .text.HAL_MspInit:0000002c $d
 
 NO UNDEFINED SYMBOLS

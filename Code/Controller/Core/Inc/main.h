@@ -131,8 +131,10 @@ void Error_Handler(void);
 #define DIG1_8_GPIO_Port GPIOB
 #define SW1_Pin GPIO_PIN_4
 #define SW1_GPIO_Port GPIOB
+#define SW1_EXTI_IRQn EXTI4_15_IRQn
 #define SW2_Pin GPIO_PIN_5
 #define SW2_GPIO_Port GPIOB
+#define SW2_EXTI_IRQn EXTI4_15_IRQn
 #define RS485_UART_Pin GPIO_PIN_6
 #define RS485_UART_GPIO_Port GPIOB
 #define RS485_DE_Pin GPIO_PIN_7
@@ -143,6 +145,56 @@ void Error_Handler(void);
 #define DIG2_2_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
+
+#define GPIO_SALINITY GPIOC
+#define GPIO_DEPTH GPIOA
+
+#define NUMBER_0_MASK 0x3F
+#define NUMBER_1_MASK 0x06
+#define NUMBER_2_MASK 0x5B
+#define NUMBER_3_MASK 0x4F
+#define NUMBER_4_MASK 0x66
+#define NUMBER_5_MASK 0x6D
+#define NUMBER_6_MASK 0x7D
+#define NUMBER_7_MASK 0x07
+#define NUMBER_8_MASK 0x7F
+#define NUMBER_9_MASK 0x6F
+
+#define DP_MASK 0x80
+#define NEGATIVE_SIGN_MASK 0x40
+
+#define LETTER_A_MASK 0x77
+#define LETTER_B_MASK 0x7C
+#define LETTER_C_MASK 0x39
+#define LETTER_D_MASK 0x5E
+#define LETTER_E_MASK 0x79
+#define LETTER_F_MASK 0x71
+#define LETTER_G_MASK 0x3D
+#define LETTER_H_MASK 0x76
+#define LETTER_I_MASK 0x06
+#define LETTER_J_MASK 0x1E
+// #define LETTER_K_MASK 0x76
+#define LETTER_L_MASK 0x38
+// #define LETTER_M_MASK 0x55
+#define LETTER_N_MASK 0x54
+#define LETTER_O_MASK 0x5C
+#define LETTER_P_MASK 0x73
+#define LETTER_Q_MASK 0x67
+#define LETTER_R_MASK 0x50
+#define LETTER_S_MASK 0x6D
+#define LETTER_T_MASK 0x78
+#define LETTER_U_MASK 0x3E
+#define LETTER_V_MASK 0x1C
+// #define LETTER_W_MASK 0x3E
+// #define LETTER_X_MASK 0x76
+#define LETTER_Y_MASK 0x6E
+#define LETTER_Z_MASK 0x5B
+
+#define DIGIT_1_MASK 0x600
+#define DIGIT_2_MASK 0x500
+#define DIGIT_3_MASK 0x300
+
+#define DIGIT_DELAY 1
 
 /* USER CODE END Private defines */
 

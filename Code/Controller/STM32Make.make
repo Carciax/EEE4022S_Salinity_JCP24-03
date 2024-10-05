@@ -75,6 +75,7 @@ endif
 ######################################
 # C sources
 C_SOURCES =  \
+Core/Src/dma.c \
 Core/Src/gpio.c \
 Core/Src/main.c \
 Core/Src/spi.c \
@@ -184,6 +185,7 @@ AS_INCLUDES = \
 
 # C includes
 C_INCLUDES =  \
+-I../RS485 \
 -ICore/Inc \
 -IDrivers/CMSIS/Device/ST/STM32F0xx/Include \
 -IDrivers/CMSIS/Include \

@@ -34,11 +34,15 @@ extern "C" {
 
 extern TIM_HandleTypeDef htim6;
 
-/* USER CODE BEGIN Private defines */
+extern TIM_HandleTypeDef htim17;
 
+/* USER CODE BEGIN Private defines */
+extern DMA_HandleTypeDef hdma_tim6_up;
+extern DMA_HandleTypeDef hdma_tim17_ch1_up;
 /* USER CODE END Private defines */
 
 void MX_TIM6_Init(void);
+void MX_TIM17_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 

@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
   48              		.cfi_offset 11, -8
   49              		.cfi_offset 14, -4
   50 0004 2DED068B 		vpush.64	{d8, d9, d10}
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 2
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 2
 
 
   51              		.cfi_def_cfa_offset 60
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
  103 0058 4046     		mov	r0, r8
  104 005a 4946     		mov	r1, r9
  105 005c FFF7FEFF 		bl	__aeabi_dadd
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 3
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 3
 
 
  106              	.LVL7:
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
  160 00bc 4046     		mov	r0, r8
  161 00be 4946     		mov	r1, r9
  162 00c0 FFF7FEFF 		bl	__aeabi_dadd
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 4
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 4
 
 
  163              	.LVL16:
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
  216 011e 0246     		mov	r2, r0
  217 0120 0B46     		mov	r3, r1
  218              		.loc 1 11 78 view .LVU29
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 5
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 5
 
 
  219 0122 4046     		mov	r0, r8
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
  273              	.LVL34:
  274              		.loc 1 11 199 view .LVU38
  275 0186 5246     		mov	r2, r10
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 6
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 6
 
 
  276 0188 5B46     		mov	r3, fp
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
  328              		.loc 1 13 34 discriminator 1 view .LVU49
  329 01e2 63A3     		adr	r3, .L3+104
  330 01e4 D3E90023 		ldrd	r2, [r3]
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 7
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 7
 
 
  331 01e8 FFF7FEFF 		bl	__aeabi_dmul
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
  385              		.loc 1 13 114 discriminator 2 view .LVU57
  386 0258 5246     		mov	r2, r10
  387 025a 5B46     		mov	r3, fp
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 8
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 8
 
 
  388 025c FFF7FEFF 		bl	__aeabi_dmul
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
  442 02c4 0246     		mov	r2, r0
  443 02c6 0B46     		mov	r3, r1
  444              		.loc 1 13 169 discriminator 3 view .LVU66
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 9
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 9
 
 
  445 02c8 2046     		mov	r0, r4
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
  499 0360 A4367172 		.word	1920022180
  500 0364 BF43713F 		.word	1064387519
  501 0368 00000000 		.word	0
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 10
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 10
 
 
  502 036c 0000E03F 		.word	1071644672
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
  556 0412 0246     		mov	r2, r0
  557 0414 0B46     		mov	r3, r1
  558              		.loc 1 13 265 discriminator 5 view .LVU74
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 11
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 11
 
 
  559 0416 4046     		mov	r0, r8
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
  613 0480 0B46     		mov	r3, r1
  614              		.loc 1 13 148 discriminator 6 view .LVU82
  615 0482 3046     		mov	r0, r6
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 12
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 12
 
 
  616 0484 3946     		mov	r1, r7
@@ -695,783 +695,826 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 1
  646              		.cfi_endproc
  647              	.LFE220:
  649              		.global	__aeabi_i2d
- 650              		.section	.text.calculate_conductivity,"ax",%progbits
+ 650              		.section	.text.calculate_average_resistance,"ax",%progbits
  651              		.align	1
- 652              		.global	calculate_conductivity
+ 652              		.global	calculate_average_resistance
  653              		.syntax unified
  654              		.thumb
  655              		.thumb_func
- 657              	calculate_conductivity:
+ 657              	calculate_average_resistance:
  658              	.LVL81:
- 659              	.LFB221:
+ 659              	.LFB222:
   15:Core/Src/salinity.c **** 
   16:Core/Src/salinity.c **** double calculate_conductivity(Electrode_Type electrode, ResistanceSample_TypeDef *samples, uint16_t
   17:Core/Src/salinity.c **** {
- 660              		.loc 1 17 1 is_stmt 1 view -0
+  18:Core/Src/salinity.c ****     switch (electrode)
+  19:Core/Src/salinity.c ****     {
+  20:Core/Src/salinity.c ****     case Au:
+  21:Core/Src/salinity.c ****     case Au_Shielded:
+  22:Core/Src/salinity.c ****         // average resistance
+  23:Core/Src/salinity.c ****         double average_resistance = calculate_average_resistance(samples, num_samples);
+  24:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+  25:Core/Src/salinity.c ****         double resistivity = average_resistance * AU_PAD_AREA / AU_PAD_DISTANCE;
+  26:Core/Src/salinity.c ****         return 1 / resistivity;
+  27:Core/Src/salinity.c ****     case Ti:
+  28:Core/Src/salinity.c ****         return 0;
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 13
+
+
+  29:Core/Src/salinity.c ****     }
+  30:Core/Src/salinity.c ****     return 0; // should never reach here
+  31:Core/Src/salinity.c **** }
+  32:Core/Src/salinity.c **** 
+  33:Core/Src/salinity.c **** double calculate_average_resistance(ResistanceSample_TypeDef *samples, uint16_t num_samples)
+  34:Core/Src/salinity.c **** {
+ 660              		.loc 1 34 1 is_stmt 1 view -0
  661              		.cfi_startproc
  662              		@ args = 0, pretend = 0, frame = 0
  663              		@ frame_needed = 0, uses_anonymous_args = 0
-  18:Core/Src/salinity.c ****     switch (electrode)
- 664              		.loc 1 18 5 view .LVU87
- 665 0000 68B3     		cbz	r0, .L13
- 666 0002 0128     		cmp	r0, #1
- 667 0004 33D0     		beq	.L14
- 668 0006 7047     		bx	lr
- 669              	.LVL82:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 13
-
-
- 670              	.L12:
- 671              		.cfi_def_cfa_offset 24
- 672              		.cfi_offset 4, -24
- 673              		.cfi_offset 5, -20
- 674              		.cfi_offset 6, -16
- 675              		.cfi_offset 7, -12
- 676              		.cfi_offset 8, -8
- 677              		.cfi_offset 14, -4
+ 664              		.loc 1 34 1 is_stmt 0 view .LVU87
+ 665 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 666              		.cfi_def_cfa_offset 24
+ 667              		.cfi_offset 4, -24
+ 668              		.cfi_offset 5, -20
+ 669              		.cfi_offset 6, -16
+ 670              		.cfi_offset 7, -12
+ 671              		.cfi_offset 8, -8
+ 672              		.cfi_offset 14, -4
+ 673 0004 8046     		mov	r8, r0
+ 674 0006 0D46     		mov	r5, r1
+  35:Core/Src/salinity.c ****     double sum = 0;
+ 675              		.loc 1 35 5 is_stmt 1 view .LVU88
+ 676              	.LVL82:
+  36:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 677              		.loc 1 36 5 view .LVU89
  678              	.LBB2:
- 679              	.LBB3:
-  19:Core/Src/salinity.c ****     {
-  20:Core/Src/salinity.c ****     case Au:
-  21:Core/Src/salinity.c ****     {
-  22:Core/Src/salinity.c ****         // average resistance
-  23:Core/Src/salinity.c ****         double sum = 0;
-  24:Core/Src/salinity.c ****         for (uint16_t i = 0; i < num_samples; i++)
-  25:Core/Src/salinity.c ****         {
-  26:Core/Src/salinity.c ****             sum += samples[i].resistance;
- 680              		.loc 1 26 13 view .LVU88
- 681              		.loc 1 26 27 is_stmt 0 view .LVU89
- 682 0008 08EB0413 		add	r3, r8, r4, lsl #4
- 683              		.loc 1 26 17 view .LVU90
- 684 000c D3E90223 		ldrd	r2, [r3, #8]
- 685 0010 3046     		mov	r0, r6
- 686 0012 3946     		mov	r1, r7
- 687 0014 FFF7FEFF 		bl	__aeabi_dadd
- 688              	.LVL83:
- 689 0018 0646     		mov	r6, r0
- 690              	.LVL84:
- 691              		.loc 1 26 17 view .LVU91
- 692 001a 0F46     		mov	r7, r1
- 693              	.LVL85:
-  24:Core/Src/salinity.c ****         {
- 694              		.loc 1 24 48 is_stmt 1 discriminator 3 view .LVU92
- 695 001c 0134     		adds	r4, r4, #1
- 696              	.LVL86:
-  24:Core/Src/salinity.c ****         {
- 697              		.loc 1 24 48 is_stmt 0 discriminator 3 view .LVU93
- 698 001e A4B2     		uxth	r4, r4
- 699              	.LVL87:
- 700              	.L9:
-  24:Core/Src/salinity.c ****         {
- 701              		.loc 1 24 32 is_stmt 1 discriminator 1 view .LVU94
- 702 0020 AC42     		cmp	r4, r5
- 703 0022 F1D3     		bcc	.L12
- 704              	.LBE3:
-  27:Core/Src/salinity.c ****         }
-  28:Core/Src/salinity.c ****         double average_resistance = sum / num_samples;
- 705              		.loc 1 28 9 view .LVU95
- 706              		.loc 1 28 41 is_stmt 0 view .LVU96
- 707 0024 2846     		mov	r0, r5
- 708 0026 FFF7FEFF 		bl	__aeabi_i2d
- 709              	.LVL88:
- 710 002a 0246     		mov	r2, r0
- 711 002c 0B46     		mov	r3, r1
- 712              		.loc 1 28 16 view .LVU97
- 713 002e 3046     		mov	r0, r6
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 14
+ 679              		.loc 1 36 10 view .LVU90
+ 680              		.loc 1 36 19 is_stmt 0 view .LVU91
+ 681 0008 0024     		movs	r4, #0
+ 682              	.LBE2:
+  35:Core/Src/salinity.c ****     double sum = 0;
+ 683              		.loc 1 35 12 view .LVU92
+ 684 000a 0026     		movs	r6, #0
+ 685 000c 0027     		movs	r7, #0
+ 686              	.LBB3:
+ 687              		.loc 1 36 5 view .LVU93
+ 688 000e 0BE0     		b	.L9
+ 689              	.LVL83:
+ 690              	.L10:
+  37:Core/Src/salinity.c ****     {
+  38:Core/Src/salinity.c ****         sum += samples[i].resistance;
+ 691              		.loc 1 38 9 is_stmt 1 view .LVU94
+ 692              		.loc 1 38 23 is_stmt 0 view .LVU95
+ 693 0010 08EB0413 		add	r3, r8, r4, lsl #4
+ 694              		.loc 1 38 13 view .LVU96
+ 695 0014 D3E90223 		ldrd	r2, [r3, #8]
+ 696 0018 3046     		mov	r0, r6
+ 697 001a 3946     		mov	r1, r7
+ 698 001c FFF7FEFF 		bl	__aeabi_dadd
+ 699              	.LVL84:
+ 700 0020 0646     		mov	r6, r0
+ 701              	.LVL85:
+ 702              		.loc 1 38 13 view .LVU97
+ 703 0022 0F46     		mov	r7, r1
+ 704              	.LVL86:
+  36:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 14
 
 
- 714 0030 3946     		mov	r1, r7
- 715 0032 FFF7FEFF 		bl	__aeabi_ddiv
- 716              	.LVL89:
-  29:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
-  30:Core/Src/salinity.c ****         double resistivity = average_resistance * AU_PAD_AREA / AU_PAD_DISTANCE;
- 717              		.loc 1 30 9 is_stmt 1 view .LVU98
- 718              		.loc 1 30 49 is_stmt 0 view .LVU99
- 719 0036 13A3     		adr	r3, .L19+12
- 720 0038 D3E90023 		ldrd	r2, [r3]
- 721 003c FFF7FEFF 		bl	__aeabi_dmul
- 722              	.LVL90:
- 723              		.loc 1 30 16 view .LVU100
- 724 0040 12A3     		adr	r3, .L19+20
- 725 0042 D3E90023 		ldrd	r2, [r3]
- 726 0046 FFF7FEFF 		bl	__aeabi_ddiv
- 727              	.LVL91:
- 728 004a 0246     		mov	r2, r0
- 729 004c 0B46     		mov	r3, r1
- 730              	.LVL92:
-  31:Core/Src/salinity.c ****         return 1 / resistivity;
- 731              		.loc 1 31 9 is_stmt 1 view .LVU101
- 732              		.loc 1 31 18 is_stmt 0 view .LVU102
- 733 004e 0020     		movs	r0, #0
- 734 0050 0B49     		ldr	r1, .L19+8
- 735 0052 FFF7FEFF 		bl	__aeabi_ddiv
- 736              	.LVL93:
- 737              		.loc 1 31 18 view .LVU103
- 738 0056 41EC100B 		vmov	d0, r0, r1
- 739              	.LBE2:
-  32:Core/Src/salinity.c ****     }
-  33:Core/Src/salinity.c ****     case Ti:
-  34:Core/Src/salinity.c ****     {
-  35:Core/Src/salinity.c ****         return 0;
-  36:Core/Src/salinity.c ****     }
-  37:Core/Src/salinity.c ****     }
-  38:Core/Src/salinity.c **** }
- 740              		.loc 1 38 1 view .LVU104
- 741 005a BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
- 742              	.LVL94:
- 743              	.L13:
- 744              		.cfi_def_cfa_offset 0
- 745              		.cfi_restore 4
- 746              		.cfi_restore 5
- 747              		.cfi_restore 6
- 748              		.cfi_restore 7
- 749              		.cfi_restore 8
- 750              		.cfi_restore 14
+ 705              		.loc 1 36 44 is_stmt 1 discriminator 3 view .LVU98
+ 706 0024 0134     		adds	r4, r4, #1
+ 707              	.LVL87:
+  36:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 708              		.loc 1 36 44 is_stmt 0 discriminator 3 view .LVU99
+ 709 0026 A4B2     		uxth	r4, r4
+ 710              	.LVL88:
+ 711              	.L9:
+  36:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 712              		.loc 1 36 28 is_stmt 1 discriminator 1 view .LVU100
+ 713 0028 AC42     		cmp	r4, r5
+ 714 002a F1D3     		bcc	.L10
+ 715              	.LBE3:
+  39:Core/Src/salinity.c ****     }
+  40:Core/Src/salinity.c ****     return sum / num_samples;
+ 716              		.loc 1 40 5 view .LVU101
+ 717              		.loc 1 40 16 is_stmt 0 view .LVU102
+ 718 002c 2846     		mov	r0, r5
+ 719 002e FFF7FEFF 		bl	__aeabi_i2d
+ 720              	.LVL89:
+ 721 0032 0246     		mov	r2, r0
+ 722 0034 0B46     		mov	r3, r1
+ 723 0036 3046     		mov	r0, r6
+ 724 0038 3946     		mov	r1, r7
+ 725 003a FFF7FEFF 		bl	__aeabi_ddiv
+ 726              	.LVL90:
+  41:Core/Src/salinity.c **** }
+ 727              		.loc 1 41 1 view .LVU103
+ 728 003e 41EC100B 		vmov	d0, r0, r1
+ 729 0042 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 730              		.loc 1 41 1 view .LVU104
+ 731              		.cfi_endproc
+ 732              	.LFE222:
+ 734              		.section	.text.calculate_conductivity,"ax",%progbits
+ 735              		.align	1
+ 736              		.global	calculate_conductivity
+ 737              		.syntax unified
+ 738              		.thumb
+ 739              		.thumb_func
+ 741              	calculate_conductivity:
+ 742              	.LVL91:
+ 743              	.LFB221:
   17:Core/Src/salinity.c ****     switch (electrode)
- 751              		.loc 1 17 1 view .LVU105
- 752 005e 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
- 753              		.cfi_def_cfa_offset 24
- 754              		.cfi_offset 4, -24
- 755              		.cfi_offset 5, -20
- 756              		.cfi_offset 6, -16
- 757              		.cfi_offset 7, -12
- 758              		.cfi_offset 8, -8
- 759              		.cfi_offset 14, -4
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 15
-
-
- 760 0062 8846     		mov	r8, r1
- 761 0064 1546     		mov	r5, r2
+ 744              		.loc 1 17 1 is_stmt 1 view -0
+ 745              		.cfi_startproc
+ 746              		@ args = 0, pretend = 0, frame = 0
+ 747              		@ frame_needed = 0, uses_anonymous_args = 0
+  17:Core/Src/salinity.c ****     switch (electrode)
+ 748              		.loc 1 17 1 is_stmt 0 view .LVU106
+ 749 0000 08B5     		push	{r3, lr}
+ 750              		.cfi_def_cfa_offset 8
+ 751              		.cfi_offset 3, -8
+ 752              		.cfi_offset 14, -4
+ 753 0002 0B46     		mov	r3, r1
   18:Core/Src/salinity.c ****     {
- 762              		.loc 1 18 5 view .LVU106
- 763 0066 0024     		movs	r4, #0
- 764 0068 0026     		movs	r6, #0
- 765 006a 0027     		movs	r7, #0
- 766 006c D8E7     		b	.L9
- 767              	.L14:
- 768              		.cfi_def_cfa_offset 0
- 769              		.cfi_restore 4
- 770              		.cfi_restore 5
- 771              		.cfi_restore 6
- 772              		.cfi_restore 7
- 773              		.cfi_restore 8
- 774              		.cfi_restore 14
-  18:Core/Src/salinity.c ****     {
- 775              		.loc 1 18 5 view .LVU107
- 776 006e 9FED020B 		vldr.64	d0, .L19
- 777              		.loc 1 38 1 view .LVU108
- 778 0072 7047     		bx	lr
- 779              	.L20:
- 780 0074 AFF30080 		.align	3
- 781              	.L19:
- 782 0078 00000000 		.word	0
- 783 007c 00000000 		.word	0
- 784 0080 0000F03F 		.word	1072693248
- 785 0084 2D431CEB 		.word	-350469331
- 786 0088 E2363A3F 		.word	1060779746
- 787 008c 7B14AE47 		.word	1202590843
- 788 0090 E17A843F 		.word	1065646817
- 789              		.cfi_endproc
- 790              	.LFE221:
- 792              		.global	__aeabi_ui2d
- 793              		.section	.text.calculate_resistance,"ax",%progbits
- 794              		.align	1
- 795              		.global	calculate_resistance
- 796              		.syntax unified
- 797              		.thumb
- 798              		.thumb_func
- 800              	calculate_resistance:
- 801              	.LVL95:
- 802              	.LFB222:
-  39:Core/Src/salinity.c **** 
-  40:Core/Src/salinity.c **** void calculate_resistance(VoltageSample_TypeDef *voltage_samples, ResistanceSample_TypeDef *reistan
-  41:Core/Src/salinity.c **** {
- 803              		.loc 1 41 1 is_stmt 1 view -0
- 804              		.cfi_startproc
- 805              		@ args = 0, pretend = 0, frame = 0
- 806              		@ frame_needed = 0, uses_anonymous_args = 0
- 807              		.loc 1 41 1 is_stmt 0 view .LVU110
- 808 0000 2DE9F84F 		push	{r3, r4, r5, r6, r7, r8, r9, r10, fp, lr}
- 809              		.cfi_def_cfa_offset 40
- 810              		.cfi_offset 3, -40
- 811              		.cfi_offset 4, -36
- 812              		.cfi_offset 5, -32
- 813              		.cfi_offset 6, -28
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 16
+ 754              		.loc 1 18 5 is_stmt 1 view .LVU107
+ 755 0004 20B1     		cbz	r0, .L13
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 15
 
 
- 814              		.cfi_offset 7, -24
- 815              		.cfi_offset 8, -20
- 816              		.cfi_offset 9, -16
- 817              		.cfi_offset 10, -12
- 818              		.cfi_offset 11, -8
- 819              		.cfi_offset 14, -4
- 820 0004 8246     		mov	r10, r0
- 821 0006 8846     		mov	r8, r1
- 822 0008 9146     		mov	r9, r2
-  42:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
- 823              		.loc 1 42 5 is_stmt 1 view .LVU111
- 824              	.LBB4:
- 825              		.loc 1 42 10 view .LVU112
- 826              	.LVL96:
- 827              		.loc 1 42 19 is_stmt 0 view .LVU113
- 828 000a 0024     		movs	r4, #0
- 829              		.loc 1 42 5 view .LVU114
- 830 000c 1DE0     		b	.L22
- 831              	.LVL97:
- 832              	.L23:
-  43:Core/Src/salinity.c ****     {
-  44:Core/Src/salinity.c ****         reistance_samples[i].voltage = voltage_samples[i].dac_output;
- 833              		.loc 1 44 9 is_stmt 1 view .LVU115
- 834              		.loc 1 44 55 is_stmt 0 view .LVU116
- 835 000e 0AEBC405 		add	r5, r10, r4, lsl #3
- 836              		.loc 1 44 26 view .LVU117
- 837 0012 2301     		lsls	r3, r4, #4
- 838 0014 08EB041B 		add	fp, r8, r4, lsl #4
- 839              		.loc 1 44 58 view .LVU118
- 840 0018 6A88     		ldrh	r2, [r5, #2]
- 841              		.loc 1 44 38 view .LVU119
- 842 001a 28F80320 		strh	r2, [r8, r3]	@ movhi
-  45:Core/Src/salinity.c ****         reistance_samples[i].resistance = (double) voltage_samples[i].measurement / voltage_samples
- 843              		.loc 1 45 9 is_stmt 1 view .LVU120
- 844              		.loc 1 45 43 is_stmt 0 view .LVU121
- 845 001e E888     		ldrh	r0, [r5, #6]
- 846 0020 FFF7FEFF 		bl	__aeabi_ui2d
- 847              	.LVL98:
- 848 0024 0646     		mov	r6, r0
- 849 0026 0F46     		mov	r7, r1
- 850              		.loc 1 45 83 view .LVU122
- 851 0028 A888     		ldrh	r0, [r5, #4]
- 852 002a FFF7FEFF 		bl	__aeabi_i2d
- 853              	.LVL99:
- 854 002e 0246     		mov	r2, r0
- 855 0030 0B46     		mov	r3, r1
- 856 0032 3046     		mov	r0, r6
- 857 0034 3946     		mov	r1, r7
- 858 0036 FFF7FEFF 		bl	__aeabi_ddiv
- 859              	.LVL100:
- 860              		.loc 1 45 110 view .LVU123
- 861 003a 0022     		movs	r2, #0
- 862 003c 054B     		ldr	r3, .L25
- 863 003e FFF7FEFF 		bl	__aeabi_dmul
- 864              	.LVL101:
- 865              		.loc 1 45 41 view .LVU124
- 866 0042 CBE90201 		strd	r0, [fp, #8]
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 17
+ 756 0006 0228     		cmp	r0, #2
+ 757 0008 02D0     		beq	.L13
+ 758 000a 9FED0F0B 		vldr.64	d0, .L17
+ 759 000e 17E0     		b	.L12
+ 760              	.L13:
+ 761              	.LBB4:
+  23:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+ 762              		.loc 1 23 9 view .LVU108
+  23:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+ 763              		.loc 1 23 37 is_stmt 0 view .LVU109
+ 764 0010 1146     		mov	r1, r2
+ 765              	.LVL92:
+  23:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+ 766              		.loc 1 23 37 view .LVU110
+ 767 0012 1846     		mov	r0, r3
+ 768              	.LVL93:
+  23:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+ 769              		.loc 1 23 37 view .LVU111
+ 770 0014 FFF7FEFF 		bl	calculate_average_resistance
+ 771              	.LVL94:
+  23:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+ 772              		.loc 1 23 37 view .LVU112
+ 773 0018 51EC100B 		vmov	r0, r1, d0
+ 774              	.LVL95:
+  25:Core/Src/salinity.c ****         return 1 / resistivity;
+ 775              		.loc 1 25 9 is_stmt 1 view .LVU113
+  25:Core/Src/salinity.c ****         return 1 / resistivity;
+ 776              		.loc 1 25 49 is_stmt 0 view .LVU114
+ 777 001c 0DA3     		adr	r3, .L17+12
+ 778 001e D3E90023 		ldrd	r2, [r3]
+ 779 0022 FFF7FEFF 		bl	__aeabi_dmul
+ 780              	.LVL96:
+  25:Core/Src/salinity.c ****         return 1 / resistivity;
+ 781              		.loc 1 25 16 view .LVU115
+ 782 0026 0DA3     		adr	r3, .L17+20
+ 783 0028 D3E90023 		ldrd	r2, [r3]
+ 784 002c FFF7FEFF 		bl	__aeabi_ddiv
+ 785              	.LVL97:
+ 786 0030 0246     		mov	r2, r0
+ 787 0032 0B46     		mov	r3, r1
+ 788              	.LVL98:
+  26:Core/Src/salinity.c ****     case Ti:
+ 789              		.loc 1 26 9 is_stmt 1 view .LVU116
+  26:Core/Src/salinity.c ****     case Ti:
+ 790              		.loc 1 26 18 is_stmt 0 view .LVU117
+ 791 0034 0020     		movs	r0, #0
+ 792 0036 0649     		ldr	r1, .L17+8
+ 793 0038 FFF7FEFF 		bl	__aeabi_ddiv
+ 794              	.LVL99:
+  26:Core/Src/salinity.c ****     case Ti:
+ 795              		.loc 1 26 18 view .LVU118
+ 796 003c 41EC100B 		vmov	d0, r0, r1
+ 797              	.LVL100:
+ 798              	.L12:
+  26:Core/Src/salinity.c ****     case Ti:
+ 799              		.loc 1 26 18 view .LVU119
+ 800              	.LBE4:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 16
 
 
-  42:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
- 867              		.loc 1 42 44 is_stmt 1 discriminator 3 view .LVU125
- 868 0046 0134     		adds	r4, r4, #1
- 869              	.LVL102:
-  42:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
- 870              		.loc 1 42 44 is_stmt 0 discriminator 3 view .LVU126
- 871 0048 A4B2     		uxth	r4, r4
- 872              	.LVL103:
- 873              	.L22:
-  42:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
- 874              		.loc 1 42 28 is_stmt 1 discriminator 1 view .LVU127
- 875 004a 4C45     		cmp	r4, r9
- 876 004c DFD3     		bcc	.L23
- 877              	.LBE4:
-  46:Core/Src/salinity.c ****     }
-  47:Core/Src/salinity.c **** }
- 878              		.loc 1 47 1 is_stmt 0 view .LVU128
- 879 004e BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
- 880              	.LVL104:
- 881              	.L26:
- 882              		.loc 1 47 1 view .LVU129
- 883 0052 00BF     		.align	2
- 884              	.L25:
- 885 0054 00001440 		.word	1075052544
- 886              		.cfi_endproc
- 887              	.LFE222:
- 889              		.section	.text.measure_temperature,"ax",%progbits
- 890              		.align	1
- 891              		.global	measure_temperature
- 892              		.syntax unified
- 893              		.thumb
- 894              		.thumb_func
- 896              	measure_temperature:
- 897              	.LFB223:
-  48:Core/Src/salinity.c **** 
-  49:Core/Src/salinity.c **** /**
-  50:Core/Src/salinity.c ****  * @brief Measures temperature
-  51:Core/Src/salinity.c ****  *
-  52:Core/Src/salinity.c ****  * @return double: temperature value in degrees Celsius
-  53:Core/Src/salinity.c ****  */
-  54:Core/Src/salinity.c **** double measure_temperature(void)
-  55:Core/Src/salinity.c **** {
- 898              		.loc 1 55 1 is_stmt 1 view -0
- 899              		.cfi_startproc
- 900              		@ args = 0, pretend = 0, frame = 8
- 901              		@ frame_needed = 0, uses_anonymous_args = 0
- 902 0000 00B5     		push	{lr}
- 903              		.cfi_def_cfa_offset 4
- 904              		.cfi_offset 14, -4
- 905 0002 87B0     		sub	sp, sp, #28
- 906              		.cfi_def_cfa_offset 32
-  56:Core/Src/salinity.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, Pressure_device_addr, 1, 1000) != HAL_OK)
- 907              		.loc 1 56 5 view .LVU131
- 908              		.loc 1 56 9 is_stmt 0 view .LVU132
- 909 0004 4FF47A73 		mov	r3, #1000
- 910 0008 0122     		movs	r2, #1
- 911 000a DA21     		movs	r1, #218
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 18
+  31:Core/Src/salinity.c **** 
+ 801              		.loc 1 31 1 view .LVU120
+ 802 0040 08BD     		pop	{r3, pc}
+ 803              	.L18:
+ 804 0042 00BFAFF3 		.align	3
+ 804      0080
+ 805              	.L17:
+ 806 0048 00000000 		.word	0
+ 807 004c 00000000 		.word	0
+ 808 0050 0000F03F 		.word	1072693248
+ 809 0054 2D431CEB 		.word	-350469331
+ 810 0058 E2363A3F 		.word	1060779746
+ 811 005c 7B14AE47 		.word	1202590843
+ 812 0060 E17A843F 		.word	1065646817
+ 813              		.cfi_endproc
+ 814              	.LFE221:
+ 816              		.global	__aeabi_ui2d
+ 817              		.section	.text.calculate_resistance,"ax",%progbits
+ 818              		.align	1
+ 819              		.global	calculate_resistance
+ 820              		.syntax unified
+ 821              		.thumb
+ 822              		.thumb_func
+ 824              	calculate_resistance:
+ 825              	.LVL101:
+ 826              	.LFB223:
+  42:Core/Src/salinity.c **** 
+  43:Core/Src/salinity.c **** void calculate_resistance(VoltageSample_TypeDef *voltage_samples, ResistanceSample_TypeDef *reistan
+  44:Core/Src/salinity.c **** {
+ 827              		.loc 1 44 1 is_stmt 1 view -0
+ 828              		.cfi_startproc
+ 829              		@ args = 0, pretend = 0, frame = 0
+ 830              		@ frame_needed = 0, uses_anonymous_args = 0
+ 831              		.loc 1 44 1 is_stmt 0 view .LVU122
+ 832 0000 2DE9F84F 		push	{r3, r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 833              		.cfi_def_cfa_offset 40
+ 834              		.cfi_offset 3, -40
+ 835              		.cfi_offset 4, -36
+ 836              		.cfi_offset 5, -32
+ 837              		.cfi_offset 6, -28
+ 838              		.cfi_offset 7, -24
+ 839              		.cfi_offset 8, -20
+ 840              		.cfi_offset 9, -16
+ 841              		.cfi_offset 10, -12
+ 842              		.cfi_offset 11, -8
+ 843              		.cfi_offset 14, -4
+ 844 0004 8246     		mov	r10, r0
+ 845 0006 8846     		mov	r8, r1
+ 846 0008 9146     		mov	r9, r2
+  45:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 847              		.loc 1 45 5 is_stmt 1 view .LVU123
+ 848              	.LBB5:
+ 849              		.loc 1 45 10 view .LVU124
+ 850              	.LVL102:
+ 851              		.loc 1 45 19 is_stmt 0 view .LVU125
+ 852 000a 0024     		movs	r4, #0
+ 853              		.loc 1 45 5 view .LVU126
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 17
 
 
- 912 000c 3048     		ldr	r0, .L38+8
- 913 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
- 914              	.LVL105:
- 915              		.loc 1 56 8 discriminator 1 view .LVU133
- 916 0012 A0B9     		cbnz	r0, .L34
- 917              	.L28:
-  57:Core/Src/salinity.c ****     {
-  58:Core/Src/salinity.c ****         Error_Handler();
-  59:Core/Src/salinity.c ****     }
-  60:Core/Src/salinity.c **** 
-  61:Core/Src/salinity.c ****     // Request temperature
-  62:Core/Src/salinity.c ****     uint8_t request = Pressure_request_temperature;
- 918              		.loc 1 62 5 is_stmt 1 view .LVU134
- 919              		.loc 1 62 13 is_stmt 0 view .LVU135
- 920 0014 0423     		movs	r3, #4
- 921 0016 8DF81730 		strb	r3, [sp, #23]
-  63:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Write(&hi2c1, Pressure_device_addr, Pressure_mem_addr_request, 1, &request, 1, 
- 922              		.loc 1 63 5 is_stmt 1 view .LVU136
- 923              		.loc 1 63 9 is_stmt 0 view .LVU137
- 924 001a 4FF47A73 		mov	r3, #1000
- 925 001e 0293     		str	r3, [sp, #8]
- 926 0020 0123     		movs	r3, #1
- 927 0022 0193     		str	r3, [sp, #4]
- 928 0024 0DF11702 		add	r2, sp, #23
- 929 0028 0092     		str	r2, [sp]
- 930 002a 0A22     		movs	r2, #10
- 931 002c DA21     		movs	r1, #218
- 932 002e 2848     		ldr	r0, .L38+8
- 933 0030 FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 934              	.LVL106:
- 935              		.loc 1 63 8 discriminator 1 view .LVU138
- 936 0034 30B9     		cbnz	r0, .L35
- 937              	.L29:
-  64:Core/Src/salinity.c ****     {
-  65:Core/Src/salinity.c ****         Error_Handler();
-  66:Core/Src/salinity.c ****     }
-  67:Core/Src/salinity.c **** 
-  68:Core/Src/salinity.c ****     // Wait for measurement
-  69:Core/Src/salinity.c ****     uint8_t status = 0;
- 938              		.loc 1 69 5 is_stmt 1 view .LVU139
- 939              		.loc 1 69 13 is_stmt 0 view .LVU140
- 940 0036 0023     		movs	r3, #0
- 941 0038 8DF81630 		strb	r3, [sp, #22]
- 942 003c 0DE0     		b	.L31
- 943              	.L34:
-  58:Core/Src/salinity.c ****     }
- 944              		.loc 1 58 9 is_stmt 1 view .LVU141
- 945 003e FFF7FEFF 		bl	Error_Handler
- 946              	.LVL107:
- 947 0042 E7E7     		b	.L28
- 948              	.L35:
-  65:Core/Src/salinity.c ****     }
- 949              		.loc 1 65 9 view .LVU142
- 950 0044 FFF7FEFF 		bl	Error_Handler
- 951              	.LVL108:
- 952 0048 F5E7     		b	.L29
- 953              	.L30:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 19
+ 854 000c 1DE0     		b	.L20
+ 855              	.LVL103:
+ 856              	.L21:
+  46:Core/Src/salinity.c ****     {
+  47:Core/Src/salinity.c ****         reistance_samples[i].voltage = voltage_samples[i].dac_output;
+ 857              		.loc 1 47 9 is_stmt 1 view .LVU127
+ 858              		.loc 1 47 55 is_stmt 0 view .LVU128
+ 859 000e 0AEBC405 		add	r5, r10, r4, lsl #3
+ 860              		.loc 1 47 26 view .LVU129
+ 861 0012 2301     		lsls	r3, r4, #4
+ 862 0014 08EB041B 		add	fp, r8, r4, lsl #4
+ 863              		.loc 1 47 58 view .LVU130
+ 864 0018 6A88     		ldrh	r2, [r5, #2]
+ 865              		.loc 1 47 38 view .LVU131
+ 866 001a 28F80320 		strh	r2, [r8, r3]	@ movhi
+  48:Core/Src/salinity.c ****         reistance_samples[i].resistance = (double) voltage_samples[i].measurement / voltage_samples
+ 867              		.loc 1 48 9 is_stmt 1 view .LVU132
+ 868              		.loc 1 48 43 is_stmt 0 view .LVU133
+ 869 001e E888     		ldrh	r0, [r5, #6]
+ 870 0020 FFF7FEFF 		bl	__aeabi_ui2d
+ 871              	.LVL104:
+ 872 0024 0646     		mov	r6, r0
+ 873 0026 0F46     		mov	r7, r1
+ 874              		.loc 1 48 83 view .LVU134
+ 875 0028 A888     		ldrh	r0, [r5, #4]
+ 876 002a FFF7FEFF 		bl	__aeabi_i2d
+ 877              	.LVL105:
+ 878 002e 0246     		mov	r2, r0
+ 879 0030 0B46     		mov	r3, r1
+ 880 0032 3046     		mov	r0, r6
+ 881 0034 3946     		mov	r1, r7
+ 882 0036 FFF7FEFF 		bl	__aeabi_ddiv
+ 883              	.LVL106:
+ 884              		.loc 1 48 110 view .LVU135
+ 885 003a 0022     		movs	r2, #0
+ 886 003c 054B     		ldr	r3, .L23
+ 887 003e FFF7FEFF 		bl	__aeabi_dmul
+ 888              	.LVL107:
+ 889              		.loc 1 48 41 view .LVU136
+ 890 0042 CBE90201 		strd	r0, [fp, #8]
+  45:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 891              		.loc 1 45 44 is_stmt 1 discriminator 3 view .LVU137
+ 892 0046 0134     		adds	r4, r4, #1
+ 893              	.LVL108:
+  45:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 894              		.loc 1 45 44 is_stmt 0 discriminator 3 view .LVU138
+ 895 0048 A4B2     		uxth	r4, r4
+ 896              	.LVL109:
+ 897              	.L20:
+  45:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 898              		.loc 1 45 28 is_stmt 1 discriminator 1 view .LVU139
+ 899 004a 4C45     		cmp	r4, r9
+ 900 004c DFD3     		bcc	.L21
+ 901              	.LBE5:
+  49:Core/Src/salinity.c ****     }
+  50:Core/Src/salinity.c **** }
+ 902              		.loc 1 50 1 is_stmt 0 view .LVU140
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 18
 
 
-  70:Core/Src/salinity.c ****     do
-  71:Core/Src/salinity.c ****     {
-  72:Core/Src/salinity.c ****         if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_status, 1, &status, 1,
-  73:Core/Src/salinity.c ****         {
-  74:Core/Src/salinity.c ****             Error_Handler();
-  75:Core/Src/salinity.c ****         }
-  76:Core/Src/salinity.c ****         HAL_Delay(100);
- 954              		.loc 1 76 9 view .LVU143
- 955 004a 6420     		movs	r0, #100
- 956 004c FFF7FEFF 		bl	HAL_Delay
- 957              	.LVL109:
-  77:Core/Src/salinity.c ****     } while ((status & Pressure_status_finished) == 0);
- 958              		.loc 1 77 50 view .LVU144
- 959              		.loc 1 77 22 is_stmt 0 view .LVU145
- 960 0050 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
- 961              		.loc 1 77 50 view .LVU146
- 962 0054 13F0010F 		tst	r3, #1
- 963 0058 11D1     		bne	.L36
- 964              	.L31:
-  70:Core/Src/salinity.c ****     do
- 965              		.loc 1 70 5 is_stmt 1 view .LVU147
-  72:Core/Src/salinity.c ****         {
- 966              		.loc 1 72 9 view .LVU148
-  72:Core/Src/salinity.c ****         {
- 967              		.loc 1 72 13 is_stmt 0 view .LVU149
- 968 005a 4FF47A73 		mov	r3, #1000
- 969 005e 0293     		str	r3, [sp, #8]
- 970 0060 0123     		movs	r3, #1
- 971 0062 0193     		str	r3, [sp, #4]
- 972 0064 0DF11602 		add	r2, sp, #22
- 973 0068 0092     		str	r2, [sp]
- 974 006a 1322     		movs	r2, #19
- 975 006c DA21     		movs	r1, #218
- 976 006e 1848     		ldr	r0, .L38+8
- 977 0070 FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 978              	.LVL110:
-  72:Core/Src/salinity.c ****         {
- 979              		.loc 1 72 12 discriminator 1 view .LVU150
- 980 0074 0028     		cmp	r0, #0
- 981 0076 E8D0     		beq	.L30
-  74:Core/Src/salinity.c ****         }
- 982              		.loc 1 74 13 is_stmt 1 view .LVU151
- 983 0078 FFF7FEFF 		bl	Error_Handler
- 984              	.LVL111:
- 985 007c E5E7     		b	.L30
- 986              	.L36:
-  78:Core/Src/salinity.c **** 
-  79:Core/Src/salinity.c ****     uint8_t buf[2];
- 987              		.loc 1 79 5 view .LVU152
-  80:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_temperature, 1, buf, 2, 10
- 988              		.loc 1 80 5 view .LVU153
- 989              		.loc 1 80 9 is_stmt 0 view .LVU154
- 990 007e 4FF47A73 		mov	r3, #1000
- 991 0082 0293     		str	r3, [sp, #8]
- 992 0084 0223     		movs	r3, #2
- 993 0086 0193     		str	r3, [sp, #4]
- 994 0088 05AB     		add	r3, sp, #20
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 20
+ 903 004e BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 904              	.LVL110:
+ 905              	.L24:
+ 906              		.loc 1 50 1 view .LVU141
+ 907 0052 00BF     		.align	2
+ 908              	.L23:
+ 909 0054 00001440 		.word	1075052544
+ 910              		.cfi_endproc
+ 911              	.LFE223:
+ 913              		.section	.text.measure_temperature,"ax",%progbits
+ 914              		.align	1
+ 915              		.global	measure_temperature
+ 916              		.syntax unified
+ 917              		.thumb
+ 918              		.thumb_func
+ 920              	measure_temperature:
+ 921              	.LFB224:
+  51:Core/Src/salinity.c **** 
+  52:Core/Src/salinity.c **** /**
+  53:Core/Src/salinity.c ****  * @brief Measures temperature
+  54:Core/Src/salinity.c ****  *
+  55:Core/Src/salinity.c ****  * @return double: temperature value in degrees Celsius
+  56:Core/Src/salinity.c ****  */
+  57:Core/Src/salinity.c **** double measure_temperature(void)
+  58:Core/Src/salinity.c **** {
+ 922              		.loc 1 58 1 is_stmt 1 view -0
+ 923              		.cfi_startproc
+ 924              		@ args = 0, pretend = 0, frame = 8
+ 925              		@ frame_needed = 0, uses_anonymous_args = 0
+ 926 0000 00B5     		push	{lr}
+ 927              		.cfi_def_cfa_offset 4
+ 928              		.cfi_offset 14, -4
+ 929 0002 87B0     		sub	sp, sp, #28
+ 930              		.cfi_def_cfa_offset 32
+  59:Core/Src/salinity.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, Pressure_device_addr, 1, 1000) != HAL_OK)
+ 931              		.loc 1 59 5 view .LVU143
+ 932              		.loc 1 59 9 is_stmt 0 view .LVU144
+ 933 0004 4FF47A73 		mov	r3, #1000
+ 934 0008 0122     		movs	r2, #1
+ 935 000a DA21     		movs	r1, #218
+ 936 000c 3048     		ldr	r0, .L36+8
+ 937 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
+ 938              	.LVL111:
+ 939              		.loc 1 59 8 discriminator 1 view .LVU145
+ 940 0012 A0B9     		cbnz	r0, .L32
+ 941              	.L26:
+  60:Core/Src/salinity.c ****     {
+  61:Core/Src/salinity.c ****         Error_Handler();
+  62:Core/Src/salinity.c ****     }
+  63:Core/Src/salinity.c **** 
+  64:Core/Src/salinity.c ****     // Request temperature
+  65:Core/Src/salinity.c ****     uint8_t request = Pressure_request_temperature;
+ 942              		.loc 1 65 5 is_stmt 1 view .LVU146
+ 943              		.loc 1 65 13 is_stmt 0 view .LVU147
+ 944 0014 0423     		movs	r3, #4
+ 945 0016 8DF81730 		strb	r3, [sp, #23]
+  66:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Write(&hi2c1, Pressure_device_addr, Pressure_mem_addr_request, 1, &request, 1, 
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 19
 
 
- 995 008a 0093     		str	r3, [sp]
- 996 008c 0123     		movs	r3, #1
- 997 008e 0F22     		movs	r2, #15
- 998 0090 DA21     		movs	r1, #218
- 999 0092 0F48     		ldr	r0, .L38+8
- 1000 0094 FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 1001              	.LVL112:
- 1002              		.loc 1 80 8 discriminator 1 view .LVU155
- 1003 0098 88B9     		cbnz	r0, .L37
- 1004              	.L32:
-  81:Core/Src/salinity.c ****     {
-  82:Core/Src/salinity.c ****         Error_Handler();
-  83:Core/Src/salinity.c ****     }
-  84:Core/Src/salinity.c **** 
-  85:Core/Src/salinity.c ****     uint16_t temperature = (buf[0] << 8) | buf[1];
- 1005              		.loc 1 85 5 is_stmt 1 view .LVU156
- 1006              		.loc 1 85 32 is_stmt 0 view .LVU157
- 1007 009a 9DF81400 		ldrb	r0, [sp, #20]	@ zero_extendqisi2
- 1008              		.loc 1 85 47 view .LVU158
- 1009 009e 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
- 1010              	.LVL113:
-  86:Core/Src/salinity.c **** 
-  87:Core/Src/salinity.c ****     return ((double)temperature) * 0.1f;
- 1011              		.loc 1 87 5 is_stmt 1 view .LVU159
- 1012              		.loc 1 87 13 is_stmt 0 view .LVU160
- 1013 00a2 43EA0020 		orr	r0, r3, r0, lsl #8
- 1014              	.LVL114:
- 1015              		.loc 1 87 13 view .LVU161
- 1016 00a6 FFF7FEFF 		bl	__aeabi_ui2d
- 1017              	.LVL115:
- 1018              		.loc 1 87 34 view .LVU162
- 1019 00aa 07A3     		adr	r3, .L38
- 1020 00ac D3E90023 		ldrd	r2, [r3]
- 1021 00b0 FFF7FEFF 		bl	__aeabi_dmul
- 1022              	.LVL116:
-  88:Core/Src/salinity.c **** }
- 1023              		.loc 1 88 1 view .LVU163
- 1024 00b4 41EC100B 		vmov	d0, r0, r1
- 1025 00b8 07B0     		add	sp, sp, #28
- 1026              		.cfi_remember_state
- 1027              		.cfi_def_cfa_offset 4
- 1028              		@ sp needed
- 1029 00ba 5DF804FB 		ldr	pc, [sp], #4
- 1030              	.LVL117:
- 1031              	.L37:
- 1032              		.cfi_restore_state
-  82:Core/Src/salinity.c ****     }
- 1033              		.loc 1 82 9 is_stmt 1 view .LVU164
- 1034 00be FFF7FEFF 		bl	Error_Handler
- 1035              	.LVL118:
- 1036 00c2 EAE7     		b	.L32
- 1037              	.L39:
- 1038 00c4 AFF30080 		.align	3
- 1039              	.L38:
- 1040 00c8 000000A0 		.word	-1610612736
- 1041 00cc 9999B93F 		.word	1069128089
- 1042 00d0 00000000 		.word	hi2c1
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 21
+ 946              		.loc 1 66 5 is_stmt 1 view .LVU148
+ 947              		.loc 1 66 9 is_stmt 0 view .LVU149
+ 948 001a 4FF47A73 		mov	r3, #1000
+ 949 001e 0293     		str	r3, [sp, #8]
+ 950 0020 0123     		movs	r3, #1
+ 951 0022 0193     		str	r3, [sp, #4]
+ 952 0024 0DF11702 		add	r2, sp, #23
+ 953 0028 0092     		str	r2, [sp]
+ 954 002a 0A22     		movs	r2, #10
+ 955 002c DA21     		movs	r1, #218
+ 956 002e 2848     		ldr	r0, .L36+8
+ 957 0030 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 958              	.LVL112:
+ 959              		.loc 1 66 8 discriminator 1 view .LVU150
+ 960 0034 30B9     		cbnz	r0, .L33
+ 961              	.L27:
+  67:Core/Src/salinity.c ****     {
+  68:Core/Src/salinity.c ****         Error_Handler();
+  69:Core/Src/salinity.c ****     }
+  70:Core/Src/salinity.c **** 
+  71:Core/Src/salinity.c ****     // Wait for measurement
+  72:Core/Src/salinity.c ****     uint8_t status = 0;
+ 962              		.loc 1 72 5 is_stmt 1 view .LVU151
+ 963              		.loc 1 72 13 is_stmt 0 view .LVU152
+ 964 0036 0023     		movs	r3, #0
+ 965 0038 8DF81630 		strb	r3, [sp, #22]
+ 966 003c 0DE0     		b	.L29
+ 967              	.L32:
+  61:Core/Src/salinity.c ****     }
+ 968              		.loc 1 61 9 is_stmt 1 view .LVU153
+ 969 003e FFF7FEFF 		bl	Error_Handler
+ 970              	.LVL113:
+ 971 0042 E7E7     		b	.L26
+ 972              	.L33:
+  68:Core/Src/salinity.c ****     }
+ 973              		.loc 1 68 9 view .LVU154
+ 974 0044 FFF7FEFF 		bl	Error_Handler
+ 975              	.LVL114:
+ 976 0048 F5E7     		b	.L27
+ 977              	.L28:
+  73:Core/Src/salinity.c ****     do
+  74:Core/Src/salinity.c ****     {
+  75:Core/Src/salinity.c ****         if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_status, 1, &status, 1,
+  76:Core/Src/salinity.c ****         {
+  77:Core/Src/salinity.c ****             Error_Handler();
+  78:Core/Src/salinity.c ****         }
+  79:Core/Src/salinity.c ****         HAL_Delay(100);
+ 978              		.loc 1 79 9 view .LVU155
+ 979 004a 6420     		movs	r0, #100
+ 980 004c FFF7FEFF 		bl	HAL_Delay
+ 981              	.LVL115:
+  80:Core/Src/salinity.c ****     } while ((status & Pressure_status_finished) == 0);
+ 982              		.loc 1 80 50 view .LVU156
+ 983              		.loc 1 80 22 is_stmt 0 view .LVU157
+ 984 0050 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
+ 985              		.loc 1 80 50 view .LVU158
+ 986 0054 13F0010F 		tst	r3, #1
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 20
 
 
- 1043              		.cfi_endproc
- 1044              	.LFE223:
- 1046              		.section	.text.measure_pressure,"ax",%progbits
- 1047              		.align	1
- 1048              		.global	measure_pressure
- 1049              		.syntax unified
- 1050              		.thumb
- 1051              		.thumb_func
- 1053              	measure_pressure:
- 1054              	.LFB224:
+ 987 0058 11D1     		bne	.L34
+ 988              	.L29:
+  73:Core/Src/salinity.c ****     do
+ 989              		.loc 1 73 5 is_stmt 1 view .LVU159
+  75:Core/Src/salinity.c ****         {
+ 990              		.loc 1 75 9 view .LVU160
+  75:Core/Src/salinity.c ****         {
+ 991              		.loc 1 75 13 is_stmt 0 view .LVU161
+ 992 005a 4FF47A73 		mov	r3, #1000
+ 993 005e 0293     		str	r3, [sp, #8]
+ 994 0060 0123     		movs	r3, #1
+ 995 0062 0193     		str	r3, [sp, #4]
+ 996 0064 0DF11602 		add	r2, sp, #22
+ 997 0068 0092     		str	r2, [sp]
+ 998 006a 1322     		movs	r2, #19
+ 999 006c DA21     		movs	r1, #218
+ 1000 006e 1848     		ldr	r0, .L36+8
+ 1001 0070 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 1002              	.LVL116:
+  75:Core/Src/salinity.c ****         {
+ 1003              		.loc 1 75 12 discriminator 1 view .LVU162
+ 1004 0074 0028     		cmp	r0, #0
+ 1005 0076 E8D0     		beq	.L28
+  77:Core/Src/salinity.c ****         }
+ 1006              		.loc 1 77 13 is_stmt 1 view .LVU163
+ 1007 0078 FFF7FEFF 		bl	Error_Handler
+ 1008              	.LVL117:
+ 1009 007c E5E7     		b	.L28
+ 1010              	.L34:
+  81:Core/Src/salinity.c **** 
+  82:Core/Src/salinity.c ****     uint8_t buf[2];
+ 1011              		.loc 1 82 5 view .LVU164
+  83:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_temperature, 1, buf, 2, 10
+ 1012              		.loc 1 83 5 view .LVU165
+ 1013              		.loc 1 83 9 is_stmt 0 view .LVU166
+ 1014 007e 4FF47A73 		mov	r3, #1000
+ 1015 0082 0293     		str	r3, [sp, #8]
+ 1016 0084 0223     		movs	r3, #2
+ 1017 0086 0193     		str	r3, [sp, #4]
+ 1018 0088 05AB     		add	r3, sp, #20
+ 1019 008a 0093     		str	r3, [sp]
+ 1020 008c 0123     		movs	r3, #1
+ 1021 008e 0F22     		movs	r2, #15
+ 1022 0090 DA21     		movs	r1, #218
+ 1023 0092 0F48     		ldr	r0, .L36+8
+ 1024 0094 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 1025              	.LVL118:
+ 1026              		.loc 1 83 8 discriminator 1 view .LVU167
+ 1027 0098 88B9     		cbnz	r0, .L35
+ 1028              	.L30:
+  84:Core/Src/salinity.c ****     {
+  85:Core/Src/salinity.c ****         Error_Handler();
+  86:Core/Src/salinity.c ****     }
+  87:Core/Src/salinity.c **** 
+  88:Core/Src/salinity.c ****     uint16_t temperature = (buf[0] << 8) | buf[1];
+ 1029              		.loc 1 88 5 is_stmt 1 view .LVU168
+ 1030              		.loc 1 88 32 is_stmt 0 view .LVU169
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 21
+
+
+ 1031 009a 9DF81400 		ldrb	r0, [sp, #20]	@ zero_extendqisi2
+ 1032              		.loc 1 88 47 view .LVU170
+ 1033 009e 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
+ 1034              	.LVL119:
   89:Core/Src/salinity.c **** 
-  90:Core/Src/salinity.c **** /**
-  91:Core/Src/salinity.c ****  * @brief Measures pressure
-  92:Core/Src/salinity.c ****  * @return double: pressure value in decibars corrected to 0 deibars at 0 meters above sea level
-  93:Core/Src/salinity.c ****  */
-  94:Core/Src/salinity.c **** double measure_pressure(void)
-  95:Core/Src/salinity.c **** {
- 1055              		.loc 1 95 1 view -0
- 1056              		.cfi_startproc
- 1057              		@ args = 0, pretend = 0, frame = 8
- 1058              		@ frame_needed = 0, uses_anonymous_args = 0
- 1059 0000 00B5     		push	{lr}
- 1060              		.cfi_def_cfa_offset 4
- 1061              		.cfi_offset 14, -4
- 1062 0002 87B0     		sub	sp, sp, #28
- 1063              		.cfi_def_cfa_offset 32
-  96:Core/Src/salinity.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, Pressure_device_addr, 1, 1000) != HAL_OK)
- 1064              		.loc 1 96 5 view .LVU166
- 1065              		.loc 1 96 9 is_stmt 0 view .LVU167
- 1066 0004 4FF47A73 		mov	r3, #1000
- 1067 0008 0122     		movs	r2, #1
- 1068 000a DA21     		movs	r1, #218
- 1069 000c 3848     		ldr	r0, .L51+16
- 1070 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
- 1071              	.LVL119:
- 1072              		.loc 1 96 8 discriminator 1 view .LVU168
- 1073 0012 A0B9     		cbnz	r0, .L47
- 1074              	.L41:
-  97:Core/Src/salinity.c ****     {
-  98:Core/Src/salinity.c ****         Error_Handler();
-  99:Core/Src/salinity.c ****     }
- 100:Core/Src/salinity.c **** 
- 101:Core/Src/salinity.c ****     // Request pressure
- 102:Core/Src/salinity.c ****     uint8_t request = Pressure_request_pressure;
- 1075              		.loc 1 102 5 is_stmt 1 view .LVU169
- 1076              		.loc 1 102 13 is_stmt 0 view .LVU170
- 1077 0014 0623     		movs	r3, #6
- 1078 0016 8DF81730 		strb	r3, [sp, #23]
- 103:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Write(&hi2c1, Pressure_device_addr, Pressure_mem_addr_request, 1, &request, 1, 
- 1079              		.loc 1 103 5 is_stmt 1 view .LVU171
- 1080              		.loc 1 103 9 is_stmt 0 view .LVU172
- 1081 001a 4FF47A73 		mov	r3, #1000
- 1082 001e 0293     		str	r3, [sp, #8]
- 1083 0020 0123     		movs	r3, #1
- 1084 0022 0193     		str	r3, [sp, #4]
- 1085 0024 0DF11702 		add	r2, sp, #23
- 1086 0028 0092     		str	r2, [sp]
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 22
+  90:Core/Src/salinity.c ****     return ((double)temperature) * 0.1f;
+ 1035              		.loc 1 90 5 is_stmt 1 view .LVU171
+ 1036              		.loc 1 90 13 is_stmt 0 view .LVU172
+ 1037 00a2 43EA0020 		orr	r0, r3, r0, lsl #8
+ 1038              	.LVL120:
+ 1039              		.loc 1 90 13 view .LVU173
+ 1040 00a6 FFF7FEFF 		bl	__aeabi_ui2d
+ 1041              	.LVL121:
+ 1042              		.loc 1 90 34 view .LVU174
+ 1043 00aa 07A3     		adr	r3, .L36
+ 1044 00ac D3E90023 		ldrd	r2, [r3]
+ 1045 00b0 FFF7FEFF 		bl	__aeabi_dmul
+ 1046              	.LVL122:
+  91:Core/Src/salinity.c **** }
+ 1047              		.loc 1 91 1 view .LVU175
+ 1048 00b4 41EC100B 		vmov	d0, r0, r1
+ 1049 00b8 07B0     		add	sp, sp, #28
+ 1050              		.cfi_remember_state
+ 1051              		.cfi_def_cfa_offset 4
+ 1052              		@ sp needed
+ 1053 00ba 5DF804FB 		ldr	pc, [sp], #4
+ 1054              	.LVL123:
+ 1055              	.L35:
+ 1056              		.cfi_restore_state
+  85:Core/Src/salinity.c ****     }
+ 1057              		.loc 1 85 9 is_stmt 1 view .LVU176
+ 1058 00be FFF7FEFF 		bl	Error_Handler
+ 1059              	.LVL124:
+ 1060 00c2 EAE7     		b	.L30
+ 1061              	.L37:
+ 1062 00c4 AFF30080 		.align	3
+ 1063              	.L36:
+ 1064 00c8 000000A0 		.word	-1610612736
+ 1065 00cc 9999B93F 		.word	1069128089
+ 1066 00d0 00000000 		.word	hi2c1
+ 1067              		.cfi_endproc
+ 1068              	.LFE224:
+ 1070              		.section	.text.measure_pressure,"ax",%progbits
+ 1071              		.align	1
+ 1072              		.global	measure_pressure
+ 1073              		.syntax unified
+ 1074              		.thumb
+ 1075              		.thumb_func
+ 1077              	measure_pressure:
+ 1078              	.LFB225:
+  92:Core/Src/salinity.c **** 
+  93:Core/Src/salinity.c **** /**
+  94:Core/Src/salinity.c ****  * @brief Measures pressure
+  95:Core/Src/salinity.c ****  * @return double: pressure value in decibars corrected to 0 deibars at 0 meters above sea level
+  96:Core/Src/salinity.c ****  */
+  97:Core/Src/salinity.c **** double measure_pressure(void)
+  98:Core/Src/salinity.c **** {
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 22
 
 
- 1087 002a 0A22     		movs	r2, #10
- 1088 002c DA21     		movs	r1, #218
- 1089 002e 3048     		ldr	r0, .L51+16
- 1090 0030 FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 1091              	.LVL120:
- 1092              		.loc 1 103 8 discriminator 1 view .LVU173
- 1093 0034 30B9     		cbnz	r0, .L48
- 1094              	.L42:
- 104:Core/Src/salinity.c ****     {
- 105:Core/Src/salinity.c ****         Error_Handler();
- 106:Core/Src/salinity.c ****     }
- 107:Core/Src/salinity.c **** 
- 108:Core/Src/salinity.c ****     // Wait for measurement
- 109:Core/Src/salinity.c ****     uint8_t status = 0;
- 1095              		.loc 1 109 5 is_stmt 1 view .LVU174
- 1096              		.loc 1 109 13 is_stmt 0 view .LVU175
- 1097 0036 0023     		movs	r3, #0
- 1098 0038 8DF81630 		strb	r3, [sp, #22]
- 1099 003c 0DE0     		b	.L44
- 1100              	.L47:
-  98:Core/Src/salinity.c ****     }
- 1101              		.loc 1 98 9 is_stmt 1 view .LVU176
- 1102 003e FFF7FEFF 		bl	Error_Handler
- 1103              	.LVL121:
- 1104 0042 E7E7     		b	.L41
- 1105              	.L48:
- 105:Core/Src/salinity.c ****     }
- 1106              		.loc 1 105 9 view .LVU177
- 1107 0044 FFF7FEFF 		bl	Error_Handler
- 1108              	.LVL122:
- 1109 0048 F5E7     		b	.L42
- 1110              	.L43:
- 110:Core/Src/salinity.c ****     do
- 111:Core/Src/salinity.c ****     {
- 112:Core/Src/salinity.c ****         if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_status, 1, &status, 1,
- 113:Core/Src/salinity.c ****         {
- 114:Core/Src/salinity.c ****             Error_Handler();
- 115:Core/Src/salinity.c ****         }
- 116:Core/Src/salinity.c ****         HAL_Delay(100);
- 1111              		.loc 1 116 9 view .LVU178
- 1112 004a 6420     		movs	r0, #100
- 1113 004c FFF7FEFF 		bl	HAL_Delay
- 1114              	.LVL123:
- 117:Core/Src/salinity.c ****     } while ((status & Pressure_status_finished) == 0);
- 1115              		.loc 1 117 50 view .LVU179
- 1116              		.loc 1 117 22 is_stmt 0 view .LVU180
- 1117 0050 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
- 1118              		.loc 1 117 50 view .LVU181
- 1119 0054 13F0010F 		tst	r3, #1
- 1120 0058 11D1     		bne	.L49
- 1121              	.L44:
- 110:Core/Src/salinity.c ****     do
- 1122              		.loc 1 110 5 is_stmt 1 view .LVU182
- 112:Core/Src/salinity.c ****         {
- 1123              		.loc 1 112 9 view .LVU183
- 112:Core/Src/salinity.c ****         {
- 1124              		.loc 1 112 13 is_stmt 0 view .LVU184
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 23
+ 1079              		.loc 1 98 1 view -0
+ 1080              		.cfi_startproc
+ 1081              		@ args = 0, pretend = 0, frame = 8
+ 1082              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1083 0000 00B5     		push	{lr}
+ 1084              		.cfi_def_cfa_offset 4
+ 1085              		.cfi_offset 14, -4
+ 1086 0002 87B0     		sub	sp, sp, #28
+ 1087              		.cfi_def_cfa_offset 32
+  99:Core/Src/salinity.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, Pressure_device_addr, 1, 1000) != HAL_OK)
+ 1088              		.loc 1 99 5 view .LVU178
+ 1089              		.loc 1 99 9 is_stmt 0 view .LVU179
+ 1090 0004 4FF47A73 		mov	r3, #1000
+ 1091 0008 0122     		movs	r2, #1
+ 1092 000a DA21     		movs	r1, #218
+ 1093 000c 3848     		ldr	r0, .L49+16
+ 1094 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
+ 1095              	.LVL125:
+ 1096              		.loc 1 99 8 discriminator 1 view .LVU180
+ 1097 0012 A0B9     		cbnz	r0, .L45
+ 1098              	.L39:
+ 100:Core/Src/salinity.c ****     {
+ 101:Core/Src/salinity.c ****         Error_Handler();
+ 102:Core/Src/salinity.c ****     }
+ 103:Core/Src/salinity.c **** 
+ 104:Core/Src/salinity.c ****     // Request pressure
+ 105:Core/Src/salinity.c ****     uint8_t request = Pressure_request_pressure;
+ 1099              		.loc 1 105 5 is_stmt 1 view .LVU181
+ 1100              		.loc 1 105 13 is_stmt 0 view .LVU182
+ 1101 0014 0623     		movs	r3, #6
+ 1102 0016 8DF81730 		strb	r3, [sp, #23]
+ 106:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Write(&hi2c1, Pressure_device_addr, Pressure_mem_addr_request, 1, &request, 1, 
+ 1103              		.loc 1 106 5 is_stmt 1 view .LVU183
+ 1104              		.loc 1 106 9 is_stmt 0 view .LVU184
+ 1105 001a 4FF47A73 		mov	r3, #1000
+ 1106 001e 0293     		str	r3, [sp, #8]
+ 1107 0020 0123     		movs	r3, #1
+ 1108 0022 0193     		str	r3, [sp, #4]
+ 1109 0024 0DF11702 		add	r2, sp, #23
+ 1110 0028 0092     		str	r2, [sp]
+ 1111 002a 0A22     		movs	r2, #10
+ 1112 002c DA21     		movs	r1, #218
+ 1113 002e 3048     		ldr	r0, .L49+16
+ 1114 0030 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 1115              	.LVL126:
+ 1116              		.loc 1 106 8 discriminator 1 view .LVU185
+ 1117 0034 30B9     		cbnz	r0, .L46
+ 1118              	.L40:
+ 107:Core/Src/salinity.c ****     {
+ 108:Core/Src/salinity.c ****         Error_Handler();
+ 109:Core/Src/salinity.c ****     }
+ 110:Core/Src/salinity.c **** 
+ 111:Core/Src/salinity.c ****     // Wait for measurement
+ 112:Core/Src/salinity.c ****     uint8_t status = 0;
+ 1119              		.loc 1 112 5 is_stmt 1 view .LVU186
+ 1120              		.loc 1 112 13 is_stmt 0 view .LVU187
+ 1121 0036 0023     		movs	r3, #0
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 23
 
 
- 1125 005a 4FF47A73 		mov	r3, #1000
- 1126 005e 0293     		str	r3, [sp, #8]
- 1127 0060 0123     		movs	r3, #1
- 1128 0062 0193     		str	r3, [sp, #4]
- 1129 0064 0DF11602 		add	r2, sp, #22
- 1130 0068 0092     		str	r2, [sp]
- 1131 006a 1322     		movs	r2, #19
- 1132 006c DA21     		movs	r1, #218
- 1133 006e 2048     		ldr	r0, .L51+16
- 1134 0070 FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 1135              	.LVL124:
- 112:Core/Src/salinity.c ****         {
- 1136              		.loc 1 112 12 discriminator 1 view .LVU185
- 1137 0074 0028     		cmp	r0, #0
- 1138 0076 E8D0     		beq	.L43
- 114:Core/Src/salinity.c ****         }
- 1139              		.loc 1 114 13 is_stmt 1 view .LVU186
- 1140 0078 FFF7FEFF 		bl	Error_Handler
- 1141              	.LVL125:
- 1142 007c E5E7     		b	.L43
- 1143              	.L49:
- 118:Core/Src/salinity.c **** 
- 119:Core/Src/salinity.c ****     uint8_t buf[4];
- 1144              		.loc 1 119 5 view .LVU187
- 120:Core/Src/salinity.c **** 
- 121:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_pressure, 1, buf, 4, 1000)
- 1145              		.loc 1 121 5 view .LVU188
- 1146              		.loc 1 121 9 is_stmt 0 view .LVU189
- 1147 007e 4FF47A73 		mov	r3, #1000
- 1148 0082 0293     		str	r3, [sp, #8]
- 1149 0084 0423     		movs	r3, #4
- 1150 0086 0193     		str	r3, [sp, #4]
- 1151 0088 04AB     		add	r3, sp, #16
- 1152 008a 0093     		str	r3, [sp]
- 1153 008c 0123     		movs	r3, #1
- 1154 008e 0B22     		movs	r2, #11
- 1155 0090 DA21     		movs	r1, #218
- 1156 0092 1748     		ldr	r0, .L51+16
- 1157 0094 FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 1158              	.LVL126:
- 1159              		.loc 1 121 8 discriminator 1 view .LVU190
- 1160 0098 F0B9     		cbnz	r0, .L50
- 1161              	.L45:
- 122:Core/Src/salinity.c ****     {
- 123:Core/Src/salinity.c ****         Error_Handler();
- 124:Core/Src/salinity.c ****     }
- 125:Core/Src/salinity.c **** 
- 126:Core/Src/salinity.c ****     uint32_t pressure = (buf[0] << 24) | (buf[1] << 16) | (buf[2] << 8) | buf[3];
- 1162              		.loc 1 126 5 is_stmt 1 view .LVU191
- 1163              		.loc 1 126 29 is_stmt 0 view .LVU192
- 1164 009a 9DF81020 		ldrb	r2, [sp, #16]	@ zero_extendqisi2
- 1165              		.loc 1 126 46 view .LVU193
- 1166 009e 9DF81130 		ldrb	r3, [sp, #17]	@ zero_extendqisi2
- 1167              		.loc 1 126 50 view .LVU194
- 1168 00a2 1B04     		lsls	r3, r3, #16
- 1169              		.loc 1 126 40 view .LVU195
- 1170 00a4 43EA0263 		orr	r3, r3, r2, lsl #24
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 24
+ 1122 0038 8DF81630 		strb	r3, [sp, #22]
+ 1123 003c 0DE0     		b	.L42
+ 1124              	.L45:
+ 101:Core/Src/salinity.c ****     }
+ 1125              		.loc 1 101 9 is_stmt 1 view .LVU188
+ 1126 003e FFF7FEFF 		bl	Error_Handler
+ 1127              	.LVL127:
+ 1128 0042 E7E7     		b	.L39
+ 1129              	.L46:
+ 108:Core/Src/salinity.c ****     }
+ 1130              		.loc 1 108 9 view .LVU189
+ 1131 0044 FFF7FEFF 		bl	Error_Handler
+ 1132              	.LVL128:
+ 1133 0048 F5E7     		b	.L40
+ 1134              	.L41:
+ 113:Core/Src/salinity.c ****     do
+ 114:Core/Src/salinity.c ****     {
+ 115:Core/Src/salinity.c ****         if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_status, 1, &status, 1,
+ 116:Core/Src/salinity.c ****         {
+ 117:Core/Src/salinity.c ****             Error_Handler();
+ 118:Core/Src/salinity.c ****         }
+ 119:Core/Src/salinity.c ****         HAL_Delay(100);
+ 1135              		.loc 1 119 9 view .LVU190
+ 1136 004a 6420     		movs	r0, #100
+ 1137 004c FFF7FEFF 		bl	HAL_Delay
+ 1138              	.LVL129:
+ 120:Core/Src/salinity.c ****     } while ((status & Pressure_status_finished) == 0);
+ 1139              		.loc 1 120 50 view .LVU191
+ 1140              		.loc 1 120 22 is_stmt 0 view .LVU192
+ 1141 0050 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
+ 1142              		.loc 1 120 50 view .LVU193
+ 1143 0054 13F0010F 		tst	r3, #1
+ 1144 0058 11D1     		bne	.L47
+ 1145              	.L42:
+ 113:Core/Src/salinity.c ****     do
+ 1146              		.loc 1 113 5 is_stmt 1 view .LVU194
+ 115:Core/Src/salinity.c ****         {
+ 1147              		.loc 1 115 9 view .LVU195
+ 115:Core/Src/salinity.c ****         {
+ 1148              		.loc 1 115 13 is_stmt 0 view .LVU196
+ 1149 005a 4FF47A73 		mov	r3, #1000
+ 1150 005e 0293     		str	r3, [sp, #8]
+ 1151 0060 0123     		movs	r3, #1
+ 1152 0062 0193     		str	r3, [sp, #4]
+ 1153 0064 0DF11602 		add	r2, sp, #22
+ 1154 0068 0092     		str	r2, [sp]
+ 1155 006a 1322     		movs	r2, #19
+ 1156 006c DA21     		movs	r1, #218
+ 1157 006e 2048     		ldr	r0, .L49+16
+ 1158 0070 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 1159              	.LVL130:
+ 115:Core/Src/salinity.c ****         {
+ 1160              		.loc 1 115 12 discriminator 1 view .LVU197
+ 1161 0074 0028     		cmp	r0, #0
+ 1162 0076 E8D0     		beq	.L41
+ 117:Core/Src/salinity.c ****         }
+ 1163              		.loc 1 117 13 is_stmt 1 view .LVU198
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 24
 
 
- 1171              		.loc 1 126 63 view .LVU196
- 1172 00a8 9DF81220 		ldrb	r2, [sp, #18]	@ zero_extendqisi2
- 1173              		.loc 1 126 57 view .LVU197
- 1174 00ac 43EA0223 		orr	r3, r3, r2, lsl #8
- 1175              		.loc 1 126 78 view .LVU198
- 1176 00b0 9DF81300 		ldrb	r0, [sp, #19]	@ zero_extendqisi2
- 1177              	.LVL127:
- 127:Core/Src/salinity.c ****     
- 128:Core/Src/salinity.c ****     return ((double) pressure - PASCALS_AT_SEA_LEVEL) * PASCALS_PER_DECIBAR;
- 1178              		.loc 1 128 5 is_stmt 1 view .LVU199
- 1179              		.loc 1 128 13 is_stmt 0 view .LVU200
- 1180 00b4 1843     		orrs	r0, r0, r3
- 1181              	.LVL128:
- 1182              		.loc 1 128 13 view .LVU201
- 1183 00b6 FFF7FEFF 		bl	__aeabi_ui2d
- 1184              	.LVL129:
- 1185              		.loc 1 128 31 view .LVU202
- 1186 00ba 09A3     		adr	r3, .L51
- 1187 00bc D3E90023 		ldrd	r2, [r3]
- 1188 00c0 FFF7FEFF 		bl	__aeabi_dsub
- 1189              	.LVL130:
- 1190              		.loc 1 128 55 view .LVU203
- 1191 00c4 08A3     		adr	r3, .L51+8
- 1192 00c6 D3E90023 		ldrd	r2, [r3]
- 1193 00ca FFF7FEFF 		bl	__aeabi_dmul
- 1194              	.LVL131:
- 129:Core/Src/salinity.c **** }
- 1195              		.loc 1 129 1 view .LVU204
- 1196 00ce 41EC100B 		vmov	d0, r0, r1
- 1197 00d2 07B0     		add	sp, sp, #28
- 1198              		.cfi_remember_state
- 1199              		.cfi_def_cfa_offset 4
- 1200              		@ sp needed
- 1201 00d4 5DF804FB 		ldr	pc, [sp], #4
- 1202              	.LVL132:
- 1203              	.L50:
- 1204              		.cfi_restore_state
- 123:Core/Src/salinity.c ****     }
- 1205              		.loc 1 123 9 is_stmt 1 view .LVU205
- 1206 00d8 FFF7FEFF 		bl	Error_Handler
- 1207              	.LVL133:
- 1208 00dc DDE7     		b	.L45
- 1209              	.L52:
- 1210 00de 00BF     		.align	3
- 1211              	.L51:
- 1212 00e0 00000000 		.word	0
- 1213 00e4 D0BCF840 		.word	1090043088
- 1214 00e8 2D431CEB 		.word	-350469331
- 1215 00ec E2361A3F 		.word	1058682594
- 1216 00f0 00000000 		.word	hi2c1
- 1217              		.cfi_endproc
- 1218              	.LFE224:
- 1220              		.text
- 1221              	.Letext0:
- 1222              		.file 2 "/opt/local/arm-none-eabi/include/machine/_default_types.h"
- 1223              		.file 3 "/opt/local/arm-none-eabi/include/sys/_stdint.h"
- 1224              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 25
+ 1164 0078 FFF7FEFF 		bl	Error_Handler
+ 1165              	.LVL131:
+ 1166 007c E5E7     		b	.L41
+ 1167              	.L47:
+ 121:Core/Src/salinity.c **** 
+ 122:Core/Src/salinity.c ****     uint8_t buf[4];
+ 1168              		.loc 1 122 5 view .LVU199
+ 123:Core/Src/salinity.c **** 
+ 124:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_pressure, 1, buf, 4, 1000)
+ 1169              		.loc 1 124 5 view .LVU200
+ 1170              		.loc 1 124 9 is_stmt 0 view .LVU201
+ 1171 007e 4FF47A73 		mov	r3, #1000
+ 1172 0082 0293     		str	r3, [sp, #8]
+ 1173 0084 0423     		movs	r3, #4
+ 1174 0086 0193     		str	r3, [sp, #4]
+ 1175 0088 04AB     		add	r3, sp, #16
+ 1176 008a 0093     		str	r3, [sp]
+ 1177 008c 0123     		movs	r3, #1
+ 1178 008e 0B22     		movs	r2, #11
+ 1179 0090 DA21     		movs	r1, #218
+ 1180 0092 1748     		ldr	r0, .L49+16
+ 1181 0094 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 1182              	.LVL132:
+ 1183              		.loc 1 124 8 discriminator 1 view .LVU202
+ 1184 0098 F0B9     		cbnz	r0, .L48
+ 1185              	.L43:
+ 125:Core/Src/salinity.c ****     {
+ 126:Core/Src/salinity.c ****         Error_Handler();
+ 127:Core/Src/salinity.c ****     }
+ 128:Core/Src/salinity.c **** 
+ 129:Core/Src/salinity.c ****     uint32_t pressure = (buf[0] << 24) | (buf[1] << 16) | (buf[2] << 8) | buf[3];
+ 1186              		.loc 1 129 5 is_stmt 1 view .LVU203
+ 1187              		.loc 1 129 29 is_stmt 0 view .LVU204
+ 1188 009a 9DF81020 		ldrb	r2, [sp, #16]	@ zero_extendqisi2
+ 1189              		.loc 1 129 46 view .LVU205
+ 1190 009e 9DF81130 		ldrb	r3, [sp, #17]	@ zero_extendqisi2
+ 1191              		.loc 1 129 50 view .LVU206
+ 1192 00a2 1B04     		lsls	r3, r3, #16
+ 1193              		.loc 1 129 40 view .LVU207
+ 1194 00a4 43EA0263 		orr	r3, r3, r2, lsl #24
+ 1195              		.loc 1 129 63 view .LVU208
+ 1196 00a8 9DF81220 		ldrb	r2, [sp, #18]	@ zero_extendqisi2
+ 1197              		.loc 1 129 57 view .LVU209
+ 1198 00ac 43EA0223 		orr	r3, r3, r2, lsl #8
+ 1199              		.loc 1 129 78 view .LVU210
+ 1200 00b0 9DF81300 		ldrb	r0, [sp, #19]	@ zero_extendqisi2
+ 1201              	.LVL133:
+ 130:Core/Src/salinity.c ****     
+ 131:Core/Src/salinity.c ****     return ((double) pressure - PASCALS_AT_SEA_LEVEL) * PASCALS_PER_DECIBAR;
+ 1202              		.loc 1 131 5 is_stmt 1 view .LVU211
+ 1203              		.loc 1 131 13 is_stmt 0 view .LVU212
+ 1204 00b4 1843     		orrs	r0, r0, r3
+ 1205              	.LVL134:
+ 1206              		.loc 1 131 13 view .LVU213
+ 1207 00b6 FFF7FEFF 		bl	__aeabi_ui2d
+ 1208              	.LVL135:
+ 1209              		.loc 1 131 31 view .LVU214
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 25
 
 
- 1225              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 1226              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 1227              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 1228              		.file 8 "Core/Inc/voltage.h"
- 1229              		.file 9 "Core/Inc/salinity.h"
- 1230              		.file 10 "Core/Inc/i2c.h"
- 1231              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 1232              		.file 12 "Core/Inc/main.h"
- 1233              		.file 13 "/opt/local/arm-none-eabi/include/math.h"
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s 			page 26
+ 1210 00ba 09A3     		adr	r3, .L49
+ 1211 00bc D3E90023 		ldrd	r2, [r3]
+ 1212 00c0 FFF7FEFF 		bl	__aeabi_dsub
+ 1213              	.LVL136:
+ 1214              		.loc 1 131 55 view .LVU215
+ 1215 00c4 08A3     		adr	r3, .L49+8
+ 1216 00c6 D3E90023 		ldrd	r2, [r3]
+ 1217 00ca FFF7FEFF 		bl	__aeabi_dmul
+ 1218              	.LVL137:
+ 132:Core/Src/salinity.c **** }
+ 1219              		.loc 1 132 1 view .LVU216
+ 1220 00ce 41EC100B 		vmov	d0, r0, r1
+ 1221 00d2 07B0     		add	sp, sp, #28
+ 1222              		.cfi_remember_state
+ 1223              		.cfi_def_cfa_offset 4
+ 1224              		@ sp needed
+ 1225 00d4 5DF804FB 		ldr	pc, [sp], #4
+ 1226              	.LVL138:
+ 1227              	.L48:
+ 1228              		.cfi_restore_state
+ 126:Core/Src/salinity.c ****     }
+ 1229              		.loc 1 126 9 is_stmt 1 view .LVU217
+ 1230 00d8 FFF7FEFF 		bl	Error_Handler
+ 1231              	.LVL139:
+ 1232 00dc DDE7     		b	.L43
+ 1233              	.L50:
+ 1234 00de 00BF     		.align	3
+ 1235              	.L49:
+ 1236 00e0 00000000 		.word	0
+ 1237 00e4 D0BCF840 		.word	1090043088
+ 1238 00e8 2D431CEB 		.word	-350469331
+ 1239 00ec E2361A3F 		.word	1058682594
+ 1240 00f0 00000000 		.word	hi2c1
+ 1241              		.cfi_endproc
+ 1242              	.LFE225:
+ 1244              		.text
+ 1245              	.Letext0:
+ 1246              		.file 2 "/opt/local/arm-none-eabi/include/machine/_default_types.h"
+ 1247              		.file 3 "/opt/local/arm-none-eabi/include/sys/_stdint.h"
+ 1248              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
+ 1249              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 1250              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 1251              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 1252              		.file 8 "../RS485/ProbeConfiguration.h"
+ 1253              		.file 9 "Core/Inc/voltage.h"
+ 1254              		.file 10 "Core/Inc/salinity.h"
+ 1255              		.file 11 "Core/Inc/i2c.h"
+ 1256              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 1257              		.file 13 "Core/Inc/main.h"
+ 1258              		.file 14 "/opt/local/arm-none-eabi/include/math.h"
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 26
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 salinity.c
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:25     .text.calculate_salinity:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:31     .text.calculate_salinity:00000000 calculate_salinity
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:477    .text.calculate_salinity:00000308 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:531    .text.calculate_salinity:000003dc $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:640    .text.calculate_salinity:00000498 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:651    .text.calculate_conductivity:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:657    .text.calculate_conductivity:00000000 calculate_conductivity
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:782    .text.calculate_conductivity:00000078 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:794    .text.calculate_resistance:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:800    .text.calculate_resistance:00000000 calculate_resistance
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:885    .text.calculate_resistance:00000054 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:890    .text.measure_temperature:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:896    .text.measure_temperature:00000000 measure_temperature
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:1040   .text.measure_temperature:000000c8 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:1047   .text.measure_pressure:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:1053   .text.measure_pressure:00000000 measure_pressure
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccoNU7JV.s:1212   .text.measure_pressure:000000e0 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:25     .text.calculate_salinity:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:31     .text.calculate_salinity:00000000 calculate_salinity
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:477    .text.calculate_salinity:00000308 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:531    .text.calculate_salinity:000003dc $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:640    .text.calculate_salinity:00000498 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:651    .text.calculate_average_resistance:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:657    .text.calculate_average_resistance:00000000 calculate_average_resistance
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:735    .text.calculate_conductivity:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:741    .text.calculate_conductivity:00000000 calculate_conductivity
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:806    .text.calculate_conductivity:00000048 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:818    .text.calculate_resistance:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:824    .text.calculate_resistance:00000000 calculate_resistance
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:909    .text.calculate_resistance:00000054 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:914    .text.measure_temperature:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:920    .text.measure_temperature:00000000 measure_temperature
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:1064   .text.measure_temperature:000000c8 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:1071   .text.measure_pressure:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:1077   .text.measure_pressure:00000000 measure_pressure
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:1236   .text.measure_pressure:000000e0 $d
 
 UNDEFINED SYMBOLS
 __aeabi_ddiv

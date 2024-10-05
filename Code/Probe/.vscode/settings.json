@@ -14,7 +14,11 @@
         "bit": "c",
         "cmath": "c",
         "*.tcc": "c",
-        "i2c.h": "c"
+        "i2c.h": "c",
+        "probeconfiguration.h": "c"
     },
-    "cmake.sourceDirectory": "/Users/cameronclark/Documents/UCT/EEE4022S/EEE4022S_Salinity_JCP24-03/Code/Probe/Drivers/CMSIS/DSP/Source/ControllerFunctions"
+    "cmake.sourceDirectory": "/Users/cameronclark/Documents/UCT/EEE4022S/EEE4022S_Salinity_JCP24-03/Code/Probe/Drivers/CMSIS/DSP/Source/ControllerFunctions",
+    "C_Cpp.default.includePath": [
+        "../RS485"
+    ]
 }

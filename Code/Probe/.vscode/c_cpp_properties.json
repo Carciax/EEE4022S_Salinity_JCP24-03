@@ -3,6 +3,7 @@
     {
       "name": "STM32",
       "includePath": [
+        "../RS485",
         "Core/Inc",
         "Drivers/CMSIS/Device/ST/STM32F4xx/Include",
         "Drivers/CMSIS/Include",

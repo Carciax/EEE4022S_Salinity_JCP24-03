@@ -18,23 +18,26 @@ double calculate_conductivity(Electrode_Type electrode, ResistanceSample_TypeDef
     switch (electrode)
     {
     case Au:
-    {
+    case Au_Shielded:
         // average resistance
-        double sum = 0;
-        for (uint16_t i = 0; i < num_samples; i++)
-        {
-            sum += samples[i].resistance;
-        }
-        double average_resistance = sum / num_samples;
+        double average_resistance = calculate_average_resistance(samples, num_samples);
         // calcualte resistivity, return conductivity
         double resistivity = average_resistance * AU_PAD_AREA / AU_PAD_DISTANCE;
         return 1 / resistivity;
-    }
     case Ti:
-    {
         return 0;
     }
+    return 0; // should never reach here
+}
+
+double calculate_average_resistance(ResistanceSample_TypeDef *samples, uint16_t num_samples)
+{
+    double sum = 0;
+    for (uint16_t i = 0; i < num_samples; i++)
+    {
+        sum += samples[i].resistance;
     }
+    return sum / num_samples;
 }
 
 void calculate_resistance(VoltageSample_TypeDef *voltage_samples, ResistanceSample_TypeDef *reistance_samples, uint16_t num_samples)

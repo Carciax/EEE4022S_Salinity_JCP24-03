@@ -57,12 +57,12 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define SW_Shield1_Au2_Pin GPIO_PIN_13
-#define SW_Shield1_Au2_GPIO_Port GPIOC
-#define SW_Shield2_Au1_Pin GPIO_PIN_14
-#define SW_Shield2_Au1_GPIO_Port GPIOC
-#define SW_Shield2_Au2_Pin GPIO_PIN_15
-#define SW_Shield2_Au2_GPIO_Port GPIOC
+#define SW_Shield2_V_Pin GPIO_PIN_13
+#define SW_Shield2_V_GPIO_Port GPIOC
+#define SW_Shield1_GND_Pin GPIO_PIN_14
+#define SW_Shield1_GND_GPIO_Port GPIOC
+#define SW_Shield2_GND_Pin GPIO_PIN_15
+#define SW_Shield2_GND_GPIO_Port GPIOC
 #define SW_R1_100_Pin GPIO_PIN_0
 #define SW_R1_100_GPIO_Port GPIOC
 #define SW_R1_1k_Pin GPIO_PIN_1
@@ -109,8 +109,8 @@ void Error_Handler(void);
 #define SW_Ti1_GND_GPIO_Port GPIOC
 #define SW_Ti2_GND_Pin GPIO_PIN_11
 #define SW_Ti2_GND_GPIO_Port GPIOC
-#define SW_Shield1_Au1_Pin GPIO_PIN_12
-#define SW_Shield1_Au1_GPIO_Port GPIOC
+#define SW_Shield1_V_Pin GPIO_PIN_12
+#define SW_Shield1_V_GPIO_Port GPIOC
 #define RS485_UART_Pin GPIO_PIN_6
 #define RS485_UART_GPIO_Port GPIOB
 #define RS485_DE_Pin GPIO_PIN_7

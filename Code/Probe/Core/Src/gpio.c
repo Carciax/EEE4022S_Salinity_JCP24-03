@@ -54,10 +54,10 @@ void MX_GPIO_Init(void)
   __HAL_RCC_GPIOD_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, SW_Shield1_Au2_Pin|SW_Shield2_Au1_Pin|SW_Shield2_Au2_Pin|SW_R1_100_Pin
+  HAL_GPIO_WritePin(GPIOC, SW_Shield2_V_Pin|SW_Shield1_GND_Pin|SW_Shield2_GND_Pin|SW_R1_100_Pin
                           |SW_R1_1k_Pin|SW_R1_10k_Pin|SW_R1_Calib_Pin|SW_R1_Au1_Pin
                           |SW_R1_Au2_Pin|SW_R1_Ti1_Pin|SW_R1_Ti2_Pin|SW_Au1_GND_Pin
-                          |SW_Au2_GND_Pin|SW_Ti1_GND_Pin|SW_Ti2_GND_Pin|SW_Shield1_Au1_Pin, GPIO_PIN_RESET);
+                          |SW_Au2_GND_Pin|SW_Ti1_GND_Pin|SW_Ti2_GND_Pin|SW_Shield1_V_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, LED_Red_Pin|LED_Green_Pin|RS485_DE_Pin, GPIO_PIN_RESET);
@@ -66,10 +66,10 @@ void MX_GPIO_Init(void)
                            PCPin PCPin PCPin PCPin
                            PCPin PCPin PCPin PCPin
                            PCPin PCPin PCPin PCPin */
-  GPIO_InitStruct.Pin = SW_Shield1_Au2_Pin|SW_Shield2_Au1_Pin|SW_Shield2_Au2_Pin|SW_R1_100_Pin
+  GPIO_InitStruct.Pin = SW_Shield2_V_Pin|SW_Shield1_GND_Pin|SW_Shield2_GND_Pin|SW_R1_100_Pin
                           |SW_R1_1k_Pin|SW_R1_10k_Pin|SW_R1_Calib_Pin|SW_R1_Au1_Pin
                           |SW_R1_Au2_Pin|SW_R1_Ti1_Pin|SW_R1_Ti2_Pin|SW_Au1_GND_Pin
-                          |SW_Au2_GND_Pin|SW_Ti1_GND_Pin|SW_Ti2_GND_Pin|SW_Shield1_Au1_Pin;
+                          |SW_Au2_GND_Pin|SW_Ti1_GND_Pin|SW_Ti2_GND_Pin|SW_Shield1_V_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

@@ -6,8 +6,8 @@
 void voltage_init (void)
 {
     dac_init();
-    // adc_set_channel(ADC_CHANNEL_SIGNAL);
-    adc_set_channel(ADC_CHANNEL_AMP);
+    adc_set_channel(ADC_CHANNEL_SIGNAL);
+    // adc_set_channel(ADC_CHANNEL_AMP);
     reset_muxs();
     HAL_TIM_Base_Start(&htim10);
 }
@@ -119,6 +119,12 @@ uint16_t measure_pin_voltage (Direction direction, Electrode_Type electrode, uin
             adc_reverse_val = adc_average(adc_samples);
             GPIOSW->BSRR = (SW_R1_Ti2_Pin | SW_Ti1_GND_Pin) << 16;
             break;
+        case Au_Shielded:
+            GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Au1_GND_Pin | SW_Shield2_V_Pin | SW_Shield1_GND_Pin;
+            us_delay(VOLTAGE_SETTLE_TIME);
+            adc_reverse_val = adc_average(adc_samples);
+            GPIOSW->BSRR = (SW_R1_Au2_Pin | SW_Au1_GND_Pin | SW_Shield2_V_Pin | SW_Shield1_GND_Pin) << 16;
+            break;
         }
     case UNIDIRECTIONAL:
         switch (electrode)
@@ -135,8 +141,13 @@ uint16_t measure_pin_voltage (Direction direction, Electrode_Type electrode, uin
             adc_forward_val = adc_average(adc_samples);
             GPIOSW->BSRR = (SW_R1_Ti1_Pin | SW_Ti2_GND_Pin) << 16;
             break;
+        case Au_Shielded:
+            GPIOSW->BSRR = SW_R1_Au1_Pin | SW_Au2_GND_Pin | SW_Shield1_V_Pin | SW_Shield2_GND_Pin;
+            us_delay(VOLTAGE_SETTLE_TIME);
+            adc_forward_val = adc_average(adc_samples);
+            GPIOSW->BSRR = (SW_R1_Au1_Pin | SW_Au2_GND_Pin | SW_Shield1_V_Pin | SW_Shield2_GND_Pin) << 16;
+            break;
         }
-        break;
     }
 
     if (direction == BIDIRECTIONAL) {
@@ -174,7 +185,7 @@ void measure_voltage_sweep (VoltageSample_TypeDef* samples, Direction direction,
         adc_set_channel(ADC_CHANNEL_DAC);
         samples[i].dac_output = measure_dac_voltage(adc_samples);
 
-        adc_set_channel(ADC_CHANNEL_AMP);
+        adc_set_channel(ADC_CHANNEL_SIGNAL);
         samples[i].calib = measure_calib_voltage(adc_samples);
 
         samples[i].measurement = measure_pin_voltage(direction, electrode, adc_samples);

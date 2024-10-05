@@ -6,6 +6,7 @@
 #include "adc.h"
 #include "i2c.h"
 #include "tim.h"
+#include "ProbeConfiguration.h"
 
 /* Private defines -----------------------------------------------------------*/
 /* SWITCHES */
@@ -39,7 +40,7 @@
 #define DAC_trigger_reset 0x0008
 #define DAC_trigger_config_reset (0b1 << 9)
 
-#define VOLTAGE_SETTLE_TIME 20 // us
+#define VOLTAGE_SETTLE_TIME 10 // us
 
 /* Private typedef -----------------------------------------------------------*/
 typedef enum {
@@ -53,22 +54,6 @@ typedef enum {
     ADC_CHANNEL_TI2 = ADC_CHANNEL_7,
     ADC_CHANNEL_CALIB = ADC_CHANNEL_8
 } ADC_Channel;
-
-typedef enum {
-    R1_100 = 0U,
-    R1_1k = 1U,
-    R1_10k = 2U
-} R1_Type;
-
-typedef enum {
-    Au = 0U,
-    Ti = 1U,
-} Electrode_Type;
-
-typedef enum {
-    UNIDIRECTIONAL = 0U,
-    BIDIRECTIONAL = 1U,
-} Direction;
 
 typedef struct {
     uint16_t dac_input;

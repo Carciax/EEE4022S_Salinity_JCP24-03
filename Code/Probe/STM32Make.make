@@ -189,6 +189,7 @@ AS_INCLUDES = \
 
 # C includes
 C_INCLUDES =  \
+-I../RS485 \
 -ICore/Inc \
 -IDrivers/CMSIS/Device/ST/STM32F4xx/Include \
 -IDrivers/CMSIS/Include \

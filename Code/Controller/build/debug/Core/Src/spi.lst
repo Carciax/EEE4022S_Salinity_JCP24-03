@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 1
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 1
   30:Core/Src/spi.c **** void MX_SPI2_Init(void)
   31:Core/Src/spi.c **** {
   27              		.loc 1 31 1 view -0
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 2
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s 			page 2
 
 
   28              		.cfi_startproc
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 1
   66              		.loc 1 47 32 is_stmt 0 view .LVU16
   67 0022 C361     		str	r3, [r0, #28]
   48:Core/Src/spi.c ****   hspi2.Init.FirstBit = SPI_FIRSTBIT_MSB;
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 3
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s 			page 3
 
 
   68              		.loc 1 48 3 is_stmt 1 view .LVU17
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 1
  107 0046 C046     		.align	2
  108              	.L4:
  109 0048 00000000 		.word	hspi2
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 4
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s 			page 4
 
 
  110 004c 00380040 		.word	1073756160
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 1
   76:Core/Src/spi.c ****     __HAL_RCC_GPIOB_CLK_ENABLE();
   77:Core/Src/spi.c ****     /**SPI2 GPIO Configuration
   78:Core/Src/spi.c ****     PB13     ------> SPI2_SCK
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 5
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s 			page 5
 
 
   79:Core/Src/spi.c ****     PB14     ------> SPI2_MISO
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 1
  183 0030 5A69     		ldr	r2, [r3, #20]
  184 0032 8021     		movs	r1, #128
  185 0034 C902     		lsls	r1, r1, #11
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 6
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s 			page 6
 
 
  186 0036 0A43     		orrs	r2, r1
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 1
  229              		.global	HAL_SPI_MspDeInit
  230              		.syntax unified
  231              		.code	16
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 7
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s 			page 7
 
 
  232              		.thumb_func
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 1
  262 000e D369     		ldr	r3, [r2, #28]
  263 0010 0649     		ldr	r1, .L14+8
  264 0012 0B40     		ands	r3, r1
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 8
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s 			page 8
 
 
  265 0014 D361     		str	r3, [r2, #28]
@@ -464,22 +464,22 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 1
  302              		.file 9 "Core/Inc/spi.h"
  303              		.file 10 "Core/Inc/main.h"
  304              		.file 11 "<built-in>"
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s 			page 9
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s 			page 9
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 spi.c
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s:19     .text.MX_SPI2_Init:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s:25     .text.MX_SPI2_Init:00000000 MX_SPI2_Init
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s:109    .text.MX_SPI2_Init:00000048 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s:291    .bss.hspi2:00000000 hspi2
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s:115    .text.HAL_SPI_MspInit:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s:121    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s:221    .text.HAL_SPI_MspInit:0000005c $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s:228    .text.HAL_SPI_MspDeInit:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s:234    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s:279    .text.HAL_SPI_MspDeInit:00000024 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuAEDEO.s:288    .bss.hspi2:00000000 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s:19     .text.MX_SPI2_Init:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s:25     .text.MX_SPI2_Init:00000000 MX_SPI2_Init
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s:109    .text.MX_SPI2_Init:00000048 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s:291    .bss.hspi2:00000000 hspi2
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s:115    .text.HAL_SPI_MspInit:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s:121    .text.HAL_SPI_MspInit:00000000 HAL_SPI_MspInit
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s:221    .text.HAL_SPI_MspInit:0000005c $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s:228    .text.HAL_SPI_MspDeInit:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s:234    .text.HAL_SPI_MspDeInit:00000000 HAL_SPI_MspDeInit
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s:279    .text.HAL_SPI_MspDeInit:00000024 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccdzvFMv.s:288    .bss.hspi2:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_SPI_Init

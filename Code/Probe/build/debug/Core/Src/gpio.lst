@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 1
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cczWauE7.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 1
   28:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
   29:Core/Src/gpio.c **** /* Configure GPIO                                                             */
   30:Core/Src/gpio.c **** /*----------------------------------------------------------------------------*/
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 2
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cczWauE7.s 			page 2
 
 
   31:Core/Src/gpio.c **** /* USER CODE BEGIN 1 */
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 1
   63              		.loc 1 50 3 view .LVU7
   64 0024 009A     		ldr	r2, [sp]
   65              	.LBE2:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 3
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cczWauE7.s 			page 3
 
 
   66              		.loc 1 50 3 view .LVU8
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 1
  116              	.LBB6:
  117              		.loc 1 54 3 view .LVU28
  118 0062 0494     		str	r4, [sp, #16]
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 4
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cczWauE7.s 			page 4
 
 
  119              		.loc 1 54 3 view .LVU29
@@ -195,7 +195,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 1
  130              		.loc 1 54 3 view .LVU32
   55:Core/Src/gpio.c **** 
   56:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
-  57:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOC, SW_Shield1_Au2_Pin|SW_Shield2_Au1_Pin|SW_Shield2_Au2_Pin|SW_R1_100_Pin
+  57:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOC, SW_Shield2_V_Pin|SW_Shield1_GND_Pin|SW_Shield2_GND_Pin|SW_R1_100_Pin
  131              		.loc 1 57 3 view .LVU33
  132 0076 234D     		ldr	r5, .L3+4
  133 0078 2246     		mov	r2, r4
@@ -205,7 +205,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 1
  137              	.LVL0:
   58:Core/Src/gpio.c ****                           |SW_R1_1k_Pin|SW_R1_10k_Pin|SW_R1_Calib_Pin|SW_R1_Au1_Pin
   59:Core/Src/gpio.c ****                           |SW_R1_Au2_Pin|SW_R1_Ti1_Pin|SW_R1_Ti2_Pin|SW_Au1_GND_Pin
-  60:Core/Src/gpio.c ****                           |SW_Au2_GND_Pin|SW_Ti1_GND_Pin|SW_Ti2_GND_Pin|SW_Shield1_Au1_Pin, GPIO_PI
+  60:Core/Src/gpio.c ****                           |SW_Au2_GND_Pin|SW_Ti1_GND_Pin|SW_Ti2_GND_Pin|SW_Shield1_V_Pin, GPIO_PIN_
   61:Core/Src/gpio.c **** 
   62:Core/Src/gpio.c ****   /*Configure GPIO pin Output Level */
   63:Core/Src/gpio.c ****   HAL_GPIO_WritePin(GPIOB, LED_Red_Pin|LED_Green_Pin|RS485_DE_Pin, GPIO_PIN_RESET);
@@ -221,14 +221,14 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 1
   66:Core/Src/gpio.c ****                            PCPin PCPin PCPin PCPin
   67:Core/Src/gpio.c ****                            PCPin PCPin PCPin PCPin
   68:Core/Src/gpio.c ****                            PCPin PCPin PCPin PCPin */
-  69:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = SW_Shield1_Au2_Pin|SW_Shield2_Au1_Pin|SW_Shield2_Au2_Pin|SW_R1_100_Pin
+  69:Core/Src/gpio.c ****   GPIO_InitStruct.Pin = SW_Shield2_V_Pin|SW_Shield1_GND_Pin|SW_Shield2_GND_Pin|SW_R1_100_Pin
  145              		.loc 1 69 3 view .LVU35
  146              		.loc 1 69 23 is_stmt 0 view .LVU36
  147 0090 4FF6FF73 		movw	r3, #65535
  148 0094 0593     		str	r3, [sp, #20]
   70:Core/Src/gpio.c ****                           |SW_R1_1k_Pin|SW_R1_10k_Pin|SW_R1_Calib_Pin|SW_R1_Au1_Pin
   71:Core/Src/gpio.c ****                           |SW_R1_Au2_Pin|SW_R1_Ti1_Pin|SW_R1_Ti2_Pin|SW_Au1_GND_Pin
-  72:Core/Src/gpio.c ****                           |SW_Au2_GND_Pin|SW_Ti1_GND_Pin|SW_Ti2_GND_Pin|SW_Shield1_Au1_Pin;
+  72:Core/Src/gpio.c ****                           |SW_Au2_GND_Pin|SW_Ti1_GND_Pin|SW_Ti2_GND_Pin|SW_Shield1_V_Pin;
   73:Core/Src/gpio.c ****   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
  149              		.loc 1 73 3 is_stmt 1 view .LVU37
  150              		.loc 1 73 24 is_stmt 0 view .LVU38
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 1
  153              		.loc 1 74 3 is_stmt 1 view .LVU39
  154              		.loc 1 74 24 is_stmt 0 view .LVU40
  155 009a 0794     		str	r4, [sp, #28]
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 5
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cczWauE7.s 			page 5
 
 
   75:Core/Src/gpio.c ****   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 1
  195 00c4 FFF7FEFF 		bl	HAL_GPIO_Init
  196              	.LVL4:
   90:Core/Src/gpio.c **** 
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 6
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cczWauE7.s 			page 6
 
 
   91:Core/Src/gpio.c ****   /*Configure GPIO pins : PB10 PB12 PB13 PB14
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 1
  108:Core/Src/gpio.c ****   GPIO_InitStruct.Pull = GPIO_NOPULL;
  234              		.loc 1 108 3 is_stmt 1 view .LVU78
  235              		.loc 1 108 24 is_stmt 0 view .LVU79
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 7
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cczWauE7.s 			page 7
 
 
  236 00f2 0794     		str	r4, [sp, #28]
@@ -392,14 +392,14 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 1
  262              		.file 3 "/opt/local/arm-none-eabi/include/sys/_stdint.h"
  263              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
  264              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s 			page 8
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cczWauE7.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 gpio.c
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s:21     .text.MX_GPIO_Init:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccpShAnR.s:250    .text.MX_GPIO_Init:00000100 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cczWauE7.s:21     .text.MX_GPIO_Init:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cczWauE7.s:27     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cczWauE7.s:250    .text.MX_GPIO_Init:00000100 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
