@@ -29,7 +29,7 @@ build/debug/Core/Src/main.o: Core/Src/main.c Core/Inc/main.h \
  Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart.h \
  Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal_uart_ex.h Core/Inc/dma.h \
  Core/Inc/main.h Core/Inc/spi.h Core/Inc/tim.h Core/Inc/usart.h \
- Core/Inc/gpio.h ../RS485/RS485.h
+ Core/Inc/gpio.h ../RS485/RS485.h ../RS485/ProbeConfig.h
 Core/Inc/main.h:
 Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h:
 Core/Inc/stm32f0xx_hal_conf.h:
@@ -69,3 +69,4 @@ Core/Inc/tim.h:
 Core/Inc/usart.h:
 Core/Inc/gpio.h:
 ../RS485/RS485.h:
+../RS485/ProbeConfig.h:

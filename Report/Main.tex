@@ -2,7 +2,6 @@
 \input{Style/ChapterStyle}
 
 \input{FrontMatter/Commands}
-% \loadglsentries{FrontMatter/Glossary}
 \input{FrontMatter/Glossary}
 
 \begin{document}
@@ -15,7 +14,7 @@
 
 \tableofcontents
 \listoffigures
-\glsresetall%
+\glsresetall{}
 
 \printnoidxglossary[type=\acronymtype,nonumberlist,title={Abbreviations}]
 \newpage
@@ -24,7 +23,9 @@
 
 \input{Chapters/Introduction}
 \input{Chapters/Literature}
-\input{Chapters/Methodology}
+\input{Chapters/Theory}
+\input{Chapters/Design}
+\input{Chapters/Testing}
 \input{Chapters/Conclusions}
 \input{Chapters/Recommendations}
 

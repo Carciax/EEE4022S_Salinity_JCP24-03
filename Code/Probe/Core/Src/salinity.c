@@ -4,9 +4,9 @@
 
 /* Private user code ---------------------------------------------------------*/
 
-double calculate_salinity(double conductivity, double temperature, double pressure)
+double calculate_salinity(double conductivity, double temperature, double pressure, double standard_conductivity)
 {
-    double R = conductivity / STANARD_CONDUCTIVITY;
+    double R = conductivity / standard_conductivity;
     double r_t = CONST_C_0 + CONST_C_1 * temperature + CONST_C_2 * temperature * temperature + CONST_C_3 * temperature * temperature * temperature + CONST_C_4 * temperature * temperature * temperature * temperature;
     double R_p = 1 + (CONST_E_1 * pressure + CONST_E_2 * pressure * pressure + CONST_E_3 * pressure * pressure * pressure) / (1 + CONST_D_1 * temperature + CONST_D_2 * temperature * temperature + R * (CONST_D_3 + CONST_D_4 * temperature));
     double R_t = R / (R_p * r_t);
@@ -17,6 +17,8 @@ double calculate_conductivity(Electrode_Type electrode, ResistanceSample_TypeDef
 {
     switch (electrode)
     {
+    case Ti:
+        // to be implemented
     case Au:
     case Au_Shielded:
         // average resistance
@@ -24,8 +26,8 @@ double calculate_conductivity(Electrode_Type electrode, ResistanceSample_TypeDef
         // calcualte resistivity, return conductivity
         double resistivity = average_resistance * AU_PAD_AREA / AU_PAD_DISTANCE;
         return 1 / resistivity;
-    case Ti:
-        return 0;
+    default:
+        break;
     }
     return 0; // should never reach here
 }

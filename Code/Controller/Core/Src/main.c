@@ -27,6 +27,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "RS485.h"
+#include "ProbeConfig.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -36,17 +37,19 @@ typedef enum
     DISPLAY_SALINITY_DEPTH = 0x00,
     DISPLAY_TEMPERATURE = 0x01,
     DISPLAY_DEPTH = 0x02,
-    DISPLAY_SALINITY = 0x03,
+    DISPLAY_RESISTANCE = 0x03,
     DISPLAY_CONDUCTIVITY = 0x04,
-    DISPLAY_RESISTANCE = 0x05,
+    DISPLAY_SALINITY = 0x05,
     DISPLAY_CONFIG_ELECTRODE = 0x06,
-    DISPLAY_CONFIG_VOLTAGE_START = 0x07,
-    DISPLAY_CONFIG_VOLTAGE_END = 0x08,
-    DISPLAY_CONFIG_VOLTAGE_STEP = 0x09,
-    DISPLAY_CONFIG_ADC_SAMPLES = 0x0a,
-    DISPLAY_CONFIG_R1 = 0x0b,
-    DISPLAY_CONFIG_SEND = 0x0c,
-    DISPLAY_END = 0x0d,
+    DISPLAY_CONFIG_R1 = 0x07,
+    DISPLAY_CONFIG_VOLTAGE_START = 0x08,
+    DISPLAY_CONFIG_VOLTAGE_END = 0x09,
+    DISPLAY_CONFIG_VOLTAGE_SAMPLES = 0x0a,
+    DISPLAY_CONFIG_ADC_SAMPLES = 0x0b,
+    DISPLAY_CONFIG_VOLTAGE_SETTLE_TIME = 0x0c,
+    DISPLAY_CONFIG_SEND = 0x0d,
+    DISPLAY_CALIB = 0x0e,
+    Display_Mode_MAX = 0x0f,
 } Display_Mode;
 
 /* USER CODE END PTD */
@@ -71,16 +74,28 @@ const uint32_t display_values[][3] = {
     {0, 0, 0}, // unused
     {0xffff0000 | DIGIT_1_MASK | LETTER_T_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_E_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_P_MASK},
     {0xffff0000 | DIGIT_1_MASK | LETTER_D_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_E_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_P_MASK},
-    {0xffff0000 | DIGIT_1_MASK | LETTER_S_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_A_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_L_MASK},
-    {0xffff0000 | DIGIT_1_MASK | LETTER_C_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_N_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_D_MASK},
     {0xffff0000 | DIGIT_1_MASK | LETTER_R_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_E_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_S_MASK},
+    {0xffff0000 | DIGIT_1_MASK | LETTER_C_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_N_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_D_MASK},
+    {0xffff0000 | DIGIT_1_MASK | LETTER_S_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_A_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_L_MASK},
     {0xffff0000 | DIGIT_1_MASK | LETTER_E_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_L_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_E_MASK},
+    {0xffff0000 | DIGIT_1_MASK | LETTER_R_MASK, 0xffff0000 | DIGIT_2_MASK | NUMBER_1_MASK, 0xffff0000 | DIGIT_3_MASK | 0},
     {0xffff0000 | DIGIT_1_MASK | LETTER_V_MASK | DECIMAL_POINT, 0xffff0000 | DIGIT_2_MASK | LETTER_S_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_T_MASK},
     {0xffff0000 | DIGIT_1_MASK | LETTER_V_MASK | DECIMAL_POINT, 0xffff0000 | DIGIT_2_MASK | LETTER_E_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_D_MASK},
     {0xffff0000 | DIGIT_1_MASK | LETTER_V_MASK | DECIMAL_POINT, 0xffff0000 | DIGIT_2_MASK | LETTER_S_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_P_MASK},
     {0xffff0000 | DIGIT_1_MASK | LETTER_S_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_P_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_L_MASK},
-    {0xffff0000 | DIGIT_1_MASK | LETTER_R_MASK, 0xffff0000 | DIGIT_2_MASK | NUMBER_1_MASK, 0xffff0000 | DIGIT_3_MASK | 0},
+    {0xffff0000 | DIGIT_1_MASK | LETTER_S_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_T_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_L_MASK},
     {0xffff0000 | DIGIT_1_MASK | LETTER_C_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_F_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_G_MASK},
+    {0xffff0000 | DIGIT_1_MASK | LETTER_C_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_L_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_B_MASK},
+};
+const uint32_t display_electrode_type[][3] = {
+    {0xffff0000 | DIGIT_1_MASK | LETTER_A_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_U_MASK, 0},
+    {0xffff0000 | DIGIT_1_MASK | LETTER_T_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_I_MASK, 0},
+    {0xffff0000 | DIGIT_1_MASK | LETTER_A_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_U_MASK, 0xffff0000 | DIGIT_3_MASK | LETTER_S_MASK},
+};
+const uint32_t display_r1_type[][3] = {
+    {0xffff0000 | DIGIT_1_MASK | NUMBER_1_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_E_MASK, 0xffff0000 | DIGIT_3_MASK | NUMBER_2_MASK},
+    {0xffff0000 | DIGIT_1_MASK | NUMBER_1_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_E_MASK, 0xffff0000 | DIGIT_3_MASK | NUMBER_3_MASK},
+    {0xffff0000 | DIGIT_1_MASK | NUMBER_1_MASK, 0xffff0000 | DIGIT_2_MASK | LETTER_E_MASK, 0xffff0000 | DIGIT_3_MASK | NUMBER_4_MASK},
 };
 
 uint32_t salinity_dma_buff[] = {0xffff0000 | DIGIT_1_MASK | NEGATIVE_SIGN_MASK, 0xffff0000 | DIGIT_2_MASK | NEGATIVE_SIGN_MASK, 0xffff0000 | DIGIT_3_MASK | NEGATIVE_SIGN_MASK};
@@ -90,16 +105,18 @@ Display_Mode display_mode = DISPLAY_SALINITY_DEPTH;
 RS485_Expecting expecting_response = EXPECTING_NONE;
 uint8_t rx_buffer[DATA_PACKET_SIZE];
 uint8_t temperature[DATA_PACKET_SIZE] = {0, 0, 0},
-    depth[DATA_PACKET_SIZE] = {0, 0, 0},
-    salinity[DATA_PACKET_SIZE] = {0, 0, 0},
-    resistance[DATA_PACKET_SIZE] = {0, 0, 0},
-    conductivity[DATA_PACKET_SIZE] = {0, 0, 0};
+        depth[DATA_PACKET_SIZE] = {0, 0, 0},
+        salinity[DATA_PACKET_SIZE] = {0, 0, 0},
+        resistance[DATA_PACKET_SIZE] = {0, 0, 0},
+        conductivity[DATA_PACKET_SIZE] = {0, 0, 0};
+ProbeConfig_TypeDef probe_config = {Au, R1_100, BIDIRECTIONAL, 0, 0x200, 10, 2, STANARD_CONDUCTIVITY, 5};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
+void update_buffer_with_voltage(uint32_t *buffer, uint16_t voltage);
 void update_buffer(uint32_t *buffer, uint8_t *data);
 void rs485_transmit(uint8_t *data, uint16_t size);
 void rs485_receive_IT(uint16_t size);
@@ -155,8 +172,6 @@ int main(void)
     HAL_TIM_Base_Start(&htim17);
     __HAL_TIM_ENABLE_DMA(&htim17, TIM_DMA_CC1);
 
-    // uint8_t command[] = {COMMAND_RESET};
-    // rs485_transmit(command, 1);
     /* USER CODE END 2 */
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
@@ -244,7 +259,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             {
                 update_buffer(salinity_dma_buff, salinity);
             }
-
             expecting_response = EXPECTING_DEPTH;
             uint8_t command[] = {COMMAND_GET_DEPTH};
             rs485_transmit(command, 1);
@@ -263,11 +277,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             depth[0] = rx_buffer[0];
             depth[1] = rx_buffer[1];
             depth[2] = rx_buffer[2];
-            if (display_mode == DISPLAY_DEPTH)
+            if ((display_mode == DISPLAY_DEPTH) || (display_mode == DISPLAY_SALINITY_DEPTH))
             {
                 update_buffer(depth_dma_buff, depth);
             }
-
             break;
         case EXPECTING_SALINITY:
             salinity[0] = rx_buffer[0];
@@ -277,7 +290,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             {
                 update_buffer(depth_dma_buff, salinity);
             }
-
             break;
         case EXPECTING_CONDUCTIVITY:
             conductivity[0] = rx_buffer[0];
@@ -287,7 +299,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             {
                 update_buffer(depth_dma_buff, conductivity);
             }
-
             break;
         case EXPECTING_RESISTANCE:
             resistance[0] = rx_buffer[0];
@@ -297,7 +308,23 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             {
                 update_buffer(depth_dma_buff, resistance);
             }
+            break;
+        case EXPECTING_STANARD_CONDUCTIVITY:
+            // write std cnd to sd card.
+            break;
 
+        case EXPECTING_CONFIG_READY:
+            if (rx_buffer[0] == RESPONSE_ACK)
+            {
+                expecting_response = EXPECTING_ACK;
+                rs485_transmit((uint8_t *)&probe_config, CONFIG_PACKET_SIZE);
+                rs485_receive_IT(1);
+            }
+            break;
+        case EXPECTING_ACK:
+            if (rx_buffer[0] == RESPONSE_ACK)
+            {
+            }
             break;
         default:
             break;
@@ -307,7 +334,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-    uint8_t command[] = {0};
+    uint8_t command[] = {0}, data[] = {0, 0, 0};
     switch (GPIO_Pin)
     {
     case SW1_Pin:
@@ -315,7 +342,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         {
         case DISPLAY_SALINITY_DEPTH:
             expecting_response = EXPECTING_SALINITY_DEPTH;
-            command[0] = COMMAND_GET_SALINITY_DEPTH;
+            command[0] = COMMAND_GET_SALINITY;
             rs485_transmit(command, 1);
             rs485_receive_IT(DATA_PACKET_SIZE);
             break;
@@ -349,12 +376,60 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
             rs485_transmit(command, 1);
             rs485_receive_IT(DATA_PACKET_SIZE);
             break;
+
+        case DISPLAY_CONFIG_ELECTRODE:
+            probe_config.electrode = (probe_config.electrode + 1) % Electrode_Type_MAX;
+            depth_dma_buff[0] = display_electrode_type[probe_config.electrode][0];
+            depth_dma_buff[1] = display_electrode_type[probe_config.electrode][1];
+            depth_dma_buff[2] = display_electrode_type[probe_config.electrode][2];
+            break;
+        case DISPLAY_CONFIG_R1:
+            probe_config.r1 = (probe_config.r1 + 1) % R1_Type_MAX;
+            depth_dma_buff[0] = display_r1_type[probe_config.r1][0];
+            depth_dma_buff[1] = display_r1_type[probe_config.r1][1];
+            depth_dma_buff[2] = display_r1_type[probe_config.r1][2];
+            break;
+        case DISPLAY_CONFIG_VOLTAGE_START:
+            probe_config.voltage_start = (probe_config.voltage_start + 1) % 1024;
+            update_buffer_with_voltage(depth_dma_buff, probe_config.voltage_start);
+            break;
+        case DISPLAY_CONFIG_VOLTAGE_END:
+            probe_config.voltage_end = (probe_config.voltage_end + 1) % 1024;
+            update_buffer_with_voltage(depth_dma_buff, probe_config.voltage_end);
+            break;
+        case DISPLAY_CONFIG_VOLTAGE_SAMPLES:
+            probe_config.num_samples = (probe_config.num_samples + 1) % 100;
+            data[0] = probe_config.num_samples / 100;
+            data[1] = (probe_config.num_samples % 100) / 10;
+            data[2] = probe_config.num_samples % 10;
+            update_buffer(depth_dma_buff, data);
+            break;
+        case DISPLAY_CONFIG_ADC_SAMPLES:
+            probe_config.adc_samples = (probe_config.adc_samples + 1) % 10;
+            data[0] = probe_config.adc_samples / 100;
+            data[1] = (probe_config.adc_samples % 100) / 10;
+            data[2] = probe_config.adc_samples % 10;
+            update_buffer(depth_dma_buff, data);
+            break;
+
+        case DISPLAY_CONFIG_SEND:
+            expecting_response = EXPECTING_CONFIG_READY;
+            command[0] = COMMAND_SET_CONFIG;
+            rs485_transmit(command, 1);
+            rs485_receive_IT(1);
+            break;
+        case DISPLAY_CALIB:
+            expecting_response = EXPECTING_STANARD_CONDUCTIVITY;
+            command[0] = COMMNAD_GET_STANDARD_CONDUCTIVITY;
+            rs485_transmit(command, 1);
+            rs485_receive_IT(sizeof(uint32_t));
+            break;
         default:
             break;
         }
         break;
     case SW2_Pin:
-        display_mode = (display_mode + 1) % DISPLAY_END;
+        display_mode = (display_mode + 1) % Display_Mode_MAX;
         salinity_dma_buff[0] = display_values[display_mode][0];
         salinity_dma_buff[1] = display_values[display_mode][1];
         salinity_dma_buff[2] = display_values[display_mode][2];
@@ -379,6 +454,38 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         case DISPLAY_RESISTANCE:
             update_buffer(depth_dma_buff, resistance);
             break;
+        case DISPLAY_CONFIG_ELECTRODE:
+            depth_dma_buff[0] = display_electrode_type[probe_config.electrode][0];
+            depth_dma_buff[1] = display_electrode_type[probe_config.electrode][1];
+            depth_dma_buff[2] = display_electrode_type[probe_config.electrode][2];
+            break;
+        case DISPLAY_CONFIG_R1:
+            depth_dma_buff[0] = display_r1_type[probe_config.r1][0];
+            depth_dma_buff[1] = display_r1_type[probe_config.r1][1];
+            depth_dma_buff[2] = display_r1_type[probe_config.r1][2];
+            break;
+        case DISPLAY_CONFIG_VOLTAGE_START:
+            update_buffer_with_voltage(depth_dma_buff, probe_config.voltage_start);
+            break;
+        case DISPLAY_CONFIG_VOLTAGE_END:
+            update_buffer_with_voltage(depth_dma_buff, probe_config.voltage_end);
+            break;
+        case DISPLAY_CONFIG_VOLTAGE_SAMPLES:
+            data[0] = probe_config.num_samples / 100;
+            data[1] = (probe_config.num_samples % 100) / 10;
+            data[2] = probe_config.num_samples % 10;
+            update_buffer(depth_dma_buff, data);
+            break;
+        case DISPLAY_CONFIG_ADC_SAMPLES:
+            data[0] = probe_config.adc_samples / 100;
+            data[1] = (probe_config.adc_samples % 100) / 10;
+            data[2] = probe_config.adc_samples % 10;
+            update_buffer(depth_dma_buff, data);
+            break;
+        case DISPLAY_CONFIG_SEND:
+            depth_dma_buff[0] = 0xffff0000 | DIGIT_1_MASK | NEGATIVE_SIGN_MASK;
+            depth_dma_buff[1] = 0xffff0000 | DIGIT_2_MASK | NEGATIVE_SIGN_MASK;
+            depth_dma_buff[2] = 0xffff0000 | DIGIT_3_MASK | NEGATIVE_SIGN_MASK;
         default:
             break;
         }
@@ -386,6 +493,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     default:
         break;
     }
+}
+
+void update_buffer_with_voltage(uint32_t *buffer, uint16_t voltage)
+{
+    // voltage is 10 bit
+    uint8_t data[3] = {0, 0, 0};
+    voltage = (voltage * 330) / 1024;
+    data[0] = voltage / 100 | DECIMAL_POINT;
+    data[1] = (voltage % 100) / 10;
+    data[2] = voltage % 10;
+    update_buffer(buffer, data);
 }
 
 void update_buffer(uint32_t *buffer, uint8_t *data)

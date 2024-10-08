@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.12)  1 OCT 2024 21:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.12)  7 OCT 2024 17:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -886,24 +886,24 @@ Package tocbibind Note: Using chapter style headings, unless overridden.
 )) (./FrontMatter/Commands.tex) (./FrontMatter/Glossary.tex) (./Main.aux)
 \openout1 = `Main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 7.
+LaTeX Font Info:    ... okay on input line 7.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -964,12 +964,12 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring ON on input line 8.
+Package hyperref Info: Link coloring ON on input line 7.
  (./Main.out) (./Main.out)
 \@outlinefile=\write3
 \openout3 = `Main.out'.
 
-Package csquotes Info: Making character " active on input line 8.
+Package csquotes Info: Making character " active on input line 7.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
  (/usr/local/texlive/2024/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
@@ -977,20 +977,20 @@ Package: xparse 2024-02-18 L3 Experimental document command parser
 )) (/usr/local/texlive/2024/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 8.
-LaTeX Info: Redefining \microtypecontext on input line 8.
-Package microtype Info: Applying patch `item' on input line 8.
-Package microtype Info: Applying patch `toc' on input line 8.
-Package microtype Info: Applying patch `eqnum' on input line 8.
-Package microtype Info: Applying patch `footnote' on input line 8.
-Package microtype Info: Applying patch `verbatim' on input line 8.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 7.
+LaTeX Info: Redefining \microtypecontext on input line 7.
+Package microtype Info: Applying patch `item' on input line 7.
+Package microtype Info: Applying patch `toc' on input line 7.
+Package microtype Info: Applying patch `eqnum' on input line 7.
+Package microtype Info: Applying patch `footnote' on input line 7.
+Package microtype Info: Applying patch `verbatim' on input line 7.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 8.
+LaTeX Info: Redefining \showhyphens on input line 7.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1007,17 +1007,17 @@ Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \symgns@font=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/lmr/m/n --> TS1/lmr/b/n on input line 8.
-Package gensymb Info: Math companion symbols declared on input line 8.
-LaTeX Info: Redefining \degree on input line 8.
-LaTeX Info: Redefining \celsius on input line 8.
-Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 8.
-LaTeX Info: Redefining \ohm on input line 8.
-Package gensymb Info: Using \textohm for \ohm on input line 8.
-LaTeX Info: Redefining \micro on input line 8.
-Package gensymb Info: Using \textmu for \micro on input line 8.
+(Font)                  TS1/lmr/m/n --> TS1/lmr/b/n on input line 7.
+Package gensymb Info: Math companion symbols declared on input line 7.
+LaTeX Info: Redefining \degree on input line 7.
+LaTeX Info: Redefining \celsius on input line 7.
+Package gensymb Info: Using text companion symbols for \degree, \celsius and \perthousand on input line 7.
+LaTeX Info: Redefining \ohm on input line 7.
+Package gensymb Info: Using \textohm for \ohm on input line 7.
+LaTeX Info: Redefining \micro on input line 7.
+Package gensymb Info: Using \textmu for \micro on input line 7.
  (./FrontMatter/Title.tex
-<FrontMatter/UCT_logo.png, id=156, 1554.80875pt x 1578.89874pt>
+<FrontMatter/UCT_logo.png, id=152, 1554.80875pt x 1578.89874pt>
 File: FrontMatter/UCT_logo.png Graphic file (type png)
 <use FrontMatter/UCT_logo.png>
 Package pdftex.def Info: FrontMatter/UCT_logo.png  used on input line 14.
@@ -1025,7 +1025,7 @@ Package pdftex.def Info: FrontMatter/UCT_logo.png  used on input line 14.
 ) (./FrontMatter/Declaration.tex [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./FrontMatter/UCT_logo.png>]
-<Figures/Signature.png, id=166, 335.2525pt x 235.88126pt>
+<Figures/Signature.png, id=162, 335.2525pt x 235.88126pt>
 File: Figures/Signature.png Graphic file (type png)
 <use Figures/Signature.png>
 Package pdftex.def Info: Figures/Signature.png  used on input line 23.
@@ -1108,17 +1108,15 @@ Package pdftex.def Info: Figures/ocean_salinity_temperature_quantity.png  used o
 (pdftex.def)             Requested size: 362.77264pt x 242.9711pt.
 [3
 
-{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./Figures/ocean_salinity_temperature_quantity.png>]
-
-LaTeX Warning: Reference `eq:salininty-density' on page 4 undefined on input line 65.
-
-[4]
-
-LaTeX Warning: Reference `' on page 5 undefined on input line 80.
-
-[5]
+{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc} <./Figures/ocean_salinity_temperature_quantity.png>] [4]
+<Figures/salinity_distribution.png, id=355, 115.632pt x 56.3706pt>
+File: Figures/salinity_distribution.png Graphic file (type png)
+<use Figures/salinity_distribution.png>
+Package pdftex.def Info: Figures/salinity_distribution.png  used on input line 85.
+(pdftex.def)             Requested size: 362.77264pt x 176.86125pt.
+ [5 <./Figures/salinity_distribution.png>] [6]) (./Chapters/Theory.tex [7]
 Chapter 3.
-[6
+[8
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}]
 > Step: init table outer spec.
@@ -1129,92 +1127,96 @@ Chapter 3.
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 > Step: build the whole table.
- [7]) (./Chapters/Methodology.tex [8]
+ [9]) (./Chapters/Design.tex [10]
 Chapter 4.
-[9
+[11
 
 ]
-<Figures/GoldElectrode.png, id=441, 617.30624pt x 833.1125pt>
+<Figures/GoldElectrode.png, id=475, 617.30624pt x 833.1125pt>
 File: Figures/GoldElectrode.png Graphic file (type png)
 <use Figures/GoldElectrode.png>
-Package pdftex.def Info: Figures/GoldElectrode.png  used on input line 59.
+Package pdftex.def Info: Figures/GoldElectrode.png  used on input line 57.
 (pdftex.def)             Requested size: 241.84843pt x 326.3999pt.
- [10]
-<Figures/CircuitOverview.png, id=450, 977.6525pt x 760.8425pt>
+ [12]
+<Figures/CircuitOverview.png, id=484, 977.6525pt x 760.8425pt>
 File: Figures/CircuitOverview.png Graphic file (type png)
 <use Figures/CircuitOverview.png>
-Package pdftex.def Info: Figures/CircuitOverview.png  used on input line 79.
+Package pdftex.def Info: Figures/CircuitOverview.png  used on input line 77.
 (pdftex.def)             Requested size: 241.84843pt x 188.21332pt.
- [11 <./Figures/GoldElectrode.png>]
-<Figures/AuElectrodeExample.png, id=463, 656.4525pt x 760.8425pt>
+ [13 <./Figures/GoldElectrode.png>] [14 <./Figures/CircuitOverview.png>]
+<Figures/AuElectrodeExample.png, id=508, 656.4525pt x 760.8425pt>
 File: Figures/AuElectrodeExample.png Graphic file (type png)
 <use Figures/AuElectrodeExample.png>
-Package pdftex.def Info: Figures/AuElectrodeExample.png  used on input line 114.
+Package pdftex.def Info: Figures/AuElectrodeExample.png  used on input line 112.
 (pdftex.def)             Requested size: 241.84843pt x 280.31154pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[12 <./Figures/CircuitOverview.png>] [13 <./Figures/AuElectrodeExample.png>]) (./Chapters/Conclusions.tex [14]
+ [15 <./Figures/AuElectrodeExample.png>] [16]) (./Chapters/Testing.tex [17]
 Chapter 5.
-) (./Chapters/Recommendations.tex [15
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+[18
+
+]) (./Chapters/Conclusions.tex [19]
+Chapter 6.
+) (./Chapters/Recommendations.tex [20
 
 ]
-Chapter 6.
-) [16
+Chapter 7.
+) [21
 
 ] (./Main.bbl
-Underfull \hbox (badness 5345) in paragraph at lines 59--61
+Underfull \hbox (badness 5345) in paragraph at lines 64--66
 []\T1/lmr/m/n/10.95 (+20) U. G. Sur-vey, ``Wa-ter den-sity,'' 2018. [On-line]. Avail-
  []
 
-[17
+[22
 
-]
-Underfull \hbox (badness 1762) in paragraph at lines 86--88
+] [23]
+Underfull \hbox (badness 1762) in paragraph at lines 131--133
 []\T1/lmr/m/n/10.95 (+20) S.-B. Sci-en-tific, ``Con-ver-sion of pres-sure to depth,'' 2024. [On-
  []
 
 
-Underfull \hbox (badness 2961) in paragraph at lines 86--88
+Underfull \hbox (badness 2961) in paragraph at lines 131--133
 \T1/lmr/m/n/10.95 (+20) line]. Avail-able: [][]$https : / / www . google . com / url ? sa = t & rct = j & q = &esrc = s & source =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--88
+Underfull \hbox (badness 10000) in paragraph at lines 131--133
 \T1/lmr/m/n/10.95 (+20) web & cd = &ved = 2ahUKEwij6ebU1sCIAxXPiv0HHXDELasQFnoECCMQAQ & url = https %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 86--88
+Underfull \hbox (badness 10000) in paragraph at lines 131--133
 \T1/lmr/m/n/10.95 (+20) 3A % 2F % 2Fwww . seabird . com % 2Fasset-[]get . download . jsa % 3Fid % 3D54627861710 & usg =
  []
 
-) [18] (./Main.aux)
+) [24] (./Main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 6999E092539B43783A7C64562D82029D;6969.
+(rerunfilecheck)             Checksum: 78C1C201FE90BB2FAD857C9318795ECC;6556.
  ) 
 Here is how much of TeX's memory you used:
- 36594 strings out of 474116
- 716682 string characters out of 5743682
+ 36753 strings out of 474116
+ 721277 string characters out of 5743682
  1968187 words of memory out of 5000000
- 58055 multiletter control sequences out of 15000+600000
- 638559 words of font info for 202 fonts, out of 8000000 for 9000
+ 58188 multiletter control sequences out of 15000+600000
+ 640141 words of font info for 205 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,12n,110p,2495b,1197s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,12n,113p,2495b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Main.pdf (26 pages, 748901 bytes).
+Output written on Main.pdf (32 pages, 1104359 bytes).
 PDF statistics:
- 630 PDF objects out of 1000 (max. 8388607)
- 543 compressed objects within 6 object streams
- 125 named destinations out of 1000 (max. 500000)
- 55631 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 705 PDF objects out of 1000 (max. 8388607)
+ 609 compressed objects within 7 object streams
+ 145 named destinations out of 1000 (max. 500000)
+ 55628 words of extra memory for PDF output out of 61914 (max. 10000000)
 

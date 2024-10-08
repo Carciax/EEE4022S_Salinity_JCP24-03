@@ -129,10 +129,7 @@ void Error_Handler(void);
 
 #define Pressure_status_finished 0x1
 
-#define NUM_SAMPLES 10
-#define VOLTAGE_START 256
-#define VOLTAGE_END (512 + 256)
-#define ADC_SAMPLES 5
+#define MAX_SAMPLES 1024
 
 #define PACKET_START "Packet Start\n"
 #define PACKET_END "Packet End\n\n"

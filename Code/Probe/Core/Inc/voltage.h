@@ -6,7 +6,7 @@
 #include "adc.h"
 #include "i2c.h"
 #include "tim.h"
-#include "ProbeConfiguration.h"
+#include "ProbeConfig.h"
 
 /* Private defines -----------------------------------------------------------*/
 /* SWITCHES */
@@ -40,8 +40,6 @@
 #define DAC_trigger_reset 0x0008
 #define DAC_trigger_config_reset (0b1 << 9)
 
-#define VOLTAGE_SETTLE_TIME 10 // us
-
 /* Private typedef -----------------------------------------------------------*/
 typedef enum {
     ADC_CHANNEL_UNBUFF_DAC = ADC_CHANNEL_0,
@@ -67,15 +65,16 @@ void voltage_init (void);
 void us_delay(uint16_t micro_s);
 void dac_init (void);
 void dac_drain (void);
+void dac_set_voltage(uint16_t voltage);
 void dac_write (uint16_t memory_addr, uint16_t data);
 
 void adc_set_channel (ADC_Channel channel);
 uint16_t adc_average (uint16_t adc_samples);
 
 void reset_muxs (void);
-uint16_t measure_dac_voltage (uint16_t adc_samples);
-uint16_t measure_calib_voltage (uint16_t adc_samples);
-uint16_t measure_pin_voltage (Direction direction, Electrode_Type electrode, uint16_t adc_samples);
-void measure_voltage_sweep (VoltageSample_TypeDef* samples, Direction direction, R1_Type r1, Electrode_Type electrode, uint16_t dac_start, uint16_t dac_stop, uint16_t num_samples, uint16_t adc_samples);
+uint16_t measure_dac_voltage (uint16_t adc_samples, uint16_t voltage_settle_time);
+uint16_t measure_calib_voltage (uint16_t adc_samples, uint16_t voltage_settle_time);
+uint16_t measure_pin_voltage (Direction direction, Electrode_Type electrode, uint16_t adc_samples, uint16_t voltage_settle_time);
+void measure_voltage_sweep (VoltageSample_TypeDef* samples, Direction direction, R1_Type r1, Electrode_Type electrode, uint16_t dac_start, uint16_t dac_stop, uint16_t num_samples, uint16_t adc_samples, uint16_t voltage_settle_time);
 
 #endif // __RESISTANCE_H

@@ -7,8 +7,6 @@
 #include "voltage.h"
 #include "math.h"
 /* Private defines -----------------------------------------------------------*/
-#define STANARD_CONDUCTIVITY 5 // conductivity of sodium chloride solution at 15 degrees Celsius and 1 atm pressure
-
 #define CONST_K 0.0162
 
 #define CONST_A_0 0.0080
@@ -50,17 +48,18 @@
 
 /* Private typedef -----------------------------------------------------------*/
 
-typedef struct {
+typedef struct
+{
     uint16_t voltage;
     double resistance;
 } ResistanceSample_TypeDef;
 
 /* Functions prototypes ---------------------------------------------*/
-double calculate_salinity(double conductivity, double temperature, double pressure);
-double calculate_conductivity(Electrode_Type electrode, ResistanceSample_TypeDef* samples, uint16_t num_samples);
-void calculate_resistance(VoltageSample_TypeDef* voltage_samples, ResistanceSample_TypeDef* reistance_samples, uint16_t num_samples);
-double calculate_average_resistance(ResistanceSample_TypeDef* samples, uint16_t num_samples);
+double calculate_salinity(double conductivity, double temperature, double pressure, double standard_conductivity);
+double calculate_conductivity(Electrode_Type electrode, ResistanceSample_TypeDef *samples, uint16_t num_samples);
+void calculate_resistance(VoltageSample_TypeDef *voltage_samples, ResistanceSample_TypeDef *reistance_samples, uint16_t num_samples);
+double calculate_average_resistance(ResistanceSample_TypeDef *samples, uint16_t num_samples);
 double measure_temperature(void);
-double measure_pressure(void); 
+double measure_pressure(void);
 
 #endif // __SALINITY_H

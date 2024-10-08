@@ -30,7 +30,7 @@ build/debug/Core/Src/voltage.o: Core/Src/voltage.c Core/Inc/voltage.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h Core/Inc/adc.h \
- Core/Inc/i2c.h Core/Inc/tim.h ../RS485/ProbeConfiguration.h
+ Core/Inc/i2c.h Core/Inc/tim.h ../RS485/ProbeConfig.h Core/Inc/main.h
 Core/Inc/voltage.h:
 Core/Inc/main.h:
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
@@ -69,4 +69,5 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 Core/Inc/adc.h:
 Core/Inc/i2c.h:
 Core/Inc/tim.h:
-../RS485/ProbeConfiguration.h:
+../RS485/ProbeConfig.h:
+Core/Inc/main.h:

@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 1
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -39,7 +39,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 1
    4:Core/Src/salinity.c **** 
    5:Core/Src/salinity.c **** /* Private user code ---------------------------------------------------------*/
    6:Core/Src/salinity.c **** 
-   7:Core/Src/salinity.c **** double calculate_salinity(double conductivity, double temperature, double pressure)
+   7:Core/Src/salinity.c **** double calculate_salinity(double conductivity, double temperature, double pressure, double standard
    8:Core/Src/salinity.c **** {
   34              		.loc 1 8 1 view -0
   35              		.cfi_startproc
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 1
   48              		.cfi_offset 11, -8
   49              		.cfi_offset 14, -4
   50 0004 2DED068B 		vpush.64	{d8, d9, d10}
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 2
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 2
 
 
   51              		.cfi_def_cfa_offset 60
@@ -73,1448 +73,1444 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 1
   60 000a 51EC100B 		vmov	r0, r1, d0
   61 000e 55EC114B 		vmov	r4, r5, d1
   62 0012 57EC126B 		vmov	r6, r7, d2
-   9:Core/Src/salinity.c ****     double R = conductivity / STANARD_CONDUCTIVITY;
-  63              		.loc 1 9 5 is_stmt 1 view .LVU2
-  64              		.loc 1 9 12 is_stmt 0 view .LVU3
-  65 0016 0022     		movs	r2, #0
-  66 0018 ED4B     		ldr	r3, .L3+200
-  67 001a FFF7FEFF 		bl	__aeabi_ddiv
-  68              	.LVL1:
-  69              		.loc 1 9 12 view .LVU4
-  70 001e 8246     		mov	r10, r0
-  71 0020 8B46     		mov	fp, r1
-  72              	.LVL2:
+  63 0016 53EC132B 		vmov	r2, r3, d3
+   9:Core/Src/salinity.c ****     double R = conductivity / standard_conductivity;
+  64              		.loc 1 9 5 is_stmt 1 view .LVU2
+  65              		.loc 1 9 12 is_stmt 0 view .LVU3
+  66 001a FFF7FEFF 		bl	__aeabi_ddiv
+  67              	.LVL1:
+  68              		.loc 1 9 12 view .LVU4
+  69 001e 8246     		mov	r10, r0
+  70 0020 8B46     		mov	fp, r1
+  71              	.LVL2:
   10:Core/Src/salinity.c ****     double r_t = CONST_C_0 + CONST_C_1 * temperature + CONST_C_2 * temperature * temperature + CONS
-  73              		.loc 1 10 5 is_stmt 1 view .LVU5
-  74              		.loc 1 10 40 is_stmt 0 view .LVU6
-  75 0022 B9A3     		adr	r3, .L3
-  76 0024 D3E90023 		ldrd	r2, [r3]
-  77 0028 2046     		mov	r0, r4
-  78 002a 2946     		mov	r1, r5
-  79 002c FFF7FEFF 		bl	__aeabi_dmul
-  80              	.LVL3:
-  81              		.loc 1 10 28 view .LVU7
-  82 0030 B7A3     		adr	r3, .L3+8
-  83 0032 D3E90023 		ldrd	r2, [r3]
-  84 0036 FFF7FEFF 		bl	__aeabi_dadd
-  85              	.LVL4:
-  86 003a 8046     		mov	r8, r0
-  87 003c 8946     		mov	r9, r1
-  88              		.loc 1 10 66 view .LVU8
-  89 003e B6A3     		adr	r3, .L3+16
-  90 0040 D3E90023 		ldrd	r2, [r3]
-  91 0044 2046     		mov	r0, r4
-  92 0046 2946     		mov	r1, r5
-  93 0048 FFF7FEFF 		bl	__aeabi_dmul
-  94              	.LVL5:
-  95              		.loc 1 10 80 view .LVU9
-  96 004c 2246     		mov	r2, r4
-  97 004e 2B46     		mov	r3, r5
-  98 0050 FFF7FEFF 		bl	__aeabi_dmul
-  99              	.LVL6:
- 100 0054 0246     		mov	r2, r0
- 101 0056 0B46     		mov	r3, r1
- 102              		.loc 1 10 54 view .LVU10
- 103 0058 4046     		mov	r0, r8
- 104 005a 4946     		mov	r1, r9
- 105 005c FFF7FEFF 		bl	__aeabi_dadd
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 3
+  72              		.loc 1 10 5 is_stmt 1 view .LVU5
+  73              		.loc 1 10 40 is_stmt 0 view .LVU6
+  74 0022 0FF24C43 		adr	r3, .L3+160
+  75 0026 D3E90023 		ldrd	r2, [r3]
+  76 002a 2046     		mov	r0, r4
+  77 002c 2946     		mov	r1, r5
+  78 002e FFF7FEFF 		bl	__aeabi_dmul
+  79              	.LVL3:
+  80              		.loc 1 10 28 view .LVU7
+  81 0032 0FF24443 		adr	r3, .L3+168
+  82 0036 D3E90023 		ldrd	r2, [r3]
+  83 003a FFF7FEFF 		bl	__aeabi_dadd
+  84              	.LVL4:
+  85 003e 8046     		mov	r8, r0
+  86 0040 8946     		mov	r9, r1
+  87              		.loc 1 10 66 view .LVU8
+  88 0042 0FF23C43 		adr	r3, .L3+176
+  89 0046 D3E90023 		ldrd	r2, [r3]
+  90 004a 2046     		mov	r0, r4
+  91 004c 2946     		mov	r1, r5
+  92 004e FFF7FEFF 		bl	__aeabi_dmul
+  93              	.LVL5:
+  94              		.loc 1 10 80 view .LVU9
+  95 0052 2246     		mov	r2, r4
+  96 0054 2B46     		mov	r3, r5
+  97 0056 FFF7FEFF 		bl	__aeabi_dmul
+  98              	.LVL6:
+  99 005a 0246     		mov	r2, r0
+ 100 005c 0B46     		mov	r3, r1
+ 101              		.loc 1 10 54 view .LVU10
+ 102 005e 4046     		mov	r0, r8
+ 103 0060 4946     		mov	r1, r9
+ 104 0062 FFF7FEFF 		bl	__aeabi_dadd
+ 105              	.LVL7:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 3
 
 
- 106              	.LVL7:
- 107 0060 8046     		mov	r8, r0
- 108 0062 8946     		mov	r9, r1
- 109              		.loc 1 10 106 view .LVU11
- 110 0064 AEA3     		adr	r3, .L3+24
- 111 0066 D3E90023 		ldrd	r2, [r3]
- 112 006a 2046     		mov	r0, r4
- 113 006c 2946     		mov	r1, r5
- 114 006e FFF7FEFF 		bl	__aeabi_dmul
- 115              	.LVL8:
- 116              		.loc 1 10 120 view .LVU12
- 117 0072 2246     		mov	r2, r4
- 118 0074 2B46     		mov	r3, r5
- 119 0076 FFF7FEFF 		bl	__aeabi_dmul
- 120              	.LVL9:
- 121              		.loc 1 10 134 view .LVU13
- 122 007a 2246     		mov	r2, r4
- 123 007c 2B46     		mov	r3, r5
- 124 007e FFF7FEFF 		bl	__aeabi_dmul
- 125              	.LVL10:
- 126 0082 0246     		mov	r2, r0
- 127 0084 0B46     		mov	r3, r1
- 128              		.loc 1 10 94 view .LVU14
- 129 0086 4046     		mov	r0, r8
- 130 0088 4946     		mov	r1, r9
- 131 008a FFF7FEFF 		bl	__aeabi_dadd
- 132              	.LVL11:
- 133 008e 8046     		mov	r8, r0
- 134 0090 8946     		mov	r9, r1
- 135              		.loc 1 10 160 view .LVU15
- 136 0092 A5A3     		adr	r3, .L3+32
- 137 0094 D3E90023 		ldrd	r2, [r3]
- 138 0098 2046     		mov	r0, r4
- 139 009a 2946     		mov	r1, r5
- 140 009c FFF7FEFF 		bl	__aeabi_dmul
- 141              	.LVL12:
- 142              		.loc 1 10 174 view .LVU16
- 143 00a0 2246     		mov	r2, r4
- 144 00a2 2B46     		mov	r3, r5
- 145 00a4 FFF7FEFF 		bl	__aeabi_dmul
- 146              	.LVL13:
- 147              		.loc 1 10 188 view .LVU17
- 148 00a8 2246     		mov	r2, r4
- 149 00aa 2B46     		mov	r3, r5
- 150 00ac FFF7FEFF 		bl	__aeabi_dmul
- 151              	.LVL14:
- 152              		.loc 1 10 202 view .LVU18
- 153 00b0 2246     		mov	r2, r4
- 154 00b2 2B46     		mov	r3, r5
- 155 00b4 FFF7FEFF 		bl	__aeabi_dmul
- 156              	.LVL15:
- 157 00b8 0246     		mov	r2, r0
- 158 00ba 0B46     		mov	r3, r1
- 159              		.loc 1 10 12 view .LVU19
- 160 00bc 4046     		mov	r0, r8
- 161 00be 4946     		mov	r1, r9
- 162 00c0 FFF7FEFF 		bl	__aeabi_dadd
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 4
+ 106 0066 8046     		mov	r8, r0
+ 107 0068 8946     		mov	r9, r1
+ 108              		.loc 1 10 106 view .LVU11
+ 109 006a 0FF21C43 		adr	r3, .L3+184
+ 110 006e D3E90023 		ldrd	r2, [r3]
+ 111 0072 2046     		mov	r0, r4
+ 112 0074 2946     		mov	r1, r5
+ 113 0076 FFF7FEFF 		bl	__aeabi_dmul
+ 114              	.LVL8:
+ 115              		.loc 1 10 120 view .LVU12
+ 116 007a 2246     		mov	r2, r4
+ 117 007c 2B46     		mov	r3, r5
+ 118 007e FFF7FEFF 		bl	__aeabi_dmul
+ 119              	.LVL9:
+ 120              		.loc 1 10 134 view .LVU13
+ 121 0082 2246     		mov	r2, r4
+ 122 0084 2B46     		mov	r3, r5
+ 123 0086 FFF7FEFF 		bl	__aeabi_dmul
+ 124              	.LVL10:
+ 125 008a 0246     		mov	r2, r0
+ 126 008c 0B46     		mov	r3, r1
+ 127              		.loc 1 10 94 view .LVU14
+ 128 008e 4046     		mov	r0, r8
+ 129 0090 4946     		mov	r1, r9
+ 130 0092 FFF7FEFF 		bl	__aeabi_dadd
+ 131              	.LVL11:
+ 132 0096 8046     		mov	r8, r0
+ 133 0098 8946     		mov	r9, r1
+ 134              		.loc 1 10 160 view .LVU15
+ 135 009a FDA3     		adr	r3, .L3+192
+ 136 009c D3E90023 		ldrd	r2, [r3]
+ 137 00a0 2046     		mov	r0, r4
+ 138 00a2 2946     		mov	r1, r5
+ 139 00a4 FFF7FEFF 		bl	__aeabi_dmul
+ 140              	.LVL12:
+ 141              		.loc 1 10 174 view .LVU16
+ 142 00a8 2246     		mov	r2, r4
+ 143 00aa 2B46     		mov	r3, r5
+ 144 00ac FFF7FEFF 		bl	__aeabi_dmul
+ 145              	.LVL13:
+ 146              		.loc 1 10 188 view .LVU17
+ 147 00b0 2246     		mov	r2, r4
+ 148 00b2 2B46     		mov	r3, r5
+ 149 00b4 FFF7FEFF 		bl	__aeabi_dmul
+ 150              	.LVL14:
+ 151              		.loc 1 10 202 view .LVU18
+ 152 00b8 2246     		mov	r2, r4
+ 153 00ba 2B46     		mov	r3, r5
+ 154 00bc FFF7FEFF 		bl	__aeabi_dmul
+ 155              	.LVL15:
+ 156 00c0 0246     		mov	r2, r0
+ 157 00c2 0B46     		mov	r3, r1
+ 158              		.loc 1 10 12 view .LVU19
+ 159 00c4 4046     		mov	r0, r8
+ 160 00c6 4946     		mov	r1, r9
+ 161 00c8 FFF7FEFF 		bl	__aeabi_dadd
+ 162              	.LVL16:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 4
 
 
- 163              	.LVL16:
- 164 00c4 CDE90001 		strd	r0, [sp]
- 165              	.LVL17:
+ 163 00cc CDE90001 		strd	r0, [sp]
+ 164              	.LVL17:
   11:Core/Src/salinity.c ****     double R_p = 1 + (CONST_E_1 * pressure + CONST_E_2 * pressure * pressure + CONST_E_3 * pressure
- 166              		.loc 1 11 5 is_stmt 1 view .LVU20
- 167              		.loc 1 11 33 is_stmt 0 view .LVU21
- 168 00c8 99A3     		adr	r3, .L3+40
- 169 00ca D3E90023 		ldrd	r2, [r3]
- 170 00ce 3046     		mov	r0, r6
- 171              	.LVL18:
- 172              		.loc 1 11 33 view .LVU22
- 173 00d0 3946     		mov	r1, r7
- 174 00d2 FFF7FEFF 		bl	__aeabi_dmul
- 175              	.LVL19:
- 176 00d6 8046     		mov	r8, r0
- 177 00d8 8946     		mov	r9, r1
- 178              		.loc 1 11 56 view .LVU23
- 179 00da 97A3     		adr	r3, .L3+48
- 180 00dc D3E90023 		ldrd	r2, [r3]
- 181 00e0 3046     		mov	r0, r6
- 182 00e2 3946     		mov	r1, r7
- 183 00e4 FFF7FEFF 		bl	__aeabi_dmul
- 184              	.LVL20:
- 185              		.loc 1 11 67 view .LVU24
- 186 00e8 3246     		mov	r2, r6
- 187 00ea 3B46     		mov	r3, r7
- 188 00ec FFF7FEFF 		bl	__aeabi_dmul
- 189              	.LVL21:
- 190 00f0 0246     		mov	r2, r0
- 191 00f2 0B46     		mov	r3, r1
- 192              		.loc 1 11 44 view .LVU25
- 193 00f4 4046     		mov	r0, r8
- 194 00f6 4946     		mov	r1, r9
- 195 00f8 FFF7FEFF 		bl	__aeabi_dadd
- 196              	.LVL22:
- 197 00fc 8046     		mov	r8, r0
- 198 00fe 8946     		mov	r9, r1
- 199              		.loc 1 11 90 view .LVU26
- 200 0100 8FA3     		adr	r3, .L3+56
- 201 0102 D3E90023 		ldrd	r2, [r3]
- 202 0106 3046     		mov	r0, r6
- 203 0108 3946     		mov	r1, r7
- 204 010a FFF7FEFF 		bl	__aeabi_dmul
- 205              	.LVL23:
- 206              		.loc 1 11 101 view .LVU27
- 207 010e 3246     		mov	r2, r6
- 208 0110 3B46     		mov	r3, r7
- 209 0112 FFF7FEFF 		bl	__aeabi_dmul
- 210              	.LVL24:
- 211              		.loc 1 11 112 view .LVU28
- 212 0116 3246     		mov	r2, r6
- 213 0118 3B46     		mov	r3, r7
- 214 011a FFF7FEFF 		bl	__aeabi_dmul
- 215              	.LVL25:
- 216 011e 0246     		mov	r2, r0
- 217 0120 0B46     		mov	r3, r1
- 218              		.loc 1 11 78 view .LVU29
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 5
+ 165              		.loc 1 11 5 is_stmt 1 view .LVU20
+ 166              		.loc 1 11 33 is_stmt 0 view .LVU21
+ 167 00d0 F1A3     		adr	r3, .L3+200
+ 168 00d2 D3E90023 		ldrd	r2, [r3]
+ 169 00d6 3046     		mov	r0, r6
+ 170              	.LVL18:
+ 171              		.loc 1 11 33 view .LVU22
+ 172 00d8 3946     		mov	r1, r7
+ 173 00da FFF7FEFF 		bl	__aeabi_dmul
+ 174              	.LVL19:
+ 175 00de 8046     		mov	r8, r0
+ 176 00e0 8946     		mov	r9, r1
+ 177              		.loc 1 11 56 view .LVU23
+ 178 00e2 EFA3     		adr	r3, .L3+208
+ 179 00e4 D3E90023 		ldrd	r2, [r3]
+ 180 00e8 3046     		mov	r0, r6
+ 181 00ea 3946     		mov	r1, r7
+ 182 00ec FFF7FEFF 		bl	__aeabi_dmul
+ 183              	.LVL20:
+ 184              		.loc 1 11 67 view .LVU24
+ 185 00f0 3246     		mov	r2, r6
+ 186 00f2 3B46     		mov	r3, r7
+ 187 00f4 FFF7FEFF 		bl	__aeabi_dmul
+ 188              	.LVL21:
+ 189 00f8 0246     		mov	r2, r0
+ 190 00fa 0B46     		mov	r3, r1
+ 191              		.loc 1 11 44 view .LVU25
+ 192 00fc 4046     		mov	r0, r8
+ 193 00fe 4946     		mov	r1, r9
+ 194 0100 FFF7FEFF 		bl	__aeabi_dadd
+ 195              	.LVL22:
+ 196 0104 8046     		mov	r8, r0
+ 197 0106 8946     		mov	r9, r1
+ 198              		.loc 1 11 90 view .LVU26
+ 199 0108 E7A3     		adr	r3, .L3+216
+ 200 010a D3E90023 		ldrd	r2, [r3]
+ 201 010e 3046     		mov	r0, r6
+ 202 0110 3946     		mov	r1, r7
+ 203 0112 FFF7FEFF 		bl	__aeabi_dmul
+ 204              	.LVL23:
+ 205              		.loc 1 11 101 view .LVU27
+ 206 0116 3246     		mov	r2, r6
+ 207 0118 3B46     		mov	r3, r7
+ 208 011a FFF7FEFF 		bl	__aeabi_dmul
+ 209              	.LVL24:
+ 210              		.loc 1 11 112 view .LVU28
+ 211 011e 3246     		mov	r2, r6
+ 212 0120 3B46     		mov	r3, r7
+ 213 0122 FFF7FEFF 		bl	__aeabi_dmul
+ 214              	.LVL25:
+ 215 0126 0246     		mov	r2, r0
+ 216 0128 0B46     		mov	r3, r1
+ 217              		.loc 1 11 78 view .LVU29
+ 218 012a 4046     		mov	r0, r8
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 5
 
 
- 219 0122 4046     		mov	r0, r8
- 220 0124 4946     		mov	r1, r9
- 221 0126 FFF7FEFF 		bl	__aeabi_dadd
- 222              	.LVL26:
- 223 012a 0646     		mov	r6, r0
- 224              	.LVL27:
- 225              		.loc 1 11 78 view .LVU30
- 226 012c 0F46     		mov	r7, r1
- 227              		.loc 1 11 141 view .LVU31
- 228 012e 86A3     		adr	r3, .L3+64
- 229 0130 D3E90023 		ldrd	r2, [r3]
- 230 0134 2046     		mov	r0, r4
- 231 0136 2946     		mov	r1, r5
- 232 0138 FFF7FEFF 		bl	__aeabi_dmul
- 233              	.LVL28:
- 234              		.loc 1 11 129 view .LVU32
- 235 013c 0022     		movs	r2, #0
- 236 013e A54B     		ldr	r3, .L3+204
- 237 0140 FFF7FEFF 		bl	__aeabi_dadd
- 238              	.LVL29:
- 239 0144 8046     		mov	r8, r0
- 240 0146 8946     		mov	r9, r1
- 241              		.loc 1 11 167 view .LVU33
- 242 0148 81A3     		adr	r3, .L3+72
- 243 014a D3E90023 		ldrd	r2, [r3]
- 244 014e 2046     		mov	r0, r4
- 245 0150 2946     		mov	r1, r5
- 246 0152 FFF7FEFF 		bl	__aeabi_dmul
- 247              	.LVL30:
- 248              		.loc 1 11 181 view .LVU34
- 249 0156 2246     		mov	r2, r4
- 250 0158 2B46     		mov	r3, r5
- 251 015a FFF7FEFF 		bl	__aeabi_dmul
- 252              	.LVL31:
- 253 015e 0246     		mov	r2, r0
- 254 0160 0B46     		mov	r3, r1
- 255              		.loc 1 11 155 view .LVU35
- 256 0162 4046     		mov	r0, r8
- 257 0164 4946     		mov	r1, r9
- 258 0166 FFF7FEFF 		bl	__aeabi_dadd
- 259              	.LVL32:
- 260 016a 8046     		mov	r8, r0
- 261 016c 8946     		mov	r9, r1
- 262              		.loc 1 11 224 view .LVU36
- 263 016e 7AA3     		adr	r3, .L3+80
- 264 0170 D3E90023 		ldrd	r2, [r3]
- 265 0174 2046     		mov	r0, r4
- 266 0176 2946     		mov	r1, r5
- 267 0178 FFF7FEFF 		bl	__aeabi_dmul
- 268              	.LVL33:
- 269              		.loc 1 11 212 view .LVU37
- 270 017c 78A3     		adr	r3, .L3+88
- 271 017e D3E90023 		ldrd	r2, [r3]
- 272 0182 FFF7FEFF 		bl	__aeabi_dsub
- 273              	.LVL34:
- 274              		.loc 1 11 199 view .LVU38
- 275 0186 5246     		mov	r2, r10
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 6
+ 219 012c 4946     		mov	r1, r9
+ 220 012e FFF7FEFF 		bl	__aeabi_dadd
+ 221              	.LVL26:
+ 222 0132 0646     		mov	r6, r0
+ 223              	.LVL27:
+ 224              		.loc 1 11 78 view .LVU30
+ 225 0134 0F46     		mov	r7, r1
+ 226              		.loc 1 11 141 view .LVU31
+ 227 0136 DEA3     		adr	r3, .L3+224
+ 228 0138 D3E90023 		ldrd	r2, [r3]
+ 229 013c 2046     		mov	r0, r4
+ 230 013e 2946     		mov	r1, r5
+ 231 0140 FFF7FEFF 		bl	__aeabi_dmul
+ 232              	.LVL28:
+ 233              		.loc 1 11 129 view .LVU32
+ 234 0144 0022     		movs	r2, #0
+ 235 0146 C84B     		ldr	r3, .L3+152
+ 236 0148 FFF7FEFF 		bl	__aeabi_dadd
+ 237              	.LVL29:
+ 238 014c 8046     		mov	r8, r0
+ 239 014e 8946     		mov	r9, r1
+ 240              		.loc 1 11 167 view .LVU33
+ 241 0150 9FA3     		adr	r3, .L3
+ 242 0152 D3E90023 		ldrd	r2, [r3]
+ 243 0156 2046     		mov	r0, r4
+ 244 0158 2946     		mov	r1, r5
+ 245 015a FFF7FEFF 		bl	__aeabi_dmul
+ 246              	.LVL30:
+ 247              		.loc 1 11 181 view .LVU34
+ 248 015e 2246     		mov	r2, r4
+ 249 0160 2B46     		mov	r3, r5
+ 250 0162 FFF7FEFF 		bl	__aeabi_dmul
+ 251              	.LVL31:
+ 252 0166 0246     		mov	r2, r0
+ 253 0168 0B46     		mov	r3, r1
+ 254              		.loc 1 11 155 view .LVU35
+ 255 016a 4046     		mov	r0, r8
+ 256 016c 4946     		mov	r1, r9
+ 257 016e FFF7FEFF 		bl	__aeabi_dadd
+ 258              	.LVL32:
+ 259 0172 8046     		mov	r8, r0
+ 260 0174 8946     		mov	r9, r1
+ 261              		.loc 1 11 224 view .LVU36
+ 262 0176 98A3     		adr	r3, .L3+8
+ 263 0178 D3E90023 		ldrd	r2, [r3]
+ 264 017c 2046     		mov	r0, r4
+ 265 017e 2946     		mov	r1, r5
+ 266 0180 FFF7FEFF 		bl	__aeabi_dmul
+ 267              	.LVL33:
+ 268              		.loc 1 11 212 view .LVU37
+ 269 0184 96A3     		adr	r3, .L3+16
+ 270 0186 D3E90023 		ldrd	r2, [r3]
+ 271 018a FFF7FEFF 		bl	__aeabi_dsub
+ 272              	.LVL34:
+ 273              		.loc 1 11 199 view .LVU38
+ 274 018e 5246     		mov	r2, r10
+ 275 0190 5B46     		mov	r3, fp
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 6
 
 
- 276 0188 5B46     		mov	r3, fp
- 277 018a FFF7FEFF 		bl	__aeabi_dmul
- 278              	.LVL35:
- 279 018e 0246     		mov	r2, r0
- 280 0190 0B46     		mov	r3, r1
- 281              		.loc 1 11 195 view .LVU39
- 282 0192 4046     		mov	r0, r8
- 283 0194 4946     		mov	r1, r9
- 284 0196 FFF7FEFF 		bl	__aeabi_dadd
- 285              	.LVL36:
- 286 019a 0246     		mov	r2, r0
- 287 019c 0B46     		mov	r3, r1
- 288              		.loc 1 11 124 view .LVU40
- 289 019e 3046     		mov	r0, r6
- 290 01a0 3946     		mov	r1, r7
- 291 01a2 FFF7FEFF 		bl	__aeabi_ddiv
- 292              	.LVL37:
- 293              		.loc 1 11 12 view .LVU41
- 294 01a6 0022     		movs	r2, #0
- 295 01a8 8A4B     		ldr	r3, .L3+204
- 296 01aa FFF7FEFF 		bl	__aeabi_dadd
- 297              	.LVL38:
- 298 01ae 0246     		mov	r2, r0
- 299 01b0 0B46     		mov	r3, r1
- 300              	.LVL39:
+ 276 0192 FFF7FEFF 		bl	__aeabi_dmul
+ 277              	.LVL35:
+ 278 0196 0246     		mov	r2, r0
+ 279 0198 0B46     		mov	r3, r1
+ 280              		.loc 1 11 195 view .LVU39
+ 281 019a 4046     		mov	r0, r8
+ 282 019c 4946     		mov	r1, r9
+ 283 019e FFF7FEFF 		bl	__aeabi_dadd
+ 284              	.LVL36:
+ 285 01a2 0246     		mov	r2, r0
+ 286 01a4 0B46     		mov	r3, r1
+ 287              		.loc 1 11 124 view .LVU40
+ 288 01a6 3046     		mov	r0, r6
+ 289 01a8 3946     		mov	r1, r7
+ 290 01aa FFF7FEFF 		bl	__aeabi_ddiv
+ 291              	.LVL37:
+ 292              		.loc 1 11 12 view .LVU41
+ 293 01ae 0022     		movs	r2, #0
+ 294 01b0 AD4B     		ldr	r3, .L3+152
+ 295 01b2 FFF7FEFF 		bl	__aeabi_dadd
+ 296              	.LVL38:
+ 297 01b6 0246     		mov	r2, r0
+ 298 01b8 0B46     		mov	r3, r1
+ 299              	.LVL39:
   12:Core/Src/salinity.c ****     double R_t = R / (R_p * r_t);
- 301              		.loc 1 12 5 is_stmt 1 view .LVU42
- 302              		.loc 1 12 27 is_stmt 0 view .LVU43
- 303 01b2 DDE90001 		ldrd	r0, [sp]
- 304 01b6 FFF7FEFF 		bl	__aeabi_dmul
- 305              	.LVL40:
- 306              		.loc 1 12 27 view .LVU44
- 307 01ba 0246     		mov	r2, r0
- 308 01bc 0B46     		mov	r3, r1
- 309              		.loc 1 12 12 view .LVU45
- 310 01be 5046     		mov	r0, r10
- 311 01c0 5946     		mov	r1, fp
- 312 01c2 FFF7FEFF 		bl	__aeabi_ddiv
- 313              	.LVL41:
- 314 01c6 8246     		mov	r10, r0
- 315              	.LVL42:
- 316              		.loc 1 12 12 view .LVU46
- 317 01c8 8B46     		mov	fp, r1
- 318              	.LVL43:
+ 300              		.loc 1 12 5 is_stmt 1 view .LVU42
+ 301              		.loc 1 12 27 is_stmt 0 view .LVU43
+ 302 01ba DDE90001 		ldrd	r0, [sp]
+ 303 01be FFF7FEFF 		bl	__aeabi_dmul
+ 304              	.LVL40:
+ 305              		.loc 1 12 27 view .LVU44
+ 306 01c2 0246     		mov	r2, r0
+ 307 01c4 0B46     		mov	r3, r1
+ 308              		.loc 1 12 12 view .LVU45
+ 309 01c6 5046     		mov	r0, r10
+ 310 01c8 5946     		mov	r1, fp
+ 311 01ca FFF7FEFF 		bl	__aeabi_ddiv
+ 312              	.LVL41:
+ 313 01ce 8246     		mov	r10, r0
+ 314              	.LVL42:
+ 315              		.loc 1 12 12 view .LVU46
+ 316 01d0 8B46     		mov	fp, r1
+ 317              	.LVL43:
   13:Core/Src/salinity.c ****     return CONST_A_0 + CONST_A_1 * pow(R_t, 0.5) + CONST_A_2 * R_t + CONST_A_3 * pow(R_t, 1.5) + CO
- 319              		.loc 1 13 5 is_stmt 1 view .LVU47
- 320              		.loc 1 13 36 is_stmt 0 view .LVU48
- 321 01ca 9FED67AB 		vldr.64	d10, .L3+96
- 322 01ce B0EE4A1A 		vmov.f32	s2, s20
- 323 01d2 F0EE6A1A 		vmov.f32	s3, s21
- 324 01d6 4BEC10AB 		vmov	d0, r10, fp
- 325 01da FFF7FEFF 		bl	pow
- 326              	.LVL44:
- 327 01de 51EC100B 		vmov	r0, r1, d0
- 328              		.loc 1 13 34 discriminator 1 view .LVU49
- 329 01e2 63A3     		adr	r3, .L3+104
- 330 01e4 D3E90023 		ldrd	r2, [r3]
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 7
+ 318              		.loc 1 13 5 is_stmt 1 view .LVU47
+ 319              		.loc 1 13 36 is_stmt 0 view .LVU48
+ 320 01d2 9FED85AB 		vldr.64	d10, .L3+24
+ 321 01d6 B0EE4A1A 		vmov.f32	s2, s20
+ 322 01da F0EE6A1A 		vmov.f32	s3, s21
+ 323 01de 4BEC10AB 		vmov	d0, r10, fp
+ 324 01e2 FFF7FEFF 		bl	pow
+ 325              	.LVL44:
+ 326 01e6 51EC100B 		vmov	r0, r1, d0
+ 327              		.loc 1 13 34 discriminator 1 view .LVU49
+ 328 01ea 81A3     		adr	r3, .L3+32
+ 329 01ec D3E90023 		ldrd	r2, [r3]
+ 330 01f0 FFF7FEFF 		bl	__aeabi_dmul
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 7
 
 
- 331 01e8 FFF7FEFF 		bl	__aeabi_dmul
- 332              	.LVL45:
- 333              		.loc 1 13 22 discriminator 1 view .LVU50
- 334 01ec 62A3     		adr	r3, .L3+112
- 335 01ee D3E90023 		ldrd	r2, [r3]
- 336 01f2 FFF7FEFF 		bl	__aeabi_dadd
- 337              	.LVL46:
- 338 01f6 0646     		mov	r6, r0
- 339 01f8 0F46     		mov	r7, r1
- 340              		.loc 1 13 62 discriminator 1 view .LVU51
- 341 01fa 61A3     		adr	r3, .L3+120
- 342 01fc D3E90023 		ldrd	r2, [r3]
- 343 0200 5046     		mov	r0, r10
- 344 0202 5946     		mov	r1, fp
- 345 0204 FFF7FEFF 		bl	__aeabi_dmul
- 346              	.LVL47:
- 347 0208 0246     		mov	r2, r0
- 348 020a 0B46     		mov	r3, r1
- 349              		.loc 1 13 50 discriminator 1 view .LVU52
- 350 020c 3046     		mov	r0, r6
- 351 020e 3946     		mov	r1, r7
- 352 0210 FFF7FEFF 		bl	__aeabi_dadd
- 353              	.LVL48:
- 354 0214 0646     		mov	r6, r0
- 355 0216 0F46     		mov	r7, r1
- 356              		.loc 1 13 82 discriminator 1 view .LVU53
- 357 0218 9FED5B9B 		vldr.64	d9, .L3+128
- 358 021c B0EE491A 		vmov.f32	s2, s18
- 359 0220 F0EE691A 		vmov.f32	s3, s19
- 360 0224 4BEC10AB 		vmov	d0, r10, fp
- 361 0228 FFF7FEFF 		bl	pow
- 362              	.LVL49:
- 363 022c 51EC100B 		vmov	r0, r1, d0
- 364              		.loc 1 13 80 discriminator 2 view .LVU54
- 365 0230 57A3     		adr	r3, .L3+136
- 366 0232 D3E90023 		ldrd	r2, [r3]
- 367 0236 FFF7FEFF 		bl	__aeabi_dmul
- 368              	.LVL50:
- 369 023a 0246     		mov	r2, r0
- 370 023c 0B46     		mov	r3, r1
- 371              		.loc 1 13 68 discriminator 2 view .LVU55
- 372 023e 3046     		mov	r0, r6
- 373 0240 3946     		mov	r1, r7
- 374 0242 FFF7FEFF 		bl	__aeabi_dadd
- 375              	.LVL51:
- 376 0246 0646     		mov	r6, r0
- 377 0248 0F46     		mov	r7, r1
- 378              		.loc 1 13 108 discriminator 2 view .LVU56
- 379 024a 53A3     		adr	r3, .L3+144
- 380 024c D3E90023 		ldrd	r2, [r3]
- 381 0250 5046     		mov	r0, r10
- 382 0252 5946     		mov	r1, fp
- 383 0254 FFF7FEFF 		bl	__aeabi_dmul
- 384              	.LVL52:
- 385              		.loc 1 13 114 discriminator 2 view .LVU57
- 386 0258 5246     		mov	r2, r10
- 387 025a 5B46     		mov	r3, fp
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 8
+ 331              	.LVL45:
+ 332              		.loc 1 13 22 discriminator 1 view .LVU50
+ 333 01f4 80A3     		adr	r3, .L3+40
+ 334 01f6 D3E90023 		ldrd	r2, [r3]
+ 335 01fa FFF7FEFF 		bl	__aeabi_dadd
+ 336              	.LVL46:
+ 337 01fe 0646     		mov	r6, r0
+ 338 0200 0F46     		mov	r7, r1
+ 339              		.loc 1 13 62 discriminator 1 view .LVU51
+ 340 0202 7FA3     		adr	r3, .L3+48
+ 341 0204 D3E90023 		ldrd	r2, [r3]
+ 342 0208 5046     		mov	r0, r10
+ 343 020a 5946     		mov	r1, fp
+ 344 020c FFF7FEFF 		bl	__aeabi_dmul
+ 345              	.LVL47:
+ 346 0210 0246     		mov	r2, r0
+ 347 0212 0B46     		mov	r3, r1
+ 348              		.loc 1 13 50 discriminator 1 view .LVU52
+ 349 0214 3046     		mov	r0, r6
+ 350 0216 3946     		mov	r1, r7
+ 351 0218 FFF7FEFF 		bl	__aeabi_dadd
+ 352              	.LVL48:
+ 353 021c 0646     		mov	r6, r0
+ 354 021e 0F46     		mov	r7, r1
+ 355              		.loc 1 13 82 discriminator 1 view .LVU53
+ 356 0220 9FED799B 		vldr.64	d9, .L3+56
+ 357 0224 B0EE491A 		vmov.f32	s2, s18
+ 358 0228 F0EE691A 		vmov.f32	s3, s19
+ 359 022c 4BEC10AB 		vmov	d0, r10, fp
+ 360 0230 FFF7FEFF 		bl	pow
+ 361              	.LVL49:
+ 362 0234 51EC100B 		vmov	r0, r1, d0
+ 363              		.loc 1 13 80 discriminator 2 view .LVU54
+ 364 0238 75A3     		adr	r3, .L3+64
+ 365 023a D3E90023 		ldrd	r2, [r3]
+ 366 023e FFF7FEFF 		bl	__aeabi_dmul
+ 367              	.LVL50:
+ 368 0242 0246     		mov	r2, r0
+ 369 0244 0B46     		mov	r3, r1
+ 370              		.loc 1 13 68 discriminator 2 view .LVU55
+ 371 0246 3046     		mov	r0, r6
+ 372 0248 3946     		mov	r1, r7
+ 373 024a FFF7FEFF 		bl	__aeabi_dadd
+ 374              	.LVL51:
+ 375 024e 0646     		mov	r6, r0
+ 376 0250 0F46     		mov	r7, r1
+ 377              		.loc 1 13 108 discriminator 2 view .LVU56
+ 378 0252 71A3     		adr	r3, .L3+72
+ 379 0254 D3E90023 		ldrd	r2, [r3]
+ 380 0258 5046     		mov	r0, r10
+ 381 025a 5946     		mov	r1, fp
+ 382 025c FFF7FEFF 		bl	__aeabi_dmul
+ 383              	.LVL52:
+ 384              		.loc 1 13 114 discriminator 2 view .LVU57
+ 385 0260 5246     		mov	r2, r10
+ 386 0262 5B46     		mov	r3, fp
+ 387 0264 FFF7FEFF 		bl	__aeabi_dmul
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 8
 
 
- 388 025c FFF7FEFF 		bl	__aeabi_dmul
- 389              	.LVL53:
- 390 0260 0246     		mov	r2, r0
- 391 0262 0B46     		mov	r3, r1
- 392              		.loc 1 13 96 discriminator 2 view .LVU58
- 393 0264 3046     		mov	r0, r6
- 394 0266 3946     		mov	r1, r7
- 395 0268 FFF7FEFF 		bl	__aeabi_dadd
- 396              	.LVL54:
- 397 026c 0646     		mov	r6, r0
- 398 026e 0F46     		mov	r7, r1
- 399              		.loc 1 13 134 discriminator 2 view .LVU59
- 400 0270 9FED4B8B 		vldr.64	d8, .L3+152
- 401 0274 B0EE481A 		vmov.f32	s2, s16
- 402 0278 F0EE681A 		vmov.f32	s3, s17
- 403 027c 4BEC10AB 		vmov	d0, r10, fp
- 404 0280 FFF7FEFF 		bl	pow
- 405              	.LVL55:
- 406 0284 51EC100B 		vmov	r0, r1, d0
- 407              		.loc 1 13 132 discriminator 3 view .LVU60
- 408 0288 47A3     		adr	r3, .L3+160
- 409 028a D3E90023 		ldrd	r2, [r3]
- 410 028e FFF7FEFF 		bl	__aeabi_dmul
- 411              	.LVL56:
- 412 0292 0246     		mov	r2, r0
- 413 0294 0B46     		mov	r3, r1
- 414              		.loc 1 13 120 discriminator 3 view .LVU61
- 415 0296 3046     		mov	r0, r6
- 416 0298 3946     		mov	r1, r7
- 417 029a FFF7FEFF 		bl	__aeabi_dadd
- 418              	.LVL57:
- 419 029e 0646     		mov	r6, r0
- 420 02a0 0F46     		mov	r7, r1
- 421              		.loc 1 13 163 discriminator 3 view .LVU62
- 422 02a2 0022     		movs	r2, #0
- 423 02a4 4C4B     		ldr	r3, .L3+208
- 424 02a6 2046     		mov	r0, r4
- 425 02a8 2946     		mov	r1, r5
- 426 02aa FFF7FEFF 		bl	__aeabi_dsub
- 427              	.LVL58:
- 428 02ae 0446     		mov	r4, r0
- 429              	.LVL59:
- 430              		.loc 1 13 163 discriminator 3 view .LVU63
- 431 02b0 0D46     		mov	r5, r1
- 432              		.loc 1 13 184 discriminator 3 view .LVU64
- 433 02b2 3FA3     		adr	r3, .L3+168
- 434 02b4 D3E90023 		ldrd	r2, [r3]
- 435 02b8 FFF7FEFF 		bl	__aeabi_dmul
- 436              	.LVL60:
- 437              		.loc 1 13 174 discriminator 3 view .LVU65
- 438 02bc 0022     		movs	r2, #0
- 439 02be 454B     		ldr	r3, .L3+204
- 440 02c0 FFF7FEFF 		bl	__aeabi_dadd
- 441              	.LVL61:
- 442 02c4 0246     		mov	r2, r0
- 443 02c6 0B46     		mov	r3, r1
- 444              		.loc 1 13 169 discriminator 3 view .LVU66
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 9
+ 388              	.LVL53:
+ 389 0268 0246     		mov	r2, r0
+ 390 026a 0B46     		mov	r3, r1
+ 391              		.loc 1 13 96 discriminator 2 view .LVU58
+ 392 026c 3046     		mov	r0, r6
+ 393 026e 3946     		mov	r1, r7
+ 394 0270 FFF7FEFF 		bl	__aeabi_dadd
+ 395              	.LVL54:
+ 396 0274 0646     		mov	r6, r0
+ 397 0276 0F46     		mov	r7, r1
+ 398              		.loc 1 13 134 discriminator 2 view .LVU59
+ 399 0278 9FED698B 		vldr.64	d8, .L3+80
+ 400 027c B0EE481A 		vmov.f32	s2, s16
+ 401 0280 F0EE681A 		vmov.f32	s3, s17
+ 402 0284 4BEC10AB 		vmov	d0, r10, fp
+ 403 0288 FFF7FEFF 		bl	pow
+ 404              	.LVL55:
+ 405 028c 51EC100B 		vmov	r0, r1, d0
+ 406              		.loc 1 13 132 discriminator 3 view .LVU60
+ 407 0290 65A3     		adr	r3, .L3+88
+ 408 0292 D3E90023 		ldrd	r2, [r3]
+ 409 0296 FFF7FEFF 		bl	__aeabi_dmul
+ 410              	.LVL56:
+ 411 029a 0246     		mov	r2, r0
+ 412 029c 0B46     		mov	r3, r1
+ 413              		.loc 1 13 120 discriminator 3 view .LVU61
+ 414 029e 3046     		mov	r0, r6
+ 415 02a0 3946     		mov	r1, r7
+ 416 02a2 FFF7FEFF 		bl	__aeabi_dadd
+ 417              	.LVL57:
+ 418 02a6 0646     		mov	r6, r0
+ 419 02a8 0F46     		mov	r7, r1
+ 420              		.loc 1 13 163 discriminator 3 view .LVU62
+ 421 02aa 0022     		movs	r2, #0
+ 422 02ac 6F4B     		ldr	r3, .L3+156
+ 423 02ae 2046     		mov	r0, r4
+ 424 02b0 2946     		mov	r1, r5
+ 425 02b2 FFF7FEFF 		bl	__aeabi_dsub
+ 426              	.LVL58:
+ 427 02b6 0446     		mov	r4, r0
+ 428              	.LVL59:
+ 429              		.loc 1 13 163 discriminator 3 view .LVU63
+ 430 02b8 0D46     		mov	r5, r1
+ 431              		.loc 1 13 184 discriminator 3 view .LVU64
+ 432 02ba 5DA3     		adr	r3, .L3+96
+ 433 02bc D3E90023 		ldrd	r2, [r3]
+ 434 02c0 FFF7FEFF 		bl	__aeabi_dmul
+ 435              	.LVL60:
+ 436              		.loc 1 13 174 discriminator 3 view .LVU65
+ 437 02c4 0022     		movs	r2, #0
+ 438 02c6 684B     		ldr	r3, .L3+152
+ 439 02c8 FFF7FEFF 		bl	__aeabi_dadd
+ 440              	.LVL61:
+ 441 02cc 0246     		mov	r2, r0
+ 442 02ce 0B46     		mov	r3, r1
+ 443              		.loc 1 13 169 discriminator 3 view .LVU66
+ 444 02d0 2046     		mov	r0, r4
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 9
 
 
- 445 02c8 2046     		mov	r0, r4
- 446 02ca 2946     		mov	r1, r5
- 447 02cc FFF7FEFF 		bl	__aeabi_ddiv
- 448              	.LVL62:
- 449 02d0 0446     		mov	r4, r0
- 450 02d2 0D46     		mov	r5, r1
- 451              		.loc 1 13 233 discriminator 3 view .LVU67
- 452 02d4 B0EE4A1A 		vmov.f32	s2, s20
- 453 02d8 F0EE6A1A 		vmov.f32	s3, s21
- 454 02dc 4BEC10AB 		vmov	d0, r10, fp
- 455 02e0 FFF7FEFF 		bl	pow
- 456              	.LVL63:
- 457 02e4 51EC100B 		vmov	r0, r1, d0
- 458              		.loc 1 13 231 discriminator 4 view .LVU68
- 459 02e8 33A3     		adr	r3, .L3+176
- 460 02ea D3E90023 		ldrd	r2, [r3]
- 461 02ee FFF7FEFF 		bl	__aeabi_dmul
- 462              	.LVL64:
- 463              		.loc 1 13 219 discriminator 4 view .LVU69
- 464 02f2 33A3     		adr	r3, .L3+184
- 465 02f4 D3E90023 		ldrd	r2, [r3]
- 466 02f8 FFF7FEFF 		bl	__aeabi_dadd
- 467              	.LVL65:
- 468 02fc 8046     		mov	r8, r0
- 469 02fe 8946     		mov	r9, r1
- 470              		.loc 1 13 259 discriminator 4 view .LVU70
- 471 0300 31A3     		adr	r3, .L3+192
- 472 0302 D3E90023 		ldrd	r2, [r3]
- 473 0306 69E0     		b	.L4
- 474              	.L5:
- 475              		.align	3
- 476              	.L3:
- 477 0308 674E4D38 		.word	944590439
- 478 030c AA89943F 		.word	1066699178
- 479 0310 FE00B562 		.word	1656029438
- 480 0314 C9A6E53F 		.word	1072015049
- 481 0318 4E033B84 		.word	-2076507314
- 482 031c 8EF21C3F 		.word	1058861710
- 483 0320 2B1C893A 		.word	982064171
- 484 0324 0363A7BE 		.word	-1096326397
- 485 0328 2A5A5132 		.word	844192298
- 486 032c AE3B113E 		.word	1041316782
- 487 0330 BB911E2B 		.word	723423675
- 488 0334 9DB4F53E 		.word	1056289949
- 489 0338 A487059A 		.word	-1710913628
- 490 033c E35B3BBE 		.word	-1103406109
- 491 0340 871567FE 		.word	-26798713
- 492 0344 00F7F13C 		.word	1022490368
- 493 0348 26361FD7 		.word	-685820378
- 494 034c 868AA13F 		.word	1067551366
- 495 0350 08A3A366 		.word	1722000136
- 496 0354 59413D3F 		.word	1060979033
- 497 0358 430070EC 		.word	-328204221
- 498 035c D97369BF 		.word	-1083608103
- 499 0360 A4367172 		.word	1920022180
- 500 0364 BF43713F 		.word	1064387519
- 501 0368 00000000 		.word	0
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 10
+ 445 02d2 2946     		mov	r1, r5
+ 446 02d4 FFF7FEFF 		bl	__aeabi_ddiv
+ 447              	.LVL62:
+ 448 02d8 0446     		mov	r4, r0
+ 449 02da 0D46     		mov	r5, r1
+ 450              		.loc 1 13 233 discriminator 3 view .LVU67
+ 451 02dc B0EE4A1A 		vmov.f32	s2, s20
+ 452 02e0 F0EE6A1A 		vmov.f32	s3, s21
+ 453 02e4 4BEC10AB 		vmov	d0, r10, fp
+ 454 02e8 FFF7FEFF 		bl	pow
+ 455              	.LVL63:
+ 456 02ec 51EC100B 		vmov	r0, r1, d0
+ 457              		.loc 1 13 231 discriminator 4 view .LVU68
+ 458 02f0 51A3     		adr	r3, .L3+104
+ 459 02f2 D3E90023 		ldrd	r2, [r3]
+ 460 02f6 FFF7FEFF 		bl	__aeabi_dmul
+ 461              	.LVL64:
+ 462              		.loc 1 13 219 discriminator 4 view .LVU69
+ 463 02fa 51A3     		adr	r3, .L3+112
+ 464 02fc D3E90023 		ldrd	r2, [r3]
+ 465 0300 FFF7FEFF 		bl	__aeabi_dadd
+ 466              	.LVL65:
+ 467 0304 8046     		mov	r8, r0
+ 468 0306 8946     		mov	r9, r1
+ 469              		.loc 1 13 259 discriminator 4 view .LVU70
+ 470 0308 4FA3     		adr	r3, .L3+120
+ 471 030a D3E90023 		ldrd	r2, [r3]
+ 472 030e 5046     		mov	r0, r10
+ 473 0310 5946     		mov	r1, fp
+ 474 0312 FFF7FEFF 		bl	__aeabi_dmul
+ 475              	.LVL66:
+ 476 0316 0246     		mov	r2, r0
+ 477 0318 0B46     		mov	r3, r1
+ 478              		.loc 1 13 247 discriminator 4 view .LVU71
+ 479 031a 4046     		mov	r0, r8
+ 480 031c 4946     		mov	r1, r9
+ 481 031e FFF7FEFF 		bl	__aeabi_dadd
+ 482              	.LVL67:
+ 483 0322 8046     		mov	r8, r0
+ 484 0324 8946     		mov	r9, r1
+ 485              		.loc 1 13 279 discriminator 4 view .LVU72
+ 486 0326 B0EE491A 		vmov.f32	s2, s18
+ 487 032a F0EE691A 		vmov.f32	s3, s19
+ 488 032e 4BEC10AB 		vmov	d0, r10, fp
+ 489 0332 FFF7FEFF 		bl	pow
+ 490              	.LVL68:
+ 491 0336 51EC100B 		vmov	r0, r1, d0
+ 492              		.loc 1 13 277 discriminator 5 view .LVU73
+ 493 033a 45A3     		adr	r3, .L3+128
+ 494 033c D3E90023 		ldrd	r2, [r3]
+ 495 0340 FFF7FEFF 		bl	__aeabi_dmul
+ 496              	.LVL69:
+ 497 0344 0246     		mov	r2, r0
+ 498 0346 0B46     		mov	r3, r1
+ 499              		.loc 1 13 265 discriminator 5 view .LVU74
+ 500 0348 4046     		mov	r0, r8
+ 501 034a 4946     		mov	r1, r9
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 10
 
 
- 502 036c 0000E03F 		.word	1071644672
- 503 0370 7FD93D79 		.word	2034096511
- 504 0374 58A8C5BF 		.word	-1077565352
- 505 0378 FCA9F1D2 		.word	-755914244
- 506 037c 4D62803F 		.word	1065378381
- 507 0380 8AB0E1E9 		.word	-371085174
- 508 0384 95623940 		.word	1077502613
- 509 0388 00000000 		.word	0
- 510 038c 0000F83F 		.word	1073217536
- 511 0390 711B0DE0 		.word	-536011919
- 512 0394 2D302C40 		.word	1076637741
- 513 0398 D0B359F5 		.word	-178670640
- 514 039c B91A1CC0 		.word	-1071899975
- 515 03a0 00000000 		.word	0
- 516 03a4 00000440 		.word	1074003968
- 517 03a8 7C613255 		.word	1429365116
- 518 03ac 30AA0540 		.word	1074113072
- 519 03b0 82E2C798 		.word	-1731730814
- 520 03b4 BB96903F 		.word	1066440379
- 521 03b8 C7BAB88D 		.word	-1917273401
- 522 03bc 06F076BF 		.word	-1082724346
- 523 03c0 FCA9F1D2 		.word	-755914244
- 524 03c4 4D62403F 		.word	1061184077
- 525 03c8 46257502 		.word	41231686
- 526 03cc 9A087BBF 		.word	-1082455910
- 527 03d0 00001440 		.word	1075052544
- 528 03d4 0000F03F 		.word	1072693248
- 529 03d8 00002E40 		.word	1076756480
- 530              	.L4:
- 531 03dc 5046     		mov	r0, r10
- 532 03de 5946     		mov	r1, fp
- 533 03e0 FFF7FEFF 		bl	__aeabi_dmul
- 534              	.LVL66:
- 535 03e4 0246     		mov	r2, r0
- 536 03e6 0B46     		mov	r3, r1
- 537              		.loc 1 13 247 discriminator 4 view .LVU71
- 538 03e8 4046     		mov	r0, r8
- 539 03ea 4946     		mov	r1, r9
- 540 03ec FFF7FEFF 		bl	__aeabi_dadd
- 541              	.LVL67:
- 542 03f0 8046     		mov	r8, r0
- 543 03f2 8946     		mov	r9, r1
- 544              		.loc 1 13 279 discriminator 4 view .LVU72
- 545 03f4 B0EE491A 		vmov.f32	s2, s18
- 546 03f8 F0EE691A 		vmov.f32	s3, s19
- 547 03fc 4BEC10AB 		vmov	d0, r10, fp
- 548 0400 FFF7FEFF 		bl	pow
- 549              	.LVL68:
- 550 0404 51EC100B 		vmov	r0, r1, d0
- 551              		.loc 1 13 277 discriminator 5 view .LVU73
- 552 0408 23A3     		adr	r3, .L6
- 553 040a D3E90023 		ldrd	r2, [r3]
- 554 040e FFF7FEFF 		bl	__aeabi_dmul
- 555              	.LVL69:
- 556 0412 0246     		mov	r2, r0
- 557 0414 0B46     		mov	r3, r1
- 558              		.loc 1 13 265 discriminator 5 view .LVU74
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 11
+ 502 034c FFF7FEFF 		bl	__aeabi_dadd
+ 503              	.LVL70:
+ 504 0350 8046     		mov	r8, r0
+ 505 0352 8946     		mov	r9, r1
+ 506              		.loc 1 13 305 discriminator 5 view .LVU75
+ 507 0354 40A3     		adr	r3, .L3+136
+ 508 0356 D3E90023 		ldrd	r2, [r3]
+ 509 035a 5046     		mov	r0, r10
+ 510 035c 5946     		mov	r1, fp
+ 511 035e FFF7FEFF 		bl	__aeabi_dmul
+ 512              	.LVL71:
+ 513              		.loc 1 13 311 discriminator 5 view .LVU76
+ 514 0362 5246     		mov	r2, r10
+ 515 0364 5B46     		mov	r3, fp
+ 516 0366 FFF7FEFF 		bl	__aeabi_dmul
+ 517              	.LVL72:
+ 518 036a 0246     		mov	r2, r0
+ 519 036c 0B46     		mov	r3, r1
+ 520              		.loc 1 13 293 discriminator 5 view .LVU77
+ 521 036e 4046     		mov	r0, r8
+ 522 0370 4946     		mov	r1, r9
+ 523 0372 FFF7FEFF 		bl	__aeabi_dadd
+ 524              	.LVL73:
+ 525 0376 8046     		mov	r8, r0
+ 526 0378 8946     		mov	r9, r1
+ 527              		.loc 1 13 331 discriminator 5 view .LVU78
+ 528 037a B0EE481A 		vmov.f32	s2, s16
+ 529 037e F0EE681A 		vmov.f32	s3, s17
+ 530 0382 4BEC10AB 		vmov	d0, r10, fp
+ 531 0386 FFF7FEFF 		bl	pow
+ 532              	.LVL74:
+ 533 038a 51EC100B 		vmov	r0, r1, d0
+ 534              		.loc 1 13 329 discriminator 6 view .LVU79
+ 535 038e 34A3     		adr	r3, .L3+144
+ 536 0390 D3E90023 		ldrd	r2, [r3]
+ 537 0394 FFF7FEFF 		bl	__aeabi_dmul
+ 538              	.LVL75:
+ 539 0398 0246     		mov	r2, r0
+ 540 039a 0B46     		mov	r3, r1
+ 541              		.loc 1 13 317 discriminator 6 view .LVU80
+ 542 039c 4046     		mov	r0, r8
+ 543 039e 4946     		mov	r1, r9
+ 544 03a0 FFF7FEFF 		bl	__aeabi_dadd
+ 545              	.LVL76:
+ 546 03a4 0246     		mov	r2, r0
+ 547 03a6 0B46     		mov	r3, r1
+ 548              		.loc 1 13 206 discriminator 6 view .LVU81
+ 549 03a8 2046     		mov	r0, r4
+ 550 03aa 2946     		mov	r1, r5
+ 551 03ac FFF7FEFF 		bl	__aeabi_dmul
+ 552              	.LVL77:
+ 553 03b0 0246     		mov	r2, r0
+ 554 03b2 0B46     		mov	r3, r1
+ 555              		.loc 1 13 148 discriminator 6 view .LVU82
+ 556 03b4 3046     		mov	r0, r6
+ 557 03b6 3946     		mov	r1, r7
+ 558 03b8 FFF7FEFF 		bl	__aeabi_dadd
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 11
 
 
- 559 0416 4046     		mov	r0, r8
- 560 0418 4946     		mov	r1, r9
- 561 041a FFF7FEFF 		bl	__aeabi_dadd
- 562              	.LVL70:
- 563 041e 8046     		mov	r8, r0
- 564 0420 8946     		mov	r9, r1
- 565              		.loc 1 13 305 discriminator 5 view .LVU75
- 566 0422 1FA3     		adr	r3, .L6+8
- 567 0424 D3E90023 		ldrd	r2, [r3]
- 568 0428 5046     		mov	r0, r10
- 569 042a 5946     		mov	r1, fp
- 570 042c FFF7FEFF 		bl	__aeabi_dmul
- 571              	.LVL71:
- 572              		.loc 1 13 311 discriminator 5 view .LVU76
- 573 0430 5246     		mov	r2, r10
- 574 0432 5B46     		mov	r3, fp
- 575 0434 FFF7FEFF 		bl	__aeabi_dmul
- 576              	.LVL72:
- 577 0438 0246     		mov	r2, r0
- 578 043a 0B46     		mov	r3, r1
- 579              		.loc 1 13 293 discriminator 5 view .LVU77
- 580 043c 4046     		mov	r0, r8
- 581 043e 4946     		mov	r1, r9
- 582 0440 FFF7FEFF 		bl	__aeabi_dadd
- 583              	.LVL73:
- 584 0444 8046     		mov	r8, r0
- 585 0446 8946     		mov	r9, r1
- 586              		.loc 1 13 331 discriminator 5 view .LVU78
- 587 0448 B0EE481A 		vmov.f32	s2, s16
- 588 044c F0EE681A 		vmov.f32	s3, s17
- 589 0450 4BEC10AB 		vmov	d0, r10, fp
- 590 0454 FFF7FEFF 		bl	pow
- 591              	.LVL74:
- 592 0458 51EC100B 		vmov	r0, r1, d0
- 593              		.loc 1 13 329 discriminator 6 view .LVU79
- 594 045c 12A3     		adr	r3, .L6+16
- 595 045e D3E90023 		ldrd	r2, [r3]
- 596 0462 FFF7FEFF 		bl	__aeabi_dmul
- 597              	.LVL75:
- 598 0466 0246     		mov	r2, r0
- 599 0468 0B46     		mov	r3, r1
- 600              		.loc 1 13 317 discriminator 6 view .LVU80
- 601 046a 4046     		mov	r0, r8
- 602 046c 4946     		mov	r1, r9
- 603 046e FFF7FEFF 		bl	__aeabi_dadd
- 604              	.LVL76:
- 605 0472 0246     		mov	r2, r0
- 606 0474 0B46     		mov	r3, r1
- 607              		.loc 1 13 206 discriminator 6 view .LVU81
- 608 0476 2046     		mov	r0, r4
- 609 0478 2946     		mov	r1, r5
- 610 047a FFF7FEFF 		bl	__aeabi_dmul
- 611              	.LVL77:
- 612 047e 0246     		mov	r2, r0
- 613 0480 0B46     		mov	r3, r1
- 614              		.loc 1 13 148 discriminator 6 view .LVU82
- 615 0482 3046     		mov	r0, r6
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 12
-
-
- 616 0484 3946     		mov	r1, r7
- 617 0486 FFF7FEFF 		bl	__aeabi_dadd
- 618              	.LVL78:
+ 559              	.LVL78:
   14:Core/Src/salinity.c **** }
- 619              		.loc 1 14 1 view .LVU83
- 620 048a 41EC100B 		vmov	d0, r0, r1
- 621 048e 03B0     		add	sp, sp, #12
- 622              		.cfi_def_cfa_offset 60
- 623              	.LVL79:
- 624              		.loc 1 14 1 view .LVU84
- 625              		@ sp needed
- 626 0490 BDEC068B 		vldm	sp!, {d8-d10}
- 627              		.cfi_restore 84
- 628              		.cfi_restore 85
- 629              		.cfi_restore 82
- 630              		.cfi_restore 83
- 631              		.cfi_restore 80
- 632              		.cfi_restore 81
- 633              		.cfi_def_cfa_offset 36
- 634 0494 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
- 635              	.LVL80:
- 636              	.L7:
- 637              		.loc 1 14 1 view .LVU85
- 638              		.align	3
- 639              	.L6:
- 640 0498 33333333 		.word	858993459
- 641 049c 3333A3BF 		.word	-1079823565
- 642 04a0 B98D06F0 		.word	-268005959
- 643 04a4 1648B03F 		.word	1068517398
- 644 04a8 92CB7F48 		.word	1216334738
- 645 04ac BF7D8DBF 		.word	-1081246273
- 646              		.cfi_endproc
- 647              	.LFE220:
- 649              		.global	__aeabi_i2d
- 650              		.section	.text.calculate_average_resistance,"ax",%progbits
- 651              		.align	1
- 652              		.global	calculate_average_resistance
- 653              		.syntax unified
- 654              		.thumb
- 655              		.thumb_func
- 657              	calculate_average_resistance:
- 658              	.LVL81:
- 659              	.LFB222:
+ 560              		.loc 1 14 1 view .LVU83
+ 561 03bc 41EC100B 		vmov	d0, r0, r1
+ 562 03c0 03B0     		add	sp, sp, #12
+ 563              		.cfi_def_cfa_offset 60
+ 564              	.LVL79:
+ 565              		.loc 1 14 1 view .LVU84
+ 566              		@ sp needed
+ 567 03c2 BDEC068B 		vldm	sp!, {d8-d10}
+ 568              		.cfi_restore 84
+ 569              		.cfi_restore 85
+ 570              		.cfi_restore 82
+ 571              		.cfi_restore 83
+ 572              		.cfi_restore 80
+ 573              		.cfi_restore 81
+ 574              		.cfi_def_cfa_offset 36
+ 575 03c6 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 576              	.LVL80:
+ 577              	.L4:
+ 578              		.loc 1 14 1 view .LVU85
+ 579 03ca 00BFAFF3 		.align	3
+ 579      0080
+ 580              	.L3:
+ 581 03d0 08A3A366 		.word	1722000136
+ 582 03d4 59413D3F 		.word	1060979033
+ 583 03d8 430070EC 		.word	-328204221
+ 584 03dc D97369BF 		.word	-1083608103
+ 585 03e0 A4367172 		.word	1920022180
+ 586 03e4 BF43713F 		.word	1064387519
+ 587 03e8 00000000 		.word	0
+ 588 03ec 0000E03F 		.word	1071644672
+ 589 03f0 7FD93D79 		.word	2034096511
+ 590 03f4 58A8C5BF 		.word	-1077565352
+ 591 03f8 FCA9F1D2 		.word	-755914244
+ 592 03fc 4D62803F 		.word	1065378381
+ 593 0400 8AB0E1E9 		.word	-371085174
+ 594 0404 95623940 		.word	1077502613
+ 595 0408 00000000 		.word	0
+ 596 040c 0000F83F 		.word	1073217536
+ 597 0410 711B0DE0 		.word	-536011919
+ 598 0414 2D302C40 		.word	1076637741
+ 599 0418 D0B359F5 		.word	-178670640
+ 600 041c B91A1CC0 		.word	-1071899975
+ 601 0420 00000000 		.word	0
+ 602 0424 00000440 		.word	1074003968
+ 603 0428 7C613255 		.word	1429365116
+ 604 042c 30AA0540 		.word	1074113072
+ 605 0430 82E2C798 		.word	-1731730814
+ 606 0434 BB96903F 		.word	1066440379
+ 607 0438 C7BAB88D 		.word	-1917273401
+ 608 043c 06F076BF 		.word	-1082724346
+ 609 0440 FCA9F1D2 		.word	-755914244
+ 610 0444 4D62403F 		.word	1061184077
+ 611 0448 46257502 		.word	41231686
+ 612 044c 9A087BBF 		.word	-1082455910
+ 613 0450 33333333 		.word	858993459
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 12
+
+
+ 614 0454 3333A3BF 		.word	-1079823565
+ 615 0458 B98D06F0 		.word	-268005959
+ 616 045c 1648B03F 		.word	1068517398
+ 617 0460 92CB7F48 		.word	1216334738
+ 618 0464 BF7D8DBF 		.word	-1081246273
+ 619 0468 0000F03F 		.word	1072693248
+ 620 046c 00002E40 		.word	1076756480
+ 621 0470 674E4D38 		.word	944590439
+ 622 0474 AA89943F 		.word	1066699178
+ 623 0478 FE00B562 		.word	1656029438
+ 624 047c C9A6E53F 		.word	1072015049
+ 625 0480 4E033B84 		.word	-2076507314
+ 626 0484 8EF21C3F 		.word	1058861710
+ 627 0488 2B1C893A 		.word	982064171
+ 628 048c 0363A7BE 		.word	-1096326397
+ 629 0490 2A5A5132 		.word	844192298
+ 630 0494 AE3B113E 		.word	1041316782
+ 631 0498 BB911E2B 		.word	723423675
+ 632 049c 9DB4F53E 		.word	1056289949
+ 633 04a0 A487059A 		.word	-1710913628
+ 634 04a4 E35B3BBE 		.word	-1103406109
+ 635 04a8 871567FE 		.word	-26798713
+ 636 04ac 00F7F13C 		.word	1022490368
+ 637 04b0 26361FD7 		.word	-685820378
+ 638 04b4 868AA13F 		.word	1067551366
+ 639              		.cfi_endproc
+ 640              	.LFE220:
+ 642              		.global	__aeabi_i2d
+ 643              		.section	.text.calculate_average_resistance,"ax",%progbits
+ 644              		.align	1
+ 645              		.global	calculate_average_resistance
+ 646              		.syntax unified
+ 647              		.thumb
+ 648              		.thumb_func
+ 650              	calculate_average_resistance:
+ 651              	.LVL81:
+ 652              	.LFB222:
   15:Core/Src/salinity.c **** 
   16:Core/Src/salinity.c **** double calculate_conductivity(Electrode_Type electrode, ResistanceSample_TypeDef *samples, uint16_t
   17:Core/Src/salinity.c **** {
   18:Core/Src/salinity.c ****     switch (electrode)
   19:Core/Src/salinity.c ****     {
-  20:Core/Src/salinity.c ****     case Au:
-  21:Core/Src/salinity.c ****     case Au_Shielded:
-  22:Core/Src/salinity.c ****         // average resistance
-  23:Core/Src/salinity.c ****         double average_resistance = calculate_average_resistance(samples, num_samples);
-  24:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
-  25:Core/Src/salinity.c ****         double resistivity = average_resistance * AU_PAD_AREA / AU_PAD_DISTANCE;
-  26:Core/Src/salinity.c ****         return 1 / resistivity;
-  27:Core/Src/salinity.c ****     case Ti:
-  28:Core/Src/salinity.c ****         return 0;
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 13
+  20:Core/Src/salinity.c ****     case Ti:
+  21:Core/Src/salinity.c ****         // to be implemented
+  22:Core/Src/salinity.c ****     case Au:
+  23:Core/Src/salinity.c ****     case Au_Shielded:
+  24:Core/Src/salinity.c ****         // average resistance
+  25:Core/Src/salinity.c ****         double average_resistance = calculate_average_resistance(samples, num_samples);
+  26:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+  27:Core/Src/salinity.c ****         double resistivity = average_resistance * AU_PAD_AREA / AU_PAD_DISTANCE;
+  28:Core/Src/salinity.c ****         return 1 / resistivity;
+  29:Core/Src/salinity.c ****     default:
+  30:Core/Src/salinity.c ****         break;
+  31:Core/Src/salinity.c ****     }
+  32:Core/Src/salinity.c ****     return 0; // should never reach here
+  33:Core/Src/salinity.c **** }
+  34:Core/Src/salinity.c **** 
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 13
 
 
-  29:Core/Src/salinity.c ****     }
-  30:Core/Src/salinity.c ****     return 0; // should never reach here
-  31:Core/Src/salinity.c **** }
-  32:Core/Src/salinity.c **** 
-  33:Core/Src/salinity.c **** double calculate_average_resistance(ResistanceSample_TypeDef *samples, uint16_t num_samples)
-  34:Core/Src/salinity.c **** {
- 660              		.loc 1 34 1 is_stmt 1 view -0
- 661              		.cfi_startproc
- 662              		@ args = 0, pretend = 0, frame = 0
- 663              		@ frame_needed = 0, uses_anonymous_args = 0
- 664              		.loc 1 34 1 is_stmt 0 view .LVU87
- 665 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
- 666              		.cfi_def_cfa_offset 24
- 667              		.cfi_offset 4, -24
- 668              		.cfi_offset 5, -20
- 669              		.cfi_offset 6, -16
- 670              		.cfi_offset 7, -12
- 671              		.cfi_offset 8, -8
- 672              		.cfi_offset 14, -4
- 673 0004 8046     		mov	r8, r0
- 674 0006 0D46     		mov	r5, r1
-  35:Core/Src/salinity.c ****     double sum = 0;
- 675              		.loc 1 35 5 is_stmt 1 view .LVU88
- 676              	.LVL82:
-  36:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
- 677              		.loc 1 36 5 view .LVU89
- 678              	.LBB2:
- 679              		.loc 1 36 10 view .LVU90
- 680              		.loc 1 36 19 is_stmt 0 view .LVU91
- 681 0008 0024     		movs	r4, #0
- 682              	.LBE2:
-  35:Core/Src/salinity.c ****     double sum = 0;
- 683              		.loc 1 35 12 view .LVU92
- 684 000a 0026     		movs	r6, #0
- 685 000c 0027     		movs	r7, #0
- 686              	.LBB3:
- 687              		.loc 1 36 5 view .LVU93
- 688 000e 0BE0     		b	.L9
- 689              	.LVL83:
- 690              	.L10:
-  37:Core/Src/salinity.c ****     {
-  38:Core/Src/salinity.c ****         sum += samples[i].resistance;
- 691              		.loc 1 38 9 is_stmt 1 view .LVU94
- 692              		.loc 1 38 23 is_stmt 0 view .LVU95
- 693 0010 08EB0413 		add	r3, r8, r4, lsl #4
- 694              		.loc 1 38 13 view .LVU96
- 695 0014 D3E90223 		ldrd	r2, [r3, #8]
- 696 0018 3046     		mov	r0, r6
- 697 001a 3946     		mov	r1, r7
- 698 001c FFF7FEFF 		bl	__aeabi_dadd
- 699              	.LVL84:
- 700 0020 0646     		mov	r6, r0
- 701              	.LVL85:
- 702              		.loc 1 38 13 view .LVU97
- 703 0022 0F46     		mov	r7, r1
- 704              	.LVL86:
-  36:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 14
+  35:Core/Src/salinity.c **** double calculate_average_resistance(ResistanceSample_TypeDef *samples, uint16_t num_samples)
+  36:Core/Src/salinity.c **** {
+ 653              		.loc 1 36 1 is_stmt 1 view -0
+ 654              		.cfi_startproc
+ 655              		@ args = 0, pretend = 0, frame = 0
+ 656              		@ frame_needed = 0, uses_anonymous_args = 0
+ 657              		.loc 1 36 1 is_stmt 0 view .LVU87
+ 658 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 659              		.cfi_def_cfa_offset 24
+ 660              		.cfi_offset 4, -24
+ 661              		.cfi_offset 5, -20
+ 662              		.cfi_offset 6, -16
+ 663              		.cfi_offset 7, -12
+ 664              		.cfi_offset 8, -8
+ 665              		.cfi_offset 14, -4
+ 666 0004 8046     		mov	r8, r0
+ 667 0006 0D46     		mov	r5, r1
+  37:Core/Src/salinity.c ****     double sum = 0;
+ 668              		.loc 1 37 5 is_stmt 1 view .LVU88
+ 669              	.LVL82:
+  38:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 670              		.loc 1 38 5 view .LVU89
+ 671              	.LBB2:
+ 672              		.loc 1 38 10 view .LVU90
+ 673              		.loc 1 38 19 is_stmt 0 view .LVU91
+ 674 0008 0024     		movs	r4, #0
+ 675              	.LBE2:
+  37:Core/Src/salinity.c ****     double sum = 0;
+ 676              		.loc 1 37 12 view .LVU92
+ 677 000a 0026     		movs	r6, #0
+ 678 000c 0027     		movs	r7, #0
+ 679              	.LBB3:
+ 680              		.loc 1 38 5 view .LVU93
+ 681 000e 0BE0     		b	.L6
+ 682              	.LVL83:
+ 683              	.L7:
+  39:Core/Src/salinity.c ****     {
+  40:Core/Src/salinity.c ****         sum += samples[i].resistance;
+ 684              		.loc 1 40 9 is_stmt 1 view .LVU94
+ 685              		.loc 1 40 23 is_stmt 0 view .LVU95
+ 686 0010 08EB0413 		add	r3, r8, r4, lsl #4
+ 687              		.loc 1 40 13 view .LVU96
+ 688 0014 D3E90223 		ldrd	r2, [r3, #8]
+ 689 0018 3046     		mov	r0, r6
+ 690 001a 3946     		mov	r1, r7
+ 691 001c FFF7FEFF 		bl	__aeabi_dadd
+ 692              	.LVL84:
+ 693 0020 0646     		mov	r6, r0
+ 694              	.LVL85:
+ 695              		.loc 1 40 13 view .LVU97
+ 696 0022 0F46     		mov	r7, r1
+ 697              	.LVL86:
+  38:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 698              		.loc 1 38 44 is_stmt 1 discriminator 3 view .LVU98
+ 699 0024 0134     		adds	r4, r4, #1
+ 700              	.LVL87:
+  38:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 14
 
 
- 705              		.loc 1 36 44 is_stmt 1 discriminator 3 view .LVU98
- 706 0024 0134     		adds	r4, r4, #1
- 707              	.LVL87:
-  36:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
- 708              		.loc 1 36 44 is_stmt 0 discriminator 3 view .LVU99
- 709 0026 A4B2     		uxth	r4, r4
- 710              	.LVL88:
- 711              	.L9:
-  36:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
- 712              		.loc 1 36 28 is_stmt 1 discriminator 1 view .LVU100
- 713 0028 AC42     		cmp	r4, r5
- 714 002a F1D3     		bcc	.L10
- 715              	.LBE3:
-  39:Core/Src/salinity.c ****     }
-  40:Core/Src/salinity.c ****     return sum / num_samples;
- 716              		.loc 1 40 5 view .LVU101
- 717              		.loc 1 40 16 is_stmt 0 view .LVU102
- 718 002c 2846     		mov	r0, r5
- 719 002e FFF7FEFF 		bl	__aeabi_i2d
- 720              	.LVL89:
- 721 0032 0246     		mov	r2, r0
- 722 0034 0B46     		mov	r3, r1
- 723 0036 3046     		mov	r0, r6
- 724 0038 3946     		mov	r1, r7
- 725 003a FFF7FEFF 		bl	__aeabi_ddiv
- 726              	.LVL90:
-  41:Core/Src/salinity.c **** }
- 727              		.loc 1 41 1 view .LVU103
- 728 003e 41EC100B 		vmov	d0, r0, r1
- 729 0042 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
- 730              		.loc 1 41 1 view .LVU104
- 731              		.cfi_endproc
- 732              	.LFE222:
- 734              		.section	.text.calculate_conductivity,"ax",%progbits
- 735              		.align	1
- 736              		.global	calculate_conductivity
- 737              		.syntax unified
- 738              		.thumb
- 739              		.thumb_func
- 741              	calculate_conductivity:
- 742              	.LVL91:
- 743              	.LFB221:
+ 701              		.loc 1 38 44 is_stmt 0 discriminator 3 view .LVU99
+ 702 0026 A4B2     		uxth	r4, r4
+ 703              	.LVL88:
+ 704              	.L6:
+  38:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 705              		.loc 1 38 28 is_stmt 1 discriminator 1 view .LVU100
+ 706 0028 AC42     		cmp	r4, r5
+ 707 002a F1D3     		bcc	.L7
+ 708              	.LBE3:
+  41:Core/Src/salinity.c ****     }
+  42:Core/Src/salinity.c ****     return sum / num_samples;
+ 709              		.loc 1 42 5 view .LVU101
+ 710              		.loc 1 42 16 is_stmt 0 view .LVU102
+ 711 002c 2846     		mov	r0, r5
+ 712 002e FFF7FEFF 		bl	__aeabi_i2d
+ 713              	.LVL89:
+ 714 0032 0246     		mov	r2, r0
+ 715 0034 0B46     		mov	r3, r1
+ 716 0036 3046     		mov	r0, r6
+ 717 0038 3946     		mov	r1, r7
+ 718 003a FFF7FEFF 		bl	__aeabi_ddiv
+ 719              	.LVL90:
+  43:Core/Src/salinity.c **** }
+ 720              		.loc 1 43 1 view .LVU103
+ 721 003e 41EC100B 		vmov	d0, r0, r1
+ 722 0042 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 723              		.loc 1 43 1 view .LVU104
+ 724              		.cfi_endproc
+ 725              	.LFE222:
+ 727              		.section	.text.calculate_conductivity,"ax",%progbits
+ 728              		.align	1
+ 729              		.global	calculate_conductivity
+ 730              		.syntax unified
+ 731              		.thumb
+ 732              		.thumb_func
+ 734              	calculate_conductivity:
+ 735              	.LVL91:
+ 736              	.LFB221:
   17:Core/Src/salinity.c ****     switch (electrode)
- 744              		.loc 1 17 1 is_stmt 1 view -0
- 745              		.cfi_startproc
- 746              		@ args = 0, pretend = 0, frame = 0
- 747              		@ frame_needed = 0, uses_anonymous_args = 0
-  17:Core/Src/salinity.c ****     switch (electrode)
- 748              		.loc 1 17 1 is_stmt 0 view .LVU106
- 749 0000 08B5     		push	{r3, lr}
- 750              		.cfi_def_cfa_offset 8
- 751              		.cfi_offset 3, -8
- 752              		.cfi_offset 14, -4
- 753 0002 0B46     		mov	r3, r1
+ 737              		.loc 1 17 1 is_stmt 1 view -0
+ 738              		.cfi_startproc
+ 739              		@ args = 0, pretend = 0, frame = 0
+ 740              		@ frame_needed = 0, uses_anonymous_args = 0
   18:Core/Src/salinity.c ****     {
- 754              		.loc 1 18 5 is_stmt 1 view .LVU107
- 755 0004 20B1     		cbz	r0, .L13
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 15
+ 741              		.loc 1 18 5 view .LVU106
+ 742 0000 0228     		cmp	r0, #2
+ 743 0002 1AD8     		bhi	.L11
+  17:Core/Src/salinity.c ****     switch (electrode)
+ 744              		.loc 1 17 1 is_stmt 0 view .LVU107
+ 745 0004 08B5     		push	{r3, lr}
+ 746              		.cfi_def_cfa_offset 8
+ 747              		.cfi_offset 3, -8
+ 748              		.cfi_offset 14, -4
+ 749 0006 0B46     		mov	r3, r1
+ 750              	.LBB4:
+  25:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+ 751              		.loc 1 25 9 is_stmt 1 view .LVU108
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 15
 
 
- 756 0006 0228     		cmp	r0, #2
- 757 0008 02D0     		beq	.L13
- 758 000a 9FED0F0B 		vldr.64	d0, .L17
- 759 000e 17E0     		b	.L12
- 760              	.L13:
- 761              	.LBB4:
-  23:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
- 762              		.loc 1 23 9 view .LVU108
-  23:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
- 763              		.loc 1 23 37 is_stmt 0 view .LVU109
- 764 0010 1146     		mov	r1, r2
- 765              	.LVL92:
-  23:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
- 766              		.loc 1 23 37 view .LVU110
- 767 0012 1846     		mov	r0, r3
- 768              	.LVL93:
-  23:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
- 769              		.loc 1 23 37 view .LVU111
- 770 0014 FFF7FEFF 		bl	calculate_average_resistance
- 771              	.LVL94:
-  23:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
- 772              		.loc 1 23 37 view .LVU112
- 773 0018 51EC100B 		vmov	r0, r1, d0
- 774              	.LVL95:
-  25:Core/Src/salinity.c ****         return 1 / resistivity;
- 775              		.loc 1 25 9 is_stmt 1 view .LVU113
-  25:Core/Src/salinity.c ****         return 1 / resistivity;
- 776              		.loc 1 25 49 is_stmt 0 view .LVU114
- 777 001c 0DA3     		adr	r3, .L17+12
- 778 001e D3E90023 		ldrd	r2, [r3]
- 779 0022 FFF7FEFF 		bl	__aeabi_dmul
- 780              	.LVL96:
-  25:Core/Src/salinity.c ****         return 1 / resistivity;
- 781              		.loc 1 25 16 view .LVU115
- 782 0026 0DA3     		adr	r3, .L17+20
- 783 0028 D3E90023 		ldrd	r2, [r3]
- 784 002c FFF7FEFF 		bl	__aeabi_ddiv
- 785              	.LVL97:
- 786 0030 0246     		mov	r2, r0
- 787 0032 0B46     		mov	r3, r1
- 788              	.LVL98:
-  26:Core/Src/salinity.c ****     case Ti:
- 789              		.loc 1 26 9 is_stmt 1 view .LVU116
-  26:Core/Src/salinity.c ****     case Ti:
- 790              		.loc 1 26 18 is_stmt 0 view .LVU117
- 791 0034 0020     		movs	r0, #0
- 792 0036 0649     		ldr	r1, .L17+8
- 793 0038 FFF7FEFF 		bl	__aeabi_ddiv
- 794              	.LVL99:
-  26:Core/Src/salinity.c ****     case Ti:
- 795              		.loc 1 26 18 view .LVU118
- 796 003c 41EC100B 		vmov	d0, r0, r1
- 797              	.LVL100:
- 798              	.L12:
-  26:Core/Src/salinity.c ****     case Ti:
- 799              		.loc 1 26 18 view .LVU119
- 800              	.LBE4:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 16
+  25:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+ 752              		.loc 1 25 37 is_stmt 0 view .LVU109
+ 753 0008 1146     		mov	r1, r2
+ 754              	.LVL92:
+  25:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+ 755              		.loc 1 25 37 view .LVU110
+ 756 000a 1846     		mov	r0, r3
+ 757              	.LVL93:
+  25:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+ 758              		.loc 1 25 37 view .LVU111
+ 759 000c FFF7FEFF 		bl	calculate_average_resistance
+ 760              	.LVL94:
+  25:Core/Src/salinity.c ****         // calcualte resistivity, return conductivity
+ 761              		.loc 1 25 37 view .LVU112
+ 762 0010 51EC100B 		vmov	r0, r1, d0
+ 763              	.LVL95:
+  27:Core/Src/salinity.c ****         return 1 / resistivity;
+ 764              		.loc 1 27 9 is_stmt 1 view .LVU113
+  27:Core/Src/salinity.c ****         return 1 / resistivity;
+ 765              		.loc 1 27 49 is_stmt 0 view .LVU114
+ 766 0014 0DA3     		adr	r3, .L16+12
+ 767 0016 D3E90023 		ldrd	r2, [r3]
+ 768 001a FFF7FEFF 		bl	__aeabi_dmul
+ 769              	.LVL96:
+  27:Core/Src/salinity.c ****         return 1 / resistivity;
+ 770              		.loc 1 27 16 view .LVU115
+ 771 001e 0DA3     		adr	r3, .L16+20
+ 772 0020 D3E90023 		ldrd	r2, [r3]
+ 773 0024 FFF7FEFF 		bl	__aeabi_ddiv
+ 774              	.LVL97:
+ 775 0028 0246     		mov	r2, r0
+ 776 002a 0B46     		mov	r3, r1
+ 777              	.LVL98:
+  28:Core/Src/salinity.c ****     default:
+ 778              		.loc 1 28 9 is_stmt 1 view .LVU116
+  28:Core/Src/salinity.c ****     default:
+ 779              		.loc 1 28 18 is_stmt 0 view .LVU117
+ 780 002c 0020     		movs	r0, #0
+ 781 002e 0649     		ldr	r1, .L16+8
+ 782 0030 FFF7FEFF 		bl	__aeabi_ddiv
+ 783              	.LVL99:
+  28:Core/Src/salinity.c ****     default:
+ 784              		.loc 1 28 18 view .LVU118
+ 785 0034 41EC100B 		vmov	d0, r0, r1
+ 786              	.LBE4:
+  33:Core/Src/salinity.c **** 
+ 787              		.loc 1 33 1 view .LVU119
+ 788 0038 08BD     		pop	{r3, pc}
+ 789              	.LVL100:
+ 790              	.L11:
+ 791              		.cfi_def_cfa_offset 0
+ 792              		.cfi_restore 3
+ 793              		.cfi_restore 14
+  32:Core/Src/salinity.c **** }
+ 794              		.loc 1 32 12 view .LVU120
+ 795 003a 9FED010B 		vldr.64	d0, .L16
+  33:Core/Src/salinity.c **** 
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 16
 
 
-  31:Core/Src/salinity.c **** 
- 801              		.loc 1 31 1 view .LVU120
- 802 0040 08BD     		pop	{r3, pc}
- 803              	.L18:
- 804 0042 00BFAFF3 		.align	3
- 804      0080
- 805              	.L17:
- 806 0048 00000000 		.word	0
- 807 004c 00000000 		.word	0
- 808 0050 0000F03F 		.word	1072693248
- 809 0054 2D431CEB 		.word	-350469331
- 810 0058 E2363A3F 		.word	1060779746
- 811 005c 7B14AE47 		.word	1202590843
- 812 0060 E17A843F 		.word	1065646817
- 813              		.cfi_endproc
- 814              	.LFE221:
- 816              		.global	__aeabi_ui2d
- 817              		.section	.text.calculate_resistance,"ax",%progbits
- 818              		.align	1
- 819              		.global	calculate_resistance
- 820              		.syntax unified
- 821              		.thumb
- 822              		.thumb_func
- 824              	calculate_resistance:
- 825              	.LVL101:
- 826              	.LFB223:
-  42:Core/Src/salinity.c **** 
-  43:Core/Src/salinity.c **** void calculate_resistance(VoltageSample_TypeDef *voltage_samples, ResistanceSample_TypeDef *reistan
-  44:Core/Src/salinity.c **** {
- 827              		.loc 1 44 1 is_stmt 1 view -0
- 828              		.cfi_startproc
- 829              		@ args = 0, pretend = 0, frame = 0
- 830              		@ frame_needed = 0, uses_anonymous_args = 0
- 831              		.loc 1 44 1 is_stmt 0 view .LVU122
- 832 0000 2DE9F84F 		push	{r3, r4, r5, r6, r7, r8, r9, r10, fp, lr}
- 833              		.cfi_def_cfa_offset 40
- 834              		.cfi_offset 3, -40
- 835              		.cfi_offset 4, -36
- 836              		.cfi_offset 5, -32
- 837              		.cfi_offset 6, -28
- 838              		.cfi_offset 7, -24
- 839              		.cfi_offset 8, -20
- 840              		.cfi_offset 9, -16
- 841              		.cfi_offset 10, -12
- 842              		.cfi_offset 11, -8
- 843              		.cfi_offset 14, -4
- 844 0004 8246     		mov	r10, r0
- 845 0006 8846     		mov	r8, r1
- 846 0008 9146     		mov	r9, r2
-  45:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
- 847              		.loc 1 45 5 is_stmt 1 view .LVU123
- 848              	.LBB5:
- 849              		.loc 1 45 10 view .LVU124
- 850              	.LVL102:
- 851              		.loc 1 45 19 is_stmt 0 view .LVU125
- 852 000a 0024     		movs	r4, #0
- 853              		.loc 1 45 5 view .LVU126
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 17
+ 796              		.loc 1 33 1 view .LVU121
+ 797 003e 7047     		bx	lr
+ 798              	.L17:
+ 799              		.align	3
+ 800              	.L16:
+ 801 0040 00000000 		.word	0
+ 802 0044 00000000 		.word	0
+ 803 0048 0000F03F 		.word	1072693248
+ 804 004c 2D431CEB 		.word	-350469331
+ 805 0050 E2363A3F 		.word	1060779746
+ 806 0054 7B14AE47 		.word	1202590843
+ 807 0058 E17A843F 		.word	1065646817
+ 808              		.cfi_endproc
+ 809              	.LFE221:
+ 811              		.global	__aeabi_ui2d
+ 812              		.section	.text.calculate_resistance,"ax",%progbits
+ 813              		.align	1
+ 814              		.global	calculate_resistance
+ 815              		.syntax unified
+ 816              		.thumb
+ 817              		.thumb_func
+ 819              	calculate_resistance:
+ 820              	.LVL101:
+ 821              	.LFB223:
+  44:Core/Src/salinity.c **** 
+  45:Core/Src/salinity.c **** void calculate_resistance(VoltageSample_TypeDef *voltage_samples, ResistanceSample_TypeDef *reistan
+  46:Core/Src/salinity.c **** {
+ 822              		.loc 1 46 1 is_stmt 1 view -0
+ 823              		.cfi_startproc
+ 824              		@ args = 0, pretend = 0, frame = 0
+ 825              		@ frame_needed = 0, uses_anonymous_args = 0
+ 826              		.loc 1 46 1 is_stmt 0 view .LVU123
+ 827 0000 2DE9F84F 		push	{r3, r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 828              		.cfi_def_cfa_offset 40
+ 829              		.cfi_offset 3, -40
+ 830              		.cfi_offset 4, -36
+ 831              		.cfi_offset 5, -32
+ 832              		.cfi_offset 6, -28
+ 833              		.cfi_offset 7, -24
+ 834              		.cfi_offset 8, -20
+ 835              		.cfi_offset 9, -16
+ 836              		.cfi_offset 10, -12
+ 837              		.cfi_offset 11, -8
+ 838              		.cfi_offset 14, -4
+ 839 0004 8246     		mov	r10, r0
+ 840 0006 8846     		mov	r8, r1
+ 841 0008 9146     		mov	r9, r2
+  47:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 842              		.loc 1 47 5 is_stmt 1 view .LVU124
+ 843              	.LBB5:
+ 844              		.loc 1 47 10 view .LVU125
+ 845              	.LVL102:
+ 846              		.loc 1 47 19 is_stmt 0 view .LVU126
+ 847 000a 0024     		movs	r4, #0
+ 848              		.loc 1 47 5 view .LVU127
+ 849 000c 1DE0     		b	.L19
+ 850              	.LVL103:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 17
 
 
- 854 000c 1DE0     		b	.L20
- 855              	.LVL103:
- 856              	.L21:
-  46:Core/Src/salinity.c ****     {
-  47:Core/Src/salinity.c ****         reistance_samples[i].voltage = voltage_samples[i].dac_output;
- 857              		.loc 1 47 9 is_stmt 1 view .LVU127
- 858              		.loc 1 47 55 is_stmt 0 view .LVU128
- 859 000e 0AEBC405 		add	r5, r10, r4, lsl #3
- 860              		.loc 1 47 26 view .LVU129
- 861 0012 2301     		lsls	r3, r4, #4
- 862 0014 08EB041B 		add	fp, r8, r4, lsl #4
- 863              		.loc 1 47 58 view .LVU130
- 864 0018 6A88     		ldrh	r2, [r5, #2]
- 865              		.loc 1 47 38 view .LVU131
- 866 001a 28F80320 		strh	r2, [r8, r3]	@ movhi
-  48:Core/Src/salinity.c ****         reistance_samples[i].resistance = (double) voltage_samples[i].measurement / voltage_samples
- 867              		.loc 1 48 9 is_stmt 1 view .LVU132
- 868              		.loc 1 48 43 is_stmt 0 view .LVU133
- 869 001e E888     		ldrh	r0, [r5, #6]
- 870 0020 FFF7FEFF 		bl	__aeabi_ui2d
- 871              	.LVL104:
- 872 0024 0646     		mov	r6, r0
- 873 0026 0F46     		mov	r7, r1
- 874              		.loc 1 48 83 view .LVU134
- 875 0028 A888     		ldrh	r0, [r5, #4]
- 876 002a FFF7FEFF 		bl	__aeabi_i2d
- 877              	.LVL105:
- 878 002e 0246     		mov	r2, r0
- 879 0030 0B46     		mov	r3, r1
- 880 0032 3046     		mov	r0, r6
- 881 0034 3946     		mov	r1, r7
- 882 0036 FFF7FEFF 		bl	__aeabi_ddiv
- 883              	.LVL106:
- 884              		.loc 1 48 110 view .LVU135
- 885 003a 0022     		movs	r2, #0
- 886 003c 054B     		ldr	r3, .L23
- 887 003e FFF7FEFF 		bl	__aeabi_dmul
- 888              	.LVL107:
- 889              		.loc 1 48 41 view .LVU136
- 890 0042 CBE90201 		strd	r0, [fp, #8]
-  45:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
- 891              		.loc 1 45 44 is_stmt 1 discriminator 3 view .LVU137
- 892 0046 0134     		adds	r4, r4, #1
- 893              	.LVL108:
-  45:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
- 894              		.loc 1 45 44 is_stmt 0 discriminator 3 view .LVU138
- 895 0048 A4B2     		uxth	r4, r4
- 896              	.LVL109:
- 897              	.L20:
-  45:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
- 898              		.loc 1 45 28 is_stmt 1 discriminator 1 view .LVU139
- 899 004a 4C45     		cmp	r4, r9
- 900 004c DFD3     		bcc	.L21
- 901              	.LBE5:
-  49:Core/Src/salinity.c ****     }
-  50:Core/Src/salinity.c **** }
- 902              		.loc 1 50 1 is_stmt 0 view .LVU140
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 18
+ 851              	.L20:
+  48:Core/Src/salinity.c ****     {
+  49:Core/Src/salinity.c ****         reistance_samples[i].voltage = voltage_samples[i].dac_output;
+ 852              		.loc 1 49 9 is_stmt 1 view .LVU128
+ 853              		.loc 1 49 55 is_stmt 0 view .LVU129
+ 854 000e 0AEBC405 		add	r5, r10, r4, lsl #3
+ 855              		.loc 1 49 26 view .LVU130
+ 856 0012 2301     		lsls	r3, r4, #4
+ 857 0014 08EB041B 		add	fp, r8, r4, lsl #4
+ 858              		.loc 1 49 58 view .LVU131
+ 859 0018 6A88     		ldrh	r2, [r5, #2]
+ 860              		.loc 1 49 38 view .LVU132
+ 861 001a 28F80320 		strh	r2, [r8, r3]	@ movhi
+  50:Core/Src/salinity.c ****         reistance_samples[i].resistance = (double) voltage_samples[i].measurement / voltage_samples
+ 862              		.loc 1 50 9 is_stmt 1 view .LVU133
+ 863              		.loc 1 50 43 is_stmt 0 view .LVU134
+ 864 001e E888     		ldrh	r0, [r5, #6]
+ 865 0020 FFF7FEFF 		bl	__aeabi_ui2d
+ 866              	.LVL104:
+ 867 0024 0646     		mov	r6, r0
+ 868 0026 0F46     		mov	r7, r1
+ 869              		.loc 1 50 83 view .LVU135
+ 870 0028 A888     		ldrh	r0, [r5, #4]
+ 871 002a FFF7FEFF 		bl	__aeabi_i2d
+ 872              	.LVL105:
+ 873 002e 0246     		mov	r2, r0
+ 874 0030 0B46     		mov	r3, r1
+ 875 0032 3046     		mov	r0, r6
+ 876 0034 3946     		mov	r1, r7
+ 877 0036 FFF7FEFF 		bl	__aeabi_ddiv
+ 878              	.LVL106:
+ 879              		.loc 1 50 110 view .LVU136
+ 880 003a 0022     		movs	r2, #0
+ 881 003c 054B     		ldr	r3, .L22
+ 882 003e FFF7FEFF 		bl	__aeabi_dmul
+ 883              	.LVL107:
+ 884              		.loc 1 50 41 view .LVU137
+ 885 0042 CBE90201 		strd	r0, [fp, #8]
+  47:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 886              		.loc 1 47 44 is_stmt 1 discriminator 3 view .LVU138
+ 887 0046 0134     		adds	r4, r4, #1
+ 888              	.LVL108:
+  47:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 889              		.loc 1 47 44 is_stmt 0 discriminator 3 view .LVU139
+ 890 0048 A4B2     		uxth	r4, r4
+ 891              	.LVL109:
+ 892              	.L19:
+  47:Core/Src/salinity.c ****     for (uint16_t i = 0; i < num_samples; i++)
+ 893              		.loc 1 47 28 is_stmt 1 discriminator 1 view .LVU140
+ 894 004a 4C45     		cmp	r4, r9
+ 895 004c DFD3     		bcc	.L20
+ 896              	.LBE5:
+  51:Core/Src/salinity.c ****     }
+  52:Core/Src/salinity.c **** }
+ 897              		.loc 1 52 1 is_stmt 0 view .LVU141
+ 898 004e BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 899              	.LVL110:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 18
 
 
- 903 004e BDE8F88F 		pop	{r3, r4, r5, r6, r7, r8, r9, r10, fp, pc}
- 904              	.LVL110:
- 905              	.L24:
- 906              		.loc 1 50 1 view .LVU141
- 907 0052 00BF     		.align	2
- 908              	.L23:
- 909 0054 00001440 		.word	1075052544
- 910              		.cfi_endproc
- 911              	.LFE223:
- 913              		.section	.text.measure_temperature,"ax",%progbits
- 914              		.align	1
- 915              		.global	measure_temperature
- 916              		.syntax unified
- 917              		.thumb
- 918              		.thumb_func
- 920              	measure_temperature:
- 921              	.LFB224:
-  51:Core/Src/salinity.c **** 
-  52:Core/Src/salinity.c **** /**
-  53:Core/Src/salinity.c ****  * @brief Measures temperature
-  54:Core/Src/salinity.c ****  *
-  55:Core/Src/salinity.c ****  * @return double: temperature value in degrees Celsius
-  56:Core/Src/salinity.c ****  */
-  57:Core/Src/salinity.c **** double measure_temperature(void)
-  58:Core/Src/salinity.c **** {
- 922              		.loc 1 58 1 is_stmt 1 view -0
- 923              		.cfi_startproc
- 924              		@ args = 0, pretend = 0, frame = 8
- 925              		@ frame_needed = 0, uses_anonymous_args = 0
- 926 0000 00B5     		push	{lr}
- 927              		.cfi_def_cfa_offset 4
- 928              		.cfi_offset 14, -4
- 929 0002 87B0     		sub	sp, sp, #28
- 930              		.cfi_def_cfa_offset 32
-  59:Core/Src/salinity.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, Pressure_device_addr, 1, 1000) != HAL_OK)
- 931              		.loc 1 59 5 view .LVU143
- 932              		.loc 1 59 9 is_stmt 0 view .LVU144
- 933 0004 4FF47A73 		mov	r3, #1000
- 934 0008 0122     		movs	r2, #1
- 935 000a DA21     		movs	r1, #218
- 936 000c 3048     		ldr	r0, .L36+8
- 937 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
- 938              	.LVL111:
- 939              		.loc 1 59 8 discriminator 1 view .LVU145
- 940 0012 A0B9     		cbnz	r0, .L32
- 941              	.L26:
-  60:Core/Src/salinity.c ****     {
-  61:Core/Src/salinity.c ****         Error_Handler();
-  62:Core/Src/salinity.c ****     }
-  63:Core/Src/salinity.c **** 
-  64:Core/Src/salinity.c ****     // Request temperature
-  65:Core/Src/salinity.c ****     uint8_t request = Pressure_request_temperature;
- 942              		.loc 1 65 5 is_stmt 1 view .LVU146
- 943              		.loc 1 65 13 is_stmt 0 view .LVU147
- 944 0014 0423     		movs	r3, #4
- 945 0016 8DF81730 		strb	r3, [sp, #23]
-  66:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Write(&hi2c1, Pressure_device_addr, Pressure_mem_addr_request, 1, &request, 1, 
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 19
+ 900              	.L23:
+ 901              		.loc 1 52 1 view .LVU142
+ 902 0052 00BF     		.align	2
+ 903              	.L22:
+ 904 0054 00001440 		.word	1075052544
+ 905              		.cfi_endproc
+ 906              	.LFE223:
+ 908              		.section	.text.measure_temperature,"ax",%progbits
+ 909              		.align	1
+ 910              		.global	measure_temperature
+ 911              		.syntax unified
+ 912              		.thumb
+ 913              		.thumb_func
+ 915              	measure_temperature:
+ 916              	.LFB224:
+  53:Core/Src/salinity.c **** 
+  54:Core/Src/salinity.c **** /**
+  55:Core/Src/salinity.c ****  * @brief Measures temperature
+  56:Core/Src/salinity.c ****  *
+  57:Core/Src/salinity.c ****  * @return double: temperature value in degrees Celsius
+  58:Core/Src/salinity.c ****  */
+  59:Core/Src/salinity.c **** double measure_temperature(void)
+  60:Core/Src/salinity.c **** {
+ 917              		.loc 1 60 1 is_stmt 1 view -0
+ 918              		.cfi_startproc
+ 919              		@ args = 0, pretend = 0, frame = 8
+ 920              		@ frame_needed = 0, uses_anonymous_args = 0
+ 921 0000 00B5     		push	{lr}
+ 922              		.cfi_def_cfa_offset 4
+ 923              		.cfi_offset 14, -4
+ 924 0002 87B0     		sub	sp, sp, #28
+ 925              		.cfi_def_cfa_offset 32
+  61:Core/Src/salinity.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, Pressure_device_addr, 1, 1000) != HAL_OK)
+ 926              		.loc 1 61 5 view .LVU144
+ 927              		.loc 1 61 9 is_stmt 0 view .LVU145
+ 928 0004 4FF47A73 		mov	r3, #1000
+ 929 0008 0122     		movs	r2, #1
+ 930 000a DA21     		movs	r1, #218
+ 931 000c 3048     		ldr	r0, .L35+8
+ 932 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
+ 933              	.LVL111:
+ 934              		.loc 1 61 8 discriminator 1 view .LVU146
+ 935 0012 A0B9     		cbnz	r0, .L31
+ 936              	.L25:
+  62:Core/Src/salinity.c ****     {
+  63:Core/Src/salinity.c ****         Error_Handler();
+  64:Core/Src/salinity.c ****     }
+  65:Core/Src/salinity.c **** 
+  66:Core/Src/salinity.c ****     // Request temperature
+  67:Core/Src/salinity.c ****     uint8_t request = Pressure_request_temperature;
+ 937              		.loc 1 67 5 is_stmt 1 view .LVU147
+ 938              		.loc 1 67 13 is_stmt 0 view .LVU148
+ 939 0014 0423     		movs	r3, #4
+ 940 0016 8DF81730 		strb	r3, [sp, #23]
+  68:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Write(&hi2c1, Pressure_device_addr, Pressure_mem_addr_request, 1, &request, 1, 
+ 941              		.loc 1 68 5 is_stmt 1 view .LVU149
+ 942              		.loc 1 68 9 is_stmt 0 view .LVU150
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 19
 
 
- 946              		.loc 1 66 5 is_stmt 1 view .LVU148
- 947              		.loc 1 66 9 is_stmt 0 view .LVU149
- 948 001a 4FF47A73 		mov	r3, #1000
- 949 001e 0293     		str	r3, [sp, #8]
- 950 0020 0123     		movs	r3, #1
- 951 0022 0193     		str	r3, [sp, #4]
- 952 0024 0DF11702 		add	r2, sp, #23
- 953 0028 0092     		str	r2, [sp]
- 954 002a 0A22     		movs	r2, #10
- 955 002c DA21     		movs	r1, #218
- 956 002e 2848     		ldr	r0, .L36+8
- 957 0030 FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 958              	.LVL112:
- 959              		.loc 1 66 8 discriminator 1 view .LVU150
- 960 0034 30B9     		cbnz	r0, .L33
- 961              	.L27:
-  67:Core/Src/salinity.c ****     {
-  68:Core/Src/salinity.c ****         Error_Handler();
-  69:Core/Src/salinity.c ****     }
-  70:Core/Src/salinity.c **** 
-  71:Core/Src/salinity.c ****     // Wait for measurement
-  72:Core/Src/salinity.c ****     uint8_t status = 0;
- 962              		.loc 1 72 5 is_stmt 1 view .LVU151
- 963              		.loc 1 72 13 is_stmt 0 view .LVU152
- 964 0036 0023     		movs	r3, #0
- 965 0038 8DF81630 		strb	r3, [sp, #22]
- 966 003c 0DE0     		b	.L29
+ 943 001a 4FF47A73 		mov	r3, #1000
+ 944 001e 0293     		str	r3, [sp, #8]
+ 945 0020 0123     		movs	r3, #1
+ 946 0022 0193     		str	r3, [sp, #4]
+ 947 0024 0DF11702 		add	r2, sp, #23
+ 948 0028 0092     		str	r2, [sp]
+ 949 002a 0A22     		movs	r2, #10
+ 950 002c DA21     		movs	r1, #218
+ 951 002e 2848     		ldr	r0, .L35+8
+ 952 0030 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 953              	.LVL112:
+ 954              		.loc 1 68 8 discriminator 1 view .LVU151
+ 955 0034 30B9     		cbnz	r0, .L32
+ 956              	.L26:
+  69:Core/Src/salinity.c ****     {
+  70:Core/Src/salinity.c ****         Error_Handler();
+  71:Core/Src/salinity.c ****     }
+  72:Core/Src/salinity.c **** 
+  73:Core/Src/salinity.c ****     // Wait for measurement
+  74:Core/Src/salinity.c ****     uint8_t status = 0;
+ 957              		.loc 1 74 5 is_stmt 1 view .LVU152
+ 958              		.loc 1 74 13 is_stmt 0 view .LVU153
+ 959 0036 0023     		movs	r3, #0
+ 960 0038 8DF81630 		strb	r3, [sp, #22]
+ 961 003c 0DE0     		b	.L28
+ 962              	.L31:
+  63:Core/Src/salinity.c ****     }
+ 963              		.loc 1 63 9 is_stmt 1 view .LVU154
+ 964 003e FFF7FEFF 		bl	Error_Handler
+ 965              	.LVL113:
+ 966 0042 E7E7     		b	.L25
  967              	.L32:
-  61:Core/Src/salinity.c ****     }
- 968              		.loc 1 61 9 is_stmt 1 view .LVU153
- 969 003e FFF7FEFF 		bl	Error_Handler
- 970              	.LVL113:
- 971 0042 E7E7     		b	.L26
- 972              	.L33:
-  68:Core/Src/salinity.c ****     }
- 973              		.loc 1 68 9 view .LVU154
- 974 0044 FFF7FEFF 		bl	Error_Handler
- 975              	.LVL114:
- 976 0048 F5E7     		b	.L27
- 977              	.L28:
-  73:Core/Src/salinity.c ****     do
-  74:Core/Src/salinity.c ****     {
-  75:Core/Src/salinity.c ****         if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_status, 1, &status, 1,
-  76:Core/Src/salinity.c ****         {
-  77:Core/Src/salinity.c ****             Error_Handler();
-  78:Core/Src/salinity.c ****         }
-  79:Core/Src/salinity.c ****         HAL_Delay(100);
- 978              		.loc 1 79 9 view .LVU155
- 979 004a 6420     		movs	r0, #100
- 980 004c FFF7FEFF 		bl	HAL_Delay
- 981              	.LVL115:
-  80:Core/Src/salinity.c ****     } while ((status & Pressure_status_finished) == 0);
- 982              		.loc 1 80 50 view .LVU156
- 983              		.loc 1 80 22 is_stmt 0 view .LVU157
- 984 0050 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
- 985              		.loc 1 80 50 view .LVU158
- 986 0054 13F0010F 		tst	r3, #1
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 20
+  70:Core/Src/salinity.c ****     }
+ 968              		.loc 1 70 9 view .LVU155
+ 969 0044 FFF7FEFF 		bl	Error_Handler
+ 970              	.LVL114:
+ 971 0048 F5E7     		b	.L26
+ 972              	.L27:
+  75:Core/Src/salinity.c ****     do
+  76:Core/Src/salinity.c ****     {
+  77:Core/Src/salinity.c ****         if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_status, 1, &status, 1,
+  78:Core/Src/salinity.c ****         {
+  79:Core/Src/salinity.c ****             Error_Handler();
+  80:Core/Src/salinity.c ****         }
+  81:Core/Src/salinity.c ****         HAL_Delay(100);
+ 973              		.loc 1 81 9 view .LVU156
+ 974 004a 6420     		movs	r0, #100
+ 975 004c FFF7FEFF 		bl	HAL_Delay
+ 976              	.LVL115:
+  82:Core/Src/salinity.c ****     } while ((status & Pressure_status_finished) == 0);
+ 977              		.loc 1 82 50 view .LVU157
+ 978              		.loc 1 82 22 is_stmt 0 view .LVU158
+ 979 0050 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
+ 980              		.loc 1 82 50 view .LVU159
+ 981 0054 13F0010F 		tst	r3, #1
+ 982 0058 11D1     		bne	.L33
+ 983              	.L28:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 20
 
 
- 987 0058 11D1     		bne	.L34
- 988              	.L29:
-  73:Core/Src/salinity.c ****     do
- 989              		.loc 1 73 5 is_stmt 1 view .LVU159
-  75:Core/Src/salinity.c ****         {
- 990              		.loc 1 75 9 view .LVU160
-  75:Core/Src/salinity.c ****         {
- 991              		.loc 1 75 13 is_stmt 0 view .LVU161
- 992 005a 4FF47A73 		mov	r3, #1000
- 993 005e 0293     		str	r3, [sp, #8]
- 994 0060 0123     		movs	r3, #1
- 995 0062 0193     		str	r3, [sp, #4]
- 996 0064 0DF11602 		add	r2, sp, #22
- 997 0068 0092     		str	r2, [sp]
- 998 006a 1322     		movs	r2, #19
- 999 006c DA21     		movs	r1, #218
- 1000 006e 1848     		ldr	r0, .L36+8
- 1001 0070 FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 1002              	.LVL116:
-  75:Core/Src/salinity.c ****         {
- 1003              		.loc 1 75 12 discriminator 1 view .LVU162
- 1004 0074 0028     		cmp	r0, #0
- 1005 0076 E8D0     		beq	.L28
-  77:Core/Src/salinity.c ****         }
- 1006              		.loc 1 77 13 is_stmt 1 view .LVU163
- 1007 0078 FFF7FEFF 		bl	Error_Handler
- 1008              	.LVL117:
- 1009 007c E5E7     		b	.L28
- 1010              	.L34:
-  81:Core/Src/salinity.c **** 
-  82:Core/Src/salinity.c ****     uint8_t buf[2];
- 1011              		.loc 1 82 5 view .LVU164
-  83:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_temperature, 1, buf, 2, 10
- 1012              		.loc 1 83 5 view .LVU165
- 1013              		.loc 1 83 9 is_stmt 0 view .LVU166
- 1014 007e 4FF47A73 		mov	r3, #1000
- 1015 0082 0293     		str	r3, [sp, #8]
- 1016 0084 0223     		movs	r3, #2
- 1017 0086 0193     		str	r3, [sp, #4]
- 1018 0088 05AB     		add	r3, sp, #20
- 1019 008a 0093     		str	r3, [sp]
- 1020 008c 0123     		movs	r3, #1
- 1021 008e 0F22     		movs	r2, #15
- 1022 0090 DA21     		movs	r1, #218
- 1023 0092 0F48     		ldr	r0, .L36+8
- 1024 0094 FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 1025              	.LVL118:
- 1026              		.loc 1 83 8 discriminator 1 view .LVU167
- 1027 0098 88B9     		cbnz	r0, .L35
- 1028              	.L30:
-  84:Core/Src/salinity.c ****     {
-  85:Core/Src/salinity.c ****         Error_Handler();
-  86:Core/Src/salinity.c ****     }
-  87:Core/Src/salinity.c **** 
-  88:Core/Src/salinity.c ****     uint16_t temperature = (buf[0] << 8) | buf[1];
- 1029              		.loc 1 88 5 is_stmt 1 view .LVU168
- 1030              		.loc 1 88 32 is_stmt 0 view .LVU169
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 21
-
-
- 1031 009a 9DF81400 		ldrb	r0, [sp, #20]	@ zero_extendqisi2
- 1032              		.loc 1 88 47 view .LVU170
- 1033 009e 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
- 1034              	.LVL119:
+  75:Core/Src/salinity.c ****     do
+ 984              		.loc 1 75 5 is_stmt 1 view .LVU160
+  77:Core/Src/salinity.c ****         {
+ 985              		.loc 1 77 9 view .LVU161
+  77:Core/Src/salinity.c ****         {
+ 986              		.loc 1 77 13 is_stmt 0 view .LVU162
+ 987 005a 4FF47A73 		mov	r3, #1000
+ 988 005e 0293     		str	r3, [sp, #8]
+ 989 0060 0123     		movs	r3, #1
+ 990 0062 0193     		str	r3, [sp, #4]
+ 991 0064 0DF11602 		add	r2, sp, #22
+ 992 0068 0092     		str	r2, [sp]
+ 993 006a 1322     		movs	r2, #19
+ 994 006c DA21     		movs	r1, #218
+ 995 006e 1848     		ldr	r0, .L35+8
+ 996 0070 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 997              	.LVL116:
+  77:Core/Src/salinity.c ****         {
+ 998              		.loc 1 77 12 discriminator 1 view .LVU163
+ 999 0074 0028     		cmp	r0, #0
+ 1000 0076 E8D0     		beq	.L27
+  79:Core/Src/salinity.c ****         }
+ 1001              		.loc 1 79 13 is_stmt 1 view .LVU164
+ 1002 0078 FFF7FEFF 		bl	Error_Handler
+ 1003              	.LVL117:
+ 1004 007c E5E7     		b	.L27
+ 1005              	.L33:
+  83:Core/Src/salinity.c **** 
+  84:Core/Src/salinity.c ****     uint8_t buf[2];
+ 1006              		.loc 1 84 5 view .LVU165
+  85:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_temperature, 1, buf, 2, 10
+ 1007              		.loc 1 85 5 view .LVU166
+ 1008              		.loc 1 85 9 is_stmt 0 view .LVU167
+ 1009 007e 4FF47A73 		mov	r3, #1000
+ 1010 0082 0293     		str	r3, [sp, #8]
+ 1011 0084 0223     		movs	r3, #2
+ 1012 0086 0193     		str	r3, [sp, #4]
+ 1013 0088 05AB     		add	r3, sp, #20
+ 1014 008a 0093     		str	r3, [sp]
+ 1015 008c 0123     		movs	r3, #1
+ 1016 008e 0F22     		movs	r2, #15
+ 1017 0090 DA21     		movs	r1, #218
+ 1018 0092 0F48     		ldr	r0, .L35+8
+ 1019 0094 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 1020              	.LVL118:
+ 1021              		.loc 1 85 8 discriminator 1 view .LVU168
+ 1022 0098 88B9     		cbnz	r0, .L34
+ 1023              	.L29:
+  86:Core/Src/salinity.c ****     {
+  87:Core/Src/salinity.c ****         Error_Handler();
+  88:Core/Src/salinity.c ****     }
   89:Core/Src/salinity.c **** 
-  90:Core/Src/salinity.c ****     return ((double)temperature) * 0.1f;
- 1035              		.loc 1 90 5 is_stmt 1 view .LVU171
- 1036              		.loc 1 90 13 is_stmt 0 view .LVU172
- 1037 00a2 43EA0020 		orr	r0, r3, r0, lsl #8
- 1038              	.LVL120:
- 1039              		.loc 1 90 13 view .LVU173
- 1040 00a6 FFF7FEFF 		bl	__aeabi_ui2d
- 1041              	.LVL121:
- 1042              		.loc 1 90 34 view .LVU174
- 1043 00aa 07A3     		adr	r3, .L36
- 1044 00ac D3E90023 		ldrd	r2, [r3]
- 1045 00b0 FFF7FEFF 		bl	__aeabi_dmul
- 1046              	.LVL122:
-  91:Core/Src/salinity.c **** }
- 1047              		.loc 1 91 1 view .LVU175
- 1048 00b4 41EC100B 		vmov	d0, r0, r1
- 1049 00b8 07B0     		add	sp, sp, #28
- 1050              		.cfi_remember_state
- 1051              		.cfi_def_cfa_offset 4
- 1052              		@ sp needed
- 1053 00ba 5DF804FB 		ldr	pc, [sp], #4
- 1054              	.LVL123:
- 1055              	.L35:
- 1056              		.cfi_restore_state
-  85:Core/Src/salinity.c ****     }
- 1057              		.loc 1 85 9 is_stmt 1 view .LVU176
- 1058 00be FFF7FEFF 		bl	Error_Handler
- 1059              	.LVL124:
- 1060 00c2 EAE7     		b	.L30
- 1061              	.L37:
- 1062 00c4 AFF30080 		.align	3
- 1063              	.L36:
- 1064 00c8 000000A0 		.word	-1610612736
- 1065 00cc 9999B93F 		.word	1069128089
- 1066 00d0 00000000 		.word	hi2c1
- 1067              		.cfi_endproc
- 1068              	.LFE224:
- 1070              		.section	.text.measure_pressure,"ax",%progbits
- 1071              		.align	1
- 1072              		.global	measure_pressure
- 1073              		.syntax unified
- 1074              		.thumb
- 1075              		.thumb_func
- 1077              	measure_pressure:
- 1078              	.LFB225:
-  92:Core/Src/salinity.c **** 
-  93:Core/Src/salinity.c **** /**
-  94:Core/Src/salinity.c ****  * @brief Measures pressure
-  95:Core/Src/salinity.c ****  * @return double: pressure value in decibars corrected to 0 deibars at 0 meters above sea level
-  96:Core/Src/salinity.c ****  */
-  97:Core/Src/salinity.c **** double measure_pressure(void)
-  98:Core/Src/salinity.c **** {
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 22
+  90:Core/Src/salinity.c ****     uint16_t temperature = (buf[0] << 8) | buf[1];
+ 1024              		.loc 1 90 5 is_stmt 1 view .LVU169
+ 1025              		.loc 1 90 32 is_stmt 0 view .LVU170
+ 1026 009a 9DF81400 		ldrb	r0, [sp, #20]	@ zero_extendqisi2
+ 1027              		.loc 1 90 47 view .LVU171
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 21
 
 
- 1079              		.loc 1 98 1 view -0
- 1080              		.cfi_startproc
- 1081              		@ args = 0, pretend = 0, frame = 8
- 1082              		@ frame_needed = 0, uses_anonymous_args = 0
- 1083 0000 00B5     		push	{lr}
- 1084              		.cfi_def_cfa_offset 4
- 1085              		.cfi_offset 14, -4
- 1086 0002 87B0     		sub	sp, sp, #28
- 1087              		.cfi_def_cfa_offset 32
-  99:Core/Src/salinity.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, Pressure_device_addr, 1, 1000) != HAL_OK)
- 1088              		.loc 1 99 5 view .LVU178
- 1089              		.loc 1 99 9 is_stmt 0 view .LVU179
- 1090 0004 4FF47A73 		mov	r3, #1000
- 1091 0008 0122     		movs	r2, #1
- 1092 000a DA21     		movs	r1, #218
- 1093 000c 3848     		ldr	r0, .L49+16
- 1094 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
- 1095              	.LVL125:
- 1096              		.loc 1 99 8 discriminator 1 view .LVU180
- 1097 0012 A0B9     		cbnz	r0, .L45
- 1098              	.L39:
- 100:Core/Src/salinity.c ****     {
- 101:Core/Src/salinity.c ****         Error_Handler();
- 102:Core/Src/salinity.c ****     }
- 103:Core/Src/salinity.c **** 
- 104:Core/Src/salinity.c ****     // Request pressure
- 105:Core/Src/salinity.c ****     uint8_t request = Pressure_request_pressure;
- 1099              		.loc 1 105 5 is_stmt 1 view .LVU181
- 1100              		.loc 1 105 13 is_stmt 0 view .LVU182
- 1101 0014 0623     		movs	r3, #6
- 1102 0016 8DF81730 		strb	r3, [sp, #23]
- 106:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Write(&hi2c1, Pressure_device_addr, Pressure_mem_addr_request, 1, &request, 1, 
- 1103              		.loc 1 106 5 is_stmt 1 view .LVU183
- 1104              		.loc 1 106 9 is_stmt 0 view .LVU184
- 1105 001a 4FF47A73 		mov	r3, #1000
- 1106 001e 0293     		str	r3, [sp, #8]
- 1107 0020 0123     		movs	r3, #1
- 1108 0022 0193     		str	r3, [sp, #4]
- 1109 0024 0DF11702 		add	r2, sp, #23
- 1110 0028 0092     		str	r2, [sp]
- 1111 002a 0A22     		movs	r2, #10
- 1112 002c DA21     		movs	r1, #218
- 1113 002e 3048     		ldr	r0, .L49+16
- 1114 0030 FFF7FEFF 		bl	HAL_I2C_Mem_Write
- 1115              	.LVL126:
- 1116              		.loc 1 106 8 discriminator 1 view .LVU185
- 1117 0034 30B9     		cbnz	r0, .L46
- 1118              	.L40:
- 107:Core/Src/salinity.c ****     {
- 108:Core/Src/salinity.c ****         Error_Handler();
- 109:Core/Src/salinity.c ****     }
- 110:Core/Src/salinity.c **** 
- 111:Core/Src/salinity.c ****     // Wait for measurement
- 112:Core/Src/salinity.c ****     uint8_t status = 0;
- 1119              		.loc 1 112 5 is_stmt 1 view .LVU186
- 1120              		.loc 1 112 13 is_stmt 0 view .LVU187
- 1121 0036 0023     		movs	r3, #0
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 23
+ 1028 009e 9DF81530 		ldrb	r3, [sp, #21]	@ zero_extendqisi2
+ 1029              	.LVL119:
+  91:Core/Src/salinity.c **** 
+  92:Core/Src/salinity.c ****     return ((double)temperature) * 0.1f;
+ 1030              		.loc 1 92 5 is_stmt 1 view .LVU172
+ 1031              		.loc 1 92 13 is_stmt 0 view .LVU173
+ 1032 00a2 43EA0020 		orr	r0, r3, r0, lsl #8
+ 1033              	.LVL120:
+ 1034              		.loc 1 92 13 view .LVU174
+ 1035 00a6 FFF7FEFF 		bl	__aeabi_ui2d
+ 1036              	.LVL121:
+ 1037              		.loc 1 92 34 view .LVU175
+ 1038 00aa 07A3     		adr	r3, .L35
+ 1039 00ac D3E90023 		ldrd	r2, [r3]
+ 1040 00b0 FFF7FEFF 		bl	__aeabi_dmul
+ 1041              	.LVL122:
+  93:Core/Src/salinity.c **** }
+ 1042              		.loc 1 93 1 view .LVU176
+ 1043 00b4 41EC100B 		vmov	d0, r0, r1
+ 1044 00b8 07B0     		add	sp, sp, #28
+ 1045              		.cfi_remember_state
+ 1046              		.cfi_def_cfa_offset 4
+ 1047              		@ sp needed
+ 1048 00ba 5DF804FB 		ldr	pc, [sp], #4
+ 1049              	.LVL123:
+ 1050              	.L34:
+ 1051              		.cfi_restore_state
+  87:Core/Src/salinity.c ****     }
+ 1052              		.loc 1 87 9 is_stmt 1 view .LVU177
+ 1053 00be FFF7FEFF 		bl	Error_Handler
+ 1054              	.LVL124:
+ 1055 00c2 EAE7     		b	.L29
+ 1056              	.L36:
+ 1057 00c4 AFF30080 		.align	3
+ 1058              	.L35:
+ 1059 00c8 000000A0 		.word	-1610612736
+ 1060 00cc 9999B93F 		.word	1069128089
+ 1061 00d0 00000000 		.word	hi2c1
+ 1062              		.cfi_endproc
+ 1063              	.LFE224:
+ 1065              		.section	.text.measure_pressure,"ax",%progbits
+ 1066              		.align	1
+ 1067              		.global	measure_pressure
+ 1068              		.syntax unified
+ 1069              		.thumb
+ 1070              		.thumb_func
+ 1072              	measure_pressure:
+ 1073              	.LFB225:
+  94:Core/Src/salinity.c **** 
+  95:Core/Src/salinity.c **** /**
+  96:Core/Src/salinity.c ****  * @brief Measures pressure
+  97:Core/Src/salinity.c ****  * @return double: pressure value in decibars corrected to 0 deibars at 0 meters above sea level
+  98:Core/Src/salinity.c ****  */
+  99:Core/Src/salinity.c **** double measure_pressure(void)
+ 100:Core/Src/salinity.c **** {
+ 1074              		.loc 1 100 1 view -0
+ 1075              		.cfi_startproc
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 22
 
 
- 1122 0038 8DF81630 		strb	r3, [sp, #22]
- 1123 003c 0DE0     		b	.L42
+ 1076              		@ args = 0, pretend = 0, frame = 8
+ 1077              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1078 0000 00B5     		push	{lr}
+ 1079              		.cfi_def_cfa_offset 4
+ 1080              		.cfi_offset 14, -4
+ 1081 0002 87B0     		sub	sp, sp, #28
+ 1082              		.cfi_def_cfa_offset 32
+ 101:Core/Src/salinity.c ****     if (HAL_I2C_IsDeviceReady(&hi2c1, Pressure_device_addr, 1, 1000) != HAL_OK)
+ 1083              		.loc 1 101 5 view .LVU179
+ 1084              		.loc 1 101 9 is_stmt 0 view .LVU180
+ 1085 0004 4FF47A73 		mov	r3, #1000
+ 1086 0008 0122     		movs	r2, #1
+ 1087 000a DA21     		movs	r1, #218
+ 1088 000c 3848     		ldr	r0, .L48+16
+ 1089 000e FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
+ 1090              	.LVL125:
+ 1091              		.loc 1 101 8 discriminator 1 view .LVU181
+ 1092 0012 A0B9     		cbnz	r0, .L44
+ 1093              	.L38:
+ 102:Core/Src/salinity.c ****     {
+ 103:Core/Src/salinity.c ****         Error_Handler();
+ 104:Core/Src/salinity.c ****     }
+ 105:Core/Src/salinity.c **** 
+ 106:Core/Src/salinity.c ****     // Request pressure
+ 107:Core/Src/salinity.c ****     uint8_t request = Pressure_request_pressure;
+ 1094              		.loc 1 107 5 is_stmt 1 view .LVU182
+ 1095              		.loc 1 107 13 is_stmt 0 view .LVU183
+ 1096 0014 0623     		movs	r3, #6
+ 1097 0016 8DF81730 		strb	r3, [sp, #23]
+ 108:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Write(&hi2c1, Pressure_device_addr, Pressure_mem_addr_request, 1, &request, 1, 
+ 1098              		.loc 1 108 5 is_stmt 1 view .LVU184
+ 1099              		.loc 1 108 9 is_stmt 0 view .LVU185
+ 1100 001a 4FF47A73 		mov	r3, #1000
+ 1101 001e 0293     		str	r3, [sp, #8]
+ 1102 0020 0123     		movs	r3, #1
+ 1103 0022 0193     		str	r3, [sp, #4]
+ 1104 0024 0DF11702 		add	r2, sp, #23
+ 1105 0028 0092     		str	r2, [sp]
+ 1106 002a 0A22     		movs	r2, #10
+ 1107 002c DA21     		movs	r1, #218
+ 1108 002e 3048     		ldr	r0, .L48+16
+ 1109 0030 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 1110              	.LVL126:
+ 1111              		.loc 1 108 8 discriminator 1 view .LVU186
+ 1112 0034 30B9     		cbnz	r0, .L45
+ 1113              	.L39:
+ 109:Core/Src/salinity.c ****     {
+ 110:Core/Src/salinity.c ****         Error_Handler();
+ 111:Core/Src/salinity.c ****     }
+ 112:Core/Src/salinity.c **** 
+ 113:Core/Src/salinity.c ****     // Wait for measurement
+ 114:Core/Src/salinity.c ****     uint8_t status = 0;
+ 1114              		.loc 1 114 5 is_stmt 1 view .LVU187
+ 1115              		.loc 1 114 13 is_stmt 0 view .LVU188
+ 1116 0036 0023     		movs	r3, #0
+ 1117 0038 8DF81630 		strb	r3, [sp, #22]
+ 1118 003c 0DE0     		b	.L41
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 23
+
+
+ 1119              	.L44:
+ 103:Core/Src/salinity.c ****     }
+ 1120              		.loc 1 103 9 is_stmt 1 view .LVU189
+ 1121 003e FFF7FEFF 		bl	Error_Handler
+ 1122              	.LVL127:
+ 1123 0042 E7E7     		b	.L38
  1124              	.L45:
- 101:Core/Src/salinity.c ****     }
- 1125              		.loc 1 101 9 is_stmt 1 view .LVU188
- 1126 003e FFF7FEFF 		bl	Error_Handler
- 1127              	.LVL127:
- 1128 0042 E7E7     		b	.L39
- 1129              	.L46:
- 108:Core/Src/salinity.c ****     }
- 1130              		.loc 1 108 9 view .LVU189
- 1131 0044 FFF7FEFF 		bl	Error_Handler
- 1132              	.LVL128:
- 1133 0048 F5E7     		b	.L40
- 1134              	.L41:
- 113:Core/Src/salinity.c ****     do
- 114:Core/Src/salinity.c ****     {
- 115:Core/Src/salinity.c ****         if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_status, 1, &status, 1,
- 116:Core/Src/salinity.c ****         {
- 117:Core/Src/salinity.c ****             Error_Handler();
- 118:Core/Src/salinity.c ****         }
- 119:Core/Src/salinity.c ****         HAL_Delay(100);
- 1135              		.loc 1 119 9 view .LVU190
- 1136 004a 6420     		movs	r0, #100
- 1137 004c FFF7FEFF 		bl	HAL_Delay
- 1138              	.LVL129:
- 120:Core/Src/salinity.c ****     } while ((status & Pressure_status_finished) == 0);
- 1139              		.loc 1 120 50 view .LVU191
- 1140              		.loc 1 120 22 is_stmt 0 view .LVU192
- 1141 0050 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
- 1142              		.loc 1 120 50 view .LVU193
- 1143 0054 13F0010F 		tst	r3, #1
- 1144 0058 11D1     		bne	.L47
- 1145              	.L42:
- 113:Core/Src/salinity.c ****     do
- 1146              		.loc 1 113 5 is_stmt 1 view .LVU194
- 115:Core/Src/salinity.c ****         {
- 1147              		.loc 1 115 9 view .LVU195
- 115:Core/Src/salinity.c ****         {
- 1148              		.loc 1 115 13 is_stmt 0 view .LVU196
- 1149 005a 4FF47A73 		mov	r3, #1000
- 1150 005e 0293     		str	r3, [sp, #8]
- 1151 0060 0123     		movs	r3, #1
- 1152 0062 0193     		str	r3, [sp, #4]
- 1153 0064 0DF11602 		add	r2, sp, #22
- 1154 0068 0092     		str	r2, [sp]
- 1155 006a 1322     		movs	r2, #19
- 1156 006c DA21     		movs	r1, #218
- 1157 006e 2048     		ldr	r0, .L49+16
- 1158 0070 FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 1159              	.LVL130:
- 115:Core/Src/salinity.c ****         {
- 1160              		.loc 1 115 12 discriminator 1 view .LVU197
- 1161 0074 0028     		cmp	r0, #0
- 1162 0076 E8D0     		beq	.L41
- 117:Core/Src/salinity.c ****         }
- 1163              		.loc 1 117 13 is_stmt 1 view .LVU198
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 24
+ 110:Core/Src/salinity.c ****     }
+ 1125              		.loc 1 110 9 view .LVU190
+ 1126 0044 FFF7FEFF 		bl	Error_Handler
+ 1127              	.LVL128:
+ 1128 0048 F5E7     		b	.L39
+ 1129              	.L40:
+ 115:Core/Src/salinity.c ****     do
+ 116:Core/Src/salinity.c ****     {
+ 117:Core/Src/salinity.c ****         if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_status, 1, &status, 1,
+ 118:Core/Src/salinity.c ****         {
+ 119:Core/Src/salinity.c ****             Error_Handler();
+ 120:Core/Src/salinity.c ****         }
+ 121:Core/Src/salinity.c ****         HAL_Delay(100);
+ 1130              		.loc 1 121 9 view .LVU191
+ 1131 004a 6420     		movs	r0, #100
+ 1132 004c FFF7FEFF 		bl	HAL_Delay
+ 1133              	.LVL129:
+ 122:Core/Src/salinity.c ****     } while ((status & Pressure_status_finished) == 0);
+ 1134              		.loc 1 122 50 view .LVU192
+ 1135              		.loc 1 122 22 is_stmt 0 view .LVU193
+ 1136 0050 9DF81630 		ldrb	r3, [sp, #22]	@ zero_extendqisi2
+ 1137              		.loc 1 122 50 view .LVU194
+ 1138 0054 13F0010F 		tst	r3, #1
+ 1139 0058 11D1     		bne	.L46
+ 1140              	.L41:
+ 115:Core/Src/salinity.c ****     do
+ 1141              		.loc 1 115 5 is_stmt 1 view .LVU195
+ 117:Core/Src/salinity.c ****         {
+ 1142              		.loc 1 117 9 view .LVU196
+ 117:Core/Src/salinity.c ****         {
+ 1143              		.loc 1 117 13 is_stmt 0 view .LVU197
+ 1144 005a 4FF47A73 		mov	r3, #1000
+ 1145 005e 0293     		str	r3, [sp, #8]
+ 1146 0060 0123     		movs	r3, #1
+ 1147 0062 0193     		str	r3, [sp, #4]
+ 1148 0064 0DF11602 		add	r2, sp, #22
+ 1149 0068 0092     		str	r2, [sp]
+ 1150 006a 1322     		movs	r2, #19
+ 1151 006c DA21     		movs	r1, #218
+ 1152 006e 2048     		ldr	r0, .L48+16
+ 1153 0070 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 1154              	.LVL130:
+ 117:Core/Src/salinity.c ****         {
+ 1155              		.loc 1 117 12 discriminator 1 view .LVU198
+ 1156 0074 0028     		cmp	r0, #0
+ 1157 0076 E8D0     		beq	.L40
+ 119:Core/Src/salinity.c ****         }
+ 1158              		.loc 1 119 13 is_stmt 1 view .LVU199
+ 1159 0078 FFF7FEFF 		bl	Error_Handler
+ 1160              	.LVL131:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 24
 
 
- 1164 0078 FFF7FEFF 		bl	Error_Handler
- 1165              	.LVL131:
- 1166 007c E5E7     		b	.L41
- 1167              	.L47:
- 121:Core/Src/salinity.c **** 
- 122:Core/Src/salinity.c ****     uint8_t buf[4];
- 1168              		.loc 1 122 5 view .LVU199
+ 1161 007c E5E7     		b	.L40
+ 1162              	.L46:
  123:Core/Src/salinity.c **** 
- 124:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_pressure, 1, buf, 4, 1000)
- 1169              		.loc 1 124 5 view .LVU200
- 1170              		.loc 1 124 9 is_stmt 0 view .LVU201
- 1171 007e 4FF47A73 		mov	r3, #1000
- 1172 0082 0293     		str	r3, [sp, #8]
- 1173 0084 0423     		movs	r3, #4
- 1174 0086 0193     		str	r3, [sp, #4]
- 1175 0088 04AB     		add	r3, sp, #16
- 1176 008a 0093     		str	r3, [sp]
- 1177 008c 0123     		movs	r3, #1
- 1178 008e 0B22     		movs	r2, #11
- 1179 0090 DA21     		movs	r1, #218
- 1180 0092 1748     		ldr	r0, .L49+16
- 1181 0094 FFF7FEFF 		bl	HAL_I2C_Mem_Read
- 1182              	.LVL132:
- 1183              		.loc 1 124 8 discriminator 1 view .LVU202
- 1184 0098 F0B9     		cbnz	r0, .L48
- 1185              	.L43:
- 125:Core/Src/salinity.c ****     {
- 126:Core/Src/salinity.c ****         Error_Handler();
- 127:Core/Src/salinity.c ****     }
- 128:Core/Src/salinity.c **** 
- 129:Core/Src/salinity.c ****     uint32_t pressure = (buf[0] << 24) | (buf[1] << 16) | (buf[2] << 8) | buf[3];
- 1186              		.loc 1 129 5 is_stmt 1 view .LVU203
- 1187              		.loc 1 129 29 is_stmt 0 view .LVU204
- 1188 009a 9DF81020 		ldrb	r2, [sp, #16]	@ zero_extendqisi2
- 1189              		.loc 1 129 46 view .LVU205
- 1190 009e 9DF81130 		ldrb	r3, [sp, #17]	@ zero_extendqisi2
- 1191              		.loc 1 129 50 view .LVU206
- 1192 00a2 1B04     		lsls	r3, r3, #16
- 1193              		.loc 1 129 40 view .LVU207
- 1194 00a4 43EA0263 		orr	r3, r3, r2, lsl #24
- 1195              		.loc 1 129 63 view .LVU208
- 1196 00a8 9DF81220 		ldrb	r2, [sp, #18]	@ zero_extendqisi2
- 1197              		.loc 1 129 57 view .LVU209
- 1198 00ac 43EA0223 		orr	r3, r3, r2, lsl #8
- 1199              		.loc 1 129 78 view .LVU210
- 1200 00b0 9DF81300 		ldrb	r0, [sp, #19]	@ zero_extendqisi2
- 1201              	.LVL133:
- 130:Core/Src/salinity.c ****     
- 131:Core/Src/salinity.c ****     return ((double) pressure - PASCALS_AT_SEA_LEVEL) * PASCALS_PER_DECIBAR;
- 1202              		.loc 1 131 5 is_stmt 1 view .LVU211
- 1203              		.loc 1 131 13 is_stmt 0 view .LVU212
- 1204 00b4 1843     		orrs	r0, r0, r3
- 1205              	.LVL134:
- 1206              		.loc 1 131 13 view .LVU213
- 1207 00b6 FFF7FEFF 		bl	__aeabi_ui2d
- 1208              	.LVL135:
- 1209              		.loc 1 131 31 view .LVU214
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 25
+ 124:Core/Src/salinity.c ****     uint8_t buf[4];
+ 1163              		.loc 1 124 5 view .LVU200
+ 125:Core/Src/salinity.c **** 
+ 126:Core/Src/salinity.c ****     if (HAL_I2C_Mem_Read(&hi2c1, Pressure_device_addr, Pressure_mem_addr_pressure, 1, buf, 4, 1000)
+ 1164              		.loc 1 126 5 view .LVU201
+ 1165              		.loc 1 126 9 is_stmt 0 view .LVU202
+ 1166 007e 4FF47A73 		mov	r3, #1000
+ 1167 0082 0293     		str	r3, [sp, #8]
+ 1168 0084 0423     		movs	r3, #4
+ 1169 0086 0193     		str	r3, [sp, #4]
+ 1170 0088 04AB     		add	r3, sp, #16
+ 1171 008a 0093     		str	r3, [sp]
+ 1172 008c 0123     		movs	r3, #1
+ 1173 008e 0B22     		movs	r2, #11
+ 1174 0090 DA21     		movs	r1, #218
+ 1175 0092 1748     		ldr	r0, .L48+16
+ 1176 0094 FFF7FEFF 		bl	HAL_I2C_Mem_Read
+ 1177              	.LVL132:
+ 1178              		.loc 1 126 8 discriminator 1 view .LVU203
+ 1179 0098 F0B9     		cbnz	r0, .L47
+ 1180              	.L42:
+ 127:Core/Src/salinity.c ****     {
+ 128:Core/Src/salinity.c ****         Error_Handler();
+ 129:Core/Src/salinity.c ****     }
+ 130:Core/Src/salinity.c **** 
+ 131:Core/Src/salinity.c ****     uint32_t pressure = (buf[0] << 24) | (buf[1] << 16) | (buf[2] << 8) | buf[3];
+ 1181              		.loc 1 131 5 is_stmt 1 view .LVU204
+ 1182              		.loc 1 131 29 is_stmt 0 view .LVU205
+ 1183 009a 9DF81020 		ldrb	r2, [sp, #16]	@ zero_extendqisi2
+ 1184              		.loc 1 131 46 view .LVU206
+ 1185 009e 9DF81130 		ldrb	r3, [sp, #17]	@ zero_extendqisi2
+ 1186              		.loc 1 131 50 view .LVU207
+ 1187 00a2 1B04     		lsls	r3, r3, #16
+ 1188              		.loc 1 131 40 view .LVU208
+ 1189 00a4 43EA0263 		orr	r3, r3, r2, lsl #24
+ 1190              		.loc 1 131 63 view .LVU209
+ 1191 00a8 9DF81220 		ldrb	r2, [sp, #18]	@ zero_extendqisi2
+ 1192              		.loc 1 131 57 view .LVU210
+ 1193 00ac 43EA0223 		orr	r3, r3, r2, lsl #8
+ 1194              		.loc 1 131 78 view .LVU211
+ 1195 00b0 9DF81300 		ldrb	r0, [sp, #19]	@ zero_extendqisi2
+ 1196              	.LVL133:
+ 132:Core/Src/salinity.c ****     
+ 133:Core/Src/salinity.c ****     return ((double) pressure - PASCALS_AT_SEA_LEVEL) * PASCALS_PER_DECIBAR;
+ 1197              		.loc 1 133 5 is_stmt 1 view .LVU212
+ 1198              		.loc 1 133 13 is_stmt 0 view .LVU213
+ 1199 00b4 1843     		orrs	r0, r0, r3
+ 1200              	.LVL134:
+ 1201              		.loc 1 133 13 view .LVU214
+ 1202 00b6 FFF7FEFF 		bl	__aeabi_ui2d
+ 1203              	.LVL135:
+ 1204              		.loc 1 133 31 view .LVU215
+ 1205 00ba 09A3     		adr	r3, .L48
+ 1206 00bc D3E90023 		ldrd	r2, [r3]
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 25
 
 
- 1210 00ba 09A3     		adr	r3, .L49
- 1211 00bc D3E90023 		ldrd	r2, [r3]
- 1212 00c0 FFF7FEFF 		bl	__aeabi_dsub
- 1213              	.LVL136:
- 1214              		.loc 1 131 55 view .LVU215
- 1215 00c4 08A3     		adr	r3, .L49+8
- 1216 00c6 D3E90023 		ldrd	r2, [r3]
- 1217 00ca FFF7FEFF 		bl	__aeabi_dmul
- 1218              	.LVL137:
- 132:Core/Src/salinity.c **** }
- 1219              		.loc 1 132 1 view .LVU216
- 1220 00ce 41EC100B 		vmov	d0, r0, r1
- 1221 00d2 07B0     		add	sp, sp, #28
- 1222              		.cfi_remember_state
- 1223              		.cfi_def_cfa_offset 4
- 1224              		@ sp needed
- 1225 00d4 5DF804FB 		ldr	pc, [sp], #4
- 1226              	.LVL138:
- 1227              	.L48:
- 1228              		.cfi_restore_state
- 126:Core/Src/salinity.c ****     }
- 1229              		.loc 1 126 9 is_stmt 1 view .LVU217
- 1230 00d8 FFF7FEFF 		bl	Error_Handler
- 1231              	.LVL139:
- 1232 00dc DDE7     		b	.L43
- 1233              	.L50:
- 1234 00de 00BF     		.align	3
- 1235              	.L49:
- 1236 00e0 00000000 		.word	0
- 1237 00e4 D0BCF840 		.word	1090043088
- 1238 00e8 2D431CEB 		.word	-350469331
- 1239 00ec E2361A3F 		.word	1058682594
- 1240 00f0 00000000 		.word	hi2c1
- 1241              		.cfi_endproc
- 1242              	.LFE225:
- 1244              		.text
- 1245              	.Letext0:
- 1246              		.file 2 "/opt/local/arm-none-eabi/include/machine/_default_types.h"
- 1247              		.file 3 "/opt/local/arm-none-eabi/include/sys/_stdint.h"
- 1248              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
- 1249              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 1250              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 1251              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 1252              		.file 8 "../RS485/ProbeConfiguration.h"
- 1253              		.file 9 "Core/Inc/voltage.h"
- 1254              		.file 10 "Core/Inc/salinity.h"
- 1255              		.file 11 "Core/Inc/i2c.h"
- 1256              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 1257              		.file 13 "Core/Inc/main.h"
- 1258              		.file 14 "/opt/local/arm-none-eabi/include/math.h"
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s 			page 26
+ 1207 00c0 FFF7FEFF 		bl	__aeabi_dsub
+ 1208              	.LVL136:
+ 1209              		.loc 1 133 55 view .LVU216
+ 1210 00c4 08A3     		adr	r3, .L48+8
+ 1211 00c6 D3E90023 		ldrd	r2, [r3]
+ 1212 00ca FFF7FEFF 		bl	__aeabi_dmul
+ 1213              	.LVL137:
+ 134:Core/Src/salinity.c **** }
+ 1214              		.loc 1 134 1 view .LVU217
+ 1215 00ce 41EC100B 		vmov	d0, r0, r1
+ 1216 00d2 07B0     		add	sp, sp, #28
+ 1217              		.cfi_remember_state
+ 1218              		.cfi_def_cfa_offset 4
+ 1219              		@ sp needed
+ 1220 00d4 5DF804FB 		ldr	pc, [sp], #4
+ 1221              	.LVL138:
+ 1222              	.L47:
+ 1223              		.cfi_restore_state
+ 128:Core/Src/salinity.c ****     }
+ 1224              		.loc 1 128 9 is_stmt 1 view .LVU218
+ 1225 00d8 FFF7FEFF 		bl	Error_Handler
+ 1226              	.LVL139:
+ 1227 00dc DDE7     		b	.L42
+ 1228              	.L49:
+ 1229 00de 00BF     		.align	3
+ 1230              	.L48:
+ 1231 00e0 00000000 		.word	0
+ 1232 00e4 D0BCF840 		.word	1090043088
+ 1233 00e8 2D431CEB 		.word	-350469331
+ 1234 00ec E2361A3F 		.word	1058682594
+ 1235 00f0 00000000 		.word	hi2c1
+ 1236              		.cfi_endproc
+ 1237              	.LFE225:
+ 1239              		.text
+ 1240              	.Letext0:
+ 1241              		.file 2 "/opt/local/arm-none-eabi/include/machine/_default_types.h"
+ 1242              		.file 3 "/opt/local/arm-none-eabi/include/sys/_stdint.h"
+ 1243              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
+ 1244              		.file 5 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 1245              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 1246              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 1247              		.file 8 "../RS485/ProbeConfig.h"
+ 1248              		.file 9 "Core/Inc/voltage.h"
+ 1249              		.file 10 "Core/Inc/salinity.h"
+ 1250              		.file 11 "Core/Inc/i2c.h"
+ 1251              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 1252              		.file 13 "Core/Inc/main.h"
+ 1253              		.file 14 "/opt/local/arm-none-eabi/include/math.h"
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s 			page 26
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 salinity.c
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:25     .text.calculate_salinity:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:31     .text.calculate_salinity:00000000 calculate_salinity
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:477    .text.calculate_salinity:00000308 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:531    .text.calculate_salinity:000003dc $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:640    .text.calculate_salinity:00000498 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:651    .text.calculate_average_resistance:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:657    .text.calculate_average_resistance:00000000 calculate_average_resistance
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:735    .text.calculate_conductivity:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:741    .text.calculate_conductivity:00000000 calculate_conductivity
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:806    .text.calculate_conductivity:00000048 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:818    .text.calculate_resistance:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:824    .text.calculate_resistance:00000000 calculate_resistance
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:909    .text.calculate_resistance:00000054 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:914    .text.measure_temperature:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:920    .text.measure_temperature:00000000 measure_temperature
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:1064   .text.measure_temperature:000000c8 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:1071   .text.measure_pressure:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:1077   .text.measure_pressure:00000000 measure_pressure
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccjwlNG7.s:1236   .text.measure_pressure:000000e0 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:25     .text.calculate_salinity:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:31     .text.calculate_salinity:00000000 calculate_salinity
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:581    .text.calculate_salinity:000003d0 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:644    .text.calculate_average_resistance:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:650    .text.calculate_average_resistance:00000000 calculate_average_resistance
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:728    .text.calculate_conductivity:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:734    .text.calculate_conductivity:00000000 calculate_conductivity
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:801    .text.calculate_conductivity:00000040 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:813    .text.calculate_resistance:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:819    .text.calculate_resistance:00000000 calculate_resistance
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:904    .text.calculate_resistance:00000054 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:909    .text.measure_temperature:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:915    .text.measure_temperature:00000000 measure_temperature
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:1059   .text.measure_temperature:000000c8 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:1066   .text.measure_pressure:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:1072   .text.measure_pressure:00000000 measure_pressure
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cci7tpPU.s:1231   .text.measure_pressure:000000e0 $d
 
 UNDEFINED SYMBOLS
 __aeabi_ddiv

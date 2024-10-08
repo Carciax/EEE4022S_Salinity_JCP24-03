@@ -1,0 +1,106 @@
+% ----------------------------------------------------
+% Methodology
+% ----------------------------------------------------
+
+\chapter{Salinometer Evaluation and Testing}\label{ch:testing}
+
+This chapter will discuss the evaluation and testing of the salinometer. 
+A summary of these tests is shown in~\reftbl{tab:testing-summary} and each test is discussed in further detail in the following sections.
+testing phase 1 and 2
+floating point accuracy
+
+%chktex-file 44
+\begin{longtblr}[
+    caption = {A summary of the evaluation and testing of the salinometer.},
+    label = {tab:testing-summary}
+    ]{
+    colspec = {|C|C|C|C|}
+    }
+    \hline
+    \textbf{Test} & \textbf{Description} & \textbf{Ideal Result} & \textbf{Measured Result} \\
+    \hline
+    DAC Voltage Range & The range of voltages that the DAC can output from $0V$ to $V_{DD} = 3.3V$ & $0-3.3V$ & \\
+    \hline
+    ADC Accuracy & The average accuracy of the ADC in measuring voltages from $DAC_{MIN}$ to $DAC_{MAX}$ & $100\%$ & \\
+    \hline
+    Calibration Resistance & The resistance of the calibration resistor $R_{CAL}$ & $5\Omega$ & \\
+    \hline
+    Calibration Resistance using ADC & The resistance of the calibration resistor $R_{CAL}$ as measured using the ADC & $5\Omega$ & \\
+    \hline
+    Resistance Measuring Accuracy & The salinometer's average accuracy in measuring specific resistances & $100\%$ & \\
+    \hline
+    Linear Conductivity Measurement Au & Whether the sample of salt water had linear conductivity throughout a range of voltages or not using the gold electrodes with no fringe shield & Non-linear &  \\
+    \hline
+    Linear Conductivity Measurement Shielded Au & Whether the sample of salt water had linear conductivity throughout a range of voltages or not using the gold electrodes with the fringe shield & Linear & \\
+    \hline
+    Linear Conductivity Measurement Ti & Whether the sample of salt water had linear conductivity throughout a range of voltages or not using the titanium electrodes & Non-Linear & \\
+    \hline
+    Titanium Voltage to Conductivity Mapping Accuracy & How accurately the relationship between the voltage output by the DAC and the voltage measured over the titanium electrodes can correlate to a specific conductivity & $100\%$ accuracy & \\
+    \hline
+    Salinity Measurement Accuracy & The salinometer's average accuracy in measuring salinity & $100\%$ & \\
+    \hline
+\end{longtblr}
+
+\section{\gls{dac} Voltage Range}\label{sec:dac-voltage-range}
+
+The range of the \gls{dac}'s data sheet that it is able to output is from $0V$ to $99.2\% V_{DD} = 3.27V$ which decreases with increasing load.
+The ideal result of this test is that the \gls{dac} can output voltages from $0V$ to $3.3V$.
+The \gls{dac} will be tested by outputting voltages from $0V$ to $3.3V$ and measuring the output voltage both before and after the buffer transistor.
+
+The testing procedure for the \gls{dac} voltage range involves setting the \gls{dac} at a range of voltages between $0$ and $3.3V$ and measuring the output voltage before and after the buffer transistor both under maximum load of $100\Omega$ and no load.
+The measurement equipment will be a Keysight U3401A multimeter as this is the most accurate multimeter available reporting accuracy to $0.02\%$. 
+All measurement will be expressed as a percentage of $V_{DD}$.
+
+The \gls{dac} was unable to reach the 3v3 required and even with the internal voltage set to 4x1.21 it was not able to output more than vcc
+max = 2,8323V
+
+\section{\gls{adc} Accuracy}\label{sec:adc-accuracy}
+
+The \gls{adc} will be tested by measuring the voltage output by the \gls{dac} and comparing it to the voltage measured by a multimeter.
+The ideal result of this test is that the \gls{adc} can measure the voltage output by the \gls{dac} with $100\%$ accuracy.
+
+The \gls{adc} will be tested by measuring the voltage output by the \gls{dac} and comparing it to the voltage measured by a multimeter.
+This range will be from 0 to DAC\_MAX which is 2.8 volts unloaded or 868/1024 bits.
+The adc will take an average value of 5 samples to reduce noise and a delay will be added to allow the voltage to settle.
+
+\section{Calibration Resistance}\label{sec:calibration-resistance}
+
+The calibration resistor $R_{CAL}$ will be measured using a multimeter.
+The ideal result of this test is that the calibration resistor is $5\Omega$. 
+electrically disconnected from the circuit
+resistance accuracy 0.1\%
+result = 5,71 ohm
+result direct = 5,62 ohm
+wires = 0,50 ohm
+final = 5,12 ohm
+
+\section{Calibration Resistance using \gls{adc}}\label{sec:calibration-resistance-using-adc}
+
+The calibration resistor $R_{CAL}$ will be measured using the \gls{adc}.
+The ideal result of this test is that the calibration resistor is $5\Omega$.
+The voltage that is expected to be measured across the calibration resistor is $1.729$ or $2146$ on a 12 bit \gls{adc}.
+\begin{equation}
+    V_{CAL} = \frac{V_{DD} \cdot R_{CAL}}{R_{CAL} + R_1} \cdot A_{op-amp} = \frac{3.3V \cdot 5\Omega}{5\Omega + 100\Omega} \cdot 11 = 1.729V = 2146 bits
+\end{equation}
+
+dac votlage set at VDD/2 @ 0x200. adc measurement averaged by 5 times.
+vcc = 3,2930
+dac = 1,6343
+calib = 78,86 mV
+calib = 96 bits
+calib gain = 0,9413
+calib gain = 1174 bits
+
+running range of dac voltages from 0 to 2.6V (dac max loaded) = 155 to 806 bits to prevent weird occurrences.
+measuring the calib voltage over the dac voltage. using adc.
+test done while loaded with R100 + calib.
+
+
+\section{Resistance Measuring Accuracy}\label{sec:resistance-measuring-accuracy}
+
+The salinometer's accuracy in measuring specific resistances will be tested using a multimeter.
+The ideal result of this test is that the salinometer can measure resistance with $100\%$ accuracy.
+Several resistors will be measured by both the multimeter and the salinometer to determine the accuracy of the salinometer.
+
+The salinometer will be calibrated for measuring zero ohms and the resistance of the resistors will be measured using a multimeter
+The dac will run from 0.5V to 2.6V  (dac max loaded) = 155 to 806 bits to prevent weird occurrences. 

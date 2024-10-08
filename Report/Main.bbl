@@ -23,6 +23,11 @@
 \bibitem{worthington_ocean_graphs_1981}
 \emph{The Influence Of Formation Anisotropy Upon Resistivity - Porosity Relationships}, ser. SPWLA Annual Logging Symposium, vol. All Days, 06 1981.
 
+\bibitem{esa_mapping_salty_waters_2019}
+\BIBentryALTinterwordspacing
+T.~E.~S. Agency, ``Mapping salty waters,'' 2019. [Online]. Available: \url{https://www.esa.int/Applications/Observing_the_Earth/Space_for_our_climate/Mapping_salty_waters}
+\BIBentrySTDinterwordspacing
+
 \bibitem{NSIDC_ice_sheet_facts_2024}
 \BIBentryALTinterwordspacing
 N.~Snow and I.~D.~C. (NSIDC), ``Ice sheet quick facts,'' 2024. [Online]. Available: \url{https://nsidc.org/learn/parts-cryosphere/ice-sheets/ice-sheet-quick-facts}
@@ -80,6 +85,46 @@ C.~Gabarró, J.~Font, A.~Camps, M.~Vall-llossera, and A.~Julià, ``A new empiric
 
 \bibitem{yueh_microwave_salinity_error_sources_2001}
 S.~Yueh, R.~West, W.~Wilson, F.~Li, E.~Njoku, and Y.~Rahmat-Samii, ``Error sources and feasibility for microwave remote sensing of ocean surface salinity,'' \emph{IEEE Transactions on Geoscience and Remote Sensing}, vol.~39, no.~5, pp. 1049--1060, 2001.
+
+\bibitem{millard_index_of_refraction_algorithm_1990}
+\BIBentryALTinterwordspacing
+R.~Millard and G.~Seaver, ``An index of refraction algorithm for seawater over temperature, pressure, salinity, density, and wavelength,'' \emph{Deep Sea Research Part A. Oceanographic Research Papers}, vol.~37, no.~12, pp. 1909--1926, 1990. [Online]. Available: \url{https://www.sciencedirect.com/science/article/pii/019801499090086B}
+\BIBentrySTDinterwordspacing
+
+\bibitem{malarde_compact_refractometer_2008}
+\BIBentryALTinterwordspacing
+D.~Malardé, Z.~Y. Wu, P.~Grosso, J.-L. de~Bougrenet de~la Tocnaye, and M.~L. Menn, ``High-resolution and compact refractometer for salinity measurements,'' \emph{Measurement Science and Technology}, vol.~20, no.~1, p. 015204, dec 2008. [Online]. Available: \url{https://dx.doi.org/10.1088/0957-0233/20/1/015204}
+\BIBentrySTDinterwordspacing
+
+\bibitem{tengesdal_compact_refractometer_2012}
+O.~A. Tengesdal, ``Measurement of seawater refractive index and salinity by means of optical refraction,'' Master's thesis, University of Bergen, 2012.
+
+\bibitem{liao_interferometer_seawater_salinity_2023}
+\BIBentryALTinterwordspacing
+Y.~Liao, K.~Yang, and X.~Shi, ``Theoretical study on simultaneous measurement of seawater temperature and salinity based on dual fiber interferometers combined with nonlinear decoupling algorithm,'' \emph{Measurement}, vol. 211, p. 112596, 2023. [Online]. Available: \url{https://www.sciencedirect.com/science/article/pii/S0263224123001604}
+\BIBentrySTDinterwordspacing
+
+\bibitem{yang_in_situ_refractometer_salinity_measurement_2024}
+\BIBentryALTinterwordspacing
+S.~Yang, J.~Xu, L.~Ji, Q.~Sun, M.~Zhang, S.~Zhao, and C.~Wu, ``In situ measurement of deep-sea salinity using optical salinometer based on michelson interferometer,'' \emph{Journal of Marine Science and Engineering}, vol.~12, no.~9, 2024. [Online]. Available: \url{https://www.mdpi.com/2077-1312/12/9/1569}
+\BIBentrySTDinterwordspacing
+
+\bibitem{possetti_interferometer_salinity_measurement_2009}
+\BIBentryALTinterwordspacing
+G.~R.~C. Possetti, R.~C. Kamikawachi, C.~L. Prevedello, M.~Muller, and J.~L. Fabris, ``Salinity measurement in water environment with a long period grating based interferometer,'' \emph{Measurement Science and Technology}, vol.~20, no.~3, p. 034003, feb 2009. [Online]. Available: \url{https://dx.doi.org/10.1088/0957-0233/20/3/034003}
+\BIBentrySTDinterwordspacing
+
+\bibitem{nguyen_interferometer_salinity_measurement_2009}
+L.~V. Nguyen, M.~Vasiliev, and K.~Alameh, ``Three-wave fiber fabry–pérot interferometer for simultaneous measurement of temperature and water salinity of seawater,'' \emph{IEEE Photonics Technology Letters}, vol.~23, no.~7, pp. 450--452, 2011.
+
+\bibitem{zhao_interferometer_salinity_measurement_2009}
+Y.~Zhao, J.~Zhao, Y.~Peng, R.-J. Tong, and L.~Cai, ``Simultaneous measurement of seawater salinity and temperature with composite fiber-optic interferometer,'' \emph{IEEE Transactions on Instrumentation and Measurement}, vol.~71, pp. 1--8, 2022.
+
+\bibitem{somaraju_electromagnetic_salinity_2006}
+R.~Somaraju and J.~Trumpf, ``Frequency, temperature and salinity variation of the permittivity of seawater,'' \emph{IEEE Transactions on Antennas and Propagation}, vol.~54, no.~11, pp. 3441--3448, 2006.
+
+\bibitem{tengesdal_electromagnetic_salinity_2014}
+O.~A. Tengesdal, B.~L. Hauge, and L.~E. Helseth, ``Electromagnetic and optical methods for measurements of salt concentration of water,'' \emph{Journal of Electromagnetic Analysis and Applications}, vol.~6, no.~6, 2014.
 
 \bibitem{seabird_dbar_to_depth_2024}
 \BIBentryALTinterwordspacing

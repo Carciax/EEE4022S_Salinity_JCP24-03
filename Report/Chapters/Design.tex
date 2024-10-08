@@ -1,12 +1,12 @@
 % ----------------------------------------------------
-% Methodology
+% Design
 % ----------------------------------------------------
 
-\chapter{Methodology}\label{ch:methodology}
+\chapter{Design}\label{ch:design}
 
-\section{Device Design}
+\textit{dac buffer}
 
-\subsection{Salinity Measurement Method}
+\section{Salinity Measurement Method}
 
 \textit{help}
 Of the available methods for measuring salinity, the most common method used in oceanography is the conductivity method.
@@ -16,7 +16,7 @@ Information on other methods can be found in the literature review.
 One of the most common methods of measuring conductivity of a liquid is to measure the resistance between two electrodes or probes in the liquid and use that to determine its conductivity.
 The shape and material of the probes are an important factor which affect the measurement accuracy and drift as well as the ease of calculation from resistance to conductivity.
 
-\subsection{Conductivity Probe Material}
+\section{Conductivity Probe Material}
 
 Ideal probes for measuring conductivity in salt water need to have zero resistance, infinite corrosion resistance and be able to confine the electrical current in the water to a specific volume.
 The zero resistance will allow the resistance that it measured to be entirely due to the water, although most conductive materials have a conductivity in the order of $10^8 S/m$ which causes negligible resistance compared to water which has a conductivity range of $0-5 S/m$. %https://atlas-scientific.com/blog/water-conductivity-range/ https://byjus.com/physics/conductivity-of-water/#:~:text=Viscosity%20And%20Density-,Salt%20Water%20Conductivity,and%20chlorine%20ions%20(NaCl).
@@ -40,7 +40,7 @@ While this process is expensive, it is affordable within this project's budget a
 
 Gold and titanium were both used as electrodes for this project due to their high corrosion resistance, conductivity and availability.
 
-\subsection{Conductivity Probe Design}
+\section{Conductivity Probe Design}
 
 Gold electrodes made using the \gls{enig} \gls{pcb} manufacturing process were chosen to be the primary electrodes for the device.
 The high corrosion resistance and conductivity of gold were advantageous, and the \gls{pcb} allowed the probes to be made with a known area and length of the water between the probes.
@@ -65,14 +65,14 @@ The titanium electrodes are substantially simpler and cheaper than the gold elec
 Provided the testing with the gold electrodes is able to prove a constant resistance-voltage relationship, the fringing effect between the titanium electrodes could be measured and accounted for allowing for them to be used as the primary electrodes in a future iteration of the device.
 The titanium wire that was available for this project was $1mm$ in diameter and in order to account for the unknown resistance between the electrodes, the design allowed for an adjustable spacing between the electrodes and adjustable electrode length.
 
-\subsection{Resistance Measurement Method}
+\section{Resistance Measurement Method}
 
 The most common and practical method of measuring resistance is to use a resistor divider circuit.
 Current meters are also used to measure resistance, but most of them use the same principle of a resistor divider circuit to determine the current.
 This project chose to use a large $R_1$ in series with the electrodes such that the voltage between the probes would be lower which would further reduce the fringing effect.
 The measurement taken from the voltage divider was then amplified by a factor of 11 to increase the resolution of the measurement.
 
-\subsection{Circuit Overview}
+\section{Circuit Overview}
 \textit{additional advantage : will never short circuit}
 \begin{figure}
     \centering
@@ -88,7 +88,7 @@ The resistance across the titanium electrodes remained uncertain and thus, in ad
 The $R_1$ values were chosen to be $100\Omega$, $1k\Omega$ and $10k\Omega$ which would be used when the resistance between the probes is $1\Omega - 10\Omega$, $10\Omega - 100\Omega$ and $100\Omega - 1k\Omega$ respectively.
 This would allow for a minimum resolution of $11\%$ of $V_{CC}$ for the voltage measurement by the \gls{adc} as shown by \refeqn{eqn:adc-resolution}.
 \begin{equation}\label{eqn:adc-resolution}
-    \lfrac{1\Omega}{1\Omega + 100\Omega} * 11 = 11\%
+    \lfrac{1\Omega}{1\Omega + 100\Omega} * 11 = 11\% \\
     \lfrac{10\Omega}{10\Omega + 100\Omega} * 11 = 100\%
 \end{equation} 
 
@@ -98,13 +98,13 @@ This configuration also allows current to flow in both directions between electr
 
 In order to increase the measurement accuracy of the resistance, multiple high accuracy resistors were placed in series to attain the values of $R_1$ and the calibration resistor as this decreases the uncertainty of their resistance.
 This decreases the total uncertainty $\delta_{R_{total}}$ by a factor of the number of parallel resistors $n$ compared to the individual resistor uncertainty $\delta_R$ as shown by \refeqn{eqn:parallel-resistor-total} to \refeqn{eqn:parallel-resistor-uncertainty}.
-\begin{equation}[!h]\label{eqn:parallel-resistor-total}
+\begin{equation}[h]\label{eqn:parallel-resistor-total}
     R_{total} = {\left[ \sum_{i=1}^{n} \lfrac{1}{R} \right]}^{-1} = {\left(\lfrac{n}{R}\right)}^{-1} = \lfrac{1}{n}\cdot R
 \end{equation}
-\begin{equation}[!h]\label{eqn:uncertainty-general-formula}
+\begin{equation}[h]\label{eqn:uncertainty-general-formula}
     \text{for a function}~f(x_1,x_2,\dots,x_n), \text{its uncertainty} ~\delta_f = \sqrt{\sum_{i=1}^{n} {\left( \lfrac{\partial f}{\partial x_i} \delta x_i \right)}^2}
 \end{equation}
-\begin{equation}[!h]\label{eqn:parallel-resistor-uncertainty}
+\begin{equation}[h]\label{eqn:parallel-resistor-uncertainty}
     \therefore \delta_{R_{total}} = \sqrt{{\left( \lfrac{\partial R_{total}}{\partial R} \delta_R \right)}^2} = \sqrt{{\left( \lfrac{1}{n} \delta_R \right)}^2} = \lfrac{1}{n} \delta_R
 \end{equation}
 The resistances for $R_1$ were made from 3 parallel resistors with tolerance $\pm1\%$ giving a total uncertainty of $\pm0.\bar{3}\%$ and the calibration resistor was made from 4 parallel resistors with tolerance $\pm1\%$ giving a total uncertainty of $\pm0.25\%$.
@@ -121,7 +121,7 @@ The buffer op-amp has unity gain and is used to repeat the voltage going to the 
 In theory, this should allow for the fringing to be absorbed by the fringe guard and not affect the resistance measurement, however switches were added electrically connect or disconnect the fringe guard should it interfere with the resistance measurement.
 The current flowing between the fringe guards was assumed to be less than that of the pads and thus there was no need to limit the current from the op-amp.
 
-\subsection{Salinity Calculation and Display}
+\section{Salinity Calculation and Display}
 
 In order to measure the salinity of the sea ice, the probe needed to be lowered into the water and measure salinity at various depths.
 There are two methods for capturing the salinity data: either to constantly record the salinity data as the device it lowered through the water column or to have the device take a measurement when instructed by a controller.
@@ -136,7 +136,7 @@ The chosen method of making a waterproof probe was to create a \gls{pcb} and coa
 The probe \gls{pcb} was designed with the equipment necessary to measure the salinity including ports for the conductivity probes, the circuitry required to measure the resistance as shown in \reffig{fig:circuit-overview}, temperature and depth sensors which are discussed in \refsec{sec:temp-depth-measurement}, an RS485 communication port and a microcontroller.
 The microcontroller that was chosen was from the STM32F401 series as STM microcontrollers as it had a \gls{fpu} which allowed for calculating salinity on the probe. 
 
-\subsection{Temperature and Depth Measurement}\label{sec:temp-depth-measurement}
+\section{Temperature and Depth Measurement}\label{sec:temp-depth-measurement}
 
 Depth sensors that a waterproof are too expensive for this projects budget.
 However, there have been alternative approaches which use non-waterproof sensors that are isolated form the water using a flexible membrane that would allow the pressure to be transmitted to the sensor.
@@ -144,8 +144,29 @@ This project included a depth sensor with the aim to use this method to measure 
 
 The temperature sensor used in this project was an arbitrarily chosen, surface mount temperature sensor that had high accuracy and a wide temperature range.
 The temperature sensor should be coated with a thin layer of epoxy resin to waterproof it as epoxy resin is a poor thermal conductor and thus a thinner layer would allow for a more accurate temperature measurement.
-Lastly, as a convenient backup, the STM32F401 series of microcontroller contain a temperature sensor which is significantly less accurate with an accuracy of about $1\degree C$
+The choice of microcontroller and pressure sensor also provided this board with two alternative temperature sensors with less accurate, however they could be used in the event that the primary temperature sensor failed.
 
-\section{Device Coding}
-ur mom
+\section{Salinometer Code}
 
+The salinometer has to measure the resistance between the electrodes, calculate the conductivity from that and then measure the temperature and pressure to finally calculate the salinity.
+In order to do a resistance measurement, the salinometer can either perform a single measurement or a multiple measurement voltage sweep.
+In either case, a voltage is first loaded onto the \gls{dac} which is then routed through an $R_1$ resistor, then through the calibration resistor and then to ground and the voltage is recorded.
+After that the \gls{dac} is then routed through an $R_1$ resistor, then through a pair of electrodes and then to ground and the voltage is recorded.
+
+Given that the calibration resistance is known at $5\Omega\pm0.25\%$, the resistance between the electrodes can be calculated using the ratio the measured voltages as shown in \refeqn{eqn:electrode-calib-resistance}.
+\begin{equation}
+    \lfrac{V_{calib}}{V_{electrode}} = \lfrac{R_{calib}}{R_{electrode}}
+    \label{eqn:electrode-calib-resistance}
+\end{equation}
+Using this method allows for the device to nullify all scalar inaccuracies in the circuit including $R_1$ uncertainty, \gls{dac} and \gls{adc} gain errors, and the op-amp gain error.
+This is because the voltage measurement for both the calibration resistor and the electrodes would have the same inaccuracies. 
+This method is however still vulnerable to offset inaccuracies including \gls{dac} and \gls{adc} offset errors and the internal resistance of the switches.
+
+Once the resistance between the electrodes is known, the conductivity can either be calculated using the known area and length of the water between the gold electrodes or the conductivity can be calculated by using a more complex model if the titanium electrodes are used as they are subject to the fringing effect.
+Measuring the temperature and pressure is a simple matter of reading the temperature sensor and the pressure sensor respectively which finally allows salinity to be calculated which can be performed on the salinometer microcontroller as it possesses an \gls{fpu}.
+
+\section{Controller Code}
+
+The controller's primary goal is to request measurements and display the returned values to the user.
+However, once the probe is cast in epoxy resin it will become unprogrammable and thus the controller must also be able to configure the probe's settings.
+The parameters that the controller will need to adjust include the $R_1$ resistance, the electrode type, whether to use the fringe shield or not, the voltage sweep range and steps and the number of \gls{adc} samples to average.

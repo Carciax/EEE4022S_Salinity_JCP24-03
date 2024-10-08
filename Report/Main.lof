@@ -2,10 +2,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Histogram showing the volume of ocean water relative to temperature and salinity bins. The highest peak corresponds to a volume of 26 million cubic kilometres of ocean water~\cite {worthington_ocean_graphs_1981}.}}{3}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Global salinity map generated using satellite data~\cite {esa_mapping_salty_waters_2019}.}}{5}{figure.caption.9}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces The gold electrode \gls {pcb} design.}}{11}{figure.caption.9}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces A simplified representation of the resistance measuring circuit.}}{12}{figure.caption.10}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A simplified representation of the resistance measurement circuit using the gold electrodes with the fringe guard.}}{13}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The gold electrode \gls {pcb} design.}}{13}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces A simplified representation of the resistance measuring circuit.}}{14}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A simplified representation of the resistance measurement circuit using the gold electrodes with the fringe guard.}}{15}{figure.caption.12}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
