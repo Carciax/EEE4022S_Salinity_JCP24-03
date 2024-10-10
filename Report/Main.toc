@@ -30,9 +30,14 @@
 \contentsline {section}{\numberline {4.5}Circuit Overview}{13}{section.4.5}%
 \contentsline {section}{\numberline {4.6}Salinity Calculation and Display}{15}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Temperature and Depth Measurement}{16}{section.4.7}%
-\contentsline {section}{\numberline {4.8}Salinometer Code}{16}{section.4.8}%
-\contentsline {section}{\numberline {4.9}Controller Code}{17}{section.4.9}%
+\contentsline {section}{\numberline {4.8}\gls {pcb} Assembly and Corrections}{16}{section.4.8}%
+\contentsline {section}{\numberline {4.9}Salinometer Code}{16}{section.4.9}%
+\contentsline {section}{\numberline {4.10}Controller Code}{17}{section.4.10}%
 \contentsline {chapter}{\numberline {5}Salinometer Evaluation and Testing}{18}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusions}{20}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Recommendations}{21}{chapter.7}%
-\contentsline {chapter}{Bibliography}{22}{chapter*.13}%
+\contentsline {section}{\numberline {5.1}DAC Voltage Range}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}ADC Accuracy}{21}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Calibration Resistance}{21}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Resistance Measuring Accuracy}{21}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Conclusions}{24}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Recommendations}{25}{chapter.7}%
+\contentsline {chapter}{Bibliography}{26}{chapter*.16}%

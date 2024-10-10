@@ -133,21 +133,22 @@ int main(void)
     voltage_init();
     HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
 
-    GPIOSW->BSRR = SW_R1_100_Pin | SW_R1_Calib_Pin;
-    uint16_t dac_val, calib_val;
+    VoltageSample_TypeDef voltage_samples[50];
+    ResistanceSample_TypeDef resistance_samples[50];
 
-    for (uint16_t v = 0; v < 806; v += 64) {
-        dac_set_voltage(v);
-        HAL_Delay(10);
-        adc_set_channel(ADC_CHANNEL_DAC);
-        dac_val = adc_average(5);
-        adc_set_channel(ADC_CHANNEL_SIGNAL);
-        calib_val = adc_average(5);
-        __NOP();
+    measure_voltage_sweep(voltage_samples, BIDIRECTIONAL, R1_1k, Ti, 93, 806, 50, 5, 50);
+    calculate_resistance(voltage_samples, resistance_samples, 50);
+    double sweep_resistance = calculate_average_resistance(resistance_samples, 50);
+
+    measure_voltage_sweep(voltage_samples, BIDIRECTIONAL, R1_1k, Ti, 0x200, 0x201, 1, 5, 50);
+    calculate_resistance(voltage_samples, resistance_samples, 1);
+    double single_resistance = calculate_average_resistance(resistance_samples, 1);
+
+    if (sweep_resistance != single_resistance)
+    {
+        HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
     }
-
-    if (calib_val == 0) Error_Handler();
-    if (dac_val == 0) Error_Handler();
+    
     /* USER CODE END 2 */
 
     /* Infinite loop */

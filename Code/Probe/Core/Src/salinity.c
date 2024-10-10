@@ -47,7 +47,8 @@ void calculate_resistance(VoltageSample_TypeDef *voltage_samples, ResistanceSamp
     for (uint16_t i = 0; i < num_samples; i++)
     {
         reistance_samples[i].voltage = voltage_samples[i].dac_output;
-        reistance_samples[i].resistance = (double) voltage_samples[i].measurement / voltage_samples[i].calib * CALIBRATION_RESISTANCE;
+        double rm = (double)voltage_samples[i].measurement / voltage_samples[i].calib;
+        reistance_samples[i].resistance = (CORR_EQN_P2 - CORR_EQN_Q1 * rm)/(rm - CORR_EQN_P1);
     }
 }
 
@@ -129,6 +130,6 @@ double measure_pressure(void)
     }
 
     uint32_t pressure = (buf[0] << 24) | (buf[1] << 16) | (buf[2] << 8) | buf[3];
-    
-    return ((double) pressure - PASCALS_AT_SEA_LEVEL) * PASCALS_PER_DECIBAR;
+
+    return ((double)pressure - PASCALS_AT_SEA_LEVEL) * PASCALS_PER_DECIBAR;
 }
