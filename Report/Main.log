@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.12)  9 OCT 2024 15:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.12)  11 OCT 2024 00:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1101,7 +1101,7 @@ Chapter 1.
 
 ]) (./Chapters/Literature.tex [2]
 Chapter 2.
-<Figures/ocean_salinity_temperature_quantity.png, id=331, 647.41875pt x 433.62pt>
+<Figures/ocean_salinity_temperature_quantity.png, id=332, 647.41875pt x 433.62pt>
 File: Figures/ocean_salinity_temperature_quantity.png Graphic file (type png)
 <use Figures/ocean_salinity_temperature_quantity.png>
 Package pdftex.def Info: Figures/ocean_salinity_temperature_quantity.png  used on input line 13.
@@ -1109,7 +1109,7 @@ Package pdftex.def Info: Figures/ocean_salinity_temperature_quantity.png  used o
 [3
 
 {/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc} <./Figures/ocean_salinity_temperature_quantity.png>] [4]
-<Figures/salinity_distribution.png, id=395, 115.632pt x 56.3706pt>
+<Figures/salinity_distribution.png, id=396, 115.632pt x 56.3706pt>
 File: Figures/salinity_distribution.png Graphic file (type png)
 <use Figures/salinity_distribution.png>
 Package pdftex.def Info: Figures/salinity_distribution.png  used on input line 85.
@@ -1132,29 +1132,40 @@ Chapter 4.
 [11
 
 ]
-<Figures/GoldElectrode.png, id=515, 617.30624pt x 833.1125pt>
+<Figures/GoldElectrode.png, id=526, 617.30624pt x 833.1125pt>
 File: Figures/GoldElectrode.png Graphic file (type png)
 <use Figures/GoldElectrode.png>
-Package pdftex.def Info: Figures/GoldElectrode.png  used on input line 59.
-(pdftex.def)             Requested size: 241.84843pt x 326.3999pt.
+Package pdftex.def Info: Figures/GoldElectrode.png  used on input line 51.
+(pdftex.def)             Requested size: 145.11053pt x 195.8323pt.
  [12]
-<Figures/CircuitOverview.png, id=524, 977.6525pt x 760.8425pt>
+<Figures/CircuitOverview.png, id=534, 817.0525pt x 816.04875pt>
 File: Figures/CircuitOverview.png Graphic file (type png)
 <use Figures/CircuitOverview.png>
-Package pdftex.def Info: Figures/CircuitOverview.png  used on input line 79.
-(pdftex.def)             Requested size: 241.84843pt x 188.21332pt.
- [13 <./Figures/GoldElectrode.png>] [14 <./Figures/CircuitOverview.png>]
-<Figures/AuElectrodeExample.png, id=548, 656.4525pt x 760.8425pt>
+Package pdftex.def Info: Figures/CircuitOverview.png  used on input line 76.
+(pdftex.def)             Requested size: 290.22107pt x 289.86743pt.
+LaTeX Font Info:    Trying to load font information for T1+DejaVuSansMono-TLF on input line 82.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/dejavu/T1DejaVuSansMono-TLF.fd
+File: T1DejaVuSansMono-TLF.fd 2011/06/01 Font definitions for T1/DejaVuSansMono-TLF.
+)
+LaTeX Font Info:    Font shape `T1/DejaVuSansMono-TLF/m/n' will be
+(Font)              scaled to size 8.76003pt on input line 82.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `DejaVuSansMono-TLF' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [13{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/dejavu/dejavumono_t1-type1.enc} <./Figures/GoldElectrode.png>] [14 <./Figures/CircuitOverview.png>]
+<Figures/AuElectrodeExample.png, id=560, 656.4525pt x 760.8425pt>
 File: Figures/AuElectrodeExample.png Graphic file (type png)
 <use Figures/AuElectrodeExample.png>
-Package pdftex.def Info: Figures/AuElectrodeExample.png  used on input line 114.
-(pdftex.def)             Requested size: 241.84843pt x 280.31154pt.
- [15 <./Figures/AuElectrodeExample.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\gls' on input line 149.
-
-[16]) (./Chapters/Testing.tex [17]
+Package pdftex.def Info: Figures/AuElectrodeExample.png  used on input line 113.
+(pdftex.def)             Requested size: 193.47578pt x 224.23761pt.
+ [15 <./Figures/AuElectrodeExample.png>] [16]
+<Figures/probe_flowchart.png, id=586, 786.94pt x 594.22pt>
+File: Figures/probe_flowchart.png Graphic file (type png)
+<use Figures/probe_flowchart.png>
+Package pdftex.def Info: Figures/probe_flowchart.png  used on input line 161.
+(pdftex.def)             Requested size: 483.69687pt x 365.23912pt.
+ [17 <./Figures/probe_flowchart.png>]) (./Chapters/Testing.tex [18]
 Chapter 5.
 > Step: init table outer spec.
 > Step: parse table options.
@@ -1163,49 +1174,57 @@ Chapter 5.
 > Step: parse table inner spec.
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
-> Step: build the whole table.
-[18
 
-] [19]
-<Figures/Testing/DAC_no_load.png, id=603, 562.2606pt x 421.575pt>
+Overfull \hbox (2.89577pt too wide) in paragraph at lines 50--50
+ []\T1/lmr/bx/n/10.95 (-20) Measured 
+ []
+
+
+Overfull \hbox (2.89577pt too wide) in paragraph at lines 50--50
+ []\T1/lmr/bx/n/10.95 (-20) Measured 
+ []
+
+> Step: build the whole table.
+
+Overfull \hbox (2.89577pt too wide) in paragraph at lines 50--50
+ []\T1/lmr/bx/n/10.95 (-20) Measured 
+ []
+
+[19
+
+]
+<Figures/Testing/DAC_no_load.png, id=657, 562.2606pt x 421.575pt>
 File: Figures/Testing/DAC_no_load.png Graphic file (type png)
 <use Figures/Testing/DAC_no_load.png>
-Package pdftex.def Info: Figures/Testing/DAC_no_load.png  used on input line 66.
+Package pdftex.def Info: Figures/Testing/DAC_no_load.png  used on input line 67.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/DAC_loaded.png, id=606, 562.2606pt x 421.575pt>
+<Figures/Testing/DAC_loaded.png, id=660, 562.2606pt x 421.575pt>
 File: Figures/Testing/DAC_loaded.png Graphic file (type png)
 <use Figures/Testing/DAC_loaded.png>
-Package pdftex.def Info: Figures/Testing/DAC_loaded.png  used on input line 72.
+Package pdftex.def Info: Figures/Testing/DAC_loaded.png  used on input line 73.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
  [20 <./Figures/Testing/DAC_no_load.png (PNG copy)> <./Figures/Testing/DAC_loaded.png (PNG copy)>]
-<Figures/Testing/ADC.png, id=626, 562.2606pt x 421.575pt>
+<Figures/Testing/ADC.png, id=680, 562.2606pt x 421.575pt>
 File: Figures/Testing/ADC.png Graphic file (type png)
 <use Figures/Testing/ADC.png>
-Package pdftex.def Info: Figures/Testing/ADC.png  used on input line 100.
+Package pdftex.def Info: Figures/Testing/ADC.png  used on input line 101.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
  [21 <./Figures/Testing/ADC.png (PNG copy)>]
-<Figures/Testing/R_uncorrected.png, id=640, 562.2606pt x 421.575pt>
+<Figures/Testing/R_uncorrected.png, id=695, 562.2606pt x 421.575pt>
 File: Figures/Testing/R_uncorrected.png Graphic file (type png)
 <use Figures/Testing/R_uncorrected.png>
-Package pdftex.def Info: Figures/Testing/R_uncorrected.png  used on input line 132.
+Package pdftex.def Info: Figures/Testing/R_uncorrected.png  used on input line 133.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/R_corrected.png, id=641, 562.2606pt x 421.575pt>
+<Figures/Testing/R_corrected.png, id=696, 562.2606pt x 421.575pt>
 File: Figures/Testing/R_corrected.png Graphic file (type png)
 <use Figures/Testing/R_corrected.png>
-Package pdftex.def Info: Figures/Testing/R_corrected.png  used on input line 138.
+Package pdftex.def Info: Figures/Testing/R_corrected.png  used on input line 139.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
- [22 <./Figures/Testing/R_uncorrected.png (PNG copy)> <./Figures/Testing/R_corrected.png (PNG copy)>]
-LaTeX Font Info:    Trying to load font information for T1+DejaVuSansMono-TLF on input line 161.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/dejavu/T1DejaVuSansMono-TLF.fd
-File: T1DejaVuSansMono-TLF.fd 2011/06/01 Font definitions for T1/DejaVuSansMono-TLF.
-)
-LaTeX Font Info:    Font shape `T1/DejaVuSansMono-TLF/m/n' will be
-(Font)              scaled to size 8.76003pt on input line 161.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `DejaVuSansMono-TLF' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-) (./Chapters/Conclusions.tex [23{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/dejavu/dejavumono_t1-type1.enc}]
+
+
+LaTeX Warning: Reference `eqn:resistance-rational' on page 22 undefined on input line 151.
+
+) (./Chapters/Conclusions.tex [22 <./Figures/Testing/R_uncorrected.png (PNG copy)> <./Figures/Testing/R_corrected.png (PNG copy)>] [23]
 Chapter 6.
 ) (./Chapters/Recommendations.tex [24
 
@@ -1221,22 +1240,22 @@ Underfull \hbox (badness 5345) in paragraph at lines 64--66
 [26
 
 ] [27]
-Underfull \hbox (badness 1762) in paragraph at lines 131--133
+Underfull \hbox (badness 1762) in paragraph at lines 136--138
 []\T1/lmr/m/n/10.95 (+20) S.-B. Sci-en-tific, ``Con-ver-sion of pres-sure to depth,'' 2024. [On-
  []
 
 
-Underfull \hbox (badness 2961) in paragraph at lines 131--133
+Underfull \hbox (badness 2961) in paragraph at lines 136--138
 \T1/lmr/m/n/10.95 (+20) line]. Avail-able: [][]$https : / / www . google . com / url ? sa = t & rct = j & q = &esrc = s & source =
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--133
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
 \T1/lmr/m/n/10.95 (+20) web & cd = &ved = 2ahUKEwij6ebU1sCIAxXPiv0HHXDELasQFnoECCMQAQ & url = https %
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 131--133
+Underfull \hbox (badness 10000) in paragraph at lines 136--138
 \T1/lmr/m/n/10.95 (+20) 3A % 2F % 2Fwww . seabird . com % 2Fasset-[]get . download . jsa % 3Fid % 3D54627861710 & usg =
  []
 
@@ -1245,22 +1264,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--133
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
+
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: ECFE97BFC68C8529DED2DFCBAA5C09B5;7399.
+(rerunfilecheck)             Checksum: C222F1C07E0D3201A9F4042BFB30193B;7480.
  ) 
 Here is how much of TeX's memory you used:
- 36902 strings out of 474116
- 725517 string characters out of 5743682
+ 36868 strings out of 474116
+ 723955 string characters out of 5743682
  1968187 words of memory out of 5000000
- 58303 multiletter control sequences out of 15000+600000
- 641251 words of font info for 213 fonts, out of 8000000 for 9000
+ 58262 multiletter control sequences out of 15000+600000
+ 641051 words of font info for 214 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,12n,113p,2495b,1283s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,12n,110p,2495b,1199s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/dejavu/DejaVuSansMono.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Main.pdf (36 pages, 1393437 bytes).
+Output written on Main.pdf (36 pages, 1448726 bytes).
 PDF statistics:
- 824 PDF objects out of 1000 (max. 8388607)
- 712 compressed objects within 8 object streams
- 161 named destinations out of 1000 (max. 500000)
- 56205 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 877 PDF objects out of 1000 (max. 8388607)
+ 744 compressed objects within 8 object streams
+ 166 named destinations out of 1000 (max. 500000)
+ 56210 words of extra memory for PDF output out of 61914 (max. 10000000)
 

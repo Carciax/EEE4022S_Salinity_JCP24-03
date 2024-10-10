@@ -8,11 +8,12 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces The gold electrode \gls {pcb} design.}}{13}{figure.caption.10}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces A simplified representation of the resistance measuring circuit.}}{14}{figure.caption.11}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces A simplified representation of the resistance measurement circuit using the gold electrodes with the fringe guard.}}{15}{figure.caption.12}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The flowchart for the probe code that measures salinity.}}{17}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The input voltage versus the output voltage of the \gls {dac} with no load.}}{20}{figure.caption.13}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces The input voltage versus the output voltage of the \gls {dac} with a load of $100\Omega $.}}{20}{figure.caption.13}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces The voltage output by the \gls {dac} measured by a multimeter versus measured by the \gls {adc}.}}{21}{figure.caption.14}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces The resistance measuring test.}}{22}{figure.caption.15}%
-\contentsline {figure}{\numberline {5.5}{\ignorespaces The resistance measuring test using the correction equation.}}{22}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The input voltage versus the output voltage of the \gls {dac} with no load.}}{20}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The input voltage versus the output voltage of the \gls {dac} with a load of $100\Omega $.}}{20}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The voltage output by the \gls {dac} measured by a multimeter versus measured by the \gls {adc}.}}{21}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces The resistance measuring test.}}{22}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces The resistance measuring test using the corrected equation.}}{22}{figure.caption.16}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

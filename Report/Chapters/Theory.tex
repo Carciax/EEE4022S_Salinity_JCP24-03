@@ -15,34 +15,34 @@ Using decibars (dbar) for pressure is a common practice in oceanography as it is
 The Practical Salinity Scale defines Practical salinity $S_p$ in terms of a conductivity ratio $K_{15}$ which is the conductivity of a sample of water at a temperature of $15\degree C$ and a pressure equal to one standard atmosphere divided by the conductivity of a standard potassium chloride solution at the same temperature and pressure.
 The standard potassium chloride solution is $32.4356g$ of $KCl$ dissolved in $1.000kg$ of water and when the ratio between the conductivity of a sample of water and the standard solution, or $K_{15}$, equals 1 the Practical Salinity $S_p$ is, by definition, 35.~\cite{ioc_teos_2010}
 
-When $K_{15}$ is not equal to 1, the Practical Salinity $S_p$ can be calculated using the PSS-78 equation shown in \refeqn{eq:pss-78-k15}.
-\begin{equation}\label{eq:pss-78-k15}
+When $K_{15}$ is not equal to 1, the Practical Salinity $S_p$ can be calculated using the PSS-78 equation shown in \refeqn{eqn:pss-78-k15}.
+\begin{equation}\label{eqn:pss-78-k15}
     S_p = \sum_{i=0}^{5} a_i {(K_{15})}^{i/2}~~~~\text{where}~~~~K_{15} = \frac{C(S_p, 15\degree C, 0)}{C(35, 15\degree C, 0)}
 \end{equation}
 All the coefficients for the salinity-conductivity equations, including $a_i$, are given in~\reftbl{tab:pss-78-coefficients}.
 
 To calculate the salinity of a sample of water that is not at $15\degree C$ and $0 dbar$, the conductivity ratio of the sample can be expanded into the product of three ratios which are labelled $R_p$, $R_t$, and $r_t$ respectively.
-The conductivity measurement taken in the field $C(S_p, t, p)$ is related to the conductivity of the standard solution $C(35, 15\degree C, 0)$ which the device is calibrated with and is represented by $R$ in \refeqn{eq:pss-78-full-ratio}.~\cite{ioc_teos_2010}
-\begin{equation}\label{eq:pss-78-full-ratio}
+The conductivity measurement taken in the field $C(S_p, t, p)$ is related to the conductivity of the standard solution $C(35, 15\degree C, 0)$ which the device is calibrated with and is represented by $R$ in \refeqn{eqn:pss-78-full-ratio}.~\cite{ioc_teos_2010}
+\begin{equation}\label{eqn:pss-78-full-ratio}
     R = \lfrac{C(S_p, t, p)}{C(35, 15\degree C, 0)} = \lfrac{C(S_p, t, p)}{C(S_p, t, 0)} \cdot \lfrac{C(S_p, t, 0)}{C(35, t, 0)} \cdot \lfrac{C(35, t, 0)}{C(35, 15\degree C, 0)} = R_p R_t r_t
 \end{equation}
 \textit{check}
 In order to calculate the salinity of the sample $R_t$ must be found which takes a similar for to $K_{15}$.
 $r_t$ is first calculated using the temperature of the sample 
-\begin{equation}\label{eq:pss-78-rt}
+\begin{equation}\label{eqn:pss-78-rt}
     r_t = \sum_{i=0}^{4} c_i {t}^i
 \end{equation}
 following which $R_p$ is calculated using the sample's pressure $p$, temperature $t$ and conductivity ratio $R$,
-\begin{equation}\label{eq:pss-78-rp}
+\begin{equation}\label{eqn:pss-78-rp}
     R_p = 1 + \lfrac{\sum_{i=1}^{3} e_i p^i}{1 + d_1 t + d_2 {t}^2 + R\left[ d_3 + d_4 t \right]}
 \end{equation}
 and finally $R_t$ is calculated using $r_t$, $R_p$ and $R$.
-\begin{equation}\label{eq:pss-78-Rt}
+\begin{equation}\label{eqn:pss-78-Rt}
     R_t = \lfrac{R}{R_p r_t}
 \end{equation}
-Note that for a sample temperature of $15\degree C$ and pressure of $0 dbar$, $r_t$ and $R_t$ both equal 1 which leaves $R_t$ equal to $R$ and thus \refeqn{eq:pss-78-k15} can be used to calculate the Practical Salinity $S_p$.
-For temperatures other than $15\degree C$, the Practical Salinity $S_p$ can be calculated using \refeqn{eq:pss-78-full} where $k = 0.0162$.~\cite{ioc_teos_2010}
-\begin{equation}\label{eq:pss-78-full}
+Note that for a sample temperature of $15\degree C$ and pressure of $0 dbar$, $r_t$ and $R_t$ both equal 1 which leaves $R_t$ equal to $R$ and thus \refeqn{eqn:pss-78-k15} can be used to calculate the Practical Salinity $S_p$.
+For temperatures other than $15\degree C$, the Practical Salinity $S_p$ can be calculated using \refeqn{eqn:pss-78-full} where $k = 0.0162$.~\cite{ioc_teos_2010}
+\begin{equation}\label{eqn:pss-78-full}
     S_p = \sum_{i=0}^{5} a_i {(R_t)}^{i/2} + \lfrac{t-15}{1+k(t-15)} \sum_{i=0}^{5} b_i {(R_t)}^{i/2}
 \end{equation}
 
@@ -69,13 +69,13 @@ For temperatures other than $15\degree C$, the Practical Salinity $S_p$ can be c
     $5$ & $2.7081$ & $-0.0144$ & & & \\
     \hline
 \end{longtblr}
-Note that the coefficients $a_i$ precisely sum to 35 such that the Practical Salinity $S_p$ is 35 when $K_{15}$ or $R_t = 1$ as per \refeqn{eq:pss-78-k15} and \refeqn{eq:pss-78-full}.
-Additionally, the coefficients $b_i$ precisely sum to 0 such that the Practical Salinity $S_p$ does not depend on the temperature of the water when $R_t = 1$ as per \refeqn{eq:pss-78-full}.~\cite{ioc_teos_2010}
+Note that the coefficients $a_i$ precisely sum to 35 such that the Practical Salinity $S_p$ is 35 when $K_{15}$ or $R_t = 1$ as per \refeqn{eqn:pss-78-k15} and \refeqn{eqn:pss-78-full}.
+Additionally, the coefficients $b_i$ precisely sum to 0 such that the Practical Salinity $S_p$ does not depend on the temperature of the water when $R_t = 1$ as per \refeqn{eqn:pss-78-full}.~\cite{ioc_teos_2010}
 
-\refeqn{eq:pss-78-k15} to \refeqn{eq:pss-78-full} are valid for $2 < S_p < 42$ and $-2\degree C < t < 35\degree C$ and $0 dbar < p < 10\ 000 dbar$~\cite{ioc_teos_2010}.
+\refeqn{eqn:pss-78-k15} to \refeqn{eqn:pss-78-full} are valid for $2 < S_p < 42$ and $-2\degree C < t < 35\degree C$ and $0 dbar < p < 10\ 000 dbar$~\cite{ioc_teos_2010}.
 The range for salinity has been extended using estimations by \refref{hill_extension_of_pss_low_1986} for $0 < S_p < 2$ and \refref{poisson_extension_of_pss_high_1993} for $42 < S_p < 50$.
 
-The temperatures used in \refeqn{eq:pss-78-k15} to \refeqn{eq:pss-78-full} are on the IPTS-68 scale~\cite{furukawa_ipts68_1973} and have not been corrected to the currently used ITS-90 scale~\cite{preston_its90_1990}. 
+The temperatures used in \refeqn{eqn:pss-78-k15} to \refeqn{eqn:pss-78-full} are on the IPTS-68 scale~\cite{furukawa_ipts68_1973} and have not been corrected to the currently used ITS-90 scale~\cite{preston_its90_1990}. 
 In order to correctly calculate the salinity, the temperatures should be converted to the IPTS-68 scale using the equation $t_{68} = 1.00024 t_{90}$ before calculating salinity~\cite{preston_its90_1990}.
 
 \section{Electrical Characteristics of Salt Water}\label{sec:electrical-characteristics-of-salt-water}

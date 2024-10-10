@@ -23,9 +23,8 @@ double calculate_conductivity(Electrode_Type electrode, ResistanceSample_TypeDef
     case Au_Shielded:
         // average resistance
         double average_resistance = calculate_average_resistance(samples, num_samples);
-        // calcualte resistivity, return conductivity
-        double resistivity = average_resistance * AU_PAD_AREA / AU_PAD_DISTANCE;
-        return 1 / resistivity;
+        // return conductivity
+        return (double) AU_PAD_DISTANCE / (average_resistance * AU_PAD_AREA);
     default:
         break;
     }
@@ -47,8 +46,8 @@ void calculate_resistance(VoltageSample_TypeDef *voltage_samples, ResistanceSamp
     for (uint16_t i = 0; i < num_samples; i++)
     {
         reistance_samples[i].voltage = voltage_samples[i].dac_output;
-        double rm = (double)voltage_samples[i].measurement / voltage_samples[i].calib;
-        reistance_samples[i].resistance = (CORR_EQN_P2 - CORR_EQN_Q1 * rm)/(rm - CORR_EQN_P1);
+        double vr = (double)voltage_samples[i].measurement / voltage_samples[i].calib;
+        reistance_samples[i].resistance = (CORR_EQN_P2 - CORR_EQN_Q1 * vr)/(vr - CORR_EQN_P1);
     }
 }
 

@@ -25,7 +25,7 @@
 
 \bibitem{esa_mapping_salty_waters_2019}
 \BIBentryALTinterwordspacing
-T.~E.~S. Agency, ``Mapping salty waters,'' 2019. [Online]. Available: \url{https://www.esa.int/Applications/Observing_the_Earth/Space_for_our_climate/Mapping_salty_waters}
+``Mapping salty waters,'' 2019. [Online]. Available: \url{https://www.esa.int/Applications/Observing_the_Earth/Space_for_our_climate/Mapping_salty_waters}
 \BIBentrySTDinterwordspacing
 
 \bibitem{NSIDC_ice_sheet_facts_2024}
@@ -126,14 +126,14 @@ R.~Somaraju and J.~Trumpf, ``Frequency, temperature and salinity variation of th
 \bibitem{tengesdal_electromagnetic_salinity_2014}
 O.~A. Tengesdal, B.~L. Hauge, and L.~E. Helseth, ``Electromagnetic and optical methods for measurements of salt concentration of water,'' \emph{Journal of Electromagnetic Analysis and Applications}, vol.~6, no.~6, 2014.
 
-\bibitem{seabird_dbar_to_depth_2024}
-\BIBentryALTinterwordspacing
-S.-B. Scientific, ``Conversion of pressure to depth,'' 2024. [Online]. Available: \url{https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwij6ebU1sCIAxXPiv0HHXDELasQFnoECCMQAQ&url=https%3A%2F%2Fwww.seabird.com%2Fasset-get.download.jsa%3Fid%3D54627861710&usg=AOvVaw1fK2h9jmgpiBuyu8lkM1tl&opi=89978449}
-\BIBentrySTDinterwordspacing
-
 \bibitem{ioc_teos_2010}
 \BIBentryALTinterwordspacing
 I.~O. Commission, ``Teos-10: The international thermodynamic equation of seawater (teos-10) for temperature, salinity, density, sound speed, and other oceanographic variables,'' \emph{Manuals and Guides}, vol.~56, 2010. [Online]. Available: \url{https://www.teos-10.org/pubs/TEOS-10_Manual.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{seabird_dbar_to_depth_2024}
+\BIBentryALTinterwordspacing
+S.-B. Scientific, ``Conversion of pressure to depth,'' 2024. [Online]. Available: \url{https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwij6ebU1sCIAxXPiv0HHXDELasQFnoECCMQAQ&url=https%3A%2F%2Fwww.seabird.com%2Fasset-get.download.jsa%3Fid%3D54627861710&usg=AOvVaw1fK2h9jmgpiBuyu8lkM1tl&opi=89978449}
 \BIBentrySTDinterwordspacing
 
 \bibitem{hill_extension_of_pss_low_1986}
@@ -153,5 +153,13 @@ G.~T. Furukawa, J.~L. Riddle, and W.~R. Bigge, ``The international practical tem
 \BIBentryALTinterwordspacing
 H.~Preston-Thomas, ``The international temperature scale of 1990 (its-90),'' \emph{Metrologia}, vol.~27, no. 107, pp. 3--10, 1990. [Online]. Available: \url{https://www.nist.gov/system/files/documents/pml/div685/grp01/ITS-90_metrologia.pdf}
 \BIBentrySTDinterwordspacing
+
+\bibitem{as_typical_conductivity_2022}
+\BIBentryALTinterwordspacing
+``What is the typical water conductivity range? | atlas scientific,'' 2022. [Online]. Available: \url{https://www.atlascientific.com/blog/2022/09/water-conductivity-range}
+\BIBentrySTDinterwordspacing
+
+\bibitem{walsh_electrodes_conductivity_1991}
+F.~Walsh, ``Electrode reactions in metal finishing,'' \emph{Transactions of the Institute of Metal Finishing}, vol.~69, pp. 107--111, 08 1991.
 
 \end{thebibliography}

@@ -18,37 +18,38 @@ The equipment used to verify these tests were a bench multimeter model Keysight 
 
 %chktex-file 44
 \begin{longtblr}[
-    caption = {A summary of the evaluation and testing of the salinometer.},
-    label = {tab:testing-summary}
+        caption = {A summary of the evaluation and testing of the salinometer.},
+        label = {tab:testing-summary}
     ]{
-    colspec = {|C|C|C|C|}
+        % colspec = {|q{0.75cm}|C|q{2cm}|q{2cm}|q{2cm}|}
+        colspec = {|Q[c,m,1cm]|X[c,m]|*{3}{Q[c,m,1.75cm]|}}
     }
     \hline
-    \textbf{Test} & \textbf{Description} & \textbf{Ideal Result} & \textbf{Measured Result} \\
+    \textbf{Sec.} & \textbf{Test Description} & \textbf{Result Metric} & \textbf{Ideal Result} & \textbf{Measured Results} \\
     \hline
-    DAC Voltage Range & The range of voltages that the DAC can output from $0V$ to $V_{DD} = 3.3V$ & $0-3.3V$ & \\
+    \ref{sec:dac-voltage-range-and-accuracy} & The minimum and maximum voltage output of the \gls{dac} between $0V$ and $V_{DD} = 3.3V$ & Range & $0-3.3V$ & $0-2.59V$ \\
     \hline
-    ADC Accuracy & The average accuracy of the ADC in measuring voltages from $DAC_{MIN}$ to $DAC_{MAX}$ & $100\%$ & \\
+    \ref{sec:dac-voltage-range-and-accuracy} & The gain and offset of the output voltage of the \gls{dac} relative to the instructed voltage & {Gain \\ Offset} & {$1.0$ \\ $0.0V$} & {$0.9837$ \\ $0.0070V$} \\
     \hline
-    Calibration Resistance & The resistance of the calibration resistor $R_{CAL}$ & $5\Omega$ & \\
+    \ref{sec:adc-accuracy} & The gain and offset of the voltage measured by the \gls{adc} relative to the voltage measured by the multimeter & {Gain \\ Offset} & {$1.0$ \\ $0.0V$} & {$0.9877$ \\ $0.0082V$} \\
     \hline
-    Calibration Resistance using ADC & The resistance of the calibration resistor $R_{CAL}$ as measured using the ADC & $5\Omega$ & \\
+    \ref{sec:calibration-resistance} & The resistance of the calibration resistor $R_{CAL}$ & Resistance & $5\Omega$ & $5.00\Omega$ \\
     \hline
-    Resistance Measuring Accuracy & The salinometer's average accuracy in measuring specific resistances & $100\%$ & \\
+    \ref{sec:resistance-measuring-accuracy} & The gain and offset of the resistance measured by the salinometer relative to the resistance measured by the multimeter & {Gain \\ Offset} & {$1$ \\ $0\Omega$} & {$1.0000$ \\ $0.0000\Omega$} \\
     \hline
-    Linear Conductivity Measurement Au & Whether the sample of salt water had linear conductivity throughout a range of voltages or not using the gold electrodes with no fringe shield & Non-linear &  \\
-    \hline
-    Linear Conductivity Measurement Shielded Au & Whether the sample of salt water had linear conductivity throughout a range of voltages or not using the gold electrodes with the fringe shield & Linear & \\
-    \hline
-    Linear Conductivity Measurement Ti & Whether the sample of salt water had linear conductivity throughout a range of voltages or not using the titanium electrodes & Non-Linear & \\
-    \hline
-    Titanium Voltage to Conductivity Mapping Accuracy & How accurately the relationship between the voltage output by the DAC and the voltage measured over the titanium electrodes can correlate to a specific conductivity & $100\%$ accuracy & \\
-    \hline
-    Salinity Measurement Accuracy & The salinometer's average accuracy in measuring salinity & $100\%$ & \\
-    \hline
+    % Linear Conductivity Measurement Au & Whether the sample of salt water had linear conductivity throughout a range of voltages or not using the gold electrodes with no fringe shield & Non-linear &  \\
+    % \hline
+    % Linear Conductivity Measurement Shielded Au & Whether the sample of salt water had linear conductivity throughout a range of voltages or not using the gold electrodes with the fringe shield & Linear & \\
+    % \hline
+    % Linear Conductivity Measurement Ti & Whether the sample of salt water had linear conductivity throughout a range of voltages or not using the titanium electrodes & Non-Linear & \\
+    % \hline
+    % Titanium Voltage to Conductivity Mapping Accuracy & How accurately the relationship between the voltage output by the DAC and the voltage measured over the titanium electrodes can correlate to a specific conductivity & $100\%$ accuracy & \\
+    % \hline
+    % Salinity Measurement Accuracy & The salinometer's average accuracy in measuring salinity & $100\%$ & \\
+    % \hline
 \end{longtblr}
 
-\section{DAC Voltage Range}\label{sec:dac-voltage-range}
+\section{DAC Voltage Range and Accuracy}\label{sec:dac-voltage-range-and-accuracy}
 
 The \gls{dac} configuration uses a transistor in order to buffer the \gls{dac} output which allows for the power draw to be support by the transistor instead of the \gls{dac}.
 This is a common configuration where the \gls{dac} is connected to the non-inverting input of an op-amp whose output is connected to the base of an NPN transistor.
@@ -59,7 +60,7 @@ According to the transistor's \href{https://www.lcsc.com/datasheet/lcsc_datashee
 In order to assess the range and accuracy of the \gls{dac}, the \gls{dac} was instructed to output voltages from $0V$ to $V_{DD}$ in intervals of 64-bits and the output voltage was measured at the base and emitter of the buffer transistor and under maximum load of $100\Omega$ and no load.
 $V_{DD}$ and $GND$ were measured to be $3.299V$ and $0V$ respectively.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{minipage}{.5\textwidth}
         \centering
@@ -95,7 +96,7 @@ The \gls{adc} will be tested by measuring a range of voltages produced by the \g
 The \gls{adc} will be configured in 12-bit mode with each measurement taking 15 \gls{adc} clock cycles and 5 measurements will be taken and averaged to increase the accuracy of the measurement.
 The accuracy of the \gls{adc} should ideally be $100\%$.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \includegraphics[width=0.5\textwidth]{Figures/Testing/ADC}
     \caption{The voltage output by the \gls{dac} measured by a multimeter versus measured by the \gls{adc}.}
@@ -125,7 +126,7 @@ It was noticed during the testing phase that low voltage readings were not accur
 Both measurements will then be compared to the resistance measured by the multimeter.
 The range of the resistors used will be $0\Omega$ to $10\Omega$ as this is the expected range for the gold electrodes.
 
-\begin{figure}[!h]
+\begin{figure}[!ht]
     \centering
     \begin{minipage}{.5\textwidth}
         \centering
@@ -136,7 +137,7 @@ The range of the resistors used will be $0\Omega$ to $10\Omega$ as this is the e
     \begin{minipage}{.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Figures/Testing/R_corrected}
-        \caption{The resistance measuring test using the correction equation.}
+        \caption{The resistance measuring test using the corrected equation.}
         \label{fig:resistance-measuring-accuracy-corrected} %chktex 24
     \end{minipage}
 \end{figure}
@@ -144,25 +145,18 @@ The range of the resistors used will be $0\Omega$ to $10\Omega$ as this is the e
 The results are shown in~\reffig{fig:resistance-measuring-accuracy-uncorrected}. 
 The single voltage method and voltage sweep method were perfectly correlated with an $r^2$ value of $1.0000$, however there was a clear error between the actual resistance and the resistance measured by the salinometer.
 This error was assumed to be due to the resistance of the switches and the traces.
-While these values could be measured and corrected for, a more effective method would be to generate a curve of best fit and use this to correct the resistance readings.
+While these values could be measured and corrected for, a more efficient and arguably more accurate method would be to generate a curve of best fit and use this to correct the resistance readings.
 
-The equation for how the measured resistance $R_{measured}$ was calculated is shown in \refeqn{eq:resistance-measuring}.
-This equation is then expanded using the resistor divider formula, then simplified and all the constant values are combined into the constants $R_{\alpha}$, $R_{\beta}$, and $K$ as shown in \refeqn{eq:resistance-measuring-simplified}.
-This equation is then rearranged to be a rational function using $p$ and $q$ coefficients as shown in \refeqn{eq:resistance-measuring-rational} which should give the equation of best fit for the data shown in \reffig{fig:resistance-measuring-accuracy-uncorrected}.
+In order to generate the equation of best fit, the voltage ratio \refeqn{eqn:electrode-calib-resistance} is adjusted to include $r_e$ which represents the resistance of the switches and traces as shown in \refeqn{eqn:resistance-measuring}.
+The $R_{calibration}$, $R_1$ and the $r_e$ the standard rational function coefficients $p$ and $q$ as shown in \refeqn{eqn:resistance-rational}.
+Finally, the equation is rearranged to give the resistance of the electrode in terms the measured voltage ratio as shown in \refeqn{eqn:resistance-measuring-rational}.
 
 \begin{align}
-    R_{measured} &= \lfrac{V_{resistor}}{V_{calibration}} \times R_{calibration} \label{eq:resistance-measuring} \\
-    &= \lfrac{V_{DAC}{A_{gain}}\lfrac{R_{resistor} + r_{e1}}{R_{resistor} + R_1 + r_{e2}}}{V_{DAC}{A_{gain}}\lfrac{R_{calib} + r_{e3}}{R_{calib} + R_1 + r_{e4}}} \times R_{calibration} \nonumber \\
-    &= \lfrac{R_{resistor} + r_{e1}}{R_{resistor} + R_1 + r_{e2}} \times \lfrac{R_{calibration}}{\left(\lfrac{R_{calib} + r_{e3}}{R_{calib} + R_1 + r_{e4}}\right)} \nonumber \\
-    R_{measured} &= \lfrac{R_{resistor} + R_{\alpha}}{R_{resistor} + R_{\beta}} \times K \label{eq:resistance-measuring-simplified} \\
-    &= \lfrac{KR_{resistor} + KR_{\alpha}}{R_{resistor} + R_{\beta}} \nonumber \\
-    R_{measured} &= \lfrac{p_1 R_{resistor} + p_2}{R_{resistor} + q_2} \label{eq:resistance-measuring-rational}
+    V_{ratio} &= \lfrac{\lfrac{R_{electrode} + r_{e1}}{R_{electrode} + R_1 + r_{e2}}}{\lfrac{R_{calibration} + r_{e3}}{R_{calibration} + R_1 + r_{e4}}} \nonumber \\
+    &= \lfrac{R_{electrode} + r_{e1}}{R_{electrode} + R_1 + r_{e2}} \times \lfrac{R_{calibration} + R_1 + r_{e4}}{R_{calibration} + r_{e3}} \label{eqn:resistance-measuring} \\
+    V_{ratio} &= \lfrac{p_1 R_{electrode} + p_2}{R_{electrode} + q_1} \label{eqn:resistance-measuring-rational} \\
+    R_{electrode} &= \lfrac{p_2 - q_1 V_{ratio}}{V_{ratio} - p_1} \label{eqn:resistance-measuring-rearranged}
 \end{align}
 
-The \refeqn{eq:resistance-measuring-rational} of best fit was confirmed using \texttt{MATLAB} giving $p_1 = 87.3433$, $p_2 = 92.3206$ and $q_1 = 0.0001$, $q_2 = 91.8310$ with an $r^2$ value of $1.0000$. 
-\refeqn{eq:resistance-measuring-rational} could then be rearranged in terms of $R_{resistor}$ to give the correct resistance from the measured resistance $R_{measured}$ as shown in \refeqn{eq:resistance-measuring-corrected}.  
-After applying this equation to the recorded data, the results were graphed and are shown in~\reffig{fig:resistance-measuring-accuracy-corrected} with an $r^2$ value of $1.0000$.
-
-\begin{equation}\label{eq:resistance-measuring-corrected}
-    R_{resistor} = \lfrac{p_2 - q_2 R_{measured}}{R_{measured} - p_1}
-\end{equation}
+The \refeqn{eqn:resistance-measuring-rational} of best fit was confirmed using \texttt{MATLAB} giving $p_1 = 17.4687$, $p_2 = 18.4643$ and $q_1 = 91.8315$ with an $r^2$ value of $1.0000$. 
+The corrected resistance values were then obtained by applying \refeqn{eqn:resistance-measuring-rearranged} to the voltage ratios and these results were graphed and are shown in~\reffig{fig:resistance-measuring-accuracy-corrected} with a gain of $1.0000$ and an offset of $0.0000$.
