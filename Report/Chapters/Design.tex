@@ -154,7 +154,7 @@ The choice of microcontroller and pressure sensor also provided this board with 
 \section{Probe Code}
 
 The major steps in measuring salinity are to measure the conductivity of the water between the electrodes, measure the temperature and pressure of the water and then calculate the salinity.
-An overview of this process along with steps for each major measurement is shown in \reffig{fig:probe-code-flowchart}.
+An overview of this process along with the process for each major measurement is shown in \reffig{fig:probe-code-flowchart}.
 
 \begin{figure}[h]
     \centering
@@ -167,7 +167,7 @@ The conductivity measurement and calculation is different depending on if the vo
 Both variations start with a voltage sweep where the voltage is increased from the minimum to the maximum voltage with a set voltage step or vice versa by the \gls{dac}.
 At each step, the voltage output of the \gls{dac}, the voltage across the calibration resistor and the voltage across the electrodes are measured.
 
-If the ratio between the \gls{dac} voltage and the voltage across the electrodes is not constant, the conductivity will have to be analysed by performing tests to create a model to relate each voltage sample to the conductivity of the water.
+If the ratio between the \gls{dac} voltage and the voltage across the electrodes is not constant, the conductivity will have to be determined by performing tests to create a model that can relate a set voltage samples to a conductivity. 
 
 If the ratio between the \gls{dac} voltage and the voltage across the electrodes is constant, the resistance between the electrodes can be calculated using the calibration resistor.
 Given that the calibration resistance and $R_1$ is known, the resistance between the electrodes can be calculated for each voltage sample using the ratio between the electrode and calibration voltages as shown in \refeqn{eqn:electrode-calib-resistance}.
@@ -186,8 +186,24 @@ Additionally, any of the temperature, depth, resistance or conductivity measurem
 
 \section{Controller Code}
 
-\textit{todo}
+For the prospective user, the controller's primary function is to instruct the probe to take a measurement and then to display said measurement, but for the purpose of testing and investigation, the controller was given additional functionality.
+The main functions of the controller are to instruct the probe to take a measurement, to display the measurement, and to allow for configuration of the probe.
+This communication is done using the RS485 connection and requires its own board to board communication protocol and all the expected transmissions and responses are shown in \reffig{fig:rs485-flowchart}.
 
-The controller's primary goal is to request measurements and display the returned values to the user.
-However, once the probe is cast in epoxy resin it will become unprogrammable and thus the controller must also be able to configure the probe's settings.
-The parameters that the controller will need to adjust include the $R_1$ resistance, the electrode type, whether to use the fringe shield or not, the voltage sweep range and steps and the number of \gls{adc} samples to average.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Figures/rs485_flowchart}
+    \caption{The flowchart for the controller code that communicates with the probe.}
+    \label{fig:rs485-flowchart} %chktex 24
+\end{figure}
+
+The probe is perpetually in receive mode expecting a 1 byte command and responds accordingly.
+The controller can request a status byte which the probe will respond with \textit{idle}, \textit{busy} or \textit{error} depending on the state of the probe.
+The controller can request a measurement from the probe which the probe will respond with the measurement data; this measurement can be anything the probe is capable of measuring including the resistance, temperature, depth or salinity.
+
+The controller can also update the probe's configuration by sending a configuration packet.
+Once the probe is cast in epoxy resin, the configuration can only be updated this way so any possibly useful, configurable parameters were included in the configuration packet.
+This includes which electrode to use (including whether to use the fringe shield or not), the $R_1$ resistor to use, the directionality of the resistance measurement (unidirectional or bidirectional), the voltage sweep start, end and number of steps among other parameters.
+Some parameters such as the directionality are unlikely to be changed from there default value (bidirectional) but were included to cover any unforeseen circumstances.
+
+Lastly, should a system error occur on the probe, the controller can request a reset (provided the RS485 connection is still operational) which will reset the probe and return it to the idle state.

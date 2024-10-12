@@ -74,7 +74,7 @@ typedef enum
 Task current_task = TASK_NONE;
 uint8_t rx_buffer[CONFIG_PACKET_SIZE];
 RS485_Status status = STATUS_IDLE;
-ProbeConfig_TypeDef probe_config = {Au, R1_100, BIDIRECTIONAL, 0, 0x200, 10, 2, STANARD_CONDUCTIVITY, 5};
+ProbeConfig_TypeDef probe_config = {Au, R1_100, BIDIRECTIONAL, 93, 868, 10, 2, STANARD_CONDUCTIVITY, 12};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -132,31 +132,14 @@ int main(void)
     /* USER CODE BEGIN 2 */
     voltage_init();
     HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
-
-    VoltageSample_TypeDef voltage_samples[50];
-    ResistanceSample_TypeDef resistance_samples[50];
-
-    measure_voltage_sweep(voltage_samples, BIDIRECTIONAL, R1_1k, Ti, 93, 806, 50, 5, 50);
-    calculate_resistance(voltage_samples, resistance_samples, 50);
-    double sweep_resistance = calculate_average_resistance(resistance_samples, 50);
-
-    measure_voltage_sweep(voltage_samples, BIDIRECTIONAL, R1_1k, Ti, 0x200, 0x201, 1, 5, 50);
-    calculate_resistance(voltage_samples, resistance_samples, 1);
-    double single_resistance = calculate_average_resistance(resistance_samples, 1);
-
-    if (sweep_resistance != single_resistance)
-    {
-        HAL_GPIO_WritePin(LED_Red_GPIO_Port, LED_Red_Pin, GPIO_PIN_SET);
-    }
-    
     /* USER CODE END 2 */
 
     /* Infinite loop */
     /* USER CODE BEGIN WHILE */
-    // double pressure, temperature, resistance, conductivity, salinity;
-    // VoltageSample_TypeDef voltage_samples[MAX_SAMPLES];
-    // ResistanceSample_TypeDef resistance_samples[MAX_SAMPLES];
-    // rs485_receive_IT(1);
+    double pressure, temperature, resistance, conductivity, salinity;
+    VoltageSample_TypeDef voltage_samples[MAX_SAMPLES];
+    ResistanceSample_TypeDef resistance_samples[MAX_SAMPLES];
+    rs485_receive_IT(1);
     while (1)
     {
 
@@ -186,113 +169,113 @@ int main(void)
 
         // HAL_Delay(5000);
 
-        // switch (current_task)
-        // {
-        // case TASK_NONE:
-        //     // __WFI();
-        //     break;
-        // case TASK_MEASURE_TEMPERATURE:
-        //     status = STATUS_BUSY;
-        //     current_task = TASK_NONE;
+        switch (current_task)
+        {
+        case TASK_NONE:
+            // __WFI();
+            break;
+        case TASK_MEASURE_TEMPERATURE:
+            status = STATUS_BUSY;
+            current_task = TASK_NONE;
 
-        //     temperature = measure_temperature();
-        //     HAL_UART_Abort_IT(&huart1);
-        //     rs485_transmit_double(temperature);
+            temperature = measure_temperature();
+            HAL_UART_Abort_IT(&huart1);
+            rs485_transmit_double(temperature);
 
-        //     status = STATUS_IDLE;
-        //     rs485_receive_IT(1);
-        //     break;
-        // case TASK_MEASURE_DEPTH:
-        //     status = STATUS_BUSY;
-        //     current_task = TASK_NONE;
+            status = STATUS_IDLE;
+            rs485_receive_IT(1);
+            break;
+        case TASK_MEASURE_DEPTH:
+            status = STATUS_BUSY;
+            current_task = TASK_NONE;
 
-        //     pressure = measure_pressure();
-        //     HAL_UART_Abort_IT(&huart1);
-        //     rs485_transmit_double(pressure);
+            pressure = measure_pressure();
+            HAL_UART_Abort_IT(&huart1);
+            rs485_transmit_double(pressure);
 
-        //     status = STATUS_IDLE;
-        //     rs485_receive_IT(1);
-        //     break;
-        // case TASK_MEASURE_RESISTANCE:
-        //     status = STATUS_BUSY;
-        //     current_task = TASK_NONE;
+            status = STATUS_IDLE;
+            rs485_receive_IT(1);
+            break;
+        case TASK_MEASURE_RESISTANCE:
+            status = STATUS_BUSY;
+            current_task = TASK_NONE;
 
-        //     measure_voltage_sweep(
-        //         voltage_samples,
-        //         probe_config.direction,
-        //         probe_config.r1,
-        //         probe_config.electrode,
-        //         probe_config.voltage_start,
-        //         probe_config.voltage_end,
-        //         probe_config.num_samples,
-        //         probe_config.adc_samples,
-        //         probe_config.voltage_settle_time);
-        //     calculate_resistance(voltage_samples, resistance_samples, probe_config.num_samples);
+            measure_voltage_sweep(
+                voltage_samples,
+                probe_config.direction,
+                probe_config.r1,
+                probe_config.electrode,
+                probe_config.voltage_start,
+                probe_config.voltage_end,
+                probe_config.num_samples,
+                probe_config.adc_samples,
+                probe_config.voltage_settle_time);
+            calculate_resistance(voltage_samples, resistance_samples, probe_config.num_samples);
 
-        //     resistance = calculate_average_resistance(resistance_samples, probe_config.num_samples);
+            resistance = calculate_average_resistance(resistance_samples, probe_config.num_samples);
 
-        //     HAL_UART_Abort_IT(&huart1);
-        //     rs485_transmit_double(resistance);
+            HAL_UART_Abort_IT(&huart1);
+            rs485_transmit_double(resistance);
 
-        //     status = STATUS_IDLE;
-        //     rs485_receive_IT(1);
-        //     break;
-        // case TASK_MEASURE_CONDUCTIVITY:
-        //     status = STATUS_BUSY;
-        //     current_task = TASK_NONE;
+            status = STATUS_IDLE;
+            rs485_receive_IT(1);
+            break;
+        case TASK_MEASURE_CONDUCTIVITY:
+            status = STATUS_BUSY;
+            current_task = TASK_NONE;
 
-        //     measure_voltage_sweep(
-        //         voltage_samples,
-        //         probe_config.direction,
-        //         probe_config.r1,
-        //         probe_config.electrode,
-        //         probe_config.voltage_start,
-        //         probe_config.voltage_end,
-        //         probe_config.num_samples,
-        //         probe_config.adc_samples,
-        //         probe_config.voltage_settle_time);
-        //     calculate_resistance(voltage_samples, resistance_samples, probe_config.num_samples);
+            measure_voltage_sweep(
+                voltage_samples,
+                probe_config.direction,
+                probe_config.r1,
+                probe_config.electrode,
+                probe_config.voltage_start,
+                probe_config.voltage_end,
+                probe_config.num_samples,
+                probe_config.adc_samples,
+                probe_config.voltage_settle_time);
+            calculate_resistance(voltage_samples, resistance_samples, probe_config.num_samples);
 
-        //     conductivity = calculate_conductivity(probe_config.electrode, resistance_samples, probe_config.num_samples);
+            conductivity = calculate_conductivity(probe_config.electrode, resistance_samples, probe_config.num_samples);
 
-        //     HAL_UART_Abort_IT(&huart1);
-        //     rs485_transmit_double(conductivity);
+            HAL_UART_Abort_IT(&huart1);
+            rs485_transmit_double(conductivity);
 
-        //     status = STATUS_IDLE;
-        //     rs485_receive_IT(1);
-        //     break;
-        // case TASK_MEASURE_SALINITY:
-        //     status = STATUS_BUSY;
-        //     current_task = TASK_NONE;
+            status = STATUS_IDLE;
+            rs485_receive_IT(1);
+            break;
+        case TASK_MEASURE_SALINITY:
+            status = STATUS_BUSY;
+            current_task = TASK_NONE;
 
-        //     measure_voltage_sweep(
-        //         voltage_samples,
-        //         probe_config.direction,
-        //         probe_config.r1,
-        //         probe_config.electrode,
-        //         probe_config.voltage_start,
-        //         probe_config.voltage_end,
-        //         probe_config.num_samples,
-        //         probe_config.adc_samples,
-        //         probe_config.voltage_settle_time);
-        //     calculate_resistance(voltage_samples, resistance_samples, probe_config.num_samples);
+            measure_voltage_sweep(
+                voltage_samples,
+                probe_config.direction,
+                probe_config.r1,
+                probe_config.electrode,
+                probe_config.voltage_start,
+                probe_config.voltage_end,
+                probe_config.num_samples,
+                probe_config.adc_samples,
+                probe_config.voltage_settle_time);
+            calculate_resistance(voltage_samples, resistance_samples, probe_config.num_samples);
 
-        //     conductivity = calculate_conductivity(probe_config.electrode, resistance_samples, probe_config.num_samples);
-        //     temperature = measure_temperature();
-        //     pressure = measure_pressure();
+            conductivity = calculate_conductivity(probe_config.electrode, resistance_samples, probe_config.num_samples);
+            temperature = measure_temperature();
+            pressure = measure_pressure();
 
-        //     salinity = calculate_salinity(conductivity, temperature, pressure, (double) probe_config.stardard_conductivity / 1e6);
-        //     HAL_UART_Abort_IT(&huart1);
-        //     rs485_transmit_double(salinity);
+            salinity = calculate_salinity(conductivity, temperature, pressure, (double) probe_config.stardard_conductivity / 1e6);
+            HAL_UART_Abort_IT(&huart1);
+            rs485_transmit_double(salinity);
 
-        //     status = STATUS_IDLE;
-        //     rs485_receive_IT(1);
-        //     break;
-        // case TASK_WAITING_FOR_CONFIG:
-        //     break;
-        // default:
-        //     break;
-        // }
+            status = STATUS_IDLE;
+            rs485_receive_IT(1);
+            break;
+        case TASK_WAITING_FOR_CONFIG:
+            break;
+        default:
+            break;
+        }
 
         /* USER CODE END WHILE */
 
@@ -408,7 +391,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
                 rs485_receive_IT(CONFIG_PACKET_SIZE);
                 break;
             case COMMAND_RESET:
-                NVIC_SystemReset();
+                HAL_NVIC_SystemReset();
                 break;
             default:
                 response = RESPONSE_NACK;
