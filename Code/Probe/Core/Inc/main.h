@@ -130,6 +130,8 @@ void Error_Handler(void);
 #define Pressure_status_finished 0x1
 
 #define MAX_SAMPLES 1024
+#define V_MIN 93
+#define V_MAX 806
 
 #define PACKET_START "Packet Start\n"
 #define PACKET_END "Packet End\n\n"

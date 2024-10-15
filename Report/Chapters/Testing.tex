@@ -87,8 +87,6 @@ Due to the voltage limitations, the \gls{dac} will have a limited output in futu
 The output will be limited to $0V$ to $2.5V$ or $0$ to $775$ for fully loaded tests and the implementation and $0V$ to $2.7$ or $0$ to $837$ for unloaded tests.
 When excluding the voltage readings above $2.5V$, the \gls{dac} was able to achieve a gain of $0.9837V/V$ and an offset $+0.0070V$ between the input voltage and output voltage when under maximum load. 
 
-\textit{add LSB error = 0.00032V}
-
 \section{ADC Accuracy}\label{sec:adc-accuracy}
 
 The \gls{adc} will be tested by measuring a range of voltages produced by the \gls{dac} and comparing the voltage measured by a multimeter to the voltage measured by the \gls{adc}.
@@ -147,7 +145,7 @@ This error was assumed to be due to the resistance of the switches and the trace
 While these values could be measured and corrected for, a more efficient and arguably more accurate method would be to generate a curve of best fit and use this to correct the resistance readings.
 
 In order to generate the equation of best fit, the voltage ratio \refeqn{eqn:electrode-calib-resistance} is adjusted to include $r_e$ which represents the resistance of the switches and traces as shown in \refeqn{eqn:resistance-measuring}.
-The $R_{calibration}$, $R_1$ and the $r_e$ the standard rational function coefficients $p$ and $q$ as shown in \refeqn{eqn:resistance-rational}.
+The $R_{calibration}$, $R_1$ and $r_e$ are condensed into the standard rational function coefficients $p$ and $q$ as shown in \refeqn{eqn:resistance-rational}.
 Finally, the equation is rearranged to give the resistance of the electrode in terms the measured voltage ratio as shown in \refeqn{eqn:resistance-measuring-rational}.
 
 \begin{align}
@@ -159,3 +157,4 @@ Finally, the equation is rearranged to give the resistance of the electrode in t
 
 The \refeqn{eqn:resistance-measuring-rational} of best fit was confirmed using \texttt{MATLAB} giving $p_1 = 17.4687$, $p_2 = 18.4643$ and $q_1 = 91.8315$ with an $r^2$ value of $1.0000$. 
 The corrected resistance values were then obtained by applying \refeqn{eqn:resistance-measuring-rearranged} to the voltage ratios and these results were graphed and are shown in~\reffig{fig:resistance-measuring-accuracy-corrected} with a gain of $1.0000$ and an offset of $0.0000$.
+Note that this correction equation is only valid when $R_1$ is $100\Omega$ and separate equations will need to be generated should different values of $R_1$ be needed.

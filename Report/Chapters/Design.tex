@@ -147,10 +147,6 @@ The temperature sensor used in this project was an arbitrarily chosen, surface m
 The temperature sensor should be coated with a thin layer of epoxy resin to waterproof it as epoxy resin is a poor thermal conductor and thus a thinner layer would allow for a more accurate temperature measurement.
 The choice of microcontroller and pressure sensor also provided this board with two alternative temperature sensors with less accurate, however they could be used in the event that the primary temperature sensor failed.
 
-\section{PCB Assembly and Corrections}
-
-\textit{TODO: pcb correction and labelled diagram.}
-
 \section{Probe Code}
 
 The major steps in measuring salinity are to measure the conductivity of the water between the electrodes, measure the temperature and pressure of the water and then calculate the salinity.
@@ -184,7 +180,7 @@ This method is however still vulnerable to offset inaccuracies including \gls{da
 Measuring the temperature and pressure is a simple matter of reading the temperature sensor and the pressure sensor respectively which finally allows salinity to be calculated which can be performed on the salinometer microcontroller as it possesses an \gls{fpu}.
 Additionally, any of the temperature, depth, resistance or conductivity measurements can be calculated individually and transmitted to the controller if requested.
 
-\section{Controller Code}
+\section{Controller Code and Communication}
 
 For the prospective user, the controller's primary function is to instruct the probe to take a measurement and then to display said measurement, but for the purpose of testing and investigation, the controller was given additional functionality.
 The main functions of the controller are to instruct the probe to take a measurement, to display the measurement, and to allow for configuration of the probe.
@@ -207,3 +203,4 @@ This includes which electrode to use (including whether to use the fringe shield
 Some parameters such as the directionality are unlikely to be changed from there default value (bidirectional) but were included to cover any unforeseen circumstances.
 
 Lastly, should a system error occur on the probe, the controller can request a reset (provided the RS485 connection is still operational) which will reset the probe and return it to the idle state.
+Otherwise, the entire system will need to be powered off and on again to reset the probe.

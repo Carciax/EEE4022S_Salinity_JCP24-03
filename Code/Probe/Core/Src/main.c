@@ -139,6 +139,19 @@ int main(void)
     double pressure, temperature, resistance, conductivity, salinity;
     VoltageSample_TypeDef voltage_samples[MAX_SAMPLES];
     ResistanceSample_TypeDef resistance_samples[MAX_SAMPLES];
+
+    measure_voltage_sweep(
+                voltage_samples,
+                BIDIRECTIONAL,
+                R1_100,
+                Ti,
+                0,
+                V_MAX,
+                40,
+                3,
+                10);
+    transmit_sample_data_binary(voltage_samples, 40, SAMPLE_VOLTAGE);
+
     rs485_receive_IT(1);
     while (1)
     {
@@ -569,6 +582,33 @@ void transmit_sample_data_readable(void *samples, uint16_t num_samples, Sample_T
 
 void transmit_sample_data_binary(void *samples, uint16_t num_samples, Sample_Type sample_type)
 {
+    switch (sample_type)
+    {
+    case SAMPLE_VOLTAGE:
+        VoltageSample_TypeDef *voltage_samples = (VoltageSample_TypeDef *)samples;
+        char buf[] = "\n\n|DAC Input|DAC Output|Calib x 11|Measurement x 11|\n";
+        HAL_UART_Transmit(&huart6, (uint8_t *)buf, strlen(buf), 1000);
+        for (uint16_t i = 0; i < num_samples; i++) {
+            sprintf(buf, "%d,%d,%d,%d;", voltage_samples[i].dac_input, voltage_samples[i].dac_output, voltage_samples[i].calib, voltage_samples[i].measurement);
+            HAL_UART_Transmit(&huart6, (uint8_t *)buf, strlen(buf), 1000);
+        }
+        break;
+    case SAMPLE_RESISTANCE:
+        // ResistanceSample_TypeDef *resistance_samples = (ResistanceSample_TypeDef *)samples;
+        break;
+    case VALUE_CONDUCTIVITY:
+        // double *conductivity_values = (double *)samples;
+        break;
+    case VALUE_TEMPERATURE:
+        // double *temperature_values = (double *)samples;
+        break;
+    case VALUE_PRESSURE:
+        // double *pressure_values = (double *)samples;
+        break;
+    case VALUE_SALINITY:
+        // double *salinity_values = (double *)samples;
+        break;
+    }
 }
 
 /* USER CODE END 4 */

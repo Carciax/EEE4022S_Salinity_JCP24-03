@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
   38 0004 0023     		movs	r3, #0
   39 0006 5362     		str	r3, [r2, #36]
   19:Core/Src/voltage.c ****     while (__HAL_TIM_GET_COUNTER(&htim10) < micro_s)
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 2
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 2
 
 
   40              		.loc 1 19 5 view .LVU2
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
   49:Core/Src/voltage.c **** {
   67              		.loc 1 49 1 is_stmt 1 view -0
   68              		.cfi_startproc
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 3
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 3
 
 
   69              		@ args = 0, pretend = 0, frame = 8
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  115              	.L8:
  116              		.cfi_restore_state
   55:Core/Src/voltage.c ****     }
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 4
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 4
 
 
  117              		.loc 1 55 9 is_stmt 1 view .LVU21
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
   33:Core/Src/voltage.c **** 
  167              		.loc 1 33 1 is_stmt 0 view .LVU29
  168 0024 08BD     		pop	{r3, pc}
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 5
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 5
 
 
  169              	.L14:
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  218 0020 08BD     		pop	{r3, pc}
  219              		.cfi_endproc
  220              	.LFE223:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 6
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 6
 
 
  222              		.section	.text.dac_set_voltage,"ax",%progbits
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  271              		.cfi_offset 14, -4
  272 0002 85B0     		sub	sp, sp, #20
  273              		.cfi_def_cfa_offset 24
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 7
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 7
 
 
   61:Core/Src/voltage.c ****     ADC_ChannelConfTypeDef sConfig = {channel, 1, ADC_SAMPLETIME_3CYCLES, 0};
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
   67:Core/Src/voltage.c **** 
   68:Core/Src/voltage.c **** uint16_t adc_average(uint16_t adc_samples)
   69:Core/Src/voltage.c **** {
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 8
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 8
 
 
  323              		.loc 1 69 1 is_stmt 1 view -0
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
   71:Core/Src/voltage.c ****     {
  370              		.loc 1 71 44 is_stmt 1 discriminator 3 view .LVU66
  371 0024 0134     		adds	r4, r4, #1
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 9
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 9
 
 
  372              	.LVL28:
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  418              	.L35:
  419              		.align	2
  420              	.L34:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 10
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 10
 
 
  421 0008 00080240 		.word	1073874944
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  473              	measure_dac_voltage:
  474              	.LVL36:
  475              	.LFB229:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 11
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 11
 
 
   84:Core/Src/voltage.c **** 
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  522              		.global	measure_calib_voltage
  523              		.syntax unified
  524              		.thumb
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 12
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 12
 
 
  525              		.thumb_func
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  571              		.cfi_endproc
  572              	.LFE230:
  574              		.section	.text.measure_pin_voltage,"ax",%progbits
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 13
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 13
 
 
  575              		.align	1
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  618 001e DFF8F490 		ldr	r9, .L62+4
  619 0022 4FF49073 		mov	r3, #288
  620              	.LVL48:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 14
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 14
 
 
  621              		.loc 1 113 26 view .LVU116
@@ -838,7 +838,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  666 005c 4FF09063 		mov	r3, #75497472
  667 0060 C9F81830 		str	r3, [r9, #24]
  123:Core/Src/voltage.c ****             break;
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 15
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 15
 
 
  668              		.loc 1 123 13 is_stmt 1 view .LVU133
@@ -898,7 +898,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  135:Core/Src/voltage.c ****         {
  136:Core/Src/voltage.c ****         case Au:
  137:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Au1_Pin | SW_Au2_GND_Pin;
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 16
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 16
 
 
  710              		.loc 1 137 13 view .LVU146
@@ -958,7 +958,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  755 00ca 4FF00463 		mov	r3, #138412032
  756 00ce A361     		str	r3, [r4, #24]
  147:Core/Src/voltage.c ****             break;
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 17
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 17
 
 
  757              		.loc 1 147 13 is_stmt 1 view .LVU164
@@ -1018,7 +1018,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  163:Core/Src/voltage.c ****         return (adc_forward_val + adc_reverse_val) / 2;
  164:Core/Src/voltage.c ****     }
  165:Core/Src/voltage.c ****     return adc_forward_val;
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 18
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 18
 
 
  166:Core/Src/voltage.c **** }
@@ -1078,7 +1078,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  844 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
  845              		.cfi_def_cfa_offset 36
  846              		.cfi_offset 4, -36
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 19
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 19
 
 
  847              		.cfi_offset 5, -32
@@ -1138,7 +1138,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  891              	.LVL91:
  180:Core/Src/voltage.c ****         break;
  892              		.loc 1 180 9 is_stmt 1 view .LVU195
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 20
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 20
 
 
  893              	.L67:
@@ -1198,7 +1198,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  930 0060 29F83450 		strh	r5, [r9, r4, lsl #3]	@ movhi
  196:Core/Src/voltage.c **** 
  197:Core/Src/voltage.c ****         adc_set_channel(ADC_CHANNEL_DAC);
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 21
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 21
 
 
  931              		.loc 1 197 9 is_stmt 1 view .LVU208
@@ -1258,7 +1258,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  975              		.loc 1 191 44 is_stmt 0 discriminator 3 view .LVU223
  976 0098 A4B2     		uxth	r4, r4
  977              	.LVL107:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 22
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 22
 
 
  978              	.L68:
@@ -1311,48 +1311,48 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 1
  1019              		.file 15 "Core/Inc/voltage.h"
  1020              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  1021              		.file 17 "Core/Inc/main.h"
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s 			page 23
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s 			page 23
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 voltage.c
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:21     .text.us_delay:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:27     .text.us_delay:00000000 us_delay
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:53     .text.us_delay:00000010 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:58     .text.dac_write:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:64     .text.dac_write:00000000 dac_write
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:125    .text.dac_write:0000003c $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:130    .text.dac_init:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:136    .text.dac_init:00000000 dac_init
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:177    .text.dac_init:0000002c $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:182    .text.dac_drain:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:188    .text.dac_drain:00000000 dac_drain
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:223    .text.dac_set_voltage:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:229    .text.dac_set_voltage:00000000 dac_set_voltage
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:255    .text.adc_set_channel:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:261    .text.adc_set_channel:00000000 adc_set_channel
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:309    .text.adc_set_channel:00000028 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:314    .text.adc_average:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:320    .text.adc_average:00000000 adc_average
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:393    .text.adc_average:00000034 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:398    .text.reset_muxs:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:404    .text.reset_muxs:00000000 reset_muxs
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:421    .text.reset_muxs:00000008 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:427    .text.voltage_init:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:433    .text.voltage_init:00000000 voltage_init
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:462    .text.voltage_init:00000018 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:467    .text.measure_dac_voltage:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:473    .text.measure_dac_voltage:00000000 measure_dac_voltage
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:516    .text.measure_dac_voltage:00000020 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:521    .text.measure_calib_voltage:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:527    .text.measure_calib_voltage:00000000 measure_calib_voltage
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:570    .text.measure_calib_voltage:00000020 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:575    .text.measure_pin_voltage:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:581    .text.measure_pin_voltage:00000000 measure_pin_voltage
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:823    .text.measure_pin_voltage:00000110 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:830    .text.measure_voltage_sweep:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:836    .text.measure_voltage_sweep:00000000 measure_voltage_sweep
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccC8nVoS.s:1000   .text.measure_voltage_sweep:000000ac $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:21     .text.us_delay:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:27     .text.us_delay:00000000 us_delay
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:53     .text.us_delay:00000010 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:58     .text.dac_write:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:64     .text.dac_write:00000000 dac_write
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:125    .text.dac_write:0000003c $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:130    .text.dac_init:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:136    .text.dac_init:00000000 dac_init
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:177    .text.dac_init:0000002c $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:182    .text.dac_drain:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:188    .text.dac_drain:00000000 dac_drain
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:223    .text.dac_set_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:229    .text.dac_set_voltage:00000000 dac_set_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:255    .text.adc_set_channel:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:261    .text.adc_set_channel:00000000 adc_set_channel
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:309    .text.adc_set_channel:00000028 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:314    .text.adc_average:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:320    .text.adc_average:00000000 adc_average
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:393    .text.adc_average:00000034 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:398    .text.reset_muxs:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:404    .text.reset_muxs:00000000 reset_muxs
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:421    .text.reset_muxs:00000008 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:427    .text.voltage_init:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:433    .text.voltage_init:00000000 voltage_init
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:462    .text.voltage_init:00000018 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:467    .text.measure_dac_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:473    .text.measure_dac_voltage:00000000 measure_dac_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:516    .text.measure_dac_voltage:00000020 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:521    .text.measure_calib_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:527    .text.measure_calib_voltage:00000000 measure_calib_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:570    .text.measure_calib_voltage:00000020 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:575    .text.measure_pin_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:581    .text.measure_pin_voltage:00000000 measure_pin_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:823    .text.measure_pin_voltage:00000110 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:830    .text.measure_voltage_sweep:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:836    .text.measure_voltage_sweep:00000000 measure_voltage_sweep
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//cc245Pg1.s:1000   .text.measure_voltage_sweep:000000ac $d
 
 UNDEFINED SYMBOLS
 htim10
