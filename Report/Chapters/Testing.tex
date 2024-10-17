@@ -158,3 +158,29 @@ Finally, the equation is rearranged to give the resistance of the electrode in t
 The \refeqn{eqn:resistance-measuring-rational} of best fit was confirmed using \texttt{MATLAB} giving $p_1 = 17.4687$, $p_2 = 18.4643$ and $q_1 = 91.8315$ with an $r^2$ value of $1.0000$. 
 The corrected resistance values were then obtained by applying \refeqn{eqn:resistance-measuring-rearranged} to the voltage ratios and these results were graphed and are shown in~\reffig{fig:resistance-measuring-accuracy-corrected} with a gain of $1.0000$ and an offset of $0.0000$.
 Note that this correction equation is only valid when $R_1$ is $100\Omega$ and separate equations will need to be generated should different values of $R_1$ be needed.
+
+\section{Linear Conductivity Measurement}\label{sec:linear-conductivity-measurement}
+
+
+dac was linear, calib was linear for all
+
+Initial tests showed that the measurement was non-linear for au electrode however forwards and backwards voltage sweeps are not the same GRAPH
+this indicated that the measurement affected the voltage.
+
+to isolate this it was thought that the dac might not be moving the voltage properly and thus the dac was reset and drained and then the voltage was pumped allowing for a longer time for the voltage to settle. 
+this did not fix it. GRAPH
+
+the next idea was to do false measurements at max voltage before doing sweeps.
+this caused the readings to start high and slowly move to the votlage sweep. GRAPH
+this shows that the measurement clearly affects the water by agitating it.
+this could be ionising the water, or polarising it or another affected
+
+the next test involved letting it settle between each measurement as in theory this would cause. 
+starting at 2s.
+this gave two graphs that matched perfecetly for the forward and backwards sweep. GRAPH
+
+waiting 2s per measurement for 50 samples took very long and an alternate method was to change the water infront of the electrodes by agitating/stirring the water.
+this gave repeatable results that also showed a difference between two different water samples. GRAPH
+taking fewer samples over the more linear voltage range gave something that was approximately linear.
+
+trying to find a decernable metric from these graphs by analysing A/(s+p) between two samples of arbitrary salinity. TABLE

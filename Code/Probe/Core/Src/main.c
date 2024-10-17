@@ -143,14 +143,14 @@ int main(void)
     measure_voltage_sweep(
                 voltage_samples,
                 BIDIRECTIONAL,
-                R1_100,
+                R1_1k,
                 Ti,
-                0,
+                V_MIN,
                 V_MAX,
-                40,
-                3,
-                10);
-    transmit_sample_data_binary(voltage_samples, 40, SAMPLE_VOLTAGE);
+                20,
+                5,
+                100);
+    transmit_sample_data_binary(voltage_samples, 20, SAMPLE_VOLTAGE);
 
     rs485_receive_IT(1);
     while (1)

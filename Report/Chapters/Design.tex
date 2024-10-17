@@ -184,6 +184,7 @@ Additionally, any of the temperature, depth, resistance or conductivity measurem
 
 For the prospective user, the controller's primary function is to instruct the probe to take a measurement and then to display said measurement, but for the purpose of testing and investigation, the controller was given additional functionality.
 The main functions of the controller are to instruct the probe to take a measurement, to display the measurement, and to allow for configuration of the probe.
+The display was done using rotary switches to navigate a menu displayed on the 7-segment displays and buttons to request a measurement or to reset the probe.
 This communication is done using the RS485 connection and requires its own board to board communication protocol and all the expected transmissions and responses are shown in \reffig{fig:rs485-flowchart}.
 
 \begin{figure}[h]
@@ -198,7 +199,7 @@ The controller can request a status byte which the probe will respond with \text
 The controller can request a measurement from the probe which the probe will respond with the measurement data; this measurement can be anything the probe is capable of measuring including the resistance, temperature, depth or salinity.
 
 The controller can also update the probe's configuration by sending a configuration packet.
-Once the probe is cast in epoxy resin, the configuration can only be updated this way so any possibly useful, configurable parameters were included in the configuration packet.
+Once the probe is cast in epoxy resin, the configuration can only be updated this way so all possibly useful, configurable parameters were included in the configuration packet.
 This includes which electrode to use (including whether to use the fringe shield or not), the $R_1$ resistor to use, the directionality of the resistance measurement (unidirectional or bidirectional), the voltage sweep start, end and number of steps among other parameters.
 Some parameters such as the directionality are unlikely to be changed from there default value (bidirectional) but were included to cover any unforeseen circumstances.
 

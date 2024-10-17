@@ -12,9 +12,9 @@
 /* SWITCHES */
 #define GPIOSW GPIOC
 #define SW_R1_Msk (SW_R1_100_Pin | SW_R1_1k_Pin | SW_R1_10k_Pin)
-#define SW_R1_Electrode_Pin_Msk (SW_R1_Au1_Pin | SW_R1_Au2_Pin | SW_R1_Ti1_Pin | SW_R1_Ti2_Pin)
-#define SW_Electrode_GND_Pin_Msk (SW_Au1_GND_Pin | SW_Au2_GND_Pin | SW_Ti1_GND_Pin | SW_Ti2_GND_Pin)
-#define SW_Shield_Pin_Msk (SW_Shield1_Au1_Pin | SW_Shield1_Au2_Pin | SW_Shield2_Au1_Pin | SW_Shield2_Au2_Pin)
+#define SW_Ti_Pin_Msk (SW_R1_Ti1_Pin | SW_R1_Ti2_Pin | SW_Ti1_GND_Pin | SW_Ti2_GND_Pin)
+#define SW_Au_Pin_Msk (SW_R1_Au1_Pin | SW_R1_Au2_Pin | SW_Au1_GND_Pin | SW_Au2_GND_Pin)
+#define SW_Shield_Pin_Msk (SW_Shield1_V_Pin | SW_Shield1_GND_Pin | SW_Shield2_V_Pin | SW_Shield2_GND_Pin)
 
 /* DAC */
 #define DAC_device_addr (0b1001000 << 1)

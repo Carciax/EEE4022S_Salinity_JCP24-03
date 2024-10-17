@@ -110,22 +110,24 @@ uint16_t measure_pin_voltage(Direction direction, Electrode_Type electrode, uint
         switch (electrode)
         {
         case Au:
-            GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Au1_GND_Pin;
+            GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Shield1_GND_Pin;
             us_delay(voltage_settle_time);
-            adc_reverse_val = adc_average(adc_samples);
-            GPIOSW->BSRR = (SW_R1_Au2_Pin | SW_Au1_GND_Pin) << 16;
+            adc_average(adc_samples);
+            direction = UNIDIRECTIONAL;
+            GPIOSW->BSRR = (SW_Au_Pin_Msk | SW_Shield_Pin_Msk) << 16;
             break;
         case Ti:
             GPIOSW->BSRR = SW_R1_Ti2_Pin | SW_Ti1_GND_Pin;
             us_delay(voltage_settle_time);
             adc_reverse_val = adc_average(adc_samples);
-            GPIOSW->BSRR = (SW_R1_Ti2_Pin | SW_Ti1_GND_Pin) << 16;
+            GPIOSW->BSRR = (SW_Ti_Pin_Msk) << 16;
             break;
         case Au_Shielded:
-            GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Au1_GND_Pin | SW_Shield2_V_Pin | SW_Shield1_GND_Pin;
+            GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Shield2_V_Pin | SW_Shield1_GND_Pin;
             us_delay(voltage_settle_time);
-            adc_reverse_val = adc_average(adc_samples);
-            GPIOSW->BSRR = (SW_R1_Au2_Pin | SW_Au1_GND_Pin | SW_Shield2_V_Pin | SW_Shield1_GND_Pin) << 16;
+            adc_average(adc_samples);
+            direction = UNIDIRECTIONAL;
+            GPIOSW->BSRR = (SW_Au_Pin_Msk | SW_Shield_Pin_Msk) << 16;
             break;
         default:
             break;
@@ -134,22 +136,22 @@ uint16_t measure_pin_voltage(Direction direction, Electrode_Type electrode, uint
         switch (electrode)
         {
         case Au:
-            GPIOSW->BSRR = SW_R1_Au1_Pin | SW_Au2_GND_Pin;
+            GPIOSW->BSRR = SW_R1_Au1_Pin | SW_Shield2_GND_Pin;
             us_delay(voltage_settle_time);
             adc_forward_val = adc_average(adc_samples);
-            GPIOSW->BSRR = (SW_R1_Au1_Pin | SW_Au2_GND_Pin) << 16;
+            GPIOSW->BSRR = (SW_Au_Pin_Msk | SW_Shield_Pin_Msk) << 16;
             break;
         case Ti:
             GPIOSW->BSRR = SW_R1_Ti1_Pin | SW_Ti2_GND_Pin;
             us_delay(voltage_settle_time);
             adc_forward_val = adc_average(adc_samples);
-            GPIOSW->BSRR = (SW_R1_Ti1_Pin | SW_Ti2_GND_Pin) << 16;
+            GPIOSW->BSRR = (SW_Ti_Pin_Msk) << 16;
             break;
         case Au_Shielded:
-            GPIOSW->BSRR = SW_R1_Au1_Pin | SW_Au2_GND_Pin | SW_Shield1_V_Pin | SW_Shield2_GND_Pin;
+            GPIOSW->BSRR = SW_R1_Au1_Pin | SW_Shield1_V_Pin | SW_Shield2_GND_Pin;
             us_delay(voltage_settle_time);
             adc_forward_val = adc_average(adc_samples);
-            GPIOSW->BSRR = (SW_R1_Au1_Pin | SW_Au2_GND_Pin | SW_Shield1_V_Pin | SW_Shield2_GND_Pin) << 16;
+            GPIOSW->BSRR = (SW_Au_Pin_Msk | SW_Shield_Pin_Msk) << 16;
             break;
         default:
             break;
@@ -167,9 +169,8 @@ uint16_t measure_pin_voltage(Direction direction, Electrode_Type electrode, uint
 
 void measure_voltage_sweep(VoltageSample_TypeDef *samples, Direction direction, R1_Type r1, Electrode_Type electrode, uint16_t dac_start, uint16_t dac_stop, uint16_t num_samples, uint16_t adc_samples, uint16_t voltage_settle_time)
 {
-    uint16_t dac_voltage = dac_start;
-    int16_t dac_step = (dac_stop - dac_start) / num_samples;
-
+    double dac_step = (double) (dac_stop - dac_start) / num_samples;
+    double dac_voltage = dac_start;
     reset_muxs();
     dac_drain();
 
@@ -188,9 +189,16 @@ void measure_voltage_sweep(VoltageSample_TypeDef *samples, Direction direction, 
         break;
     }
 
+    // dac_set_voltage(dac_voltage);
+    // for (uint8_t i = 0; i < 50; i++)
+    // {
+    //     measure_pin_voltage(direction, electrode, adc_samples, voltage_settle_time);
+    // }
     for (uint16_t i = 0; i < num_samples; i++)
     {
-        dac_set_voltage(dac_voltage);
+        // dac_drain();
+        dac_set_voltage((uint16_t) dac_voltage);
+        HAL_Delay(2000);
 
         samples[i].dac_input = dac_voltage;
 
