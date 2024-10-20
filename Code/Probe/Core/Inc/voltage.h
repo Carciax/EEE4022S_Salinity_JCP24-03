@@ -7,6 +7,7 @@
 #include "i2c.h"
 #include "tim.h"
 #include "ProbeConfig.h"
+#include "math.h"
 
 /* Private defines -----------------------------------------------------------*/
 /* SWITCHES */
@@ -54,10 +55,10 @@ typedef enum {
 } ADC_Channel;
 
 typedef struct {
-    uint16_t dac_input;
-    uint16_t dac_output;
-    uint16_t calib;
-    uint16_t measurement;
+    int16_t dac_input;
+    int16_t dac_output;
+    int16_t calib;
+    int16_t measurement;
 } VoltageSample_TypeDef;
 
 /* Functions prototypes ---------------------------------------------*/
@@ -75,6 +76,8 @@ void reset_muxs (void);
 uint16_t measure_dac_voltage (uint16_t adc_samples, uint16_t voltage_settle_time);
 uint16_t measure_calib_voltage (uint16_t adc_samples, uint16_t voltage_settle_time);
 uint16_t measure_pin_voltage (Direction direction, Electrode_Type electrode, uint16_t adc_samples, uint16_t voltage_settle_time);
-void measure_voltage_sweep (VoltageSample_TypeDef* samples, Direction direction, R1_Type r1, Electrode_Type electrode, uint16_t dac_start, uint16_t dac_stop, uint16_t num_samples, uint16_t adc_samples, uint16_t voltage_settle_time);
+void measure_voltage_sweep (VoltageSample_TypeDef* samples, Direction direction, R1_Type r1, Electrode_Type electrode, uint16_t dac_start, uint16_t dac_stop, uint16_t num_samples, uint16_t adc_samples, uint16_t voltage_settle_time, uint16_t relaxation_time);
+
+void measure_ac_sweep (VoltageSample_TypeDef* samples, R1_Type r1, Electrode_Type electrode, uint8_t num_waves, uint16_t num_samples, uint16_t sample_delay);
 
 #endif // __RESISTANCE_H

@@ -51,6 +51,11 @@ E.~L. Lewis and R.~G. Perkin, ``Salinity: Its definition and calculation,'' \emp
 \bibitem{zheng_electrical_conductivity_of_ocean_2017}
 Y.~Zheng, Y.~Liu, J.~Zhou, and Y.~Wang, ``Electrical conductivity of the global ocean,'' \emph{Earth, Planets and Space}, vol.~69, no.~1, pp. 1--10, 2017.
 
+\bibitem{ioc_teos_2010}
+\BIBentryALTinterwordspacing
+I.~O. Commission, ``Teos-10: The international thermodynamic equation of seawater (teos-10) for temperature, salinity, density, sound speed, and other oceanographic variables,'' \emph{Manuals and Guides}, vol.~56, 2010. [Online]. Available: \url{https://www.teos-10.org/pubs/TEOS-10_Manual.pdf}
+\BIBentrySTDinterwordspacing
+
 \bibitem{britannica_seawater_encyclopaedia_2024}
 \BIBentryALTinterwordspacing
 E.~B. editors, ``Seawater,'' \emph{Encyclopædia Britannica}, 2024. [Online]. Available: \url{https://www.britannica.com/science/seawater}
@@ -58,6 +63,11 @@ E.~B. editors, ``Seawater,'' \emph{Encyclopædia Britannica}, 2024. [Online]. Av
 
 \bibitem{wooster_redefinition_of_salinity_1969}
 W.~S. Wooster, A.~J. Lee, and G.~Dietrich, ``Redefinition of salinity,'' \emph{Journal of Marine Research}, vol.~27, no.~3, 1969.
+
+\bibitem{seabird_salinity_accuracy}
+\BIBentryALTinterwordspacing
+S.~Scientific, ``How accurate is salinity measured by my ctd? what factors impact accuracy.'' [Online]. Available: \url{https://blog.seabird.com/ufaqs/how-accurate-is-salinity-measured-by-my-ctd-what-factors-impact-accuracy/}
+\BIBentrySTDinterwordspacing
 
 \bibitem{USGS_water_density_2018}
 \BIBentryALTinterwordspacing
@@ -69,6 +79,11 @@ B.~Kjerfve, ``Measurement and analysis of water current, temperature, salinity, 
 
 \bibitem{uow_oceanography_research_1966}
 U.~of~Washington Department~of Oceanography, ``A compilation of articles reporting research,'' 1966.
+
+\bibitem{millero_international_one_atmosphere_eos_seawater_1981}
+\BIBentryALTinterwordspacing
+F.~J. Millero and A.~Poisson, ``International one-atmosphere equation of state of seawater,'' \emph{Deep Sea Research Part A. Oceanographic Research Papers}, vol.~28, no.~6, pp. 625--629, 1981. [Online]. Available: \url{https://www.sciencedirect.com/science/article/pii/0198014981901229}
+\BIBentrySTDinterwordspacing
 
 \bibitem{schmidt_density_salinity_relation_2018}
 \BIBentryALTinterwordspacing
@@ -126,9 +141,19 @@ R.~Somaraju and J.~Trumpf, ``Frequency, temperature and salinity variation of th
 \bibitem{tengesdal_electromagnetic_salinity_2014}
 O.~A. Tengesdal, B.~L. Hauge, and L.~E. Helseth, ``Electromagnetic and optical methods for measurements of salt concentration of water,'' \emph{Journal of Electromagnetic Analysis and Applications}, vol.~6, no.~6, 2014.
 
-\bibitem{ioc_teos_2010}
+\bibitem{benjankar_ec_based_salt_measurement_2021}
 \BIBentryALTinterwordspacing
-I.~O. Commission, ``Teos-10: The international thermodynamic equation of seawater (teos-10) for temperature, salinity, density, sound speed, and other oceanographic variables,'' \emph{Manuals and Guides}, vol.~56, 2010. [Online]. Available: \url{https://www.teos-10.org/pubs/TEOS-10_Manual.pdf}
+R.~Benjankar and R.~Kafle, ``Salt concentration measurement using re-usable electric conductivity-based sensors,'' \emph{Water Air and Soil Pollution}, vol. 232, no.~13, p.~13, 2021. [Online]. Available: \url{https://doi.org/10.1007/s11270-020-04971-7}
+\BIBentrySTDinterwordspacing
+
+\bibitem{instructables_water_salinity_meter}
+\BIBentryALTinterwordspacing
+``Water salinity-meter : 7 steps.'' [Online]. Available: \url{https://www.instructables.com/Water-Salinity-meter/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{jonsson_chip_based_salinity_2013}
+\BIBentryALTinterwordspacing
+J.~Jonsson, K.~Smedfors, L.~Nyholm, and G.~Thornell, ``Towards chip-based salinity measurements for small submersibles and biologgers,'' \emph{International Journal of Oceanography}, vol. 2013, p.~11, 2013. [Online]. Available: \url{http://dx.doi.org/10.1155/2013/529674}
 \BIBentrySTDinterwordspacing
 
 \bibitem{seabird_dbar_to_depth_2024}
@@ -153,6 +178,20 @@ G.~T. Furukawa, J.~L. Riddle, and W.~R. Bigge, ``The international practical tem
 \BIBentryALTinterwordspacing
 H.~Preston-Thomas, ``The international temperature scale of 1990 (its-90),'' \emph{Metrologia}, vol.~27, no. 107, pp. 3--10, 1990. [Online]. Available: \url{https://www.nist.gov/system/files/documents/pml/div685/grp01/ITS-90_metrologia.pdf}
 \BIBentrySTDinterwordspacing
+
+\bibitem{solomentsev_LED_current_spreading_2022}
+M.~Solomentsev and A.~J. Hanson, ``Modeling current distribution within conductors and between parallel conductors in high-frequency magnetics,'' \emph{IEEE Open Journal of Power Electronics}, vol.~3, pp. 635--650, 2022.
+
+\bibitem{hwang_LED_current_spreading_2008}
+S.~Hwang and J.~Shim, ``A method for current spreading analysis and electrode pattern design in light-emitting diodes,'' \emph{IEEE Transactions on Electron Devices}, vol.~55, no.~5, pp. 1123--1128, 2008.
+
+\bibitem{jeon_LED_current_spreading_2001}
+\BIBentryALTinterwordspacing
+S.-R. Jeon, Y.-H. Song, H.-J. Jang, G.~M. Yang, S.~W. Hwang, and S.~J. Son, ``{Lateral current spreading in GaN-based light-emitting diodes utilizing tunnel contact junctions},'' \emph{Applied Physics Letters}, vol.~78, no.~21, pp. 3265--3267, 05 2001. [Online]. Available: \url{https://doi.org/10.1063/1.1374483}
+\BIBentrySTDinterwordspacing
+
+\bibitem{jason_current_spreading_long_objects_2008}
+Jason, ``Current spreading in long objects,'' 7515 Colshire Drive, McLean, Virginia 22102-753, oct 2008, approved for public release; distribution unlimited.
 
 \bibitem{as_typical_conductivity_2022}
 \BIBentryALTinterwordspacing

@@ -139,20 +139,50 @@ int main(void)
     double pressure, temperature, resistance, conductivity, salinity;
     VoltageSample_TypeDef voltage_samples[MAX_SAMPLES];
     ResistanceSample_TypeDef resistance_samples[MAX_SAMPLES];
+    memset(voltage_samples, 0, sizeof(voltage_samples));    
 
-    measure_voltage_sweep(
-                voltage_samples,
-                BIDIRECTIONAL,
-                R1_1k,
-                Ti,
-                V_MIN,
-                V_MAX,
-                20,
-                5,
-                100);
-    transmit_sample_data_binary(voltage_samples, 20, SAMPLE_VOLTAGE);
+    HAL_Delay(5000);
+
+    measure_ac_sweep(
+        voltage_samples,
+        R1_10k,
+        Ti,
+        4,
+        128,
+        50);
+    transmit_sample_data_binary(voltage_samples, 128, SAMPLE_VOLTAGE);;
+
+    // measure_voltage_sweep(
+    //     voltage_samples,
+    //     BIDIRECTIONAL,
+    //     R1_100,
+    //     Au_Shielded,
+    //     V_MIN,
+    //     V_MAX,
+    //     5,
+    //     5,
+    //     10,
+    //     0);
+    // HAL_Delay(2000);
+
+    // measure_voltage_sweep(
+    //     voltage_samples,
+    //     BIDIRECTIONAL,
+    //     R1_100,
+    //     Au_Shielded,
+    //     V_MIN,
+    //     V_MAX,
+    //     20,
+    //     5,
+    //     100,
+    //     2000);
+    // transmit_sample_data_binary(voltage_samples, 20, SAMPLE_VOLTAGE);
+
+    // temperature = measure_temperature();
+    // transmit_sample_data_readable(&temperature, 1, VALUE_TEMPERATURE);
 
     rs485_receive_IT(1);
+
     while (1)
     {
 
@@ -222,7 +252,8 @@ int main(void)
                 probe_config.voltage_end,
                 probe_config.num_samples,
                 probe_config.adc_samples,
-                probe_config.voltage_settle_time);
+                probe_config.voltage_settle_time,
+                0);
             calculate_resistance(voltage_samples, resistance_samples, probe_config.num_samples);
 
             resistance = calculate_average_resistance(resistance_samples, probe_config.num_samples);
@@ -246,7 +277,8 @@ int main(void)
                 probe_config.voltage_end,
                 probe_config.num_samples,
                 probe_config.adc_samples,
-                probe_config.voltage_settle_time);
+                probe_config.voltage_settle_time,
+                0);
             calculate_resistance(voltage_samples, resistance_samples, probe_config.num_samples);
 
             conductivity = calculate_conductivity(probe_config.electrode, resistance_samples, probe_config.num_samples);
@@ -270,14 +302,15 @@ int main(void)
                 probe_config.voltage_end,
                 probe_config.num_samples,
                 probe_config.adc_samples,
-                probe_config.voltage_settle_time);
+                probe_config.voltage_settle_time,
+                0);
             calculate_resistance(voltage_samples, resistance_samples, probe_config.num_samples);
 
             conductivity = calculate_conductivity(probe_config.electrode, resistance_samples, probe_config.num_samples);
             temperature = measure_temperature();
             pressure = measure_pressure();
 
-            salinity = calculate_salinity(conductivity, temperature, pressure, (double) probe_config.stardard_conductivity / 1e6);
+            salinity = calculate_salinity(conductivity, temperature, pressure, (double)probe_config.stardard_conductivity / 1e6);
             HAL_UART_Abort_IT(&huart1);
             rs485_transmit_double(salinity);
 
@@ -555,7 +588,7 @@ void transmit_sample_data_readable(void *samples, uint16_t num_samples, Sample_T
         for (uint16_t i = 0; i < num_samples; i++)
         {
             char buf[64];
-            sprintf(buf, "Temperature: %.1f\n", temperature_values[i]);
+            sprintf(buf, "\n\nTemperature: %.1f", temperature_values[i]);
             HAL_UART_Transmit(&huart6, (uint8_t *)buf, strlen(buf), 1000);
         }
         break;
@@ -588,7 +621,8 @@ void transmit_sample_data_binary(void *samples, uint16_t num_samples, Sample_Typ
         VoltageSample_TypeDef *voltage_samples = (VoltageSample_TypeDef *)samples;
         char buf[] = "\n\n|DAC Input|DAC Output|Calib x 11|Measurement x 11|\n";
         HAL_UART_Transmit(&huart6, (uint8_t *)buf, strlen(buf), 1000);
-        for (uint16_t i = 0; i < num_samples; i++) {
+        for (uint16_t i = 0; i < num_samples; i++)
+        {
             sprintf(buf, "%d,%d,%d,%d;", voltage_samples[i].dac_input, voltage_samples[i].dac_output, voltage_samples[i].calib, voltage_samples[i].measurement);
             HAL_UART_Transmit(&huart6, (uint8_t *)buf, strlen(buf), 1000);
         }

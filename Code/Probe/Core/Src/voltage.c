@@ -167,9 +167,9 @@ uint16_t measure_pin_voltage(Direction direction, Electrode_Type electrode, uint
     return adc_forward_val;
 }
 
-void measure_voltage_sweep(VoltageSample_TypeDef *samples, Direction direction, R1_Type r1, Electrode_Type electrode, uint16_t dac_start, uint16_t dac_stop, uint16_t num_samples, uint16_t adc_samples, uint16_t voltage_settle_time)
+void measure_voltage_sweep(VoltageSample_TypeDef *samples, Direction direction, R1_Type r1, Electrode_Type electrode, uint16_t dac_start, uint16_t dac_stop, uint16_t num_samples, uint16_t adc_samples, uint16_t voltage_settle_time, uint16_t relaxation_time)
 {
-    double dac_step = (double) (dac_stop - dac_start) / num_samples;
+    double dac_step = (double)(dac_stop - dac_start) / num_samples;
     double dac_voltage = dac_start;
     reset_muxs();
     dac_drain();
@@ -197,8 +197,8 @@ void measure_voltage_sweep(VoltageSample_TypeDef *samples, Direction direction, 
     for (uint16_t i = 0; i < num_samples; i++)
     {
         // dac_drain();
-        dac_set_voltage((uint16_t) dac_voltage);
-        HAL_Delay(2000);
+        dac_set_voltage((uint16_t)dac_voltage);
+        HAL_Delay(relaxation_time);
 
         samples[i].dac_input = dac_voltage;
 
@@ -211,6 +211,95 @@ void measure_voltage_sweep(VoltageSample_TypeDef *samples, Direction direction, 
         samples[i].measurement = measure_pin_voltage(direction, electrode, adc_samples, voltage_settle_time);
 
         dac_voltage += dac_step;
+    }
+
+    reset_muxs();
+    dac_drain();
+}
+
+void measure_ac_sweep(VoltageSample_TypeDef *samples, R1_Type r1, Electrode_Type electrode, uint8_t num_waves, uint16_t num_samples, uint16_t sample_delay)
+{
+    uint16_t half_wave_samples = num_samples / num_waves / 2;
+    uint16_t dac_values[half_wave_samples];
+    // generate half sin wave ampltitude 0 to 1023 to 0
+    for (uint16_t i = 0; i < half_wave_samples; i++)
+    {
+        dac_values[i] = (uint16_t)V_MAX * sin(3.14 * i / half_wave_samples) - 1;
+    }
+
+    reset_muxs();
+    dac_drain();
+
+    uint16_t r1_pin = 0;
+    switch (r1)
+    {
+    case R1_100:
+        r1_pin = SW_R1_100_Pin;
+        break;
+    case R1_1k:
+        r1_pin = SW_R1_1k_Pin;
+        break;
+    case R1_10k:
+        r1_pin = SW_R1_10k_Pin;
+        break;
+    default:
+        break;
+    }
+
+    adc_set_channel(ADC_CHANNEL_SIGNAL);
+    // GPIOSW->BSRR = SW_R1_Calib_Pin;
+    uint16_t sample = 0;
+    for (uint8_t i = 0; i < num_waves; i++)
+    {
+        switch (electrode)
+        {
+        case Ti:
+            GPIOSW->BSRR = SW_Ti_Pin_Msk << 16;
+            GPIOSW->BSRR = SW_R1_Ti2_Pin | SW_Ti1_GND_Pin;
+            break;
+        case Au_Shielded:
+            GPIOSW->BSRR = (SW_Au_Pin_Msk | SW_Shield_Pin_Msk) << 16;
+            GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Shield2_V_Pin | SW_Shield1_GND_Pin;
+            break;
+        default:
+            break;
+        }
+
+        for (uint16_t j = 0; j < half_wave_samples; j++)
+        {
+            GPIOSW->BSRR = r1_pin;
+            dac_set_voltage(dac_values[j]);
+            samples[sample].dac_input = dac_values[j];
+            us_delay(sample_delay);
+            GPIOSW->BSRR = r1_pin << 16;
+            samples[sample].measurement = adc_average(1);
+            sample++;
+        }
+
+        switch (electrode)
+        {
+        case Ti:
+            GPIOSW->BSRR = SW_Ti_Pin_Msk << 16;
+            GPIOSW->BSRR = SW_R1_Ti1_Pin | SW_Ti2_GND_Pin;
+            break;
+        case Au_Shielded:
+            GPIOSW->BSRR = (SW_Au_Pin_Msk | SW_Shield_Pin_Msk) << 16;
+            GPIOSW->BSRR = SW_R1_Au1_Pin | SW_Shield1_V_Pin | SW_Shield2_GND_Pin;
+            break;
+        default:
+            break;
+        }
+
+        for (uint16_t j = 0; j < half_wave_samples; j++)
+        {
+            GPIOSW->BSRR = r1_pin;
+            dac_set_voltage(dac_values[j]);
+            samples[sample].dac_input = -dac_values[j];
+            us_delay(sample_delay);
+            GPIOSW->BSRR = r1_pin << 16;
+            samples[sample].measurement = -adc_average(1);
+            sample++;
+        }
     }
 
     reset_muxs();

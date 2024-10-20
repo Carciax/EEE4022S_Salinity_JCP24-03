@@ -1,4 +1,4 @@
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
   38 0004 0023     		movs	r3, #0
   39 0006 5362     		str	r3, [r2, #36]
   19:Core/Src/voltage.c ****     while (__HAL_TIM_GET_COUNTER(&htim10) < micro_s)
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 2
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 2
 
 
   40              		.loc 1 19 5 view .LVU2
@@ -118,7 +118,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
   49:Core/Src/voltage.c **** {
   67              		.loc 1 49 1 is_stmt 1 view -0
   68              		.cfi_startproc
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 3
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 3
 
 
   69              		@ args = 0, pretend = 0, frame = 8
@@ -178,7 +178,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  115              	.L8:
  116              		.cfi_restore_state
   55:Core/Src/voltage.c ****     }
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 4
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 4
 
 
  117              		.loc 1 55 9 is_stmt 1 view .LVU21
@@ -238,7 +238,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
   33:Core/Src/voltage.c **** 
  167              		.loc 1 33 1 is_stmt 0 view .LVU29
  168 0024 08BD     		pop	{r3, pc}
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 5
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 5
 
 
  169              	.L14:
@@ -298,7 +298,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  218 0020 08BD     		pop	{r3, pc}
  219              		.cfi_endproc
  220              	.LFE223:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 6
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 6
 
 
  222              		.section	.text.dac_set_voltage,"ax",%progbits
@@ -358,7 +358,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  271              		.cfi_offset 14, -4
  272 0002 85B0     		sub	sp, sp, #20
  273              		.cfi_def_cfa_offset 24
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 7
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 7
 
 
   61:Core/Src/voltage.c ****     ADC_ChannelConfTypeDef sConfig = {channel, 1, ADC_SAMPLETIME_3CYCLES, 0};
@@ -418,7 +418,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
   67:Core/Src/voltage.c **** 
   68:Core/Src/voltage.c **** uint16_t adc_average(uint16_t adc_samples)
   69:Core/Src/voltage.c **** {
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 8
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 8
 
 
  323              		.loc 1 69 1 is_stmt 1 view -0
@@ -478,7 +478,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
   71:Core/Src/voltage.c ****     {
  370              		.loc 1 71 44 is_stmt 1 discriminator 3 view .LVU66
  371 0024 0134     		adds	r4, r4, #1
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 9
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 9
 
 
  372              	.LVL28:
@@ -538,7 +538,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  418              	.L35:
  419              		.align	2
  420              	.L34:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 10
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 10
 
 
  421 0008 00080240 		.word	1073874944
@@ -598,7 +598,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  473              	measure_dac_voltage:
  474              	.LVL36:
  475              	.LFB229:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 11
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 11
 
 
   84:Core/Src/voltage.c **** 
@@ -658,7 +658,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  522              		.global	measure_calib_voltage
  523              		.syntax unified
  524              		.thumb
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 12
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 12
 
 
  525              		.thumb_func
@@ -718,7 +718,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  571              		.cfi_endproc
  572              	.LFE230:
  574              		.section	.text.measure_pin_voltage,"ax",%progbits
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 13
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 13
 
 
  575              		.align	1
@@ -778,7 +778,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  618              		.loc 1 113 26 is_stmt 0 view .LVU115
  619 0020 384E     		ldr	r6, .L62
  620 0022 44F22003 		movw	r3, #16416
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 14
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 14
 
 
  621              	.LVL48:
@@ -838,7 +838,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  664 0052 FFF7FEFF 		bl	adc_average
  665              	.LVL56:
  666 0056 0746     		mov	r7, r0
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 15
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 15
 
 
  667              	.LVL57:
@@ -898,7 +898,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  709              	.LVL64:
  710              	.L49:
  132:Core/Src/voltage.c ****         default:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 16
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 16
 
 
  133:Core/Src/voltage.c ****             break;
@@ -958,7 +958,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  752              	.LVL71:
  753              		.loc 1 145 26 view .LVU165
  754 00b2 4FF40463 		mov	r3, #2112
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 17
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 17
 
 
  755 00b6 A361     		str	r3, [r4, #24]
@@ -1018,7 +1018,7 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  798              	.LVL78:
  799              	.L50:
  156:Core/Src/voltage.c ****         default:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 18
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 18
 
 
  157:Core/Src/voltage.c ****             break;
@@ -1071,149 +1071,154 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  833              		.global	__aeabi_ddiv
  834              		.global	__aeabi_ui2d
  835              		.global	__aeabi_d2uiz
- 836              		.global	__aeabi_dadd
- 837              		.section	.text.measure_voltage_sweep,"ax",%progbits
- 838              		.align	1
- 839              		.global	measure_voltage_sweep
- 840              		.syntax unified
- 841              		.thumb
- 842              		.thumb_func
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 19
+ 836              		.global	__aeabi_d2iz
+ 837              		.global	__aeabi_dadd
+ 838              		.section	.text.measure_voltage_sweep,"ax",%progbits
+ 839              		.align	1
+ 840              		.global	measure_voltage_sweep
+ 841              		.syntax unified
+ 842              		.thumb
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 19
 
 
- 844              	measure_voltage_sweep:
- 845              	.LVL83:
- 846              	.LFB232:
+ 843              		.thumb_func
+ 845              	measure_voltage_sweep:
+ 846              	.LVL83:
+ 847              	.LFB232:
  169:Core/Src/voltage.c **** 
  170:Core/Src/voltage.c **** void measure_voltage_sweep(VoltageSample_TypeDef *samples, Direction direction, R1_Type r1, Electro
  171:Core/Src/voltage.c **** {
- 847              		.loc 1 171 1 is_stmt 1 view -0
- 848              		.cfi_startproc
- 849              		@ args = 20, pretend = 0, frame = 24
- 850              		@ frame_needed = 0, uses_anonymous_args = 0
- 851              		.loc 1 171 1 is_stmt 0 view .LVU190
- 852 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
- 853              		.cfi_def_cfa_offset 36
- 854              		.cfi_offset 4, -36
- 855              		.cfi_offset 5, -32
- 856              		.cfi_offset 6, -28
- 857              		.cfi_offset 7, -24
- 858              		.cfi_offset 8, -20
- 859              		.cfi_offset 9, -16
- 860              		.cfi_offset 10, -12
- 861              		.cfi_offset 11, -8
- 862              		.cfi_offset 14, -4
- 863 0004 87B0     		sub	sp, sp, #28
- 864              		.cfi_def_cfa_offset 64
- 865 0006 0646     		mov	r6, r0
- 866 0008 8B46     		mov	fp, r1
- 867 000a 9246     		mov	r10, r2
- 868 000c 0593     		str	r3, [sp, #20]
- 869 000e BDF84080 		ldrh	r8, [sp, #64]
- 870 0012 BDF84870 		ldrh	r7, [sp, #72]
- 871 0016 BDF84C40 		ldrh	r4, [sp, #76]
- 872 001a BDF85050 		ldrh	r5, [sp, #80]
- 172:Core/Src/voltage.c ****     double dac_step = (double) (dac_stop - dac_start) / num_samples;
- 873              		.loc 1 172 5 is_stmt 1 view .LVU191
- 874              		.loc 1 172 23 is_stmt 0 view .LVU192
- 875 001e BDF84400 		ldrh	r0, [sp, #68]
- 876              	.LVL84:
- 877              		.loc 1 172 23 view .LVU193
- 878 0022 A0EB0800 		sub	r0, r0, r8
- 879 0026 FFF7FEFF 		bl	__aeabi_i2d
- 880              	.LVL85:
- 881              		.loc 1 172 23 view .LVU194
- 882 002a CDE90001 		strd	r0, [sp]
- 883              		.loc 1 172 55 view .LVU195
- 884 002e 3846     		mov	r0, r7
- 885 0030 FFF7FEFF 		bl	__aeabi_i2d
- 886              	.LVL86:
- 887 0034 0246     		mov	r2, r0
- 888 0036 0B46     		mov	r3, r1
- 889              		.loc 1 172 12 view .LVU196
- 890 0038 DDE90001 		ldrd	r0, [sp]
- 891 003c FFF7FEFF 		bl	__aeabi_ddiv
- 892              	.LVL87:
- 893 0040 CDE90201 		strd	r0, [sp, #8]
- 894              	.LVL88:
+ 848              		.loc 1 171 1 is_stmt 1 view -0
+ 849              		.cfi_startproc
+ 850              		@ args = 24, pretend = 0, frame = 24
+ 851              		@ frame_needed = 0, uses_anonymous_args = 0
+ 852              		.loc 1 171 1 is_stmt 0 view .LVU190
+ 853 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 854              		.cfi_def_cfa_offset 36
+ 855              		.cfi_offset 4, -36
+ 856              		.cfi_offset 5, -32
+ 857              		.cfi_offset 6, -28
+ 858              		.cfi_offset 7, -24
+ 859              		.cfi_offset 8, -20
+ 860              		.cfi_offset 9, -16
+ 861              		.cfi_offset 10, -12
+ 862              		.cfi_offset 11, -8
+ 863              		.cfi_offset 14, -4
+ 864 0004 87B0     		sub	sp, sp, #28
+ 865              		.cfi_def_cfa_offset 64
+ 866 0006 0646     		mov	r6, r0
+ 867 0008 0591     		str	r1, [sp, #20]
+ 868 000a 9146     		mov	r9, r2
+ 869 000c 9B46     		mov	fp, r3
+ 870 000e BDF840A0 		ldrh	r10, [sp, #64]
+ 871 0012 BDF84870 		ldrh	r7, [sp, #72]
+ 872 0016 BDF84C40 		ldrh	r4, [sp, #76]
+ 873 001a BDF85050 		ldrh	r5, [sp, #80]
+ 874 001e BDF85480 		ldrh	r8, [sp, #84]
+ 172:Core/Src/voltage.c ****     double dac_step = (double)(dac_stop - dac_start) / num_samples;
+ 875              		.loc 1 172 5 is_stmt 1 view .LVU191
+ 876              		.loc 1 172 23 is_stmt 0 view .LVU192
+ 877 0022 BDF84400 		ldrh	r0, [sp, #68]
+ 878              	.LVL84:
+ 879              		.loc 1 172 23 view .LVU193
+ 880 0026 A0EB0A00 		sub	r0, r0, r10
+ 881 002a FFF7FEFF 		bl	__aeabi_i2d
+ 882              	.LVL85:
+ 883              		.loc 1 172 23 view .LVU194
+ 884 002e CDE90001 		strd	r0, [sp]
+ 885              		.loc 1 172 54 view .LVU195
+ 886 0032 3846     		mov	r0, r7
+ 887 0034 FFF7FEFF 		bl	__aeabi_i2d
+ 888              	.LVL86:
+ 889 0038 0246     		mov	r2, r0
+ 890 003a 0B46     		mov	r3, r1
+ 891              		.loc 1 172 12 view .LVU196
+ 892 003c DDE90001 		ldrd	r0, [sp]
+ 893 0040 FFF7FEFF 		bl	__aeabi_ddiv
+ 894              	.LVL87:
+ 895 0044 CDE90201 		strd	r0, [sp, #8]
+ 896              	.LVL88:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 20
+
+
  173:Core/Src/voltage.c ****     double dac_voltage = dac_start;
- 895              		.loc 1 173 5 is_stmt 1 view .LVU197
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 20
-
-
- 896              		.loc 1 173 12 is_stmt 0 view .LVU198
- 897 0044 4046     		mov	r0, r8
- 898              	.LVL89:
- 899              		.loc 1 173 12 view .LVU199
- 900 0046 FFF7FEFF 		bl	__aeabi_ui2d
- 901              	.LVL90:
- 902 004a CDE90001 		strd	r0, [sp]
- 903              	.LVL91:
+ 897              		.loc 1 173 5 is_stmt 1 view .LVU197
+ 898              		.loc 1 173 12 is_stmt 0 view .LVU198
+ 899 0048 5046     		mov	r0, r10
+ 900              	.LVL89:
+ 901              		.loc 1 173 12 view .LVU199
+ 902 004a FFF7FEFF 		bl	__aeabi_ui2d
+ 903              	.LVL90:
+ 904 004e CDE90001 		strd	r0, [sp]
+ 905              	.LVL91:
  174:Core/Src/voltage.c ****     reset_muxs();
- 904              		.loc 1 174 5 is_stmt 1 view .LVU200
- 905 004e FFF7FEFF 		bl	reset_muxs
- 906              	.LVL92:
+ 906              		.loc 1 174 5 is_stmt 1 view .LVU200
+ 907 0052 FFF7FEFF 		bl	reset_muxs
+ 908              	.LVL92:
  175:Core/Src/voltage.c ****     dac_drain();
- 907              		.loc 1 175 5 view .LVU201
- 908 0052 FFF7FEFF 		bl	dac_drain
- 909              	.LVL93:
+ 909              		.loc 1 175 5 view .LVU201
+ 910 0056 FFF7FEFF 		bl	dac_drain
+ 911              	.LVL93:
  176:Core/Src/voltage.c **** 
  177:Core/Src/voltage.c ****     switch (r1)
- 910              		.loc 1 177 5 view .LVU202
- 911 0056 BAF1010F 		cmp	r10, #1
- 912 005a 0BD0     		beq	.L65
- 913 005c BAF1020F 		cmp	r10, #2
- 914 0060 0CD0     		beq	.L66
- 915 0062 BAF1000F 		cmp	r10, #0
- 916 0066 02D1     		bne	.L67
+ 912              		.loc 1 177 5 view .LVU202
+ 913 005a B9F1010F 		cmp	r9, #1
+ 914 005e 0BD0     		beq	.L65
+ 915 0060 B9F1020F 		cmp	r9, #2
+ 916 0064 0CD0     		beq	.L66
+ 917 0066 B9F1000F 		cmp	r9, #0
+ 918 006a 02D1     		bne	.L67
  178:Core/Src/voltage.c ****     {
  179:Core/Src/voltage.c ****     case R1_100:
  180:Core/Src/voltage.c ****         GPIOSW->BSRR = SW_R1_100_Pin;
- 917              		.loc 1 180 9 view .LVU203
- 918              		.loc 1 180 22 is_stmt 0 view .LVU204
- 919 0068 264B     		ldr	r3, .L71
- 920 006a 0122     		movs	r2, #1
- 921 006c 9A61     		str	r2, [r3, #24]
- 922              	.LVL94:
+ 919              		.loc 1 180 9 view .LVU203
+ 920              		.loc 1 180 22 is_stmt 0 view .LVU204
+ 921 006c 274B     		ldr	r3, .L71
+ 922 006e 0122     		movs	r2, #1
+ 923 0070 9A61     		str	r2, [r3, #24]
+ 924              	.LVL94:
  181:Core/Src/voltage.c ****         break;
- 923              		.loc 1 181 9 is_stmt 1 view .LVU205
- 924              	.L67:
- 171:Core/Src/voltage.c ****     double dac_step = (double) (dac_stop - dac_start) / num_samples;
- 925              		.loc 1 171 1 is_stmt 0 view .LVU206
- 926 006e 4FF00008 		mov	r8, #0
- 927 0072 3EE0     		b	.L68
- 928              	.LVL95:
- 929              	.L65:
+ 925              		.loc 1 181 9 is_stmt 1 view .LVU205
+ 926              	.L67:
+ 171:Core/Src/voltage.c ****     double dac_step = (double)(dac_stop - dac_start) / num_samples;
+ 927              		.loc 1 171 1 is_stmt 0 view .LVU206
+ 928 0072 4FF00009 		mov	r9, #0
+ 929              	.LVL95:
+ 171:Core/Src/voltage.c ****     double dac_step = (double)(dac_stop - dac_start) / num_samples;
+ 930              		.loc 1 171 1 view .LVU207
+ 931 0076 3FE0     		b	.L68
+ 932              	.LVL96:
+ 933              	.L65:
  182:Core/Src/voltage.c ****     case R1_1k:
  183:Core/Src/voltage.c ****         GPIOSW->BSRR = SW_R1_1k_Pin;
- 930              		.loc 1 183 9 is_stmt 1 view .LVU207
- 931              		.loc 1 183 22 is_stmt 0 view .LVU208
- 932 0074 234B     		ldr	r3, .L71
- 933 0076 0222     		movs	r2, #2
- 934 0078 9A61     		str	r2, [r3, #24]
- 935              	.LVL96:
+ 934              		.loc 1 183 9 is_stmt 1 view .LVU208
+ 935              		.loc 1 183 22 is_stmt 0 view .LVU209
+ 936 0078 244B     		ldr	r3, .L71
+ 937 007a 0222     		movs	r2, #2
+ 938 007c 9A61     		str	r2, [r3, #24]
+ 939              	.LVL97:
  184:Core/Src/voltage.c ****         break;
- 936              		.loc 1 184 9 is_stmt 1 view .LVU209
- 937 007a F8E7     		b	.L67
- 938              	.LVL97:
- 939              	.L66:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 21
+
+
+ 940              		.loc 1 184 9 is_stmt 1 view .LVU210
+ 941 007e F8E7     		b	.L67
+ 942              	.LVL98:
+ 943              	.L66:
  185:Core/Src/voltage.c ****     case R1_10k:
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 21
-
-
  186:Core/Src/voltage.c ****         GPIOSW->BSRR = SW_R1_10k_Pin;
- 940              		.loc 1 186 9 view .LVU210
- 941              		.loc 1 186 22 is_stmt 0 view .LVU211
- 942 007c 214B     		ldr	r3, .L71
- 943 007e 0422     		movs	r2, #4
- 944 0080 9A61     		str	r2, [r3, #24]
- 945              	.LVL98:
+ 944              		.loc 1 186 9 view .LVU211
+ 945              		.loc 1 186 22 is_stmt 0 view .LVU212
+ 946 0080 224B     		ldr	r3, .L71
+ 947 0082 0422     		movs	r2, #4
+ 948 0084 9A61     		str	r2, [r3, #24]
+ 949              	.LVL99:
  187:Core/Src/voltage.c ****         break;
- 946              		.loc 1 187 9 is_stmt 1 view .LVU212
- 947 0082 F4E7     		b	.L67
- 948              	.LVL99:
- 949              	.L69:
- 950              	.LBB4:
+ 950              		.loc 1 187 9 is_stmt 1 view .LVU213
+ 951 0086 F4E7     		b	.L67
+ 952              	.LVL100:
+ 953              	.L69:
+ 954              	.LBB4:
  188:Core/Src/voltage.c ****     default:
  189:Core/Src/voltage.c ****         break;
  190:Core/Src/voltage.c ****     }
@@ -1226,185 +1231,778 @@ ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 1
  197:Core/Src/voltage.c ****     for (uint16_t i = 0; i < num_samples; i++)
  198:Core/Src/voltage.c ****     {
  199:Core/Src/voltage.c ****         // dac_drain();
- 200:Core/Src/voltage.c ****         dac_set_voltage((uint16_t) dac_voltage);
- 951              		.loc 1 200 9 view .LVU213
- 952 0084 DDE90001 		ldrd	r0, [sp]
- 953 0088 FFF7FEFF 		bl	__aeabi_d2uiz
- 954              	.LVL100:
- 955 008c 1FFA80F9 		uxth	r9, r0
- 956 0090 4846     		mov	r0, r9
- 957 0092 FFF7FEFF 		bl	dac_set_voltage
+ 200:Core/Src/voltage.c ****         dac_set_voltage((uint16_t)dac_voltage);
+ 955              		.loc 1 200 9 view .LVU214
+ 956 0088 DDE90001 		ldrd	r0, [sp]
+ 957 008c FFF7FEFF 		bl	__aeabi_d2uiz
  958              	.LVL101:
- 201:Core/Src/voltage.c ****         HAL_Delay(2000);
- 959              		.loc 1 201 9 view .LVU214
- 960 0096 4FF4FA60 		mov	r0, #2000
- 961 009a FFF7FEFF 		bl	HAL_Delay
- 962              	.LVL102:
+ 959 0090 80B2     		uxth	r0, r0
+ 960 0092 FFF7FEFF 		bl	dac_set_voltage
+ 961              	.LVL102:
+ 201:Core/Src/voltage.c ****         HAL_Delay(relaxation_time);
+ 962              		.loc 1 201 9 view .LVU215
+ 963 0096 4046     		mov	r0, r8
+ 964 0098 FFF7FEFF 		bl	HAL_Delay
+ 965              	.LVL103:
  202:Core/Src/voltage.c **** 
  203:Core/Src/voltage.c ****         samples[i].dac_input = dac_voltage;
- 963              		.loc 1 203 9 view .LVU215
- 964              		.loc 1 203 16 is_stmt 0 view .LVU216
- 965 009e 06EBC80A 		add	r10, r6, r8, lsl #3
- 966              		.loc 1 203 30 view .LVU217
- 967 00a2 26F83890 		strh	r9, [r6, r8, lsl #3]	@ movhi
+ 966              		.loc 1 203 9 view .LVU216
+ 967              		.loc 1 203 16 is_stmt 0 view .LVU217
+ 968 009c 06EBC90A 		add	r10, r6, r9, lsl #3
+ 969              		.loc 1 203 30 view .LVU218
+ 970 00a0 DDE90001 		ldrd	r0, [sp]
+ 971 00a4 FFF7FEFF 		bl	__aeabi_d2iz
+ 972              	.LVL104:
+ 973 00a8 26F83900 		strh	r0, [r6, r9, lsl #3]	@ movhi
  204:Core/Src/voltage.c **** 
  205:Core/Src/voltage.c ****         adc_set_channel(ADC_CHANNEL_DAC);
- 968              		.loc 1 205 9 is_stmt 1 view .LVU218
- 969 00a6 0120     		movs	r0, #1
- 970 00a8 FFF7FEFF 		bl	adc_set_channel
- 971              	.LVL103:
+ 974              		.loc 1 205 9 is_stmt 1 view .LVU219
+ 975 00ac 0120     		movs	r0, #1
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 22
+
+
+ 976 00ae FFF7FEFF 		bl	adc_set_channel
+ 977              	.LVL105:
  206:Core/Src/voltage.c ****         samples[i].dac_output = measure_dac_voltage(adc_samples, voltage_settle_time);
- 972              		.loc 1 206 9 view .LVU219
- 973              		.loc 1 206 33 is_stmt 0 view .LVU220
- 974 00ac 2946     		mov	r1, r5
- 975 00ae 2046     		mov	r0, r4
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 22
-
-
- 976 00b0 FFF7FEFF 		bl	measure_dac_voltage
- 977              	.LVL104:
- 978              		.loc 1 206 31 discriminator 1 view .LVU221
- 979 00b4 AAF80200 		strh	r0, [r10, #2]	@ movhi
+ 978              		.loc 1 206 9 view .LVU220
+ 979              		.loc 1 206 33 is_stmt 0 view .LVU221
+ 980 00b2 2946     		mov	r1, r5
+ 981 00b4 2046     		mov	r0, r4
+ 982 00b6 FFF7FEFF 		bl	measure_dac_voltage
+ 983              	.LVL106:
+ 984              		.loc 1 206 31 discriminator 1 view .LVU222
+ 985 00ba AAF80200 		strh	r0, [r10, #2]	@ movhi
  207:Core/Src/voltage.c **** 
  208:Core/Src/voltage.c ****         adc_set_channel(ADC_CHANNEL_SIGNAL);
- 980              		.loc 1 208 9 is_stmt 1 view .LVU222
- 981 00b8 0320     		movs	r0, #3
- 982 00ba FFF7FEFF 		bl	adc_set_channel
- 983              	.LVL105:
+ 986              		.loc 1 208 9 is_stmt 1 view .LVU223
+ 987 00be 0320     		movs	r0, #3
+ 988 00c0 FFF7FEFF 		bl	adc_set_channel
+ 989              	.LVL107:
  209:Core/Src/voltage.c ****         samples[i].calib = measure_calib_voltage(adc_samples, voltage_settle_time);
- 984              		.loc 1 209 9 view .LVU223
- 985              		.loc 1 209 28 is_stmt 0 view .LVU224
- 986 00be 2946     		mov	r1, r5
- 987 00c0 2046     		mov	r0, r4
- 988 00c2 FFF7FEFF 		bl	measure_calib_voltage
- 989              	.LVL106:
- 990              		.loc 1 209 26 discriminator 1 view .LVU225
- 991 00c6 AAF80400 		strh	r0, [r10, #4]	@ movhi
+ 990              		.loc 1 209 9 view .LVU224
+ 991              		.loc 1 209 28 is_stmt 0 view .LVU225
+ 992 00c4 2946     		mov	r1, r5
+ 993 00c6 2046     		mov	r0, r4
+ 994 00c8 FFF7FEFF 		bl	measure_calib_voltage
+ 995              	.LVL108:
+ 996              		.loc 1 209 26 discriminator 1 view .LVU226
+ 997 00cc AAF80400 		strh	r0, [r10, #4]	@ movhi
  210:Core/Src/voltage.c **** 
  211:Core/Src/voltage.c ****         samples[i].measurement = measure_pin_voltage(direction, electrode, adc_samples, voltage_set
- 992              		.loc 1 211 9 is_stmt 1 view .LVU226
- 993              		.loc 1 211 34 is_stmt 0 view .LVU227
- 994 00ca 2B46     		mov	r3, r5
- 995 00cc 2246     		mov	r2, r4
- 996 00ce 0599     		ldr	r1, [sp, #20]
- 997 00d0 5846     		mov	r0, fp
- 998 00d2 FFF7FEFF 		bl	measure_pin_voltage
- 999              	.LVL107:
- 1000              		.loc 1 211 32 discriminator 1 view .LVU228
- 1001 00d6 AAF80600 		strh	r0, [r10, #6]	@ movhi
+ 998              		.loc 1 211 9 is_stmt 1 view .LVU227
+ 999              		.loc 1 211 34 is_stmt 0 view .LVU228
+ 1000 00d0 2B46     		mov	r3, r5
+ 1001 00d2 2246     		mov	r2, r4
+ 1002 00d4 5946     		mov	r1, fp
+ 1003 00d6 0598     		ldr	r0, [sp, #20]
+ 1004 00d8 FFF7FEFF 		bl	measure_pin_voltage
+ 1005              	.LVL109:
+ 1006              		.loc 1 211 32 discriminator 1 view .LVU229
+ 1007 00dc AAF80600 		strh	r0, [r10, #6]	@ movhi
  212:Core/Src/voltage.c **** 
  213:Core/Src/voltage.c ****         dac_voltage += dac_step;
- 1002              		.loc 1 213 9 is_stmt 1 view .LVU229
- 1003              		.loc 1 213 21 is_stmt 0 view .LVU230
- 1004 00da DDE90223 		ldrd	r2, [sp, #8]
- 1005 00de DDE90001 		ldrd	r0, [sp]
- 1006 00e2 FFF7FEFF 		bl	__aeabi_dadd
- 1007              	.LVL108:
- 1008 00e6 CDE90001 		strd	r0, [sp]
- 1009              	.LVL109:
- 197:Core/Src/voltage.c ****     {
- 1010              		.loc 1 197 44 is_stmt 1 discriminator 3 view .LVU231
- 1011 00ea 08F10108 		add	r8, r8, #1
- 1012              	.LVL110:
- 197:Core/Src/voltage.c ****     {
- 1013              		.loc 1 197 44 is_stmt 0 discriminator 3 view .LVU232
- 1014 00ee 1FFA88F8 		uxth	r8, r8
+ 1008              		.loc 1 213 9 is_stmt 1 view .LVU230
+ 1009              		.loc 1 213 21 is_stmt 0 view .LVU231
+ 1010 00e0 DDE90223 		ldrd	r2, [sp, #8]
+ 1011 00e4 DDE90001 		ldrd	r0, [sp]
+ 1012 00e8 FFF7FEFF 		bl	__aeabi_dadd
+ 1013              	.LVL110:
+ 1014 00ec CDE90001 		strd	r0, [sp]
  1015              	.LVL111:
- 1016              	.L68:
  197:Core/Src/voltage.c ****     {
- 1017              		.loc 1 197 28 is_stmt 1 discriminator 1 view .LVU233
- 1018 00f2 B845     		cmp	r8, r7
- 1019 00f4 C6D3     		bcc	.L69
- 1020              	.LBE4:
+ 1016              		.loc 1 197 44 is_stmt 1 discriminator 3 view .LVU232
+ 1017 00f0 09F10109 		add	r9, r9, #1
+ 1018              	.LVL112:
+ 197:Core/Src/voltage.c ****     {
+ 1019              		.loc 1 197 44 is_stmt 0 discriminator 3 view .LVU233
+ 1020 00f4 1FFA89F9 		uxth	r9, r9
+ 1021              	.LVL113:
+ 1022              	.L68:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 23
+
+
+ 197:Core/Src/voltage.c ****     {
+ 1023              		.loc 1 197 28 is_stmt 1 discriminator 1 view .LVU234
+ 1024 00f8 B945     		cmp	r9, r7
+ 1025 00fa C5D3     		bcc	.L69
+ 1026              	.LBE4:
  214:Core/Src/voltage.c ****     }
  215:Core/Src/voltage.c **** 
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 23
-
-
  216:Core/Src/voltage.c ****     reset_muxs();
- 1021              		.loc 1 216 5 view .LVU234
- 1022 00f6 FFF7FEFF 		bl	reset_muxs
- 1023              	.LVL112:
+ 1027              		.loc 1 216 5 view .LVU235
+ 1028 00fc FFF7FEFF 		bl	reset_muxs
+ 1029              	.LVL114:
  217:Core/Src/voltage.c ****     dac_drain();
- 1024              		.loc 1 217 5 view .LVU235
- 1025 00fa FFF7FEFF 		bl	dac_drain
- 1026              	.LVL113:
- 218:Core/Src/voltage.c **** }...
- 1027              		.loc 1 218 1 is_stmt 0 view .LVU236
- 1028 00fe 07B0     		add	sp, sp, #28
- 1029              		.cfi_def_cfa_offset 36
- 1030              	.LVL114:
- 1031              		.loc 1 218 1 view .LVU237
- 1032              		@ sp needed
- 1033 0100 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
- 1034              	.LVL115:
- 1035              	.L72:
- 1036              		.loc 1 218 1 view .LVU238
- 1037              		.align	2
- 1038              	.L71:
- 1039 0104 00080240 		.word	1073874944
- 1040              		.cfi_endproc
- 1041              	.LFE232:
- 1043              		.text
- 1044              	.Letext0:
- 1045              		.file 2 "/opt/local/arm-none-eabi/include/machine/_default_types.h"
- 1046              		.file 3 "/opt/local/arm-none-eabi/include/sys/_stdint.h"
- 1047              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
- 1048              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
- 1049              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 1050              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 1051              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
- 1052              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
- 1053              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
- 1054              		.file 11 "Core/Inc/adc.h"
- 1055              		.file 12 "Core/Inc/i2c.h"
- 1056              		.file 13 "Core/Inc/tim.h"
- 1057              		.file 14 "../RS485/ProbeConfig.h"
- 1058              		.file 15 "Core/Inc/voltage.h"
- 1059              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 1060              		.file 17 "Core/Inc/main.h"
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 24
+ 1030              		.loc 1 217 5 view .LVU236
+ 1031 0100 FFF7FEFF 		bl	dac_drain
+ 1032              	.LVL115:
+ 218:Core/Src/voltage.c **** }
+ 1033              		.loc 1 218 1 is_stmt 0 view .LVU237
+ 1034 0104 07B0     		add	sp, sp, #28
+ 1035              		.cfi_def_cfa_offset 36
+ 1036              	.LVL116:
+ 1037              		.loc 1 218 1 view .LVU238
+ 1038              		@ sp needed
+ 1039 0106 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 1040              	.LVL117:
+ 1041              	.L72:
+ 1042              		.loc 1 218 1 view .LVU239
+ 1043 010a 00BF     		.align	2
+ 1044              	.L71:
+ 1045 010c 00080240 		.word	1073874944
+ 1046              		.cfi_endproc
+ 1047              	.LFE232:
+ 1049              		.global	__aeabi_dmul
+ 1050              		.global	__aeabi_dsub
+ 1051              		.section	.text.measure_ac_sweep,"ax",%progbits
+ 1052              		.align	1
+ 1053              		.global	measure_ac_sweep
+ 1054              		.syntax unified
+ 1055              		.thumb
+ 1056              		.thumb_func
+ 1058              	measure_ac_sweep:
+ 1059              	.LVL118:
+ 1060              	.LFB233:
+ 219:Core/Src/voltage.c **** 
+ 220:Core/Src/voltage.c **** void measure_ac_sweep(VoltageSample_TypeDef *samples, R1_Type r1, Electrode_Type electrode, uint8_t
+ 221:Core/Src/voltage.c **** {
+ 1061              		.loc 1 221 1 is_stmt 1 view -0
+ 1062              		.cfi_startproc
+ 1063              		@ args = 8, pretend = 0, frame = 24
+ 1064              		@ frame_needed = 1, uses_anonymous_args = 0
+ 1065              		.loc 1 221 1 is_stmt 0 view .LVU241
+ 1066 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ 1067              		.cfi_def_cfa_offset 36
+ 1068              		.cfi_offset 4, -36
+ 1069              		.cfi_offset 5, -32
+ 1070              		.cfi_offset 6, -28
+ 1071              		.cfi_offset 7, -24
+ 1072              		.cfi_offset 8, -20
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 24
+
+
+ 1073              		.cfi_offset 9, -16
+ 1074              		.cfi_offset 10, -12
+ 1075              		.cfi_offset 11, -8
+ 1076              		.cfi_offset 14, -4
+ 1077 0004 87B0     		sub	sp, sp, #28
+ 1078              		.cfi_def_cfa_offset 64
+ 1079 0006 00AF     		add	r7, sp, #0
+ 1080              		.cfi_def_cfa_register 7
+ 1081 0008 0C46     		mov	r4, r1
+ 1082 000a 9246     		mov	r10, r2
+ 1083 000c 1946     		mov	r1, r3
+ 1084              	.LVL119:
+ 1085              		.loc 1 221 1 view .LVU242
+ 1086 000e 7B60     		str	r3, [r7, #4]
+ 1087 0010 B7F84420 		ldrh	r2, [r7, #68]
+ 1088              	.LVL120:
+ 1089              		.loc 1 221 1 view .LVU243
+ 1090 0014 3A61     		str	r2, [r7, #16]
+ 222:Core/Src/voltage.c ****     uint16_t half_wave_samples = num_samples / num_waves / 2;
+ 1091              		.loc 1 222 5 is_stmt 1 view .LVU244
+ 1092              		.loc 1 222 58 is_stmt 0 view .LVU245
+ 1093 0016 B7F84030 		ldrh	r3, [r7, #64]
+ 1094              	.LVL121:
+ 1095              		.loc 1 222 58 view .LVU246
+ 1096 001a 93FBF1F3 		sdiv	r3, r3, r1
+ 1097              		.loc 1 222 14 view .LVU247
+ 1098 001e 4FEA530B 		lsr	fp, r3, #1
+ 1099              	.LVL122:
+ 223:Core/Src/voltage.c ****     uint16_t dac_values[half_wave_samples];
+ 1100              		.loc 1 223 5 is_stmt 1 view .LVU248
+ 1101              		.loc 1 223 14 is_stmt 0 view .LVU249
+ 1102 0022 4FEA4B03 		lsl	r3, fp, #1
+ 1103 0026 0733     		adds	r3, r3, #7
+ 1104 0028 DB08     		lsrs	r3, r3, #3
+ 1105 002a 6A46     		mov	r2, sp
+ 1106 002c A2EBC303 		sub	r3, r2, r3, lsl #3
+ 1107 0030 9D46     		mov	sp, r3
+ 1108 0032 6E46     		mov	r6, sp
+ 1109              	.LVL123:
+ 224:Core/Src/voltage.c ****     // generate half sin wave ampltitude 0 to 1023 to 0
+ 225:Core/Src/voltage.c ****     for (uint16_t i = 0; i < half_wave_samples; i++)
+ 1110              		.loc 1 225 5 is_stmt 1 view .LVU250
+ 1111              	.LBB5:
+ 1112              		.loc 1 225 10 view .LVU251
+ 1113              		.loc 1 225 19 is_stmt 0 view .LVU252
+ 1114 0034 4FF00009 		mov	r9, #0
+ 1115 0038 7861     		str	r0, [r7, #20]
+ 1116 003a A046     		mov	r8, r4
+ 1117              	.LVL124:
+ 1118              	.L74:
+ 1119              		.loc 1 225 28 is_stmt 1 discriminator 1 view .LVU253
+ 1120 003c D945     		cmp	r9, fp
+ 1121 003e 29D2     		bcs	.L93
+ 226:Core/Src/voltage.c ****     {
+ 227:Core/Src/voltage.c ****         dac_values[i] = (uint16_t)V_MAX * sin(3.14 * i / half_wave_samples) - 1;
+ 1122              		.loc 1 227 9 view .LVU254
+ 1123              		.loc 1 227 52 is_stmt 0 view .LVU255
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 25
+
+
+ 1124 0040 4846     		mov	r0, r9
+ 1125 0042 FFF7FEFF 		bl	__aeabi_i2d
+ 1126              	.LVL125:
+ 1127 0046 6AA3     		adr	r3, .L95+16
+ 1128 0048 D3E90023 		ldrd	r2, [r3]
+ 1129 004c FFF7FEFF 		bl	__aeabi_dmul
+ 1130              	.LVL126:
+ 1131 0050 0446     		mov	r4, r0
+ 1132 0052 0D46     		mov	r5, r1
+ 1133              		.loc 1 227 43 view .LVU256
+ 1134 0054 5846     		mov	r0, fp
+ 1135 0056 FFF7FEFF 		bl	__aeabi_i2d
+ 1136              	.LVL127:
+ 1137 005a 0246     		mov	r2, r0
+ 1138 005c 0B46     		mov	r3, r1
+ 1139 005e 2046     		mov	r0, r4
+ 1140 0060 2946     		mov	r1, r5
+ 1141 0062 FFF7FEFF 		bl	__aeabi_ddiv
+ 1142              	.LVL128:
+ 1143 0066 41EC100B 		vmov	d0, r0, r1
+ 1144 006a FFF7FEFF 		bl	sin
+ 1145              	.LVL129:
+ 1146 006e 51EC100B 		vmov	r0, r1, d0
+ 1147              		.loc 1 227 41 discriminator 1 view .LVU257
+ 1148 0072 0022     		movs	r2, #0
+ 1149 0074 5A4B     		ldr	r3, .L95
+ 1150 0076 FFF7FEFF 		bl	__aeabi_dmul
+ 1151              	.LVL130:
+ 1152              		.loc 1 227 77 discriminator 1 view .LVU258
+ 1153 007a 0022     		movs	r2, #0
+ 1154 007c 594B     		ldr	r3, .L95+4
+ 1155 007e FFF7FEFF 		bl	__aeabi_dsub
+ 1156              	.LVL131:
+ 1157              		.loc 1 227 23 discriminator 1 view .LVU259
+ 1158 0082 FFF7FEFF 		bl	__aeabi_d2uiz
+ 1159              	.LVL132:
+ 1160 0086 26F81900 		strh	r0, [r6, r9, lsl #1]	@ movhi
+ 225:Core/Src/voltage.c ****     {
+ 1161              		.loc 1 225 50 is_stmt 1 discriminator 3 view .LVU260
+ 1162 008a 09F10109 		add	r9, r9, #1
+ 1163              	.LVL133:
+ 225:Core/Src/voltage.c ****     {
+ 1164              		.loc 1 225 50 is_stmt 0 discriminator 3 view .LVU261
+ 1165 008e 1FFA89F9 		uxth	r9, r9
+ 1166              	.LVL134:
+ 225:Core/Src/voltage.c ****     {
+ 1167              		.loc 1 225 50 discriminator 3 view .LVU262
+ 1168 0092 D3E7     		b	.L74
+ 1169              	.L93:
+ 225:Core/Src/voltage.c ****     {
+ 1170              		.loc 1 225 50 discriminator 3 view .LVU263
+ 1171              	.LBE5:
+ 228:Core/Src/voltage.c ****     }
+ 229:Core/Src/voltage.c **** 
+ 230:Core/Src/voltage.c ****     reset_muxs();
+ 1172              		.loc 1 230 5 view .LVU264
+ 1173 0094 4446     		mov	r4, r8
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 26
+
+
+ 1174 0096 D7F81480 		ldr	r8, [r7, #20]
+ 1175              	.LVL135:
+ 1176              		.loc 1 230 5 is_stmt 1 view .LVU265
+ 1177 009a FFF7FEFF 		bl	reset_muxs
+ 1178              	.LVL136:
+ 231:Core/Src/voltage.c ****     dac_drain();
+ 1179              		.loc 1 231 5 view .LVU266
+ 1180 009e FFF7FEFF 		bl	dac_drain
+ 1181              	.LVL137:
+ 232:Core/Src/voltage.c **** 
+ 233:Core/Src/voltage.c ****     uint16_t r1_pin = 0;
+ 1182              		.loc 1 233 5 view .LVU267
+ 234:Core/Src/voltage.c ****     switch (r1)
+ 1183              		.loc 1 234 5 view .LVU268
+ 1184 00a2 012C     		cmp	r4, #1
+ 1185 00a4 12D0     		beq	.L89
+ 1186              		.loc 1 234 5 is_stmt 0 view .LVU269
+ 1187 00a6 022C     		cmp	r4, #2
+ 1188 00a8 13D0     		beq	.L90
+ 1189 00aa ACB9     		cbnz	r4, .L91
+ 235:Core/Src/voltage.c ****     {
+ 236:Core/Src/voltage.c ****     case R1_100:
+ 237:Core/Src/voltage.c ****         r1_pin = SW_R1_100_Pin;
+ 1190              		.loc 1 237 16 view .LVU270
+ 1191 00ac 4FF00109 		mov	r9, #1
+ 1192              	.LVL138:
+ 1193              	.L76:
+ 238:Core/Src/voltage.c ****         break;
+ 239:Core/Src/voltage.c ****     case R1_1k:
+ 240:Core/Src/voltage.c ****         r1_pin = SW_R1_1k_Pin;
+ 241:Core/Src/voltage.c ****         break;
+ 242:Core/Src/voltage.c ****     case R1_10k:
+ 243:Core/Src/voltage.c ****         r1_pin = SW_R1_10k_Pin;
+ 244:Core/Src/voltage.c ****         break;
+ 245:Core/Src/voltage.c ****     default:
+ 246:Core/Src/voltage.c ****         break;
+ 247:Core/Src/voltage.c ****     }
+ 248:Core/Src/voltage.c **** 
+ 249:Core/Src/voltage.c ****     adc_set_channel(ADC_CHANNEL_SIGNAL);
+ 1194              		.loc 1 249 5 is_stmt 1 view .LVU271
+ 1195 00b0 0320     		movs	r0, #3
+ 1196 00b2 FFF7FEFF 		bl	adc_set_channel
+ 1197              	.LVL139:
+ 250:Core/Src/voltage.c ****     // GPIOSW->BSRR = SW_R1_Calib_Pin;
+ 251:Core/Src/voltage.c ****     uint16_t sample = 0;
+ 1198              		.loc 1 251 5 view .LVU272
+ 252:Core/Src/voltage.c ****     for (uint8_t i = 0; i < num_waves; i++)
+ 1199              		.loc 1 252 5 view .LVU273
+ 1200              	.LBB6:
+ 1201              		.loc 1 252 10 view .LVU274
+ 1202              		.loc 1 252 18 is_stmt 0 view .LVU275
+ 1203 00b6 0023     		movs	r3, #0
+ 1204 00b8 FB60     		str	r3, [r7, #12]
+ 1205              	.LVL140:
+ 1206              		.loc 1 252 18 view .LVU276
+ 1207              	.LBE6:
+ 251:Core/Src/voltage.c ****     for (uint8_t i = 0; i < num_waves; i++)
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 27
+
+
+ 1208              		.loc 1 251 14 view .LVU277
+ 1209 00ba 1C46     		mov	r4, r3
+ 1210              	.LVL141:
+ 251:Core/Src/voltage.c ****     for (uint8_t i = 0; i < num_waves; i++)
+ 1211              		.loc 1 251 14 view .LVU278
+ 1212 00bc C7F814B0 		str	fp, [r7, #20]
+ 1213              	.LVL142:
+ 251:Core/Src/voltage.c ****     for (uint8_t i = 0; i < num_waves; i++)
+ 1214              		.loc 1 251 14 view .LVU279
+ 1215 00c0 3346     		mov	r3, r6
+ 1216 00c2 4E46     		mov	r6, r9
+ 1217              	.LVL143:
+ 251:Core/Src/voltage.c ****     for (uint8_t i = 0; i < num_waves; i++)
+ 1218              		.loc 1 251 14 view .LVU280
+ 1219 00c4 C7F808A0 		str	r10, [r7, #8]
+ 1220              	.LVL144:
+ 251:Core/Src/voltage.c ****     for (uint8_t i = 0; i < num_waves; i++)
+ 1221              		.loc 1 251 14 view .LVU281
+ 1222 00c8 9946     		mov	r9, r3
+ 1223              	.LVL145:
+ 1224              	.LBB9:
+ 1225              		.loc 1 252 5 view .LVU282
+ 1226 00ca 74E0     		b	.L77
+ 1227              	.LVL146:
+ 1228              	.L89:
+ 1229              		.loc 1 252 5 view .LVU283
+ 1230              	.LBE9:
+ 240:Core/Src/voltage.c ****         break;
+ 1231              		.loc 1 240 16 view .LVU284
+ 1232 00cc 4FF00209 		mov	r9, #2
+ 1233              	.LVL147:
+ 240:Core/Src/voltage.c ****         break;
+ 1234              		.loc 1 240 16 view .LVU285
+ 1235 00d0 EEE7     		b	.L76
+ 1236              	.LVL148:
+ 1237              	.L90:
+ 243:Core/Src/voltage.c ****         break;
+ 1238              		.loc 1 243 16 view .LVU286
+ 1239 00d2 4FF00409 		mov	r9, #4
+ 1240              	.LVL149:
+ 243:Core/Src/voltage.c ****         break;
+ 1241              		.loc 1 243 16 view .LVU287
+ 1242 00d6 EBE7     		b	.L76
+ 1243              	.LVL150:
+ 1244              	.L91:
+ 234:Core/Src/voltage.c ****     {
+ 1245              		.loc 1 234 5 view .LVU288
+ 1246 00d8 4FF00009 		mov	r9, #0
+ 1247              	.LVL151:
+ 234:Core/Src/voltage.c ****     {
+ 1248              		.loc 1 234 5 view .LVU289
+ 1249 00dc E8E7     		b	.L76
+ 1250              	.LVL152:
+ 1251              	.L78:
+ 1252              	.LBB10:
+ 253:Core/Src/voltage.c ****     {
+ 254:Core/Src/voltage.c ****         switch (electrode)
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 28
+
+
+ 255:Core/Src/voltage.c ****         {
+ 256:Core/Src/voltage.c ****         case Ti:
+ 257:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_Ti_Pin_Msk << 16;
+ 1253              		.loc 1 257 13 is_stmt 1 view .LVU290
+ 1254              		.loc 1 257 26 is_stmt 0 view .LVU291
+ 1255 00de 424B     		ldr	r3, .L95+8
+ 1256 00e0 4FF04C62 		mov	r2, #213909504
+ 1257 00e4 9A61     		str	r2, [r3, #24]
+ 1258              	.LVL153:
+ 258:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Ti2_Pin | SW_Ti1_GND_Pin;
+ 1259              		.loc 1 258 13 is_stmt 1 view .LVU292
+ 1260              		.loc 1 258 26 is_stmt 0 view .LVU293
+ 1261 00e6 4FF49062 		mov	r2, #1152
+ 1262 00ea 9A61     		str	r2, [r3, #24]
+ 259:Core/Src/voltage.c ****             break;
+ 1263              		.loc 1 259 13 is_stmt 1 view .LVU294
+ 1264 00ec 6CE0     		b	.L80
+ 1265              	.LVL154:
+ 1266              	.L79:
+ 260:Core/Src/voltage.c ****         case Au_Shielded:
+ 261:Core/Src/voltage.c ****             GPIOSW->BSRR = (SW_Au_Pin_Msk | SW_Shield_Pin_Msk) << 16;
+ 1267              		.loc 1 261 13 view .LVU295
+ 1268              		.loc 1 261 26 is_stmt 0 view .LVU296
+ 1269 00ee 3E4B     		ldr	r3, .L95+8
+ 1270 00f0 3E4A     		ldr	r2, .L95+12
+ 1271 00f2 9A61     		str	r2, [r3, #24]
+ 1272              	.LVL155:
+ 262:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Shield2_V_Pin | SW_Shield1_GND_Pin;
+ 1273              		.loc 1 262 13 is_stmt 1 view .LVU297
+ 1274              		.loc 1 262 26 is_stmt 0 view .LVU298
+ 1275 00f4 46F22002 		movw	r2, #24608
+ 1276 00f8 9A61     		str	r2, [r3, #24]
+ 263:Core/Src/voltage.c ****             break;
+ 1277              		.loc 1 263 13 is_stmt 1 view .LVU299
+ 1278 00fa 65E0     		b	.L80
+ 1279              	.LVL156:
+ 1280              	.L82:
+ 1281              	.LBB7:
+ 264:Core/Src/voltage.c ****         default:
+ 265:Core/Src/voltage.c ****             break;
+ 266:Core/Src/voltage.c ****         }
+ 267:Core/Src/voltage.c **** 
+ 268:Core/Src/voltage.c ****         for (uint16_t j = 0; j < half_wave_samples; j++)
+ 269:Core/Src/voltage.c ****         {
+ 270:Core/Src/voltage.c ****             GPIOSW->BSRR = r1_pin;
+ 1282              		.loc 1 270 13 view .LVU300
+ 1283              		.loc 1 270 26 is_stmt 0 view .LVU301
+ 1284 00fc 3A4E     		ldr	r6, .L95+8
+ 1285 00fe C6F818A0 		str	r10, [r6, #24]
+ 271:Core/Src/voltage.c ****             dac_set_voltage(dac_values[j]);
+ 1286              		.loc 1 271 13 is_stmt 1 view .LVU302
+ 1287 0102 39F81500 		ldrh	r0, [r9, r5, lsl #1]
+ 1288 0106 FFF7FEFF 		bl	dac_set_voltage
+ 1289              	.LVL157:
+ 272:Core/Src/voltage.c ****             samples[sample].dac_input = dac_values[j];
+ 1290              		.loc 1 272 13 view .LVU303
+ 1291              		.loc 1 272 20 is_stmt 0 view .LVU304
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 29
+
+
+ 1292 010a 08EBC40B 		add	fp, r8, r4, lsl #3
+ 1293              		.loc 1 272 51 view .LVU305
+ 1294 010e 39F91530 		ldrsh	r3, [r9, r5, lsl #1]
+ 1295              		.loc 1 272 39 view .LVU306
+ 1296 0112 28F83430 		strh	r3, [r8, r4, lsl #3]	@ movhi
+ 273:Core/Src/voltage.c ****             us_delay(sample_delay);
+ 1297              		.loc 1 273 13 is_stmt 1 view .LVU307
+ 1298 0116 3869     		ldr	r0, [r7, #16]
+ 1299 0118 FFF7FEFF 		bl	us_delay
+ 1300              	.LVL158:
+ 274:Core/Src/voltage.c ****             GPIOSW->BSRR = r1_pin << 16;
+ 1301              		.loc 1 274 13 view .LVU308
+ 1302              		.loc 1 274 35 is_stmt 0 view .LVU309
+ 1303 011c 4FEA0A43 		lsl	r3, r10, #16
+ 1304              		.loc 1 274 26 view .LVU310
+ 1305 0120 B361     		str	r3, [r6, #24]
+ 275:Core/Src/voltage.c ****             samples[sample].measurement = adc_average(1);
+ 1306              		.loc 1 275 13 is_stmt 1 view .LVU311
+ 1307              		.loc 1 275 43 is_stmt 0 view .LVU312
+ 1308 0122 0120     		movs	r0, #1
+ 1309 0124 FFF7FEFF 		bl	adc_average
+ 1310              	.LVL159:
+ 1311              		.loc 1 275 41 discriminator 1 view .LVU313
+ 1312 0128 ABF80600 		strh	r0, [fp, #6]	@ movhi
+ 276:Core/Src/voltage.c ****             sample++;
+ 1313              		.loc 1 276 13 is_stmt 1 view .LVU314
+ 1314              		.loc 1 276 19 is_stmt 0 view .LVU315
+ 1315 012c 0134     		adds	r4, r4, #1
+ 1316              	.LVL160:
+ 1317              		.loc 1 276 19 view .LVU316
+ 1318 012e A4B2     		uxth	r4, r4
+ 1319              	.LVL161:
+ 268:Core/Src/voltage.c ****         {
+ 1320              		.loc 1 268 54 is_stmt 1 discriminator 3 view .LVU317
+ 1321 0130 0135     		adds	r5, r5, #1
+ 1322              	.LVL162:
+ 268:Core/Src/voltage.c ****         {
+ 1323              		.loc 1 268 54 is_stmt 0 discriminator 3 view .LVU318
+ 1324 0132 ADB2     		uxth	r5, r5
+ 1325              	.LVL163:
+ 1326              	.L81:
+ 268:Core/Src/voltage.c ****         {
+ 1327              		.loc 1 268 32 is_stmt 1 discriminator 1 view .LVU319
+ 1328 0134 7B69     		ldr	r3, [r7, #20]
+ 1329 0136 9D42     		cmp	r5, r3
+ 1330 0138 E0D3     		bcc	.L82
+ 1331              	.LBE7:
+ 277:Core/Src/voltage.c ****         }
+ 278:Core/Src/voltage.c **** 
+ 279:Core/Src/voltage.c ****         switch (electrode)
+ 1332              		.loc 1 279 9 is_stmt 0 view .LVU320
+ 1333 013a 5646     		mov	r6, r10
+ 1334              		.loc 1 279 9 is_stmt 1 view .LVU321
+ 1335 013c BB68     		ldr	r3, [r7, #8]
+ 1336 013e 012B     		cmp	r3, #1
+ 1337 0140 04D0     		beq	.L83
+ 1338              	.LVL164:
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 30
+
+
+ 1339              		.loc 1 279 9 is_stmt 0 view .LVU322
+ 1340 0142 022B     		cmp	r3, #2
+ 1341 0144 0AD0     		beq	.L84
+ 1342              	.L85:
+ 1343              	.LBE10:
+ 234:Core/Src/voltage.c ****     {
+ 1344              		.loc 1 234 5 view .LVU323
+ 1345 0146 0025     		movs	r5, #0
+ 1346              	.LVL165:
+ 234:Core/Src/voltage.c ****     {
+ 1347              		.loc 1 234 5 view .LVU324
+ 1348 0148 B246     		mov	r10, r6
+ 1349 014a 2CE0     		b	.L86
+ 1350              	.LVL166:
+ 1351              	.L83:
+ 1352              	.LBB11:
+ 280:Core/Src/voltage.c ****         {
+ 281:Core/Src/voltage.c ****         case Ti:
+ 282:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_Ti_Pin_Msk << 16;
+ 1353              		.loc 1 282 13 is_stmt 1 view .LVU325
+ 1354              		.loc 1 282 26 is_stmt 0 view .LVU326
+ 1355 014c 264B     		ldr	r3, .L95+8
+ 1356 014e 4FF04C62 		mov	r2, #213909504
+ 1357 0152 9A61     		str	r2, [r3, #24]
+ 283:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Ti1_Pin | SW_Ti2_GND_Pin;
+ 1358              		.loc 1 283 13 is_stmt 1 view .LVU327
+ 1359              		.loc 1 283 26 is_stmt 0 view .LVU328
+ 1360 0154 4FF40462 		mov	r2, #2112
+ 1361 0158 9A61     		str	r2, [r3, #24]
+ 284:Core/Src/voltage.c ****             break;
+ 1362              		.loc 1 284 13 is_stmt 1 view .LVU329
+ 1363 015a F4E7     		b	.L85
+ 1364              	.L84:
+ 285:Core/Src/voltage.c ****         case Au_Shielded:
+ 286:Core/Src/voltage.c ****             GPIOSW->BSRR = (SW_Au_Pin_Msk | SW_Shield_Pin_Msk) << 16;
+ 1365              		.loc 1 286 13 view .LVU330
+ 1366              		.loc 1 286 26 is_stmt 0 view .LVU331
+ 1367 015c 224B     		ldr	r3, .L95+8
+ 1368 015e 234A     		ldr	r2, .L95+12
+ 1369 0160 9A61     		str	r2, [r3, #24]
+ 287:Core/Src/voltage.c ****             GPIOSW->BSRR = SW_R1_Au1_Pin | SW_Shield1_V_Pin | SW_Shield2_GND_Pin;
+ 1370              		.loc 1 287 13 is_stmt 1 view .LVU332
+ 1371              		.loc 1 287 26 is_stmt 0 view .LVU333
+ 1372 0162 49F21002 		movw	r2, #36880
+ 1373 0166 9A61     		str	r2, [r3, #24]
+ 288:Core/Src/voltage.c ****             break;
+ 1374              		.loc 1 288 13 is_stmt 1 view .LVU334
+ 1375 0168 EDE7     		b	.L85
+ 1376              	.LVL167:
+ 1377              	.L87:
+ 1378              	.LBB8:
+ 289:Core/Src/voltage.c ****         default:
+ 290:Core/Src/voltage.c ****             break;
+ 291:Core/Src/voltage.c ****         }
+ 292:Core/Src/voltage.c **** 
+ 293:Core/Src/voltage.c ****         for (uint16_t j = 0; j < half_wave_samples; j++)
+ 294:Core/Src/voltage.c ****         {
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 31
+
+
+ 295:Core/Src/voltage.c ****             GPIOSW->BSRR = r1_pin;
+ 1379              		.loc 1 295 13 view .LVU335
+ 1380              		.loc 1 295 26 is_stmt 0 view .LVU336
+ 1381 016a 1F4E     		ldr	r6, .L95+8
+ 1382 016c C6F818A0 		str	r10, [r6, #24]
+ 296:Core/Src/voltage.c ****             dac_set_voltage(dac_values[j]);
+ 1383              		.loc 1 296 13 is_stmt 1 view .LVU337
+ 1384 0170 39F81500 		ldrh	r0, [r9, r5, lsl #1]
+ 1385 0174 FFF7FEFF 		bl	dac_set_voltage
+ 1386              	.LVL168:
+ 297:Core/Src/voltage.c ****             samples[sample].dac_input = -dac_values[j];
+ 1387              		.loc 1 297 13 view .LVU338
+ 1388              		.loc 1 297 52 is_stmt 0 view .LVU339
+ 1389 0178 39F81530 		ldrh	r3, [r9, r5, lsl #1]
+ 1390              		.loc 1 297 20 view .LVU340
+ 1391 017c 08EBC40B 		add	fp, r8, r4, lsl #3
+ 1392              		.loc 1 297 39 view .LVU341
+ 1393 0180 5B42     		rsbs	r3, r3, #0
+ 1394 0182 28F83430 		strh	r3, [r8, r4, lsl #3]	@ movhi
+ 298:Core/Src/voltage.c ****             us_delay(sample_delay);
+ 1395              		.loc 1 298 13 is_stmt 1 view .LVU342
+ 1396 0186 3869     		ldr	r0, [r7, #16]
+ 1397 0188 FFF7FEFF 		bl	us_delay
+ 1398              	.LVL169:
+ 299:Core/Src/voltage.c ****             GPIOSW->BSRR = r1_pin << 16;
+ 1399              		.loc 1 299 13 view .LVU343
+ 1400              		.loc 1 299 35 is_stmt 0 view .LVU344
+ 1401 018c 4FEA0A43 		lsl	r3, r10, #16
+ 1402              		.loc 1 299 26 view .LVU345
+ 1403 0190 B361     		str	r3, [r6, #24]
+ 300:Core/Src/voltage.c ****             samples[sample].measurement = -adc_average(1);
+ 1404              		.loc 1 300 13 is_stmt 1 view .LVU346
+ 1405              		.loc 1 300 44 is_stmt 0 view .LVU347
+ 1406 0192 0120     		movs	r0, #1
+ 1407 0194 FFF7FEFF 		bl	adc_average
+ 1408              	.LVL170:
+ 1409              		.loc 1 300 41 discriminator 1 view .LVU348
+ 1410 0198 4042     		rsbs	r0, r0, #0
+ 1411 019a ABF80600 		strh	r0, [fp, #6]	@ movhi
+ 301:Core/Src/voltage.c ****             sample++;
+ 1412              		.loc 1 301 13 is_stmt 1 view .LVU349
+ 1413              		.loc 1 301 19 is_stmt 0 view .LVU350
+ 1414 019e 0134     		adds	r4, r4, #1
+ 1415              	.LVL171:
+ 1416              		.loc 1 301 19 view .LVU351
+ 1417 01a0 A4B2     		uxth	r4, r4
+ 1418              	.LVL172:
+ 293:Core/Src/voltage.c ****         {
+ 1419              		.loc 1 293 54 is_stmt 1 discriminator 3 view .LVU352
+ 1420 01a2 0135     		adds	r5, r5, #1
+ 1421              	.LVL173:
+ 293:Core/Src/voltage.c ****         {
+ 1422              		.loc 1 293 54 is_stmt 0 discriminator 3 view .LVU353
+ 1423 01a4 ADB2     		uxth	r5, r5
+ 1424              	.LVL174:
+ 1425              	.L86:
+ 293:Core/Src/voltage.c ****         {
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 32
+
+
+ 1426              		.loc 1 293 32 is_stmt 1 discriminator 1 view .LVU354
+ 1427 01a6 7B69     		ldr	r3, [r7, #20]
+ 1428 01a8 9D42     		cmp	r5, r3
+ 1429 01aa DED3     		bcc	.L87
+ 293:Core/Src/voltage.c ****         {
+ 1430              		.loc 1 293 32 is_stmt 0 discriminator 1 view .LVU355
+ 1431              	.LBE8:
+ 252:Core/Src/voltage.c ****     {
+ 1432              		.loc 1 252 41 discriminator 2 view .LVU356
+ 1433 01ac 5646     		mov	r6, r10
+ 252:Core/Src/voltage.c ****     {
+ 1434              		.loc 1 252 41 is_stmt 1 discriminator 2 view .LVU357
+ 1435 01ae FB68     		ldr	r3, [r7, #12]
+ 1436 01b0 0133     		adds	r3, r3, #1
+ 1437 01b2 DBB2     		uxtb	r3, r3
+ 1438 01b4 FB60     		str	r3, [r7, #12]
+ 1439              	.LVL175:
+ 1440              	.L77:
+ 252:Core/Src/voltage.c ****     {
+ 1441              		.loc 1 252 27 discriminator 1 view .LVU358
+ 1442 01b6 FB68     		ldr	r3, [r7, #12]
+ 1443 01b8 7A68     		ldr	r2, [r7, #4]
+ 1444 01ba 9342     		cmp	r3, r2
+ 1445 01bc 07D2     		bcs	.L94
+ 254:Core/Src/voltage.c ****         {
+ 1446              		.loc 1 254 9 view .LVU359
+ 1447 01be BB68     		ldr	r3, [r7, #8]
+ 1448 01c0 012B     		cmp	r3, #1
+ 1449 01c2 8CD0     		beq	.L78
+ 1450 01c4 022B     		cmp	r3, #2
+ 1451 01c6 92D0     		beq	.L79
+ 1452              	.LVL176:
+ 1453              	.L80:
+ 254:Core/Src/voltage.c ****         {
+ 1454              		.loc 1 254 9 is_stmt 0 view .LVU360
+ 1455              	.LBE11:
+ 234:Core/Src/voltage.c ****     {
+ 1456              		.loc 1 234 5 view .LVU361
+ 1457 01c8 0025     		movs	r5, #0
+ 1458 01ca B246     		mov	r10, r6
+ 1459 01cc B2E7     		b	.L81
+ 1460              	.LVL177:
+ 1461              	.L94:
+ 302:Core/Src/voltage.c ****         }
+ 303:Core/Src/voltage.c ****     }
+ 304:Core/Src/voltage.c **** 
+ 305:Core/Src/voltage.c ****     reset_muxs();
+ 1462              		.loc 1 305 5 is_stmt 1 view .LVU362
+ 1463 01ce FFF7FEFF 		bl	reset_muxs
+ 1464              	.LVL178:
+ 306:Core/Src/voltage.c ****     dac_drain();
+ 1465              		.loc 1 306 5 view .LVU363
+ 1466 01d2 FFF7FEFF 		bl	dac_drain
+ 1467              	.LVL179:
+ 307:Core/Src/voltage.c **** }...
+ 1468              		.loc 1 307 1 is_stmt 0 view .LVU364
+ 1469 01d6 1C37     		adds	r7, r7, #28
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 33
+
+
+ 1470              		.cfi_def_cfa_offset 36
+ 1471 01d8 BD46     		mov	sp, r7
+ 1472              		.cfi_def_cfa_register 13
+ 1473              		@ sp needed
+ 1474 01da BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 1475              	.LVL180:
+ 1476              	.L96:
+ 1477              		.loc 1 307 1 view .LVU365
+ 1478 01de 00BF     		.align	3
+ 1479              	.L95:
+ 1480 01e0 00308940 		.word	1082732544
+ 1481 01e4 0000F03F 		.word	1072693248
+ 1482 01e8 00080240 		.word	1073874944
+ 1483 01ec 000030F3 		.word	-214958080
+ 1484 01f0 1F85EB51 		.word	1374389535
+ 1485 01f4 B81E0940 		.word	1074339512
+ 1486              		.cfi_endproc
+ 1487              	.LFE233:
+ 1489              		.text
+ 1490              	.Letext0:
+ 1491              		.file 2 "/opt/local/arm-none-eabi/include/machine/_default_types.h"
+ 1492              		.file 3 "/opt/local/arm-none-eabi/include/sys/_stdint.h"
+ 1493              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f401xc.h"
+ 1494              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 1495              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 1496              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 1497              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
+ 1498              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 1499              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 1500              		.file 11 "Core/Inc/adc.h"
+ 1501              		.file 12 "Core/Inc/i2c.h"
+ 1502              		.file 13 "Core/Inc/tim.h"
+ 1503              		.file 14 "../RS485/ProbeConfig.h"
+ 1504              		.file 15 "Core/Inc/voltage.h"
+ 1505              		.file 16 "/opt/local/arm-none-eabi/include/math.h"
+ 1506              		.file 17 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 1507              		.file 18 "Core/Inc/main.h"
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 34
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 voltage.c
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:21     .text.us_delay:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:27     .text.us_delay:00000000 us_delay
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:53     .text.us_delay:00000010 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:58     .text.dac_write:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:64     .text.dac_write:00000000 dac_write
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:125    .text.dac_write:0000003c $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:130    .text.dac_init:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:136    .text.dac_init:00000000 dac_init
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:177    .text.dac_init:0000002c $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:182    .text.dac_drain:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:188    .text.dac_drain:00000000 dac_drain
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:223    .text.dac_set_voltage:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:229    .text.dac_set_voltage:00000000 dac_set_voltage
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:255    .text.adc_set_channel:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:261    .text.adc_set_channel:00000000 adc_set_channel
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:309    .text.adc_set_channel:00000028 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:314    .text.adc_average:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:320    .text.adc_average:00000000 adc_average
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:393    .text.adc_average:00000034 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:398    .text.reset_muxs:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:404    .text.reset_muxs:00000000 reset_muxs
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:421    .text.reset_muxs:00000008 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:427    .text.voltage_init:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:433    .text.voltage_init:00000000 voltage_init
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:462    .text.voltage_init:00000018 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:467    .text.measure_dac_voltage:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:473    .text.measure_dac_voltage:00000000 measure_dac_voltage
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:516    .text.measure_dac_voltage:00000020 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:521    .text.measure_calib_voltage:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:527    .text.measure_calib_voltage:00000000 measure_calib_voltage
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:570    .text.measure_calib_voltage:00000020 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:575    .text.measure_pin_voltage:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:581    .text.measure_pin_voltage:00000000 measure_pin_voltage
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:827    .text.measure_pin_voltage:00000104 $d
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:838    .text.measure_voltage_sweep:00000000 $t
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:844    .text.measure_voltage_sweep:00000000 measure_voltage_sweep
-/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s:1039   .text.measure_voltage_sweep:00000104 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:21     .text.us_delay:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:27     .text.us_delay:00000000 us_delay
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:53     .text.us_delay:00000010 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:58     .text.dac_write:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:64     .text.dac_write:00000000 dac_write
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:125    .text.dac_write:0000003c $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:130    .text.dac_init:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:136    .text.dac_init:00000000 dac_init
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:177    .text.dac_init:0000002c $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:182    .text.dac_drain:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:188    .text.dac_drain:00000000 dac_drain
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:223    .text.dac_set_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:229    .text.dac_set_voltage:00000000 dac_set_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:255    .text.adc_set_channel:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:261    .text.adc_set_channel:00000000 adc_set_channel
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:309    .text.adc_set_channel:00000028 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:314    .text.adc_average:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:320    .text.adc_average:00000000 adc_average
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:393    .text.adc_average:00000034 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:398    .text.reset_muxs:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:404    .text.reset_muxs:00000000 reset_muxs
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:421    .text.reset_muxs:00000008 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:427    .text.voltage_init:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:433    .text.voltage_init:00000000 voltage_init
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:462    .text.voltage_init:00000018 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:467    .text.measure_dac_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:473    .text.measure_dac_voltage:00000000 measure_dac_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:516    .text.measure_dac_voltage:00000020 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:521    .text.measure_calib_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:527    .text.measure_calib_voltage:00000000 measure_calib_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:570    .text.measure_calib_voltage:00000020 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:575    .text.measure_pin_voltage:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:581    .text.measure_pin_voltage:00000000 measure_pin_voltage
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:827    .text.measure_pin_voltage:00000104 $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:839    .text.measure_voltage_sweep:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:845    .text.measure_voltage_sweep:00000000 measure_voltage_sweep
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:1045   .text.measure_voltage_sweep:0000010c $d
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:1052   .text.measure_ac_sweep:00000000 $t
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:1058   .text.measure_ac_sweep:00000000 measure_ac_sweep
+/var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s:1480   .text.measure_ac_sweep:000001e0 $d
 
 UNDEFINED SYMBOLS
 htim10
@@ -1420,10 +2018,14 @@ HAL_ADC_PollForConversion
 HAL_ADC_GetValue
 HAL_TIM_Base_Start
 __aeabi_i2d
+ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccaWyzcK.s 			page 35
+
+
 __aeabi_ddiv
 __aeabi_ui2d
 __aeabi_d2uiz
-ARM GAS  /var/folders/rj/9n9dpytj2n74_jwlj_p0xk9m0000gn/T//ccuQkR9g.s 			page 25
-
-
+__aeabi_d2iz
 __aeabi_dadd
+__aeabi_dmul
+__aeabi_dsub
+sin
