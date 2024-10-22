@@ -9,3 +9,4 @@ salinometer
 unprogrammable
 mV
 salinometers
+nondestructive

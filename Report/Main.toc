@@ -25,21 +25,22 @@
 \contentsline {section}{\numberline {4.1}Salinity Measurement Method}{11}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Conductivity Electrode Material}{11}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Conductivity Electrode Design}{12}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Resistance Measurement Method}{13}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Circuit Overview}{13}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Salinity Calculation and Display}{16}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Temperature and Depth Measurement}{16}{section.4.7}%
-\contentsline {chapter}{\numberline {5}PCB Construction, Adjustments and Code}{18}{chapter.5}%
-\contentsline {section}{\numberline {5.1}PCB Adjustments}{18}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Probe Code}{19}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Controller Code}{21}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Board to Board Communication}{21}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Salinometer Evaluation and Testing}{23}{chapter.6}%
-\contentsline {section}{\numberline {6.1}DAC Voltage Range and Accuracy}{23}{section.6.1}%
-\contentsline {section}{\numberline {6.2}ADC Accuracy}{25}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Calibration Resistance}{25}{section.6.3}%
-\contentsline {section}{\numberline {6.4}Resistance Measuring Accuracy}{25}{section.6.4}%
-\contentsline {section}{\numberline {6.5}Linear Conductivity Measurement}{27}{section.6.5}%
-\contentsline {chapter}{\numberline {7}Conclusions}{28}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Recommendations}{29}{chapter.8}%
-\contentsline {chapter}{Bibliography}{30}{chapter*.21}%
+\contentsline {section}{\numberline {4.4}Resistance Measurement Method}{14}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Circuit Overview}{14}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Salinity Calculation and Display}{17}{section.4.6}%
+\contentsline {section}{\numberline {4.7}Temperature and Depth Measurement}{17}{section.4.7}%
+\contentsline {chapter}{\numberline {5}PCB Construction, Adjustments and Code}{19}{chapter.5}%
+\contentsline {section}{\numberline {5.1}PCB Design}{19}{section.5.1}%
+\contentsline {section}{\numberline {5.2}PCB Adjustments}{20}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Probe Code}{21}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Controller Code}{23}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Board to Board Communication}{23}{section.5.5}%
+\contentsline {chapter}{\numberline {6}Salinometer Evaluation and Testing}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}DAC Voltage Range and Accuracy}{25}{section.6.1}%
+\contentsline {section}{\numberline {6.2}ADC Accuracy}{27}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Calibration Resistance}{27}{section.6.3}%
+\contentsline {section}{\numberline {6.4}Resistance Measuring Accuracy}{27}{section.6.4}%
+\contentsline {section}{\numberline {6.5}Linear Conductivity Measurement}{29}{section.6.5}%
+\contentsline {chapter}{\numberline {7}Conclusions}{32}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Recommendations}{33}{chapter.8}%
+\contentsline {chapter}{Bibliography}{34}{chapter*.24}%

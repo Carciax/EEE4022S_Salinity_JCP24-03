@@ -8,17 +8,23 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces The gold electrode \gls {pcb} design.}}{13}{figure.caption.11}%
 \contentsline {figure}{\numberline {4.2}{\ignorespaces A simplified representation of the resistance measuring circuit.}}{14}{figure.caption.12}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces A simplified representation of the resistance measurement circuit using the gold electrodes with the fringe guard.}}{15}{figure.caption.13}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A simplified representation of the resistance measurement circuit using the gold electrodes with the fringe guard.}}{16}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The probe PCB with the gold electrodes attached and adjustments made}}{18}{figure.caption.14}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces The controller PCB with the rotary switch caps attached}}{19}{figure.caption.15}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces The flowchart for the probe code that measures salinity.}}{20}{figure.caption.16}%
-\contentsline {figure}{\numberline {5.4}{\ignorespaces The flowchart for the controller code that communicates with the probe.}}{22}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The probe PCB with the gold electrodes attached and adjustments made}}{19}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The controller PCB with the rotary switch caps attached}}{20}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The flowchart for the probe code that measures salinity.}}{22}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces The flowchart for the controller code that communicates with the probe.}}{24}{figure.caption.17}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces The input voltage versus the output voltage of the \gls {dac} with no load.}}{24}{figure.caption.18}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces The input voltage versus the output voltage of the \gls {dac} with a load of $100\Omega $.}}{24}{figure.caption.18}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces The voltage output by the \gls {dac} measured by a multimeter versus measured by the \gls {adc}.}}{25}{figure.caption.19}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces The resistance measuring test.}}{26}{figure.caption.20}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces The resistance measuring test using the corrected equation.}}{26}{figure.caption.20}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The input voltage versus the output voltage of the \gls {dac} with no load.}}{26}{figure.caption.18}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces The input voltage versus the output voltage of the \gls {dac} with a load of $100\Omega $.}}{26}{figure.caption.18}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces The voltage output by the \gls {dac} measured by a multimeter versus measured by the \gls {adc}.}}{27}{figure.caption.19}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces The resistance measuring test.}}{28}{figure.caption.20}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces The resistance measuring test using the corrected equation.}}{28}{figure.caption.20}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Conductivity test 1 with gold electrodes, the fringe shield, a voltage range of $0-2.6V$, and 50 samples taken of salt water sample of unknown .}}{29}{figure.caption.21}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Conductivity test 2 with draining and resetting the \gls {dac} between each sample.}}{29}{figure.caption.21}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Conductivity test 3 with 25 priming measurements taken before the actual measurement.}}{30}{figure.caption.22}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Conductivity test 4 with a varying number of priming measurements and all true measurement taken as reverse voltage sweeps with 500 samples.}}{30}{figure.caption.22}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Conductivity test 5 with a varying amount of relaxation time before each measurement was taken and 50 samples.}}{31}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{31}{figure.caption.23}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

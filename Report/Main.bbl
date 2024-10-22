@@ -28,6 +28,11 @@
 ``Mapping salty waters,'' 2019. [Online]. Available: \url{https://www.esa.int/Applications/Observing_the_Earth/Space_for_our_climate/Mapping_salty_waters}
 \BIBentrySTDinterwordspacing
 
+\bibitem{jonsson_chip_based_salinity_2013}
+\BIBentryALTinterwordspacing
+J.~Jonsson, K.~Smedfors, L.~Nyholm, and G.~Thornell, ``Towards chip-based salinity measurements for small submersibles and biologgers,'' \emph{International Journal of Oceanography}, vol. 2013, p.~11, 2013. [Online]. Available: \url{http://dx.doi.org/10.1155/2013/529674}
+\BIBentrySTDinterwordspacing
+
 \bibitem{NSIDC_ice_sheet_facts_2024}
 \BIBentryALTinterwordspacing
 N.~Snow and I.~D.~C. (NSIDC), ``Ice sheet quick facts,'' 2024. [Online]. Available: \url{https://nsidc.org/learn/parts-cryosphere/ice-sheets/ice-sheet-quick-facts}
@@ -151,11 +156,6 @@ R.~Benjankar and R.~Kafle, ``Salt concentration measurement using re-usable elec
 ``Water salinity-meter : 7 steps.'' [Online]. Available: \url{https://www.instructables.com/Water-Salinity-meter/}
 \BIBentrySTDinterwordspacing
 
-\bibitem{jonsson_chip_based_salinity_2013}
-\BIBentryALTinterwordspacing
-J.~Jonsson, K.~Smedfors, L.~Nyholm, and G.~Thornell, ``Towards chip-based salinity measurements for small submersibles and biologgers,'' \emph{International Journal of Oceanography}, vol. 2013, p.~11, 2013. [Online]. Available: \url{http://dx.doi.org/10.1155/2013/529674}
-\BIBentrySTDinterwordspacing
-
 \bibitem{seabird_dbar_to_depth_2024}
 \BIBentryALTinterwordspacing
 S.-B. Scientific, ``Conversion of pressure to depth,'' 2024. [Online]. Available: \url{https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwij6ebU1sCIAxXPiv0HHXDELasQFnoECCMQAQ&url=https%3A%2F%2Fwww.seabird.com%2Fasset-get.download.jsa%3Fid%3D54627861710&usg=AOvVaw1fK2h9jmgpiBuyu8lkM1tl&opi=89978449}
@@ -200,5 +200,13 @@ Jason, ``Current spreading in long objects,'' 7515 Colshire Drive, McLean, Virgi
 
 \bibitem{walsh_electrodes_conductivity_1991}
 F.~Walsh, ``Electrode reactions in metal finishing,'' \emph{Transactions of the Institute of Metal Finishing}, vol.~69, pp. 107--111, 08 1991.
+
+\bibitem{hegg_capacitor_electric_fringing_2004}
+M.~Hegg and A.~Mamishev, ``Influence of variable plate separation on fringing electric fields in parallel-plate capacitors,'' in \emph{Conference Record of the 2004 IEEE International Symposium on Electrical Insulation}, 2004, pp. 384--387.
+
+\bibitem{sloggett_fringing_fields_in_disc_1986}
+\BIBentryALTinterwordspacing
+G.~J. Sloggett, N.~G. Barton, and S.~J. Spencer, ``Fringing fields in disc capacitors,'' \emph{Journal of Physics A: Mathematical and General}, vol.~19, no.~14, p. 2725, oct 1986. [Online]. Available: \url{https://dx.doi.org/10.1088/0305-4470/19/14/012}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}

@@ -161,8 +161,92 @@ Note that this correction equation is only valid when $R_1$ is $100\Omega$ and s
 
 \section{Linear Conductivity Measurement}\label{sec:linear-conductivity-measurement}
 
+This testing phase happened after the probe was cast into epoxy.
+The primary aim of this test is to discover if the salt water had a constant resistance for any given voltage.
+The testing procedure for all the below tests was to configure the probe's electrode, sample count, \gls{dac} voltage range and anything else that may prove useful to experiment with.
+A voltage sweep was then taken either forwards or backwards which was then sent over the \gls{uart} connection to a computer where it was processed using Microsoft Excel and MATLAB to generate the graphs and metrics.
 
-dac was linear, calib was linear for all
+In additional to the results mentioned below, these tests also demonstrated that the \gls{dac} input, output and the calibration voltages were all linear.
+As mentioned above, in order to remove the linear gains of the op-amps, \gls{dac} and other components, only the ratio between the voltage across the electrodes and the calibration resistor voltage will be considered.
+
+The first test aimed at discovering if the salt water had a linear resistance for any given voltage.
+This involved using the gold electrodes with the fringe shield to isolate any potential sources of non-linearities.
+These measurements were performed with both a forwards voltage sweep and a backwards voltage sweep.
+Each voltage step measurement was also taken in both directions as mentioned earlier.
+Ideally, these two measurements should be identical.
+However, they were clearly not as shown in \reffig{fig:test-test1}.
+
+\begin{figure}[ht]
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Testing/Aus2}
+        \caption{Conductivity test 1 with gold electrodes, the fringe shield, a voltage range of $0-2.6V$, and 50 samples taken of salt water sample of unknown .}
+        \label{fig:test-test1} %chktex 24
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Testing/Aus3}
+        \caption{Conductivity test 2 with draining and resetting the \gls{dac} between each sample.}
+        \label{fig:test-test2} %chktex 24
+    \end{minipage}
+\end{figure}
+
+In order to isolate the reason for the inconsistency, multiple tests were conducted with adjustments made between each test.
+The first adjustment involved draining and resetting the \gls{dac} back to $0V$ each sample before it was set to the desired voltage.
+It should be noted that this added a small delay between each sample of around $10ms$. 
+While this did make the forward and reverse sweeps more similar as shown in \reffig{fig:test-test2}, the initial voltage lag of the reverse sweep on the right-hand side of the graph was still present.
+
+This result brought forward an alternative idea that the measurements of the water briefly altered its properties.
+This was unlikely to be a capacitive effect as the measurements were taken bidirectionally, and the capacitance would have been discharged.
+It was theorized that the alternative current through the water could be ionizing the dissolved material, ripping electrons free and allowing them to move more freely.
+However, this is purely speculative as the chemistry of the water is beyond the scope of this project and the knowledge of the author.
+
+In order to further test this theory, the next test involved taking false, or priming, measurements at the maximum voltage before taking the actual measurements.
+This caused the measurements in both directions to start high and slowly move to their predicted paths, as shown in \reffig{fig:test-test3}, which further supports the theory that the measurements were affecting the water.
+This was further examined by using a varying number of priming measurements before conducting a reverse voltage sweep with 500 samples to accuracy track the voltage lag curve as shown in \reffig{fig:test-test4}.
+It should be noted that the voltage measurement effective clips at $0.3V$ as the output of the $11\times$ gain op-amp reaches $0.3\times 11 = 3.3V$ which is the maximum voltage of the \gls{adc}.
+
+\begin{figure}[ht]
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Testing/Aus5}
+        \caption{Conductivity test 3 with 25 priming measurements taken before the actual measurement.}
+        \label{fig:test-test3} %chktex 24
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Testing/Aus7}
+        \caption{Conductivity test 4 with a varying number of priming measurements and all true measurement taken as reverse voltage sweeps with 500 samples.}
+        \label{fig:test-test4} %chktex 24
+    \end{minipage}
+\end{figure}
+
+This concluded that while there is a potential for the measurements to be perfectly primed, it is unlikely that the priming affect will have zero impact on the final measurements.
+It also indicates that the forward voltage sweeps could also be non-linear due to each subsequent measurement affecting the water before the next measurement is taken.
+Thus, an alternative method was needed to take the measurements.    
+Since the priming effect on the forward voltage sweep decreased to join the expected curve, it was theorized that the water could relax from a primed state over a short enough period of time.
+More reasons needed here.
+The next tests involved waiting for the salt water to settle between each measurement.
+
+The first test involved waiting for $2s$ between each measurement and taking $50$ samples.
+The relaxation waiting time happened while there was no voltage applied across the water.
+
+\begin{figure}[ht]
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Testing/Aus8}
+        \caption{Conductivity test 5 with a varying amount of relaxation time before each measurement was taken and 50 samples.}
+        \label{fig:test-test5} %chktex 24
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Testing/Aus10}
+        \caption{Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}
+        \label{fig:test-test6} %chktex 24
+    \end{minipage}
+\end{figure}
+
+
 
 Initial tests showed that the measurement was non-linear for au electrode however forwards and backwards voltage sweeps are not the same GRAPH
 this indicated that the measurement affected the voltage.
