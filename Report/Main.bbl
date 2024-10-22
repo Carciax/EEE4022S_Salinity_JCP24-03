@@ -191,7 +191,7 @@ S.-R. Jeon, Y.-H. Song, H.-J. Jang, G.~M. Yang, S.~W. Hwang, and S.~J. Son, ``{L
 \BIBentrySTDinterwordspacing
 
 \bibitem{jason_current_spreading_long_objects_2008}
-Jason, ``Current spreading in long objects,'' 7515 Colshire Drive, McLean, Virginia 22102-753, oct 2008, approved for public release; distribution unlimited.
+Jason, ``Current spreading in long objects,'' The MITRE Corporation, 7515 Colshire Drive, McLean, Virginia 22102-753, Tech. Rep., oct 2008, approved for public release; distribution unlimited.
 
 \bibitem{as_typical_conductivity_2022}
 \BIBentryALTinterwordspacing
@@ -207,6 +207,17 @@ M.~Hegg and A.~Mamishev, ``Influence of variable plate separation on fringing el
 \bibitem{sloggett_fringing_fields_in_disc_1986}
 \BIBentryALTinterwordspacing
 G.~J. Sloggett, N.~G. Barton, and S.~J. Spencer, ``Fringing fields in disc capacitors,'' \emph{Journal of Physics A: Mathematical and General}, vol.~19, no.~14, p. 2725, oct 1986. [Online]. Available: \url{https://dx.doi.org/10.1088/0305-4470/19/14/012}
+\BIBentrySTDinterwordspacing
+
+\bibitem{pozzebon_near_field_communication_under_water_2015}
+A.~Pozzebon, ``Bringing near field communication under water: short range data exchange in fresh and salt water,'' in \emph{2015 International EURASIP Workshop on RFID Technology (EURFID)}, 2015, pp. 152--156.
+
+\bibitem{bergmann_wireless_underwater_data_transfer_2013}
+N.~W. Bergmann, J.~Juergens, L.~Hou, Y.~Wang, and J.~Trevathan, ``Wireless underwater power and data transfer,'' in \emph{38th Annual IEEE Conference on Local Computer Networks - Workshops}, 2013, pp. 104--107.
+
+\bibitem{epotek_thermally_conductive_epoxies}
+\BIBentryALTinterwordspacing
+EPOTEK, ``Understanding how to choose an appropriate thermally conductive epoxy.'' [Online]. Available: \url{https://www.epotek.com/docs/en/Related/Tech%20Tip%2030%20Understanding%20How%20to%20Choose%20an%20Appropriate%20Thermally%20Conductive%20Epoxy.pdf}
 \BIBentrySTDinterwordspacing
 
 \end{thebibliography}

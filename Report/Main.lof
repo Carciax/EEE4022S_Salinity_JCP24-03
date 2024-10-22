@@ -10,7 +10,7 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces A simplified representation of the resistance measuring circuit.}}{14}{figure.caption.12}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces A simplified representation of the resistance measurement circuit using the gold electrodes with the fringe guard.}}{16}{figure.caption.13}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The probe PCB with the gold electrodes attached and adjustments made}}{19}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The probe PCB with the gold electrodes attached and some adjustments made}}{19}{figure.caption.14}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces The controller PCB with the rotary switch caps attached}}{20}{figure.caption.15}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces The flowchart for the probe code that measures salinity.}}{22}{figure.caption.16}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces The flowchart for the controller code that communicates with the probe.}}{24}{figure.caption.17}%

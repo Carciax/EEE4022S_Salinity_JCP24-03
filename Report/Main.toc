@@ -31,10 +31,10 @@
 \contentsline {section}{\numberline {4.7}Temperature and Depth Measurement}{17}{section.4.7}%
 \contentsline {chapter}{\numberline {5}PCB Construction, Adjustments and Code}{19}{chapter.5}%
 \contentsline {section}{\numberline {5.1}PCB Design}{19}{section.5.1}%
-\contentsline {section}{\numberline {5.2}PCB Adjustments}{20}{section.5.2}%
+\contentsline {section}{\numberline {5.2}PCB Adjustments}{21}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Probe Code}{21}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Controller Code}{23}{section.5.4}%
-\contentsline {section}{\numberline {5.5}Board to Board Communication}{23}{section.5.5}%
+\contentsline {section}{\numberline {5.5}Board-to-Board Communication}{23}{section.5.5}%
 \contentsline {chapter}{\numberline {6}Salinometer Evaluation and Testing}{25}{chapter.6}%
 \contentsline {section}{\numberline {6.1}DAC Voltage Range and Accuracy}{25}{section.6.1}%
 \contentsline {section}{\numberline {6.2}ADC Accuracy}{27}{section.6.2}%
