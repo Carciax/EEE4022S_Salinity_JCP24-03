@@ -25,7 +25,7 @@
 \contentsline {figure}{\numberline {6.5}{\ignorespaces The voltage output by the \gls {dac} measured by a multimeter versus by the \gls {adc}.}}{29}{figure.caption.21}%
 \contentsline {figure}{\numberline {6.6}{\ignorespaces The resistance measuring test.}}{30}{figure.caption.22}%
 \contentsline {figure}{\numberline {6.7}{\ignorespaces The resistance measuring test using the corrected equation.}}{30}{figure.caption.22}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Conductivity test 1 with gold electrodes and the fringe shield, a voltage range of $0-2.6V$, and 50 samples taken of salt water sample of unknown salinity.}}{32}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Conductivity test 1 with gold electrodes and the fringe shield, a voltage range of $0-2,6V$, and 50 samples taken of salt water sample of unknown salinity.}}{32}{figure.caption.23}%
 \contentsline {figure}{\numberline {6.9}{\ignorespaces Conductivity test 2 with draining and resetting the \gls {dac} between each voltage sample.}}{32}{figure.caption.23}%
 \contentsline {figure}{\numberline {6.10}{\ignorespaces Conductivity test 3 with 25 priming measurements taken before the actual measurement.}}{33}{figure.caption.24}%
 \contentsline {figure}{\numberline {6.11}{\ignorespaces Conductivity test 4 with a varying number of priming measurements and all true measurement taken as reverse voltage sweeps with 500 voltage samples.}}{33}{figure.caption.24}%
@@ -35,11 +35,15 @@
 \contentsline {figure}{\numberline {6.15}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{34}{figure.caption.26}%
 \contentsline {figure}{\numberline {6.16}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{35}{figure.caption.27}%
 \contentsline {figure}{\numberline {6.17}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{35}{figure.caption.27}%
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{35}{figure.caption.28}%
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{35}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{36}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{36}{figure.caption.28}%
 \contentsline {figure}{\numberline {6.20}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{36}{figure.caption.29}%
 \contentsline {figure}{\numberline {6.21}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{36}{figure.caption.29}%
-\contentsline {figure}{\numberline {6.22}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{36}{figure.caption.30}%
-\contentsline {figure}{\numberline {6.23}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{36}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.22}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.23}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.24}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{38}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.25}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{38}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.26}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{38}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.27}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{38}{figure.caption.32}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

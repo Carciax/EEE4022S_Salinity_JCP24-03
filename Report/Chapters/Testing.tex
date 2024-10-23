@@ -258,8 +258,6 @@ Iterative testing revealed that titanium electrodes $30m$ in length spaced $6mm$
 A test comparing the titanium and gold electrodes was performed, shown in \reffig{fig:test6}, which showed that the gold electrodes followed the expected curve that \refref{benjankar_ec_based_salt_measurement_2021} found, while the titanium electrodes did not.
 The reason for this is unknown; it was theorised the fringing effect and conductivity of the titanium electrodes were the cause, which needed further investigation.
 
-
-
 \begin{figure}[ht]
     \begin{minipage}{0.5\textwidth}
         \centering
@@ -353,6 +351,15 @@ The results of the $24,4$ \gls{psu} sample and the $29,1$ \gls{psu} sample for t
 
 These results showed a similar trend to the tests performed on the standard solution, where the measurements were grouped but increased with each successive test.
 The gold electrodes showed a similar trendline to the standard solution, while the titanium electrode's trendline was different below $1,4V$ and approximately the same above $1,4V$.
+The titanium electrode showed remarkable consistency above $1,4V$.
+
+In order to determine salinity from the voltage sweeps, a metric was measured from each which was used in the salinity calculation.
+The ideal metric would be a property of the equation of best fit.
+The equation of best fit would logically be a hyperbolic function, where the conductivity would approach infinity as the salinity approached infinity.
+The equation was modified to include an offset as even with infite conductivity, there would still be some resistance from the switches and traces in the probe.
+The equation of best fit modelled in MATLAB as $y = A/x + c$.
+The equation of best fit was calculated and graphed for the first sample of each saltwater sample's voltage sweep.
+The gold electrode removed the trailing edge, shown in \reffig{fig:test15}, and the titanium electrode removed the leading edge, shown in \reffig{fig:test16}.
 
 \begin{figure}[ht]
     \begin{minipage}{0.5\textwidth}
@@ -369,12 +376,85 @@ The gold electrodes showed a similar trendline to the standard solution, while t
     \end{minipage}
 \end{figure}
 
-waiting 2s per measurement for 50 samples took very long and an alternate method was to change the water infront of the electrodes by agitating/stirring the water.
-this gave repeatable results that also showed a difference between two different water samples. GRAPH
-taking fewer samples over the more linear voltage range gave something that was approximately linear.
+This showed a logical difference between samples of similar temperature with the gold electrodes, where the lower salinity sample had a lower conductivity, equivalent to a high resistance and thus a high voltage measurement and ratio with the calibration resistor.
+This also showed a clear difference between samples at different temperatures.
+The titanium electrodes showed illogical results, where lower salinities had a lower voltage ratio.
+The reasons for this were unclear and would be investigated further once the gold electrodes were confirmed to be working correctly.
 
-trying to find a decernable metric from these graphs by analysing A/(s+p) between two samples of arbitrary salinity. TABLE
+\section{Individual Voltage Measurements}
 
-try repeated single measurements.
+Another approach that mimicked the other source was implemented which used a single voltage measurement to calculate the salinity.
+The voltage measurements were taken far apart from each other, to ensure that the measurements did not affect each other.
+The tests were conducted with the gold electrodes and the fringe guard with the \gls{dac} set at $1,65V$, which appeared to be the most stable voltage form the previous tests.
+Similar to \refsec{sec:voltage-conductivity-mapping}, a measurement of a standard solution of $34,8$ \gls{psu} was taken, then measurements of the other three samples were taken.
 
-ac testing not rigged up correctly. GRAPH
+The voltage ratios were adjusted to be $1/x$ to fit the hyperbolic function model,
+A variation using $1/x^2$, which still had the same appoximate shape, was also tested, and yielded slightly better results, which are shown in \reftbl{tab:individual-voltage-measurements-2}.
+
+\begin{longtblr}[
+        caption = {The individual voltage measurements taken of different salt water samples.},
+        label = {tab:individual-voltage-measurements},
+    ]
+    {
+        hlines,
+        vlines, 
+        colspec = {*{4}{Q[c,m]}}
+    }
+    \textbf{Salinity Sample (\gls{psu})} & \textbf{Voltage Ratio ($V/V$)} & \textbf{Temperature ($\degree C$)} & \textbf{Calculated Salinity (\gls{psu})} \\
+    34,8 & 2,178 & 15,0 & - \\
+    24,4 & 2,320 & 23,7 & 24,9 \\
+    29,1 & 2,288 & 23,7 & 25,5 \\
+    32,9 & 2,058 & 23,7 & 32,2 \\
+\end{longtblr}
+
+As expected, this was not a highly accurate method of measuring salinity, but it was a good indicator of the salinity.
+It was able to tell the difference between the samples.
+However, the noise of the environment, and other slight errors affected the measurements enough to be more than a few \gls{psu} off.
+
+\section{AC Voltage Measurements}
+
+Following the approach that some \glspl{ctd} and \refref{jonsson_chip_based_salinity_2013} used, the saltwater samples were attempted to be tested using an \gls{ac} voltage.
+The \gls{ac} tests were performed by writing to the \gls{dac} as fast as it could operate while adding some delay, and recording the output.
+Measurements were the taken using the \gls{adc} every time the \gls{dac} was updated.
+The \gls{dac} was able to produce a highly accuracate sine wave which was passed through the water.
+
+Two different approaches were attempting.
+However, neither were fully successful as the board was not designed to measure \gls{ac} signals, because capacitor.
+The first method attempted to output a full sine wave centred around ground or $0V$.
+This was achieved by making the \gls{dac} output a half sine wave signal, and then switching the direction of the current of the titanium electrodes and then switching the current.
+The second method attempted to output a full sine wave centred around $1,65V$.
+This was simple to implement, and a mirror sine wave was repeated with the current direction switched to reverse any build-up of charge.
+
+\begin{figure}[ht]
+    \begin{minipage}{0.5\textwidth}
+        \centering
+    
+        This was simple to implement, and a mirror sine wave was repeated with the current direction switched to reverse any build-up of charge.
+        \includegraphics[width=\textwidth]{Figures/Testing/TiAC1}
+        \caption{Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}
+        \label{fig:test17} %chktex 24
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Testing/TiAC2}
+        \caption{Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}
+        \label{fig:test18} %chktex 24
+    \end{minipage}
+\end{figure}
+
+\begin{figure}[ht]
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Testing/TiAC3}
+        \caption{Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}
+        \label{fig:test19} %chktex 24
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Testing/TiAC4}
+        \caption{Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}
+        \label{fig:test20} %chktex 24
+    \end{minipage}
+\end{figure}
+
+No decernable change between the two.

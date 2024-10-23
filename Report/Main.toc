@@ -48,6 +48,8 @@
 \contentsline {section}{\numberline {6.6}Resistance Measuring Accuracy}{30}{section.6.6}%
 \contentsline {section}{\numberline {6.7}Voltage Sweep Repeatability}{31}{section.6.7}%
 \contentsline {section}{\numberline {6.8}Voltage to Conductivity Mapping}{34}{section.6.8}%
-\contentsline {chapter}{\numberline {7}Conclusions}{37}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Recommendations}{38}{chapter.8}%
-\contentsline {chapter}{Bibliography}{39}{chapter*.31}%
+\contentsline {section}{\numberline {6.9}Individual Voltage Measurements}{37}{section.6.9}%
+\contentsline {section}{\numberline {6.10}AC Voltage Measurements}{38}{section.6.10}%
+\contentsline {chapter}{\numberline {7}Conclusions}{39}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Recommendations}{40}{chapter.8}%
+\contentsline {chapter}{Bibliography}{41}{chapter*.33}%
