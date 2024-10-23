@@ -6,13 +6,13 @@
 
 \section{PCB Design}
 
-The probe, controller and gold electrodes were fabricated on \glspl{pcb}, which were designed using KiCad software and manufactured with \texttt{JLCPCB}.
-The KiCad design files are in the Git repository linked in \refappx{appx:gitrepo}. 
+The probe, controller and gold electrodes were fabricated on \glspl{pcb}, which were designed using KiCad software and manufactured with JLCPCB.
+The KiCad design files can be found in the Git repository linked in \refappx{appx:gitrepo}. 
 The gold electrodes were trivial, only requiring a single layer \gls{pcb} with simple pads and traces.
 
 The probe \gls{pcb} was the most complex.
 It was fabricated on a 4-layer \gls{pcb} with dimensions of $50\times 50mm$, shown in \reffig{fig:probe-pcb}.
-\texttt{JLCPCB} offered a discount for 4-layer \glspl{pcb} that were smaller than $50\times 50mm$ in size.
+JLCPCB offered a discount for 4-layer \glspl{pcb} that were smaller than $50\times 50mm$ in size.
 While the probe should ideally be as small as possible to fit through the ice core, it was not designed to be smaller than $50\times 50mm$ to allow for a more straightforward debugging process.
 
 %chktex-file 44
@@ -20,34 +20,27 @@ While the probe should ideally be as small as possible to fit through the ice co
     \begin{minipage}{0.5\textwidth}
         \centering
         \includegraphics[width=0.8\textwidth]{Figures/probe_pcb}
-        \caption{The probe PCB with the gold electrodes attached and some adjustments made}
-        \label{fig:probe-pcb} %chktex 24
     \end{minipage}
     \begin{minipage}{0.5\textwidth}
         \centering
-        \begin{longtblr}[
- caption=\reffig{fig:probe-pcb} Key,
- ]
- {
- hlines,
- colspec = {Q[c,m] Q[l,m,7cm]},
- }
- 1 & Programmer Port \\
- 2 & Test Points \\
- 3 & Pressure Sensor in a Protective Housing \\
- 4 & $11\times$ Gain Op-Amp \\
- 5 & Titanium Electrode Port \\
- 6 & Gold Electrodes \\
- 7 & Unity Gain Buffer Op-amp \\
- 8 & \gls{dac} and Buffer Transistor \\
- 9 & \gls{uart} to \gls{rs485} Converter \\
- 10 & \gls{rs485} Port \\
- 11 & \gls{uart} Port \\
- 12 & STM32F4 Microcontroller \\
- 13 & \glspl{led} \\
-        \end{longtblr}
+        \begin{tabular}{cl} \hline
+            1 & Programmer Port \\ \hline
+            2 & Test Points \\ \hline
+            3 & Pressure Sensor in a Protective Housing \\ \hline
+            4 & $11\times$ Gain Op-Amp \\ \hline
+            5 & Titanium Electrode Port \\ \hline
+            6 & Gold Electrodes \\ \hline
+            7 & Unity Gain Buffer Op-amp \\ \hline
+            8 & \gls{dac} and Buffer Transistor \\ \hline
+            9 & \gls{uart} to \gls{rs485} Converter \\ \hline
+            10 & \gls{rs485} Port \\ \hline
+            11 & \gls{uart} Port \\ \hline
+            12 & STM32F4 Microcontroller \\ \hline
+            13 & \glspl{led} \\ \hline
+        \end{tabular}
     \end{minipage}
-    \vspace{0.2cm} \\
+    \caption{The probe PCB with the gold electrodes attached and some adjustments made}
+    \label{fig:probe-pcb} %chktex 24
     \textit{Note 1: The rest of the titanium electrode ports are behind the gold electrode.} \\
     \textit{Note 2: The other \glspl{ic} present are the TS3A4751 switches.}
 \end{figure}
@@ -63,39 +56,33 @@ Both ports also had reverse polarity protection added to prevent unintentional b
 With the programmer and communication ports at the top of the board and the electrodes at the bottom, the probe could safely be submerged while transferring its data to a laptop.
 
 The controller \gls{pcb} was fabricated on a 2-layer board, which is shown in \reffig{fig:controller-pcb}, as the components were too large to fit on a $50\times 50mm$ 4-layer board.
-\texttt{JLCPCB} offered a similar discount for 2-layer \glspl{pcb} that were less than $100\times 100mm$ in area.
+JLCPCB offered a similar discount for 2-layer \glspl{pcb} that were less than $100\times 100mm$ in area.
 Ultimately, the controller dimensions were $100\times 60mm$, which could comfortably fit all the components while taking advantage of \texttt{JLCPCB}'s discount.
 
 \begin{figure}[ht]
     \begin{minipage}{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Figures/controller_pcb_final}
-        \caption{The controller PCB with the rotary switch caps attached}
-        \label{fig:controller-pcb} %chktex 24
     \end{minipage}
-    \begin{minipage}{0.5\textwidth}
-        \centering
-        \begin{longtblr}[
- caption=\reffig{fig:controller-pcb} Key,
- ]
- {
- hlines,
- colspec = {Q[c,m] Q[l,m]},
- }
- 1 & Salinity 7-Segment Display \\
- 2 & Depth 7-Segment Display \\
- 3 & Rotary Switches \\
- 4 & Power Input \\
- 5 & \gls{uart} to \gls{rs485} Converter \\
- 6 & \gls{rs485} Port \\
- 7 & \gls{uart} Port \\
- 8 & Input Buttons \\
- 9 & Programmer Port \\
- 10 & SD Card Port \\
- 11 & STM32F0 Microcontroller \\
- 12 & \glspl{led} \\
-        \end{longtblr}
+        \begin{minipage}{0.5\textwidth}
+            \centering
+            \begin{tabular}{cl} \hline
+            1 & Salinity 7-Segment Display \\ \hline
+            2 & Depth 7-Segment Display \\ \hline
+            3 & Rotary Switches \\ \hline
+            4 & Power Input \\ \hline
+            5 & \gls{uart} to \gls{rs485} Converter \\ \hline
+            6 & \gls{rs485} Port \\ \hline
+            7 & \gls{uart} Port \\ \hline
+            8 & Input Buttons \\ \hline
+            9 & Programmer Port \\ \hline
+            10 & SD Card Port \\ \hline
+            11 & STM32F0 Microcontroller \\ \hline
+            12 & \glspl{led} \\ \hline
+        \end{tabular}
     \end{minipage}
+    \caption{The controller PCB with the rotary switch caps attached}
+    \label{fig:controller-pcb} %chktex 24
 \end{figure}
 
 The controller was designed with the buttons, the rotary switches, the 7-segment displays, the \gls{uart} to \gls{rs485} converter, and the \gls{rs485} port mentioned in \refch{ch:design}.
@@ -112,7 +99,7 @@ Secondly, the footprint of the pressure sensor was horizontally reversed, which 
 A protective case was added around the pressure sensor to prevent it from being damaged during testing.
 The casing would later function as the support for the waterproof membrane mentioned in \refsec{sec:temp-depth-measurement}.
 
-Lastly, both op-amps were incorrectly chosen as they required a rail-to-rail voltage of $6V$ to operate, higher than the $3.3V$ provided.
+Lastly, both op-amps were incorrectly chosen as they required a rail-to-rail voltage of $6V$ to operate, higher than the $3,3V$ provided.
 Thus, they were replaced with an alternative op-amp model with the same footprint.
 The temperature sensor also had an incorrect footprint, but this could not be rectified as it was discovered after the board was fabricated. 
 Thus, the temperature sensor was not soldered to the board.
@@ -134,18 +121,19 @@ An overview of this process is shown in \reffig{fig:probe-code-flowchart}.
     \label{fig:probe-code-flowchart} %chktex 24
 \end{figure}
 
-The conductivity measurement and calculation are different depending on whether the voltage-resistance relationship is constant or not, which is expected for the gold and titanium electrodes, respectively.
-Both variations start with a voltage sweep where the \gls{dac} voltage is stepped from the given start voltage to the end voltage.
-At each step, the output of the \gls{dac}, the voltage across the calibration resistor and the voltage across the electrodes are recorded.
+The conductivity measurement was aimed at repeating the methodology that \refref{benjankar_ec_based_salt_measurement_2021} employed.
+This requires a voltage sweep of the water sample, which is then mapped to a conductivity.
+This devices specific mapping will have to be determined experimentally, as it is unique for different electrode sizes and materials.
+The voltage sweep is achieved by incrementing the output of the \gls{dac} from a given start to end voltage.
+At each step, the output of the \gls{dac} and the voltage drop across the calibration resistor and the electrodes are recorded.
 
-If the ratio between the \gls{dac} voltage and the voltage across the electrodes is not constant, the conductivity will have to be determined by performing tests to create a model that can relate a set of voltage samples to a conductivity. 
-However, if this ratio is constant, the resistance between the electrodes can be calculated using the known calibration $R_1$ resistances as shown in \refeqn{eqn:electrode-calib-resistance} to \refeqn{eqn:electrode-calib-resistance-final}.
-The electrode resistances would be calculated for each voltage sample and then averaged, allowing for conductivity to be calculated using \refeqn{eqn:conductivity-from-resistance}.
+To determine the resistance measuring accuracy, the resistance across the electrodes $R_E$ was calculated using the voltage drop across the electrodes and across the calibration resistor $R_C$, as shown in \refeqn{eqn:electrode-calib-resistance} to \refeqn{eqn:electrode-calib-resistance-final}.
+The electrode resistances $R_E$ was calculated for each voltage sample and then averaged.
 
 \begin{align}
- V_{ratio} &= \lfrac{V_{DAC}A_{11}A_{ADC}\lfrac{R_{electrode}}{R_1 + R_{electrode}}}{V_{DAC}A_{11}A_{ADC}\lfrac{R_{calibration}}{R_1 + R_{calibration}}} = \lfrac{\lfrac{R_{electrode}}{R_1 + R_{electrode}}}{\lfrac{R_{calibration}}{R_1 + R_{calibration}}} \label{eqn:electrode-calib-resistance} \\
- \lfrac{R_{electrode}}{R_1 + R_{electrode}} &= V_{ratio} \lfrac{R_{calibration}}{R_1 + R_{calibration}} = k \label{eqn:electrode-calib-resistance-simplified} \\
- R_{electrode} &= \lfrac{kR_1}{1 - k} \label{eqn:electrode-calib-resistance-final}
+ V_{ratio} &= \lfrac{V_{DAC}A_{11}A_{ADC}\lfrac{R_E}{R_1 + R_E}}{V_{DAC}A_{11}A_{ADC}\lfrac{R_C}{R_1 + R_C}} = \lfrac{\lfrac{R_E}{R_1 + R_E}}{\lfrac{R_C}{R_1 + R_C}} \label{eqn:electrode-calib-resistance} \\
+ \lfrac{R_E}{R_1 + R_E} &= V_{ratio} \lfrac{R_C}{R_1 + R_C} \rightarrow k \label{eqn:electrode-calib-resistance-simplified} \\
+ R_E &= \lfrac{kR_1}{1 - k} \label{eqn:electrode-calib-resistance-final}
 \end{align}
 
 This method of calculating resistance using a voltage ratio with a known resistance allows the probe to nullify all scalar inaccuracies in the circuit, including the \gls{dac}, \gls{adc} and op-amp gain error, as they will be present in both voltage measurements.
@@ -184,7 +172,7 @@ All the possible commands and expected transactions are shown in \reffig{fig:rs4
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.5\textwidth]{Figures/rs485_flowchart}
-    \caption{The flowchart for the controller code that communicates with the probe.}
+    \caption{The flowchart for the board-to-board communication protocol denoting the four transaction types. The arrows denote the direction of the packets being sent over the \gls{rs485} link.}
     \label{fig:rs485-flowchart} %chktex 24
 \end{figure}
 
@@ -203,3 +191,60 @@ This command allows for resetting the probe should a system error occur.
 However, this only works provided the \gls{rs485} link is still operational.
 Otherwise, the entire system must be powered off and on again to reset the probe.
 The reset on both microcontrollers is triggered using software to set the \gls{sys_reset_req} bit in the \gls{scb} register, which triggers a system reset similar to pulling the reset pin low.
+
+\section{Probe Epoxy Casting}\label{sec:probe-epoxy-casting}
+
+The circuitry on the probe had to be protected from the salt water while the electrodes were submerged, which was achieved using \textit{Kristal 20} epoxy resin.
+Before casting the epoxy, the \gls{rs485} ports on the controller and probe were connected using a multicore cable, which connected their power, ground and the \gls{rs485} data lines, which can be seen in \reffig{fig:epoxy-top}.
+A casting mould was created using acrylic sheets, which are commonly used for epoxy moulds as they tend not to stick to the epoxy.
+The sheets were cut and secured using hot glue, as seen in \reffig{fig:epoxy-side}.
+
+\begin{figure}[ht]
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=0.84\textwidth]{Figures/epoxy_casting_top}
+        \caption{A top view of the probe casting mould, the controller and the connecting cable.}
+        \label{fig:epoxy-top} %chktex 24
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/epoxy_casting_side}
+        \caption{A side view of the probe casting mould showing the gold electrode spacers.}
+        \label{fig:epoxy-side} %chktex 24
+    \end{minipage}
+\end{figure}
+
+The gold electrodes were precisely spaced using 3D-printed spacers, which were attached during the casting process and removed once the epoxy had cured.
+Lastly, two areas of the probe still needed to be accessed: the programmer and \gls{uart} ports and the titanium electrode ports.
+This would simplify further testing and allow the titanium electrodes to be optimally spaced through experimentation instead of estimations.
+These areas were isolated using \textit{Prestick}, a rubber-based reusable putty adhesive. 
+The adhesive was removed after the epoxy had cured, allowing access to the aforementioned areas.
+
+The probe was removed from the mould after the epoxy had cured, shown in \reffig{fig:probe-final}.
+The \textit{Prestick} adhesive was relatively easy to remove, and the desired areas were still accessible, allowing the titanium electrode to be added.
+Titanium is challenging to solder, requiring a complex process and advanced machinery that was not available for this project~\cite{totalmateria_joining_titanium_2005}.
+Instead, thin copper wire was tightly wrapped around the last $5mm$ of the titanium electrode, which was folded over to secure the copper wire, as shown in \reffig{fig:titanium-electrodes}.
+This configuration made connecting the electrodes to their ports easy using standard soldering and provided a continuous connection between the probe and the titanium electrode.
+
+\begin{figure}[ht]
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.65\textwidth]{Figures/probe_final}
+        \caption{The probe after the epoxy casting process with the titanium electrodes and pressure sensor's flexible membrane attached.}
+        \label{fig:probe-final} %chktex 24
+    \end{minipage}
+    \begin{minipage}{0.5\textwidth}
+        \centering
+        \includegraphics[width=0.75\textwidth]{Figures/titanium_electrode}
+        \caption{A close-up of the titanium electrode with the copper wire attached.}
+        \label{fig:titanium-electrodes} %chktex 24
+    \end{minipage}
+\end{figure}
+
+The unevenness of the mould and the hot glue created some rough edges along the epoxy.
+These could be laser cut to a smooth finish for the final product, but this was considered unnecessary for the experiments conducted in this project.
+
+Lastly, hot glue was used to attach a flexible membrane to the pressure sensor's protective casing.
+The membrane was taken from the packaging of the gold electrode \glspl{pcb} as it was readily accessible and had the required flexibility and durability to prove the concept.
+The final device would require further investigation into a more suitable material.
+The protective casing was also coated in a thin layer of hot glue as the 3D printing process used to create it had a small probability of being porous.

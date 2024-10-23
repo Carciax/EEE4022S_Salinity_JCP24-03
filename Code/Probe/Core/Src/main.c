@@ -139,18 +139,22 @@ int main(void)
     double pressure, temperature, resistance, conductivity, salinity;
     VoltageSample_TypeDef voltage_samples[MAX_SAMPLES];
     ResistanceSample_TypeDef resistance_samples[MAX_SAMPLES];
-    memset(voltage_samples, 0, sizeof(voltage_samples));    
-
+    memset(voltage_samples, 0, sizeof(voltage_samples));
     HAL_Delay(5000);
 
-    measure_ac_sweep(
-        voltage_samples,
-        R1_10k,
-        Ti,
-        4,
-        128,
-        50);
-    transmit_sample_data_binary(voltage_samples, 128, SAMPLE_VOLTAGE);;
+    // GPIOSW->BSRR = SW_Ti1_GND_Pin | SW_Ti2_GND_Pin;
+    // GPIOSW->BSRR = SW_Ti_Pin_Msk << 16;
+    // for (uint16_t i = 0; i < 20; i++)
+    // {
+    //     measure_ac_sweep(
+    //         voltage_samples,
+    //         R1_10k,
+    //         Ti,
+    //         4,
+    //         256,
+    //         50);
+    // }
+    // transmit_sample_data_binary(voltage_samples, 256, SAMPLE_VOLTAGE);
 
     // measure_voltage_sweep(
     //     voltage_samples,
@@ -165,21 +169,20 @@ int main(void)
     //     0);
     // HAL_Delay(2000);
 
-    // measure_voltage_sweep(
-    //     voltage_samples,
-    //     BIDIRECTIONAL,
-    //     R1_100,
-    //     Au_Shielded,
-    //     V_MIN,
-    //     V_MAX,
-    //     20,
-    //     5,
-    //     100,
-    //     2000);
-    // transmit_sample_data_binary(voltage_samples, 20, SAMPLE_VOLTAGE);
-
-    // temperature = measure_temperature();
-    // transmit_sample_data_readable(&temperature, 1, VALUE_TEMPERATURE);
+    measure_voltage_sweep(
+        voltage_samples,
+        BIDIRECTIONAL,
+        R1_100,
+        Au_Shielded,
+        512,
+        512,
+        1,
+        5,
+        100,
+        0);
+    transmit_sample_data_binary(voltage_samples, 1, SAMPLE_VOLTAGE);
+    temperature = measure_temperature();
+    transmit_sample_data_readable(&temperature, 1, VALUE_TEMPERATURE);
 
     rs485_receive_IT(1);
 

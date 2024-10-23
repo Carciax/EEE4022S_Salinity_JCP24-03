@@ -248,34 +248,10 @@ void measure_ac_sweep(VoltageSample_TypeDef *samples, R1_Type r1, Electrode_Type
 
     adc_set_channel(ADC_CHANNEL_SIGNAL);
     // GPIOSW->BSRR = SW_R1_Calib_Pin;
+    GPIOSW->BSRR = r1_pin;
     uint16_t sample = 0;
     for (uint8_t i = 0; i < num_waves; i++)
     {
-        switch (electrode)
-        {
-        case Ti:
-            GPIOSW->BSRR = SW_Ti_Pin_Msk << 16;
-            GPIOSW->BSRR = SW_R1_Ti2_Pin | SW_Ti1_GND_Pin;
-            break;
-        case Au_Shielded:
-            GPIOSW->BSRR = (SW_Au_Pin_Msk | SW_Shield_Pin_Msk) << 16;
-            GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Shield2_V_Pin | SW_Shield1_GND_Pin;
-            break;
-        default:
-            break;
-        }
-
-        for (uint16_t j = 0; j < half_wave_samples; j++)
-        {
-            GPIOSW->BSRR = r1_pin;
-            dac_set_voltage(dac_values[j]);
-            samples[sample].dac_input = dac_values[j];
-            us_delay(sample_delay);
-            GPIOSW->BSRR = r1_pin << 16;
-            samples[sample].measurement = adc_average(1);
-            sample++;
-        }
-
         switch (electrode)
         {
         case Ti:
@@ -292,11 +268,36 @@ void measure_ac_sweep(VoltageSample_TypeDef *samples, R1_Type r1, Electrode_Type
 
         for (uint16_t j = 0; j < half_wave_samples; j++)
         {
-            GPIOSW->BSRR = r1_pin;
+            // GPIOSW->BSRR = r1_pin;
             dac_set_voltage(dac_values[j]);
-            samples[sample].dac_input = -dac_values[j];
             us_delay(sample_delay);
-            GPIOSW->BSRR = r1_pin << 16;
+            // GPIOSW->BSRR = r1_pin << 16;
+            samples[sample].dac_input = dac_values[j];
+            samples[sample].measurement = adc_average(1);
+            sample++;
+        }
+
+        switch (electrode)
+        {
+        case Ti:
+            GPIOSW->BSRR = SW_Ti_Pin_Msk << 16;
+            GPIOSW->BSRR = SW_R1_Ti2_Pin | SW_Ti1_GND_Pin;
+            break;
+        case Au_Shielded:
+            GPIOSW->BSRR = (SW_Au_Pin_Msk | SW_Shield_Pin_Msk) << 16;
+            GPIOSW->BSRR = SW_R1_Au2_Pin | SW_Shield2_V_Pin | SW_Shield1_GND_Pin;
+            break;
+        default:
+            break;
+        }
+
+        for (uint16_t j = 0; j < half_wave_samples; j++)
+        {
+            // GPIOSW->BSRR = r1_pin;
+            dac_set_voltage(dac_values[j]);
+            us_delay(sample_delay);
+            // GPIOSW->BSRR = r1_pin << 16;
+            samples[sample].dac_input = -dac_values[j];
             samples[sample].measurement = -adc_average(1);
             sample++;
         }

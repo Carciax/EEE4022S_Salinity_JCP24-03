@@ -39,7 +39,7 @@ and finally $R_t$ is calculated using $r_t$, $R_p$ and $R$.
 \begin{equation}\label{eqn:pss-78-Rt}
  R_t = \lfrac{R}{R_p r_t}
 \end{equation}
-Note that for a sample temperature of $15\degree C$ and pressure of $0 dbar$, $r_t$ and $R_t$ both equal 1, which leaves $R_t$ equal to $R$ and thus \refeqn{eqn:pss-78-k15} can be used to calculate the Practical Salinity $S_p$.
+For a sample temperature of $15\degree C$ and pressure of $0 dbar$, $r_t$ and $R_t$ both equal 1, which leaves $R_t$ equal to $R$ and thus \refeqn{eqn:pss-78-k15} can be used to calculate the Practical Salinity $S_p$.
 For temperatures other than $15\degree C$, the Practical Salinity $S_p$ can be calculated using \refeqn{eqn:pss-78-full} where $k = 0.0162$.~\cite{ioc_teos_2010}
 \begin{equation}\label{eqn:pss-78-full}
  S_p = \sum_{i=0}^{5} a_i {(R_t)}^{i/2} + \lfrac{t-15}{1+k(t-15)} \sum_{i=0}^{5} b_i {(R_t)}^{i/2}
@@ -81,6 +81,9 @@ In order to correctly calculate the salinity, the temperatures should be convert
 % PSU vs TSD vs conductivity vs resistivity, salinity equation, capacitance of salt water, non-constant conductivity vs voltage.
 
 % \section{External Factors Affecting Electrical Characteristics of Salt Water}\label{sec:external-factors-affecting-electrical-characteristics-of-salt-water}
+
+\section{Salt water's Resistance-Voltage Measurement}
+% ostdiek_inquiry_into_physics_2020
 
 \section{Current Fringing in Conductive Materials}
 

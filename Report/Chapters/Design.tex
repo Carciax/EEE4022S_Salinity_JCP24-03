@@ -8,7 +8,9 @@
 
 The industry standard for measuring conductivity is the \gls{ctd}, which calculates salinity using conductivity, temperature and depth measurement.
 \refsec{sec:salinity-measurement-techniques} discussed several alternative methods of measuring salinity.
-However, most methods have drawbacks that make them difficult or impossible to use in Antarctica.
+The temperatures, environment and remote nature of the Antarctic make most of these methods difficult or impossible to use.
+Additionally, the final device was required to fit through an ice core hole of $110mm$ in diameter.
+While the prototype does not need to directly meet this requirement, it must be designed such that a future iteration that can.
 
 Refractometers and chlorinity titrations have the same drawbacks as the currently used hand-held \gls{ctd}, where capturing a water sample and bringing it to the surface alters its temperature and pressure, which may alter its salinity measurement.
 Microwave radiation has a lower-than-desirable accuracy.
@@ -37,7 +39,7 @@ Precious metals are known for having a significantly higher corrosion resistance
 However, they are also significantly more expensive.
 
 Choosing the electrode's material involved prioritising high corrosion resistance and low resistance while being restricted to materials that were attainable and within this project's budget.
-Titanium is the most corrosive resistant of the non-precious metals and has an acceptable conductivity of $2.3\e{6}$ which is about $25$ less than that of copper~\cite{walsh_electrodes_conductivity_1991}.
+Titanium is the most corrosive resistant of the non-precious metals and has an acceptable conductivity of $2,3\e{6}$ which is about $25$ less than that of copper~\cite{walsh_electrodes_conductivity_1991}.
 Titanium wire was available through off-cuts from a project being conducted by the Chemical Engineering Department of the University of Cape Town. 
 Thus, it was possible to use this material for the electrodes.
 
@@ -53,17 +55,28 @@ The electrode design is further discussed in \refsec{sec:conductivity-electrode-
 Gold electrodes made using the \gls{enig} \gls{pcb} manufacturing process were chosen as the device's primary electrodes.
 The \gls{pcb} manufacturing process allowed the electrodes to be made with a known area and length of the water between the electrodes, allowing for a more accurate conductivity calculation.
 
-Some scientific papers that attempt to measure salinity are uncertain whether salt water has a constant resistivity relative to the voltage applied.
-\textit{CITE}
-To verify this, the resistance of the water between the electrodes needed to be measured at different voltages while other factors were kept constant, which necessitated close attention to the fringing effect of the electrical current between the electrodes.
-Thus, wide, flat pads were used on the \gls{pcb} electrodes, which were placed close together to reduce the current spreading.
+Salt water does not have a constant resistivity with respect to voltage~\cite{benjankar_ec_based_salt_measurement_2021},\cite{mccomas_inquiry_into_physics_2005}.
+In order to isolate the non-linear resistance-voltage curve, the resistance of the water between the electrodes needed to be measured at different voltages while other factors were kept constant.
+This necessitated close attention to the fringing effect of the electrical current between the electrodes.
+Wide, flat pads were used on the \gls{pcb} electrodes, which were placed close together to reduce the current spreading.
 Additionally, a fringe guard was added to the electrodes, which consisted of a pad that outlined the main conductivity pads that repeated the same voltage as the main pads using an op-amp with unity gain.
 Ideally, the fringe guard would saturate the volume around the main pads with current and thus prevent them from fringing.
-This design is shown in \reffig{fig:gold-electrode}.
+\gls{pcb} connectors to attach the electrodes to a probe were added to this configuration, as shown in \reffig{fig:gold-electrode}.
 
+%chktex-file 44
 \begin{figure}[ht]
+    \begin{minipage}{0.5\textwidth}
+        
     \centering
-    \includegraphics[width=0.3\textwidth]{Figures/GoldElectrode}
+    \includegraphics[width=0.6\textwidth]{Figures/GoldElectrode}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \begin{tabular}{cl} \hline
+        1 & \gls{pcb} Connectors \\ \hline
+        2 & $2mm$ Fringe Guard \\ \hline
+        3 & $20mm \times 20mm$ Main Pad \\ \hline
+    \end{tabular}
+\end{minipage}
     \caption{The gold electrode \gls{pcb} design.}
     \label{fig:gold-electrode} %chktex 24
 \end{figure}
@@ -77,7 +90,7 @@ The second method employed to reduce the fringing effect was to keep the resista
 This theory is also based on capacitors where higher voltages generate stronger electrical fields that spread, or fringe, more.
 
 The gold electrodes were designed with a $20mm \times 20mm$ main pad with a $2mm$ wide fringe guard surrounding it and a spacing between the electrodes of $10mm$.
-The expected resistance was then calculated to be between $3.75\Omega$ and $6.25\Omega$ using \refeqn{eqn:conductivity-from-resistance} and conductivity values for salinities between $40$ and $25$ on the Practical Salinity Scale PSS-78~\cite{ioc_teos_2010}.
+The expected resistance was then calculated to be between $3,75\Omega$ and $6,25\Omega$ using \refeqn{eqn:conductivity-from-resistance} and conductivity values for salinities between $40$ and $25$ on the Practical Salinity Scale PSS-78~\cite{ioc_teos_2010}.
 
 The titanium electrodes were less complicated to design as they only had two variable parameters: their length and spacing.
 However, as they were made from titanium wire, the fringing effect between them could not be reduced using the same method as the gold electrodes.
@@ -100,7 +113,7 @@ The voltage drop across the electrodes was then amplified using an op-amp to inc
 
 \section{Circuit Overview}
 
-The resistor divider circuit was designed to be printed onto a \gls{pcb} (herewith referred to as the probe) manufactured with \texttt{JLCPCB}.
+The resistor divider circuit was designed to be printed onto a \gls{pcb} (herewith referred to as the probe) manufactured with JLCPCB.
 \gls{pcb} manufacturing is cost-effective, has a high precision relative to hand soldering, and the process was familiar to the author, making it the ideal method for creating the prototype.
 However, the resistor divider circuit required a few additions to increase its versatility and testing capability, an overview of which is shown in \reffig{fig:circuit-overview}.
 
@@ -112,14 +125,17 @@ However, the resistor divider circuit required a few additions to increase its v
 \end{figure}
 
 The voltage driving the resistor divider was provided by a \gls{dac} so that the voltage could be varied and salt water's voltage-resistance relationship could be determined.
-The \gls{dac} model was chosen from the \glspl{dac} available on the \texttt{JLCPCB}'s website.
+The \gls{dac} model was chosen from the \glspl{dac} available on the JLCPCB's website.
 The model DAC53401 was ultimately chosen for its high updated time of $10us$ and its advanced functionality, which allowed it to output square, triangle, and sawtooth waves.
 This functionality could be used to perform high-frequency tests in addition to linear voltage sweeps.
-The \gls{dac}'s output was connected to the base of a buffer transistor, and its emitter was connected back to the \gls{dac}'s feedback input.
-This configuration allowed a higher current to be drawn than the \gls{dac} could provide while maintaining the specified output voltage.
+
+A typical configuration of a \gls{dac} is to connect its output to the non-inverting input of an op-amp, which would be connected to the base of a transistor.
+The transistor's emitter would then be connected to the inverting input of the op-amp.
+This configuration allows a higher current to be drawn than the \gls{dac} can provide while maintaining the specified output voltage.
+The DAC53401 has an internal op-amp and a feedback input, which allows a transistor to be connected as shown in \reffig{fig:circuit-overview} to achieve the same outcome.
 
 Sets of switches added to the circuit allowed the voltage produced by the \gls{dac} to be directed to an $R_1$ resistor, then across to a pair of electrodes or to a calibration resistor.
-The switch model TS3A4751 was chosen from \texttt{JLCPCB}, which contained four switches in its \gls{ic}, as it was very cost-effective for its low and consistent on-state resistance of around $0.7\Omega$.
+The switch model TS3A4751 was chosen from JLCPCB, which contained four switches in its \gls{ic}, as it was very cost-effective for its low and consistent on-state resistance of around $0.7\Omega$.
 The circuit required three switching points: one for choosing the $R_1$ resistor, one for choosing the anode and one for choosing the cathode.
 
 It was decided to give the $R_1$ resistor alternate resistances to allow for any possible resistance between the titanium electrodes or unforeseen errors.
@@ -131,7 +147,7 @@ This configuration allowed for a minimum resolution of $11\%$ of $V_{DAC}$ for t
  \lfrac{10\Omega}{10\Omega + 100\Omega} * V_{DAC} * 11 = 100\%V_{DAC}
 \end{align} 
 
-The anode switch (switch 1) allowed $R_1$ to be connected to any of the four electrodes or to the calibration resistor of $5\Omega$, and the cathode switch (switch 2) allowed any electrode to be connected to ground.
+The anode switch, denoted as switch 1 in \reffig{fig:circuit-overview}, allowed $R_1$ to be connected to any of the four electrodes or to the calibration resistor of $5\Omega$, and the cathode switch, denoted as switch 2 in \reffig{fig:circuit-overview}, allowed any electrode to be connected to ground.
 An example of measuring the resistance between the titanium electrodes would be to connect switch 1 to Ti+ and switch 2 to Ti, allowing the voltage drop to be measured.
 This configuration also allows current to flow in both directions between electrodes, which can prevent an excessive buildup of chlorine gas or sodium electroplating on the electrodes or electrolysis of the water by taking a resistance measurement in both directions in rapid succession.
 
@@ -142,9 +158,9 @@ The total uncertainty of the parallel resistance $\delta_{R_{total}}$ is decreas
  \text{for a function}~f(x_1,x_2,\dots,x_n),~\text{its tolerance} ~\delta_f = \sqrt{\sum_{i=1}^{n} {\left( \lfrac{\partial f}{\partial x_i} \delta x_i \right)}^2} \label{eqn:uncertainty-general-formula} \\
     \therefore \delta_{R_{total}} = \sqrt{{\left( \lfrac{\partial R_{total}}{\partial R} \delta_R \right)}^2} = \sqrt{{\left( \lfrac{1}{n} \delta_R \right)}^2} = \lfrac{1}{n} \delta_R \label{eqn:parallel-resistor-uncertainty}
 \end{gather}
-The $R_1$ resistors were made from 3 parallel resistors, each with tolerance $\pm1\%$ giving a total tolerance of $\pm0.\bar{3}\%$ and the calibration resistor was made from 4 parallel resistors with tolerance $\pm1\%$ giving a total tolerance of $\pm0.25\%$.
+The $R_1$ resistors were made from 3 parallel resistors, each with tolerance $\pm1\%$ giving a total tolerance of $\pm0,\bar{3}\%$ and the calibration resistor was made from 4 parallel resistors with tolerance $\pm1\%$ giving a total tolerance of $\pm0,25\%$.
 
-One last switch point was added to the circuit for the gold electrode's fringe guards, an example of which is shown in \reffig{fig:au-measurement-circuit}.
+A last switch point was added to the circuit for the gold electrode's fringe guards, an example of which is shown in \reffig{fig:au-measurement-circuit}.
 The voltage from $R_1$ was routed to a buffer op-amp with unity gain. 
 Its output was then connected to the fringe guard, which effectively repeated the same voltage as the main pad while not affecting any measurements using them.
 The other fringe guard could be switched to ground, allowing a current to be generated between the two. 
@@ -181,7 +197,8 @@ With an external controller, a waterproofed probe could be lowered into the wate
 The chosen method of waterproofing the probe was to coat it with epoxy resin, as this was the most familiar and cost-efficient method available.
 The other notable option is to create a waterproof housing for the probe, but this can be complex and expensive.
 In addition to the circuitry shown in \reffig{fig:circuit-overview}, the probe had a temperature and depth sensor, which are discussed in \refsec{sec:temp-depth-measurement}, an \gls{rs485} communication port and a microcontroller.
-The microcontroller was chosen from the STM32F4 series as it is the most cost-effective series with a \gls{fpu}, allowing the full salinity calculation to be performed on the probe.
+The microcontroller was chosen from the STM32F4 series as it is the most cost-effective series with a \gls{fpu}, allowing the salinity to be calculated on board as per the equations in \refsec{sec:salinity-conductivity-relationship}.
+
 
 \section{Temperature and Depth Measurement}\label{sec:temp-depth-measurement}
 
@@ -190,7 +207,7 @@ An alternative approach is to use a non-waterproof pressure sensor that is isola
 The WF183DE pressure sensor was chosen as it was the most cost-effective sensor rated for above 50 meters of water pressure available at \texttt{JLCPCB}.
 Should this approach fail, the backup plan was to use the controller to manually input a depth so that the salinity could still be calculated.
 
-The temperature sensor was an arbitrarily chosen surface-mount sensor with high accuracy of $\pm 0.3\degree C$ and a wide temperature range of $-45$ to $130\degree C$.
+The temperature sensor was an arbitrarily chosen surface-mount sensor with high accuracy of $\pm 0,3\degree C$ and a wide temperature range of $-45$ to $130\degree C$.
 Epoxy resin is a poor thermal conductor~\cite{epotek_thermally_conductive_epoxies}. 
 Thus, the temperature sensor should be coated with a very thin layer of epoxy when the probe \gls{pcb} is cast, allowing for a more accurate measurement.
 The choice of microcontroller and pressure sensor also provided this board with two alternative temperature sensors, which were less accurate but could be used in the event that the primary temperature sensor failed.
