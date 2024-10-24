@@ -12,9 +12,10 @@ The tests were conducted in two phases because some required access to the board
 The first phase involved evaluating the \gls{dac}, \gls{adc}, calibration resistor and resistance measuring accuracy which is covered in \refsec{sec:dac-voltage-range-and-accuracy} to \refsec{sec:resistance-measuring-accuracy}.
 
 After the first testing phase, the probe was cast into epoxy resin as described in \refsec{sec:probe-epoxy-casting}, which allowed the second phase to commence.
-The pressure sensor was tested, and it was confirmed to be working as expected, returned accurate temperature and pressure readings.
-The second phase involved establishing a voltage-resistance relationship for the salt water, a voltage-to-conductivity relationship for both electrodes and finally, the salinometer's ability to measure salinity, which is covered in \refsec{sec:linear-conductivity-measurement} to \refsec{sec:salinity-measurement-accuracy}.
-A summary of these tests is shown in \reftbl{tab:testing-summary}, and each test is discussed in further detail in their relevant sections.
+First, the pressure sensor was tested, and it was confirmed to be working as expected, returned accurate temperature and pressure readings.
+The second phase involved establishing a voltage-resistance relationship for the salt water, a voltage-to-conductivity relationship for both electrodes and finally, the salinometer's ability to measure salinity, which is covered in \refsec{sec:voltage-sweep-repeatability} to \refsec{sec:ac-voltage-measurements}.
+No corrosion nor electrolysis was noticed during these tests, proving that the choice of materials and the bidirectional measurements were effective at preventing these issues.
+A summary of these tests is shown in \reftbl{tab:testing-summary}, and each test is discussed in further detail in its relevant section.
 
 %chktex-file 44
 \begin{longtblr}[
@@ -23,14 +24,17 @@ A summary of these tests is shown in \reftbl{tab:testing-summary}, and each test
     ]{
     hlines,
     vlines,
-    colspec = {Q[c,m,1cm]X[c,m]*{3}{Q[c,m,1.75cm]}}
+    colspec = {Q[c,m]X[c,m]Q[c,m,2.5cm]Q[c,m,1.75cm]Q[c,m,2.5cm]}
     }
     \textbf{Sec.} & \textbf{Test Description} & \textbf{Result Metric} & \textbf{Ideal Result} & \textbf{Measured Results} \\
     \ref{sec:dac-voltage-range-and-accuracy} & The minimum and maximum voltage output of the \gls{dac} between $0V$ and $V_{DD} = 3,3V$ & Range & $0-3,3V$ & $0-2,59V$ \\
     \ref{sec:dac-voltage-range-and-accuracy} & The gain and offset of the output voltage of the \gls{dac} relative to the instructed voltage & {Gain \\ Offset} & {$1,0$ \\ $0,0V$} & {$0,9837$ \\ $0,0070V$} \\
     \ref{sec:adc-accuracy} & The gain and offset of the voltage measured by the \gls{adc} relative to the voltage measured by the multimeter & {Gain \\ Offset} & {$1,0$ \\ $0,0V$} & {$0,9877$ \\ $0,0082V$} \\
-    \ref{sec:calibration-resistance} & The resistance of the calibration resistor $R_{CAL}$ & Resistance & $5\Omega$ & $5,00\Omega$ \\
+    \ref{sec:calibration-resistance} & The resistance of the calibration resistor & Resistance & $5\Omega$ & $5,00\Omega$ \\
     \ref{sec:resistance-measuring-accuracy} & The gain and offset of the resistance measured by the salinometer relative to the resistance measured by the multimeter & {Gain \\ Offset} & {$1$ \\ $0\Omega$} & {$1,0000$ \\ $0,0000\Omega$} \\
+    {\ref{sec:voltage-sweep-repeatability}, \\ \ref{sec:voltage-conductivity-mapping}} & The repeatability of voltage sweep measurements, the difference between measurements of different samples, and the accuracy of the calculated salinity & {Repeatability \\ Differentiability \\ Accuracy} & {Identical \\ Clear \\ Accurate} & {Within $10\%$ \\ Clear \\ Inaccurate} \\
+    \ref{sec:individual-voltage-measurements} & The repeatability of individual voltage measurements, the difference between measurements of different samples, and the accuracy of the calculated salinity & {Repeatability \\ Differentiability \\ Accuracy} & {Identical \\ Clear \\ Accurate} & {Within $10\%$ \\ Clear \\ Within 4 \gls{psu}} \\
+    \ref{sec:ac-voltage-measurements} & The repeatability of \gls{ac} voltage measurements, the difference between measurements of different samples, and the accuracy of the calculated salinity & {Repeatability \\ Differentiability \\ Accuracy} & {Identical \\ Clear \\ Accurate} & {Untested \\ Unclear \\ -} \\
 \end{longtblr}
 
 \section{Testing Apparatus}
@@ -148,7 +152,7 @@ This error was assumed to be due to the unaccounted resistance of the switches a
 While these values could be measured and included in the equation, a more efficient and arguably more accurate method would be to generate an equation of best fit and use it to calculate the correct resistance.
 
 To determine the general formula of the equation of best fit, \refeqn{eqn:electrode-calib-resistance} with the electrode resistance $R_E$ and the calibration resistance $R_C$, was adjusted to include $r_e$, which represents the unknown resistance of the switches and traces as shown in \refeqn{eqn:resistance-measuring}.
-$R_C$, $R_1$ and $r_e$ were condensed into the standard rational function coefficients $p$ and $q$ as shown in \refeqn{eqn:resistance-rational}.
+$R_C$, $R_1$ and $r_e$ were condensed into the standard rational function coefficients $p$ and $q$ as shown in \refeqn{eqn:resistance-measuring-rational}.
 Finally, the equation was rearranged to give the electrode's resistance in terms of the measured voltage ratio as shown in \refeqn{eqn:resistance-measuring-rational}.
 
 \begin{align}
@@ -216,7 +220,7 @@ The priming caused the actual measurements in both directions to start high and 
     \begin{minipage}{0.5\textwidth}
         \centering
         \includegraphics[width=\textwidth]{Figures/Testing/Aus7}
-        \caption{Voltage sweep repeatability test 4 with a varying number of priming measurements and all true measurement taken as reverse voltage sweeps with 500 voltage samples.}
+        \caption{Voltage sweep repeatability test 4 with a varying number of priming measurements and the actual measurement taken as reverse voltage sweeps with 500 voltage samples.}
         \label{fig:test4} %chktex 24
     \end{minipage}
 \end{figure}
@@ -233,8 +237,8 @@ Thus, an alternative method was needed to take the measurements.
 It was noticed that the priming effect decreased over time, allowing the voltage sweeps in \reffig{fig:test3} to return to their expected curves.
 A new theory stemmed from this that the water could relax from a primed state over time.
 To test this, a delay, or relaxation time, was added between voltage samples, during which no voltage was applied to the electrodes.
-The first test used a relaxation time of $2s$ and $500ms$.
-With a $2s$ relaxation time, the forward and reverse voltage sweeps were near identical, as shown in \reffig{fig:test5}
+The first test used relaxation times of $2s$ and $500ms$ and stirring to cycle the water between the electrodes.
+With a $2s$ relaxation time, the forward and reverse voltage sweeps were near identical, as shown in \reffig{fig:test5}.
 However, with a $500ms$ relaxation time, there was a clear difference and the same initial voltage lag shown in \reffig{fig:test2}.
 
 \begin{figure}[ht]
@@ -253,10 +257,10 @@ However, with a $500ms$ relaxation time, there was a clear difference and the sa
 \end{figure}
 This test concluded a valid method of measuring a voltage sweep, which used a relaxation time of $2s$ between each voltage sample.
 This method allowed the titanium electrodes' length and spacing to be experimentally configured such that they could use the same $R_1$ value of $100\Omega$ as the gold electrodes.
-Iterative testing revealed that a length of $30m$ and a spacing of $6mm$ used most of the $0V$ to $0,3V$ available to the electrodes.
+Iterative testing revealed that a length of $30mm$ and a spacing of $6mm$ used most of the $0V$ to $0,3V$ range available to the electrodes.
 A test comparing the titanium and gold electrodes was performed using a relaxation time of $2s$, shown in \reffig{fig:test6}.
 The results showed that the gold electrodes followed the same curve that \refref{benjankar_ec_based_salt_measurement_2021} found, while the titanium electrodes did not.
-The reason for this is unknown; it was theorised that the titanium electrodes' fringing effect and conductivity difference were the cause, but this needed further investigation.
+The reason for this is unknown; it was theorised that the titanium electrodes' fringing effect and conductivity difference were the cause, but this required further investigation.
 
 The investigation into determining a repeatable voltage sweep necessitated two more tests: the repeatability of the sweep on the same sample and the differentiation between samples.
 The former involved taking two voltage sweeps of two different saltwater samples of unknown but different salinities, shown in \reffig{fig:test7}.
@@ -278,8 +282,8 @@ These results showed that the voltage sweeps were approximately grouped by salin
 \end{figure}
 
 Next, an individual measurement's repeatability was further investigated by taking four identical voltage sweeps of the same saltwater sample.
-The results, shown in \reffig{fig:test8}, showed that the measurements were approximately grouped.
-However, it was noted that the voltage sweeps drifted upwards with each successive measurement.
+The results, shown in \reffig{fig:test8}, found that the measurements were approximately grouped.
+However, it was noticed that the voltage sweeps drifted upwards with each successive measurement.
 A higher voltage sweep indicated a higher resistance, lower conductivity, and thus a lower salinity.
 This was likely due to the previous sweep affecting the proceeding one, similar to the priming effect.
 A test that could isolate both issues would be replacing the water between the electrodes during the voltage sweep.
@@ -290,7 +294,7 @@ It was noticed that there was a measurement inconsistency of the voltage samples
 However, the same inconsistency was present in the measurement and calibration reading. 
 Thus, it was likely due to noise in the \gls{adc} or op-amp.
 A similar inconsistency was present at the end of the voltage range, shown in \reffig{fig:test6}, likely due to the voltage lag of the reverse sweep.
-Thus, to allow for a more straightforward analysis, the voltage sweeps of these voltages were excluded.
+To allow for a more straightforward analysis, these voltages were excluded.
 
 \section{Voltage to Conductivity Mapping}\label{sec:voltage-conductivity-mapping}
 
@@ -320,7 +324,7 @@ Once the sample reached approximately $15\degree C$, four voltage sweeps were ta
 
 The gold electrode test showed a similar result to \reffig{fig:test7}, where the measurements had the same shape and were approximately grouped, increasing with each successive test.
 However, the titanium electrode test shows different results, appearing to have two different curves.
-The samples taken below $1.4V$ appeared concave, while those above $1.4V$ appeared convex, which was confirmed not to be due to the voltage clipping at $0,3V$.
+The samples taken below $1,4V$ appeared concave, while those above $1,4V$ appeared convex, which was confirmed not to be due to the voltage clipping at $0,3V$.
 It was theorised that this was due to the fringing effect of the titanium electrodes, which were overlaid with the resistance-voltage curve of the saltwater sample.
 However, this could not be verified, as the gold electrodes could not be tested without the fringe guards. 
 Thus, the fringing effect could not be further studied.
@@ -417,7 +421,7 @@ This investigation concluded that the probe could detect a clear and logical dif
 While further investigation could be conducted into determining a mathematical relationship between the curves and their respective conductivities, it was considered viable only with more accurate data attained through the previously mentioned method of pumping water over the electrode.
 Thus, alternative methods were investigated.
 
-\section{Individual Voltage Measurements}
+\section{Individual Voltage Measurements}\label{sec:individual-voltage-measurements}
 
 A second approach, similar to that of \refref{instructables_water_salinity_meter}, was investigated, which used a single voltage measurement to calculate the salinity.
 While this would prevent any impact of the priming effect, a single measurement is highly vulnerable to noise and errors, which could cause inaccuracies in the salinity calculation.
@@ -447,7 +451,7 @@ The salinity was then calculated using the resistances.
 Calculating conductivity using resistance was a scalar operation and thus was omitted as it does not affect the salinity calculation, as previously mentioned.
 While these values proved more accurate in estimating salinity than the voltage sweep, they were inconsistent and subject to noise and error.
 
-\section{AC Voltage Measurements}
+\section{AC Voltage Measurements}\label{sec:ac-voltage-measurements}
 
 A third approach, similar to that of \refref{jonsson_chip_based_salinity_2013}, was investigated, which used an \gls{ac} sine wave to measure the saltwater's response.
 A sine wave was generated by writing precalculated values of a half sin wave to the \gls{dac} and changing the current direction between the electrodes every half wave, which gave the effect of a full sine wave centred around ground.

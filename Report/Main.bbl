@@ -1,11 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{esa_mapping_salty_waters_2019}
-{The European Space Agency}, ``Mapping salty waters,'' 2019.
-
-\bibitem{jonsson_chip_based_salinity_2013}
-J.~Jonsson, K.~Smedfors, L.~Nyholm, and G.~Thornell, ``Towards chip-based salinity measurements for small submersibles and biologgers,'' {\em International Journal of Oceanography}, vol.~2013, p.~11, 2013.
-
 \bibitem{NSIDC_ice_sheet_facts_2024}
 {National Snow and Ice Data Center}, ``Ice sheet quick facts,'' 2024.
 
@@ -81,6 +75,9 @@ C.~T. Swift and R.~E. Mcintosh, ``Considerations for microwave remote sensing of
 \bibitem{gabarro_microwave_salinity_2004}
 C.~Gabarró, J.~Font, A.~Camps, M.~Vall-llossera, and A.~Julià, ``A new empirical model of sea surface microwave emissivity for salinity remote sensing,'' {\em Geophysical Research Letters}, vol.~31, no.~1, 2004.
 
+\bibitem{esa_mapping_salty_waters_2019}
+{The European Space Agency}, ``Mapping salty waters,'' 2019.
+
 \bibitem{millard_index_of_refraction_algorithm_1990}
 R.~Millard and G.~Seaver, ``An index of refraction algorithm for seawater over temperature, pressure, salinity, density, and wavelength,'' {\em Deep Sea Research Part A. Oceanographic Research Papers}, vol.~37, no.~12, pp.~1909--1926, 1990.
 
@@ -120,8 +117,15 @@ O.~A. Tengesdal, B.~L. Hauge, and L.~E. Helseth, ``Electromagnetic and optical m
 \bibitem{benjankar_ec_based_salt_measurement_2021}
 R.~Benjankar and R.~Kafle, ``Salt concentration measurement using re-usable electric conductivity-based sensors,'' {\em Water Air and Soil Pollution}, vol.~232, no.~13, p.~13, 2021.
 
+\bibitem{ostdiek_inquiry_into_physics_2020}
+V.~J. Ostdiek and D.~J. Bord, {\em Inquiry into Physics}.
+\newblock Boston: Cengage Learning, 2020.
+
 \bibitem{instructables_water_salinity_meter}
-``Water salinity-meter : 7 steps.''
+{Autodesk Instructables}, ``Water salinity-meter : 7 steps.''
+
+\bibitem{jonsson_chip_based_salinity_2013}
+J.~Jonsson, K.~Smedfors, L.~Nyholm, and G.~Thornell, ``Towards chip-based salinity measurements for small submersibles and biologgers,'' {\em International Journal of Oceanography}, vol.~2013, p.~11, 2013.
 
 \bibitem{seabird_dbar_to_depth_2024}
 {Sea-Bird Scientific}, ``Conversion of pressure to depth,'' 2024.
@@ -180,8 +184,7 @@ N.~W. Bergmann, J.~Juergens, L.~Hou, Y.~Wang, and J.~Trevathan, ``Wireless under
 \bibitem{totalmateria_joining_titanium_2005}
 {Total Materia}, ``Joining titanium,'' 2005.
 
-\bibitem{ostdiek_inquiry_into_physics_2020}
-V.~J. Ostdiek and D.~J. Bord, {\em Inquiry into Physics}.
-\newblock Boston: Cengage Learning, 2020.
+\bibitem{nicolaas_slot_joint_2015}
+Nicolaas, ``A blog about digital fabrication: The simplest slot joint,'' 2015.
 
 \end{thebibliography}
