@@ -2,9 +2,10 @@
 % Introduction
 % ----------------------------------------------------
 
-\chapter{Introduction}
+\chapter{Introduction}\label{ch:introduction}
 
 \section{Problem Statement}
+
 There are several methods and designs for measuring salinity which is commonly understood as the salt content of water.
 However, Antarctica's freezing temperatures and harsh conditions make it challenging for scientists to study this metric there.
 The current method of measuring involves capturing a water sample from the ocean beneath the ice sheet and bringing it to the surface for measurement.
@@ -12,6 +13,7 @@ This process alters some water's physical properties, such as temperature and pr
 This project aims to design a device that can more accurately measure the salinity by using a probe to take measurements at various depths in the ocean.
 
 \section{Background}
+
 Antarctica is covered in a vast sheet of ice consisting of around 30 million cubic kilometres in volume, which is about 60\% of the world's fresh water~\cite{NSIDC_ice_sheet_facts_2024}.
 Part of the ice sheets rests on land, known as the continental ice sheet, while the rest floats on the ocean, known as the ice shelves~\cite{nsidc_ice_shelves_2024}.
 The ice sheet supports a variety of species both above and below it, as well as an ecosystem within the ice itself~\cite{noaa_arctic_expedition_2002}.
@@ -27,6 +29,7 @@ Either a probe is lowered into the water through the ice core hole, allowing mea
 Salinity is currently being measured using the latter method, which could be improved as the water sample changes temperature and pressure as it is brought to the surface, which can affect the salinity measurement.
 
 \section{Objectives}
+
 The objectives of this project are to design and develop a prototype device for measuring the salinity of the water beneath the ice shelf.
 The prototype should aid in investigating its feasibility and understanding the methodology for measuring salinity.
 It should set the foundation for a future device to be developed that can be used in the field.
@@ -36,6 +39,7 @@ The final device should be able to withstand Antarctica's harsh temperatures and
 % \lipsum[1]
 
 \section{Scope \& Limitations}
+
 This project's scope includes the design and development of a prototype device for measuring salinity.
 This includes researching the relevant literature that details devices with similar functionality, the theory behind measuring salinity, followed by the design and development of a prototype device that can test the properties of salt water and lead to a method of measuring salinity.
 The prototype development involves testing and evaluating the device to determine its effectiveness in measuring salinity.
@@ -47,4 +51,10 @@ This budget can only be spent through \gls{uct} with their approved suppliers an
 The project must be completed in 14 weeks from the start to the submission of the final report.
 
 \section{Report Outline}
-\lipsum[1]
+
+Following this introduction in \refch{ch:introduction}, the literature review in \refch{ch:literature} will give an overview of salinity, the methods of measuring it, and the devices used to measure it.
+The method of calculating salinity is cover in \refch{ch:theory-development}.
+This is followed by the design of the probe circuitry, its electrodes and a controller required to measure salinity and a controller  in \refch{ch:design}.
+\refch{ch:implementation} details the fabrication of the designed probe circuitry and the controller onto \glspl{pcb}, the correction made to them, and the waterproofing of the probe by casting it into epoxy.
+\refch{ch:testing} details the evaluation of the probe's resistance measurement accuracy, following by an investigation into and evolution of a method to measure conductivity and to calculate salinity.
+Finally, \refch{ch:conclusions} concludes the report with a summary of the project's objectives, the results obtained, and \refch{ch:recommendations} provides recommendations for future work.

@@ -25,25 +25,36 @@
 \contentsline {figure}{\numberline {6.5}{\ignorespaces The voltage output by the \gls {dac} measured by a multimeter versus by the \gls {adc}.}}{29}{figure.caption.21}%
 \contentsline {figure}{\numberline {6.6}{\ignorespaces The resistance measuring test.}}{30}{figure.caption.22}%
 \contentsline {figure}{\numberline {6.7}{\ignorespaces The resistance measuring test using the corrected equation.}}{30}{figure.caption.22}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Conductivity test 1 with gold electrodes and the fringe shield, a voltage range of $0-2,6V$, and 50 samples taken of salt water sample of unknown salinity.}}{32}{figure.caption.23}%
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Conductivity test 2 with draining and resetting the \gls {dac} between each voltage sample.}}{32}{figure.caption.23}%
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Conductivity test 3 with 25 priming measurements taken before the actual measurement.}}{33}{figure.caption.24}%
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Conductivity test 4 with a varying number of priming measurements and all true measurement taken as reverse voltage sweeps with 500 voltage samples.}}{33}{figure.caption.24}%
-\contentsline {figure}{\numberline {6.12}{\ignorespaces Conductivity test 5 with a varying amount of relaxation time before each measurement was taken and 50 samples.}}{33}{figure.caption.25}%
-\contentsline {figure}{\numberline {6.13}{\ignorespaces Conductivity test 6 with the difference between the titanium and gold electrodes.}}{33}{figure.caption.25}%
-\contentsline {figure}{\numberline {6.14}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{34}{figure.caption.26}%
-\contentsline {figure}{\numberline {6.15}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{34}{figure.caption.26}%
-\contentsline {figure}{\numberline {6.16}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{35}{figure.caption.27}%
-\contentsline {figure}{\numberline {6.17}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{35}{figure.caption.27}%
-\contentsline {figure}{\numberline {6.18}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{36}{figure.caption.28}%
-\contentsline {figure}{\numberline {6.19}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{36}{figure.caption.28}%
-\contentsline {figure}{\numberline {6.20}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{36}{figure.caption.29}%
-\contentsline {figure}{\numberline {6.21}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{36}{figure.caption.29}%
-\contentsline {figure}{\numberline {6.22}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{37}{figure.caption.30}%
-\contentsline {figure}{\numberline {6.23}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{37}{figure.caption.30}%
-\contentsline {figure}{\numberline {6.24}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{38}{figure.caption.31}%
-\contentsline {figure}{\numberline {6.25}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{38}{figure.caption.31}%
-\contentsline {figure}{\numberline {6.26}{\ignorespaces Conductivity test 6 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{38}{figure.caption.32}%
-\contentsline {figure}{\numberline {6.27}{\ignorespaces Conductivity test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{38}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Voltage sweep repeatability test 1 with gold electrodes and the fringe shield, a voltage range of $0-2,6V$, and 50 samples taken of salt water sample of unknown salinity.}}{32}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Voltage sweep repeatability test 2 with draining and resetting the \gls {dac} between each voltage sample.}}{32}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Voltage sweep repeatability test 3 with 25 priming measurements taken before the actual measurement.}}{33}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Voltage sweep repeatability test 4 with a varying number of priming measurements and all true measurement taken as reverse voltage sweeps with 500 voltage samples.}}{33}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Voltage sweep repeatability test 5 with a varying amount of relaxation time before each measurement was taken and 50 samples.}}{33}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Voltage sweep repeatability test 6 with the difference between the titanium and gold electrodes.}}{33}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Voltage sweep repeatability test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{34}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Voltage sweep repeatability test 8 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{34}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Conductivity mapping test 1 with 4 tests using the gold electrodes and the fringe guard taken of a $34,8$ \gls {psu} sample at $15,0\degree C$.}}{35}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Conductivity mapping test 2 with 4 tests using the titanium electrodes taken of a $34,8$ \gls {psu} sample at $15,0\degree C$.}}{35}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Conductivity mapping test 3 with 4 tests using the gold electrodes and the fringe guard taken of a $24,4$ \gls {psu} sample at $21,7\degree C$.}}{36}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Conductivity mapping test 4 with 4 tests using the titanium electrodes taken of a $24,4$ \gls {psu} sample at $21,7\degree C$.}}{36}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.20}{\ignorespaces Conductivity mapping test 5 with 4 tests using the gold electrodes and the fringe guard taken of a $29,1$ \gls {psu} sample at $20,2\degree C$.}}{36}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.21}{\ignorespaces Conductivity mapping test 6 with 4 tests using the titanium electrodes taken of a $29,1$ \gls {psu} sample at $20,2\degree C$.}}{36}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.22}{\ignorespaces The gold electrode tests of known samples with hyperbolic curves of best fit generated.}}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.23}{\ignorespaces The titanium electrode tests of known samples with hyperbolic curves of best fit generated.}}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.24}{\ignorespaces \gls {ac} test 1 with a 4 sine waves centred at $0V$.}}{39}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.25}{\ignorespaces \gls {ac} test 1 with a 4 sine waves centred at $1,65V$ and 4 sine waves centred at $-1,65V$.}}{39}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.26}{\ignorespaces \gls {ac} test 1 with a 4 $250Hz$ sine waves centred at $0V$ on a $34,8$ \gls {psu} sample.}}{40}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.27}{\ignorespaces \gls {ac} test 1 with a 4 $250Hz$ sine waves centred at $0V$ on a $24,4$ \gls {psu} sample.}}{40}{figure.caption.32}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces AI Use for Concept Overviews}}{49}{figure.caption.34}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces AI Use for Concept Overviews}}{50}{figure.caption.35}%
+\contentsline {figure}{\numberline {C.3}{\ignorespaces AI Use for Research Overview}}{51}{figure.caption.36}%
+\contentsline {figure}{\numberline {C.4}{\ignorespaces AI Use for Research Overview}}{52}{figure.caption.37}%
+\contentsline {figure}{\numberline {C.5}{\ignorespaces AI Use for \LaTeX commands and code}}{53}{figure.caption.38}%
+\contentsline {figure}{\numberline {C.6}{\ignorespaces AI Use for \LaTeX commands and code}}{53}{figure.caption.39}%
+\contentsline {figure}{\numberline {C.7}{\ignorespaces AI Use for BibTeX citations}}{54}{figure.caption.40}%
+\contentsline {figure}{\numberline {C.8}{\ignorespaces AI Use for BibTeX citations}}{54}{figure.caption.41}%

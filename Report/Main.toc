@@ -17,7 +17,7 @@
 \contentsline {subsection}{\numberline {2.4.3}Salinity from Density}{5}{subsection.2.4.3}%
 \contentsline {subsection}{\numberline {2.4.4}Salinity from Microwave Radiation}{5}{subsection.2.4.4}%
 \contentsline {subsection}{\numberline {2.4.5}Salinity from Refractive Index}{6}{subsection.2.4.5}%
-\contentsline {subsection}{\numberline {2.4.6}Salinity from Interferometry}{7}{subsection.2.4.6}%
+\contentsline {subsection}{\numberline {2.4.6}Salinity from Interferometry}{6}{subsection.2.4.6}%
 \contentsline {subsection}{\numberline {2.4.7}Salinity from Magnetic Permeability}{7}{subsection.2.4.7}%
 \contentsline {section}{\numberline {2.5}Salinity Measurement Devices using Conductivity}{7}{section.2.5}%
 \contentsline {chapter}{\numberline {3}Theory Development}{9}{chapter.3}%
@@ -47,9 +47,12 @@
 \contentsline {section}{\numberline {6.5}Calibration Resistance}{30}{section.6.5}%
 \contentsline {section}{\numberline {6.6}Resistance Measuring Accuracy}{30}{section.6.6}%
 \contentsline {section}{\numberline {6.7}Voltage Sweep Repeatability}{31}{section.6.7}%
-\contentsline {section}{\numberline {6.8}Voltage to Conductivity Mapping}{34}{section.6.8}%
-\contentsline {section}{\numberline {6.9}Individual Voltage Measurements}{37}{section.6.9}%
+\contentsline {section}{\numberline {6.8}Voltage to Conductivity Mapping}{35}{section.6.8}%
+\contentsline {section}{\numberline {6.9}Individual Voltage Measurements}{38}{section.6.9}%
 \contentsline {section}{\numberline {6.10}AC Voltage Measurements}{38}{section.6.10}%
-\contentsline {chapter}{\numberline {7}Conclusions}{39}{chapter.7}%
-\contentsline {chapter}{\numberline {8}Recommendations}{40}{chapter.8}%
-\contentsline {chapter}{Bibliography}{41}{chapter*.33}%
+\contentsline {chapter}{\numberline {7}Conclusions}{41}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Recommendations}{42}{chapter.8}%
+\contentsline {chapter}{Bibliography}{43}{chapter*.33}%
+\contentsline {chapter}{\numberline {A}Graduate Attribute Assessment}{47}{appendix.A}%
+\contentsline {chapter}{\numberline {B}Git Repository}{48}{appendix.B}%
+\contentsline {chapter}{\numberline {C}AI Use Screenshots}{49}{appendix.C}%

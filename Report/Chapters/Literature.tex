@@ -72,7 +72,7 @@ In 1969, an accurate relationship between these was established by \refref{woost
 The conductivity of a liquid is a measure its ability to conduct electrical current, which is related to the number of free electrons present in the liquid, which is in turn related to the number of ions present in the liquid~\cite{stewart_introduction_to_physical_oceanography_2004}.
 In the case of salt water, the ions present are from the dissolved material, which salinity was previously defined on~\cite{stewart_introduction_to_physical_oceanography_2004}.
 The relationship between salinity and conductivity accounts for all the ions in the water as opposed to just chlorine which is why it was considered a more apt measure of salinity~\cite{lewis_salinity_definition_and_calculation_1978}.
-Measuring conductivity was more accurate than titration, achieving accuracies within $0.0002$ on the Practical Salinity Scale PSS-78~\cite{seabird_salinity_accuracy}.
+Measuring conductivity was more accurate than titration, achieving accuracies within $0.0002$ \gls{psu}~\cite{seabird_salinity_accuracy}.
 The conductivity measurement is typically done using a \gls{ctd} which measures the conductivity as well as the temperature and depth that are required to accurately calculate salinity.
 \Gls{ctd} devices are discussed further in \refsec{sec:salinity-measurement-devices} and the calculation of salinity from conductivity is further discussed in~\refsec{sec:salinity-conductivity-relationship}.
 
@@ -86,7 +86,7 @@ The relationship between salinity and density is approximately linear as shown i
     \rho = \rho_0(1 + kS)
 \end{equation}
 The more accurate relationship is more complicated and includes a temperature correction defined by \refref{millero_international_one_atmosphere_eos_seawater_1981}.
-While the accuracy of salinity from density was less than that from conductivity with accuracies within $0.003$ on the Practical Salinity Scale PSS-78~\cite{millero_international_one_atmosphere_eos_seawater_1981}, \refref{schmidt_density_salinity_relation_2018} still claimed that density was more appropriate to use as the standard potassium chloride solution used to calibrate the \glspl{ctd} meters did not account for the variation of the ratios of conductive and non-conductive materials commonly present in salt water while the density of the water did.
+While the accuracy of salinity from density was less than that from conductivity with accuracies within $0.003$ \gls{psu}~\cite{millero_international_one_atmosphere_eos_seawater_1981}, \refref{schmidt_density_salinity_relation_2018} still claimed that density was more appropriate to use as the standard potassium chloride solution used to calibrate the \glspl{ctd} meters did not account for the variation of the ratios of conductive and non-conductive materials commonly present in salt water while the density of the water did.
 
 \subsection{Salinity from Microwave Radiation}
 
@@ -99,7 +99,7 @@ This necessitated the investigation of the relationship that could accurately pr
 The relationship required multiple different corrections as the microwave readings were found to be affected by \gls{sst}, surface air pressure, surface air temperature, faraday rotation, and surface wind speed~\cite{yueh_microwave_salinity_error_sources_2001}.
 
 This research has allowed for the development of satellites that can measure the salinity, which has been used to develop global salinity maps as shown in \reffig{fig:satellite_salinity_map}.
-The data measured using this method is reported to be accurate to within $0.1$ on the Practical Salinity Scale PSS-78~\cite{yueh_microwave_salinity_error_sources_2001}.
+The data measured using this method is reported to be accurate to within $0.1$ \gls{psu}~\cite{yueh_microwave_salinity_error_sources_2001}.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.75\textwidth]{Figures/salinity_distribution}
@@ -111,10 +111,10 @@ The data measured using this method is reported to be accurate to within $0.1$ o
 
 The second measurement method that takes advantage of the electromagnetic spectrum interaction uses the visible light spectrum to measure the water's refractive index.
 The relationship between salinity and refractive index is similarly complex, requiring a 27-term equation that includes the effect of pressure and temperature.
-The refractive index equation is defined a range of $500-700nm$ in wave length, $0-30\degree C$ in temperature, $0-40$ on the Practical Salinity Scale PSS-78, and $0-11000 dbar$ in pressure, and it holds an accuracy of $0.4-80$ \gls{ppm} on the Practical Salinity Scale PSS-78, decreasing with increasing pressure.~\cite{millard_index_of_refraction_algorithm_1990}
+The refractive index equation is defined a range of $500-700nm$ in wave length, $0-30\degree C$ in temperature, $0-40$ \gls{psu}, and $0-11000 dbar$ in pressure, and it holds an accuracy of $0.4-80$ \gls{ppm} \gls{psu}, decreasing with increasing pressure.~\cite{millard_index_of_refraction_algorithm_1990}
 
 Refractometers are used to measures the refractive index of water and as only a small amount of the sample is needed, these devices are relatively compact.
-Two notably compact versions have dimensions of $22.5mm \times 22.5mm \times 120mm$~\cite{malarde_compact_refractometer_2008} and $40mm \times 40mm \times 70mm$~\cite{tengesdal_compact_refractometer_2012} which have achieved accuracies of 2 and 83 \gls{ppt} on the Practical Salinity Scale PSS-78 respectively.
+Two notably compact versions have dimensions of $22.5mm \times 22.5mm \times 120mm$~\cite{malarde_compact_refractometer_2008} and $40mm \times 40mm \times 70mm$~\cite{tengesdal_compact_refractometer_2012} which have achieved accuracies of 2 and 83 \gls{ppt} \gls{psu} respectively.
 
 \subsection{Salinity from Interferometry}
 
@@ -123,7 +123,7 @@ Interferometry involves generating two identical light waves on the visible spec
 The comparative gain and phase shift between the two waves can be used to identify the salinity of a sample of salt water~\cite{liao_interferometer_seawater_salinity_2023}.
 
 This method has varying implementations, each with varying results.
-\refref{yang_in_situ_refractometer_salinity_measurement_2024} reported to be accurate within $0.001$ on the Practical Salinity Scale PSS-78 using a Michelson interferometer and other researchers have reported other accuracies using different interferometers~\cite{possetti_interferometer_salinity_measurement_2009, nguyen_interferometer_salinity_measurement_2009, zhao_interferometer_salinity_measurement_2009}.
+\refref{yang_in_situ_refractometer_salinity_measurement_2024} reported to be accurate within $0.001$ \gls{psu} using a Michelson interferometer and other researchers have reported other accuracies using different interferometers~\cite{possetti_interferometer_salinity_measurement_2009, nguyen_interferometer_salinity_measurement_2009, zhao_interferometer_salinity_measurement_2009}.
 The refractometer has the disadvantage of being a large instrument requiring precisely aligned and spaced mirrors to direct the light waves, making it difficult to implement in a compact device. 
 
 \subsection{Salinity from Magnetic Permeability}\label{subsec:salinity-from-electromagnetic-induction}

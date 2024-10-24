@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.12)  24 OCT 2024 01:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.9.12)  24 OCT 2024 14:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1019,7 +1019,7 @@ Package gensymb Info: Using \textohm for \ohm on input line 7.
 LaTeX Info: Redefining \micro on input line 7.
 Package gensymb Info: Using \textmu for \micro on input line 7.
  (./FrontMatter/Title.tex
-<FrontMatter/UCT_logo.png, id=221, 1554.80875pt x 1578.89874pt>
+<FrontMatter/UCT_logo.png, id=233, 1554.80875pt x 1578.89874pt>
 File: FrontMatter/UCT_logo.png Graphic file (type png)
 <use FrontMatter/UCT_logo.png>
 Package pdftex.def Info: FrontMatter/UCT_logo.png  used on input line 14.
@@ -1027,7 +1027,49 @@ Package pdftex.def Info: FrontMatter/UCT_logo.png  used on input line 14.
 ) (./FrontMatter/Declaration.tex [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc} <./FrontMatter/UCT_logo.png>]
-<Figures/Signature.png, id=231, 335.2525pt x 235.88126pt>
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 17.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 17.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 17.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 17.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 17.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 17.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 17.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 17.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 17.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+<Figures/Signature.png, id=243, 335.2525pt x 235.88126pt>
 File: Figures/Signature.png Graphic file (type png)
 <use Figures/Signature.png>
 Package pdftex.def Info: Figures/Signature.png  used on input line 23.
@@ -1038,49 +1080,7 @@ Package pdftex.def Info: Figures/Signature.png  used on input line 23.
 
 ]) [4
 
-] (./Main.toc
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 5.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 5.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 5.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 5.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 5.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 5.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (/usr/local/texlive/2024/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 5.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [5
+] (./Main.toc [5
 
 ])
 \tf@toc=\write4
@@ -1094,10 +1094,10 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
 
 Using TeX to sort glossary entries---this may take a while
-[8] [9
+[8{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [9
 
 
-{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] (./Chapters/Introduction.tex
+] [10] (./Chapters/Introduction.tex
 Chapter 1.
 [1
 
@@ -1130,18 +1130,18 @@ Overfull \hbox (4.76001pt too wide) in paragraph at lines 58--58
  []
 
 [4] [5]
-<Figures/salinity_distribution.png, id=662, 115.632pt x 56.3706pt>
+<Figures/salinity_distribution.png, id=721, 115.632pt x 56.3706pt>
 File: Figures/salinity_distribution.png Graphic file (type png)
 <use Figures/salinity_distribution.png>
 Package pdftex.def Info: Figures/salinity_distribution.png  used on input line 105.
 (pdftex.def)             Requested size: 362.77264pt x 176.86125pt.
- [6 <./Figures/salinity_distribution.png>] [7]
-<Figures/nano_ctd.png, id=719, 308.15125pt x 142.5325pt>
+ [6 <./Figures/salinity_distribution.png>]
+<Figures/nano_ctd.png, id=766, 308.15125pt x 142.5325pt>
 File: Figures/nano_ctd.png Graphic file (type png)
 <use Figures/nano_ctd.png>
 Package pdftex.def Info: Figures/nano_ctd.png  used on input line 160.
 (pdftex.def)             Requested size: 362.77264pt x 167.81062pt.
-) (./Chapters/Theory.tex [8 <./Figures/nano_ctd.png>]
+ [7]) (./Chapters/Theory.tex [8 <./Figures/nano_ctd.png>]
 Chapter 3.
 [9
 
@@ -1159,7 +1159,7 @@ Chapter 4.
 [12
 
 ] [13]
-<Figures/GoldElectrode.png, id=836, 617.30624pt x 833.1125pt>
+<Figures/GoldElectrode.png, id=898, 617.30624pt x 833.1125pt>
 File: Figures/GoldElectrode.png Graphic file (type png)
 <use Figures/GoldElectrode.png>
 Package pdftex.def Info: Figures/GoldElectrode.png  used on input line 71.
@@ -1170,13 +1170,13 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 68--80
  []
 
 [14 <./Figures/GoldElectrode.png>]
-<Figures/CircuitOverview.png, id=856, 817.0525pt x 816.04875pt>
+<Figures/CircuitOverview.png, id=920, 817.0525pt x 816.04875pt>
 File: Figures/CircuitOverview.png Graphic file (type png)
 <use Figures/CircuitOverview.png>
 Package pdftex.def Info: Figures/CircuitOverview.png  used on input line 122.
 (pdftex.def)             Requested size: 290.22107pt x 289.86743pt.
  [15] [16 <./Figures/CircuitOverview.png>]
-<Figures/AuElectrodeExample.png, id=885, 656.4525pt x 760.8425pt>
+<Figures/AuElectrodeExample.png, id=949, 656.4525pt x 760.8425pt>
 File: Figures/AuElectrodeExample.png Graphic file (type png)
 <use Figures/AuElectrodeExample.png>
 Package pdftex.def Info: Figures/AuElectrodeExample.png  used on input line 173.
@@ -1194,10 +1194,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             See the microtype manual for details.
 ) (./Chapters/Implementation.tex [18{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/dejavu/dejavumono_t1-type1.enc}] [19]
 Chapter 5.
-
-LaTeX Warning: Reference `appx:gitrepo' on page 20 undefined on input line 10.
-
-<Figures/probe_pcb.png, id=936, 1495.5875pt x 1706.375pt>
+<Figures/probe_pcb.png, id=1000, 1495.5875pt x 1706.375pt>
 File: Figures/probe_pcb.png Graphic file (type png)
 <use Figures/probe_pcb.png>
 Package pdftex.def Info: Figures/probe_pcb.png  used on input line 22.
@@ -1210,7 +1207,7 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 20--42
 [20
 
  <./Figures/probe_pcb.png>]
-<Figures/controller_pcb_final.png, id=961, 4047.12pt x 3035.34pt>
+<Figures/controller_pcb_final.png, id=1026, 4047.12pt x 3035.34pt>
 File: Figures/controller_pcb_final.png Graphic file (type png)
 <use Figures/controller_pcb_final.png>
 Package pdftex.def Info: Figures/controller_pcb_final.png  used on input line 65.
@@ -1221,35 +1218,35 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 63--84
  []
 
 [21 <./Figures/controller_pcb_final.png>]
-<Figures/probe_flowchart.png, id=983, 775.89874pt x 563.10374pt>
+<Figures/probe_flowchart.png, id=1049, 775.89874pt x 563.10374pt>
 File: Figures/probe_flowchart.png Graphic file (type png)
 <use Figures/probe_flowchart.png>
 Package pdftex.def Info: Figures/probe_flowchart.png  used on input line 119.
 (pdftex.def)             Requested size: 483.69687pt x 351.04538pt.
  [22] [23 <./Figures/probe_flowchart.png>]
-<Figures/rs485_flowchart.png, id=1013, 404.51125pt x 384.43625pt>
+<Figures/rs485_flowchart.png, id=1077, 404.51125pt x 384.43625pt>
 File: Figures/rs485_flowchart.png Graphic file (type png)
 <use Figures/rs485_flowchart.png>
 Package pdftex.def Info: Figures/rs485_flowchart.png  used on input line 174.
 (pdftex.def)             Requested size: 241.84843pt x 229.84814pt.
  [24 <./Figures/rs485_flowchart.png>]
-<Figures/epoxy_casting_top.png, id=1027, 2758.305pt x 1895.08pt>
+<Figures/epoxy_casting_top.png, id=1091, 2758.305pt x 1895.08pt>
 File: Figures/epoxy_casting_top.png Graphic file (type png)
 <use Figures/epoxy_casting_top.png>
 Package pdftex.def Info: Figures/epoxy_casting_top.png  used on input line 205.
 (pdftex.def)             Requested size: 199.09097pt x 136.7753pt.
-<Figures/epoxy_casting_side.png, id=1028, 3577.365pt x 2066.72125pt>
+<Figures/epoxy_casting_side.png, id=1092, 3577.365pt x 2066.72125pt>
 File: Figures/epoxy_casting_side.png Graphic file (type png)
 <use Figures/epoxy_casting_side.png>
 Package pdftex.def Info: Figures/epoxy_casting_side.png  used on input line 211.
 (pdftex.def)             Requested size: 237.01411pt x 136.9275pt.
  [25 <./Figures/epoxy_casting_top.png> <./Figures/epoxy_casting_side.png>]
-<Figures/probe_final.png, id=1040, 2013.5225pt x 2242.3775pt>
+<Figures/probe_final.png, id=1104, 2013.5225pt x 2242.3775pt>
 File: Figures/probe_final.png Graphic file (type png)
 <use Figures/probe_final.png>
 Package pdftex.def Info: Figures/probe_final.png  used on input line 232.
 (pdftex.def)             Requested size: 157.2pt x 175.04845pt.
-<Figures/titanium_electrode.png, id=1041, 2033.5975pt x 2089.8075pt>
+<Figures/titanium_electrode.png, id=1105, 2033.5975pt x 2089.8075pt>
 File: Figures/titanium_electrode.png Graphic file (type png)
 <use Figures/titanium_electrode.png>
 Package pdftex.def Info: Figures/titanium_electrode.png  used on input line 238.
@@ -1262,10 +1259,10 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 230--242
 ) (./Chapters/Testing.tex [26 <./Figures/probe_final.png> <./Figures/titanium_electrode.png>]
 Chapter 6.
 
-LaTeX Warning: Reference `sec:linear-conductivity-measurement' on page 27 undefined on input line 15.
+LaTeX Warning: Reference `sec:linear-conductivity-measurement' on page 27 undefined on input line 16.
 
 
-LaTeX Warning: Reference `sec:salinity-measurement-accuracy' on page 27 undefined on input line 15.
+LaTeX Warning: Reference `sec:salinity-measurement-accuracy' on page 27 undefined on input line 16.
 
 > Step: init table outer spec.
 > Step: parse table options.
@@ -1275,76 +1272,77 @@ LaTeX Warning: Reference `sec:salinity-measurement-accuracy' on page 27 undefine
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
 
-Overfull \hbox (2.89577pt too wide) in paragraph at lines 33--33
+Overfull \hbox (2.89577pt too wide) in paragraph at lines 34--34
  []\T1/lmr/bx/n/10.95 (-20) Measured 
  []
 
 
-Overfull \hbox (2.89577pt too wide) in paragraph at lines 33--33
+Overfull \hbox (2.89577pt too wide) in paragraph at lines 34--34
  []\T1/lmr/bx/n/10.95 (-20) Measured 
  []
 
 > Step: build the whole table.
 
-Overfull \hbox (2.89577pt too wide) in paragraph at lines 33--33
+Overfull \hbox (2.89577pt too wide) in paragraph at lines 34--34
  []\T1/lmr/bx/n/10.95 (-20) Measured 
  []
 
 [27
 
 ]
-<Figures/probe_experiments.png, id=1091, 2511.3825pt x 2619.7875pt>
+<Figures/probe_experiments.png, id=1157, 2511.3825pt x 2619.7875pt>
 File: Figures/probe_experiments.png Graphic file (type png)
 <use Figures/probe_experiments.png>
-Package pdftex.def Info: Figures/probe_experiments.png  used on input line 44.
+Package pdftex.def Info: Figures/probe_experiments.png  used on input line 45.
 (pdftex.def)             Requested size: 169.29315pt x 176.56819pt.
-<Figures/bench_multimeter.png, id=1092, 4047.12pt x 3035.34pt>
+<Figures/bench_multimeter.png, id=1158, 4047.12pt x 3035.34pt>
 File: Figures/bench_multimeter.png Graphic file (type png)
 <use Figures/bench_multimeter.png>
-Package pdftex.def Info: Figures/bench_multimeter.png  used on input line 50.
+Package pdftex.def Info: Figures/bench_multimeter.png  used on input line 51.
 (pdftex.def)             Requested size: 241.84843pt x 181.37149pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 42--54
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 43--55
 []$[]$ $[]$ 
  []
 
-<Figures/Testing/DAC_no_load.png, id=1098, 562.2606pt x 421.575pt>
+<Figures/Testing/DAC_no_load.png, id=1164, 562.2606pt x 421.575pt>
 File: Figures/Testing/DAC_no_load.png Graphic file (type png)
 <use Figures/Testing/DAC_no_load.png>
-Package pdftex.def Info: Figures/Testing/DAC_no_load.png  used on input line 68.
+Package pdftex.def Info: Figures/Testing/DAC_no_load.png  used on input line 69.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/DAC_loaded.png, id=1101, 562.2606pt x 421.575pt>
+<Figures/Testing/DAC_loaded.png, id=1167, 562.2606pt x 421.575pt>
 File: Figures/Testing/DAC_loaded.png Graphic file (type png)
 <use Figures/Testing/DAC_loaded.png>
-Package pdftex.def Info: Figures/Testing/DAC_loaded.png  used on input line 74.
+Package pdftex.def Info: Figures/Testing/DAC_loaded.png  used on input line 75.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
 [28 <./Figures/probe_experiments.png> <./Figures/bench_multimeter.png>]
-<Figures/Testing/ADC.png, id=1120, 562.2606pt x 421.575pt>
+<Figures/Testing/ADC.png, id=1185, 562.2606pt x 421.575pt>
 File: Figures/Testing/ADC.png Graphic file (type png)
 <use Figures/Testing/ADC.png>
-Package pdftex.def Info: Figures/Testing/ADC.png  used on input line 97.
+Package pdftex.def Info: Figures/Testing/ADC.png  used on input line 98.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
  [29 <./Figures/Testing/DAC_no_load.png (PNG copy)> <./Figures/Testing/DAC_loaded.png (PNG copy)> <./Figures/Testing/ADC.png (PNG copy)>]
-<Figures/Testing/R_uncorrected.png, id=1135, 562.2606pt x 421.575pt>
+<Figures/Testing/R_uncorrected.png, id=1200, 562.2606pt x 421.575pt>
 File: Figures/Testing/R_uncorrected.png Graphic file (type png)
 <use Figures/Testing/R_uncorrected.png>
-Package pdftex.def Info: Figures/Testing/R_uncorrected.png  used on input line 132.
+Package pdftex.def Info: Figures/Testing/R_uncorrected.png  used on input line 133.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/R_corrected.png, id=1136, 562.2606pt x 421.575pt>
+<Figures/Testing/R_corrected.png, id=1201, 562.2606pt x 421.575pt>
 File: Figures/Testing/R_corrected.png Graphic file (type png)
 <use Figures/Testing/R_corrected.png>
-Package pdftex.def Info: Figures/Testing/R_corrected.png  used on input line 138.
+Package pdftex.def Info: Figures/Testing/R_corrected.png  used on input line 139.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
  [30 <./Figures/Testing/R_uncorrected.png (PNG copy)> <./Figures/Testing/R_corrected.png (PNG copy)>]
 
 LaTeX Warning: Reference `eqn:resistance-rational' on page 31 undefined on input line 151.
 
-<Figures/Testing/Aus2.png, id=1155, 562.2606pt x 421.575pt>
+[31]
+<Figures/Testing/Aus2.png, id=1227, 562.2606pt x 421.575pt>
 File: Figures/Testing/Aus2.png Graphic file (type png)
 <use Figures/Testing/Aus2.png>
 Package pdftex.def Info: Figures/Testing/Aus2.png  used on input line 185.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/Aus3.png, id=1156, 562.2606pt x 421.575pt>
+<Figures/Testing/Aus3.png, id=1228, 562.2606pt x 421.575pt>
 File: Figures/Testing/Aus3.png Graphic file (type png)
 <use Figures/Testing/Aus3.png>
 Package pdftex.def Info: Figures/Testing/Aus3.png  used on input line 191.
@@ -1354,16 +1352,12 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 183--195
 []$[]$ $[]$ 
  []
 
-[31]
-
-LaTeX Warning: Citation `ostdiek_inquiry_into_physics_2020' on page 32 undefined on input line 203.
-
-<Figures/Testing/Aus5.png, id=1170, 562.2606pt x 421.575pt>
+<Figures/Testing/Aus5.png, id=1236, 562.2606pt x 421.575pt>
 File: Figures/Testing/Aus5.png Graphic file (type png)
 <use Figures/Testing/Aus5.png>
 Package pdftex.def Info: Figures/Testing/Aus5.png  used on input line 212.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/Aus7.png, id=1171, 562.2606pt x 421.575pt>
+<Figures/Testing/Aus7.png, id=1237, 562.2606pt x 421.575pt>
 File: Figures/Testing/Aus7.png Graphic file (type png)
 <use Figures/Testing/Aus7.png>
 Package pdftex.def Info: Figures/Testing/Aus7.png  used on input line 218.
@@ -1374,12 +1368,12 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 210--222
  []
 
 [32 <./Figures/Testing/Aus2.png (PNG copy)> <./Figures/Testing/Aus3.png (PNG copy)>]
-<Figures/Testing/Aus8.png, id=1180, 562.2606pt x 421.575pt>
+<Figures/Testing/Aus8.png, id=1247, 562.2606pt x 421.575pt>
 File: Figures/Testing/Aus8.png Graphic file (type png)
 <use Figures/Testing/Aus8.png>
 Package pdftex.def Info: Figures/Testing/Aus8.png  used on input line 243.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/AusTi15.png, id=1181, 562.2606pt x 421.575pt>
+<Figures/Testing/AusTi15.png, id=1248, 562.2606pt x 421.575pt>
 File: Figures/Testing/AusTi15.png Graphic file (type png)
 <use Figures/Testing/AusTi15.png>
 Package pdftex.def Info: Figures/Testing/AusTi15.png  used on input line 249.
@@ -1390,86 +1384,83 @@ Overfull \hbox (2.43333pt too wide) in paragraph at lines 241--253
  []
 
 [33 <./Figures/Testing/Aus5.png (PNG copy)> <./Figures/Testing/Aus7.png (PNG copy)> <./Figures/Testing/Aus8.png (PNG copy)> <./Figures/Testing/AusTi15.png (PNG copy)>]
-<Figures/Testing/Aus12.png, id=1188, 562.2606pt x 421.575pt>
+<Figures/Testing/Aus12.png, id=1257, 562.2606pt x 421.575pt>
 File: Figures/Testing/Aus12.png Graphic file (type png)
 <use Figures/Testing/Aus12.png>
-Package pdftex.def Info: Figures/Testing/Aus12.png  used on input line 264.
+Package pdftex.def Info: Figures/Testing/Aus12.png  used on input line 268.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/Aus10.png, id=1189, 562.2606pt x 421.575pt>
+<Figures/Testing/Aus10.png, id=1258, 562.2606pt x 421.575pt>
 File: Figures/Testing/Aus10.png Graphic file (type png)
 <use Figures/Testing/Aus10.png>
-Package pdftex.def Info: Figures/Testing/Aus10.png  used on input line 270.
+Package pdftex.def Info: Figures/Testing/Aus10.png  used on input line 274.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 262--274
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 266--278
 []$[]$ $[]$ 
  []
 
 [34 <./Figures/Testing/Aus12.png (PNG copy)> <./Figures/Testing/Aus10.png (PNG copy)>]
-<Figures/Testing/Aus16.png, id=1203, 562.2606pt x 421.575pt>
+<Figures/Testing/Aus16.png, id=1275, 562.2606pt x 421.575pt>
 File: Figures/Testing/Aus16.png Graphic file (type png)
 <use Figures/Testing/Aus16.png>
-Package pdftex.def Info: Figures/Testing/Aus16.png  used on input line 300.
+Package pdftex.def Info: Figures/Testing/Aus16.png  used on input line 309.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/Ti16.png, id=1204, 562.2606pt x 421.575pt>
+<Figures/Testing/Ti16.png, id=1278, 562.2606pt x 421.575pt>
 File: Figures/Testing/Ti16.png Graphic file (type png)
 <use Figures/Testing/Ti16.png>
-Package pdftex.def Info: Figures/Testing/Ti16.png  used on input line 306.
+Package pdftex.def Info: Figures/Testing/Ti16.png  used on input line 315.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 298--310
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 307--319
 []$[]$ $[]$ 
  []
 
-<Figures/Testing/Aus17.png, id=1209, 562.2606pt x 421.575pt>
+<Figures/Testing/Aus17.png, id=1286, 562.2606pt x 421.575pt>
 File: Figures/Testing/Aus17.png Graphic file (type png)
 <use Figures/Testing/Aus17.png>
-Package pdftex.def Info: Figures/Testing/Aus17.png  used on input line 325.
+Package pdftex.def Info: Figures/Testing/Aus17.png  used on input line 336.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/Ti17.png, id=1210, 562.2606pt x 421.575pt>
+<Figures/Testing/Ti17.png, id=1289, 562.2606pt x 421.575pt>
 File: Figures/Testing/Ti17.png Graphic file (type png)
 <use Figures/Testing/Ti17.png>
-Package pdftex.def Info: Figures/Testing/Ti17.png  used on input line 331.
+Package pdftex.def Info: Figures/Testing/Ti17.png  used on input line 342.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 323--335
-[]$[]$ $[]$ 
- []
-
-<Figures/Testing/Aus18.png, id=1211, 562.2606pt x 421.575pt>
-File: Figures/Testing/Aus18.png Graphic file (type png)
-<use Figures/Testing/Aus18.png>
-Package pdftex.def Info: Figures/Testing/Aus18.png  used on input line 340.
-(pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/Ti18.png, id=1212, 562.2606pt x 421.575pt>
-File: Figures/Testing/Ti18.png Graphic file (type png)
-<use Figures/Testing/Ti18.png>
-Package pdftex.def Info: Figures/Testing/Ti18.png  used on input line 346.
-(pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 338--350
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 334--345
 []$[]$ $[]$ 
  []
 
 [35 <./Figures/Testing/Aus16.png (PNG copy)> <./Figures/Testing/Ti16.png (PNG copy)>]
-<Figures/Testing/Au_sweep_analysis.png, id=1219, 562.2606pt x 421.575pt>
-File: Figures/Testing/Au_sweep_analysis.png Graphic file (type png)
-<use Figures/Testing/Au_sweep_analysis.png>
-Package pdftex.def Info: Figures/Testing/Au_sweep_analysis.png  used on input line 367.
+<Figures/Testing/Aus18.png, id=1296, 562.2606pt x 421.575pt>
+File: Figures/Testing/Aus18.png Graphic file (type png)
+<use Figures/Testing/Aus18.png>
+Package pdftex.def Info: Figures/Testing/Aus18.png  used on input line 350.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/Ti_sweep_analysis.png, id=1220, 562.2606pt x 421.575pt>
-File: Figures/Testing/Ti_sweep_analysis.png Graphic file (type png)
-<use Figures/Testing/Ti_sweep_analysis.png>
-Package pdftex.def Info: Figures/Testing/Ti_sweep_analysis.png  used on input line 373.
+<Figures/Testing/Ti18.png, id=1299, 562.2606pt x 421.575pt>
+File: Figures/Testing/Ti18.png Graphic file (type png)
+<use Figures/Testing/Ti18.png>
+Package pdftex.def Info: Figures/Testing/Ti18.png  used on input line 356.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 365--377
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 348--360
 []$[]$ $[]$ 
  []
 
 [36 <./Figures/Testing/Aus17.png (PNG copy)> <./Figures/Testing/Ti17.png (PNG copy)> <./Figures/Testing/Aus18.png (PNG copy)> <./Figures/Testing/Ti18.png (PNG copy)>]
+<Figures/Testing/Au_sweep_analysis.png, id=1308, 562.2606pt x 421.575pt>
+File: Figures/Testing/Au_sweep_analysis.png Graphic file (type png)
+<use Figures/Testing/Au_sweep_analysis.png>
+Package pdftex.def Info: Figures/Testing/Au_sweep_analysis.png  used on input line 376.
+(pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
+<Figures/Testing/Ti_sweep_analysis.png, id=1309, 562.2606pt x 421.575pt>
+File: Figures/Testing/Ti_sweep_analysis.png Graphic file (type png)
+<use Figures/Testing/Ti_sweep_analysis.png>
+Package pdftex.def Info: Figures/Testing/Ti_sweep_analysis.png  used on input line 382.
+(pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
 
-LaTeX Warning: Reference `tab:individual-voltage-measurements-2' on page 37 undefined on input line 392.
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 374--386
+[]$[]$ $[]$ 
+ []
 
 > Step: init table outer spec.
 > Step: parse table options.
@@ -1478,57 +1469,126 @@ LaTeX Warning: Reference `tab:individual-voltage-measurements-2' on page 37 unde
 > Step: parse table inner spec.
 > Step: execute table commands.
 > Step: calculate cell and line sizes.
-
-Package tabularray Warning: Table width is too small, need 44.98203pt more!
-
 > Step: build the whole table.
-
-Overfull \hbox (44.98203pt too wide) detected at line 408
- [] 
- []
-
 [37 <./Figures/Testing/Au_sweep_analysis.png (PNG copy)> <./Figures/Testing/Ti_sweep_analysis.png (PNG copy)>]
-<Figures/Testing/TiAC1.png, id=1250, 562.2606pt x 421.575pt>
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+ [38]
+<Figures/Testing/TiAC1.png, id=1358, 562.2606pt x 421.575pt>
 File: Figures/Testing/TiAC1.png Graphic file (type png)
 <use Figures/Testing/TiAC1.png>
-Package pdftex.def Info: Figures/Testing/TiAC1.png  used on input line 424.
+Package pdftex.def Info: Figures/Testing/TiAC1.png  used on input line 469.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/TiAC2.png, id=1251, 562.2606pt x 421.575pt>
+<Figures/Testing/TiAC2.png, id=1361, 562.2606pt x 421.575pt>
 File: Figures/Testing/TiAC2.png Graphic file (type png)
 <use Figures/Testing/TiAC2.png>
-Package pdftex.def Info: Figures/Testing/TiAC2.png  used on input line 430.
+Package pdftex.def Info: Figures/Testing/TiAC2.png  used on input line 475.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 422--434
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 467--479
 []$[]$ $[]$ 
  []
 
-<Figures/Testing/TiAC3.png, id=1252, 562.2606pt x 421.575pt>
+<Figures/Testing/TiAC3.png, id=1370, 562.2606pt x 421.575pt>
 File: Figures/Testing/TiAC3.png Graphic file (type png)
 <use Figures/Testing/TiAC3.png>
-Package pdftex.def Info: Figures/Testing/TiAC3.png  used on input line 439.
+Package pdftex.def Info: Figures/Testing/TiAC3.png  used on input line 492.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
-<Figures/Testing/TiAC4.png, id=1253, 562.2606pt x 421.575pt>
+<Figures/Testing/TiAC4.png, id=1375, 562.2606pt x 421.575pt>
 File: Figures/Testing/TiAC4.png Graphic file (type png)
 <use Figures/Testing/TiAC4.png>
-Package pdftex.def Info: Figures/Testing/TiAC4.png  used on input line 445.
+Package pdftex.def Info: Figures/Testing/TiAC4.png  used on input line 498.
 (pdftex.def)             Requested size: 241.84843pt x 181.3316pt.
 
-Overfull \hbox (2.43333pt too wide) in paragraph at lines 437--449
+Overfull \hbox (2.43333pt too wide) in paragraph at lines 490--502
 []$[]$ $[]$ 
  []
 
-) (./Chapters/Conclusions.tex [38 <./Figures/Testing/TiAC1.png (PNG copy)> <./Figures/Testing/TiAC2.png (PNG copy)> <./Figures/Testing/TiAC3.png (PNG copy)> <./Figures/Testing/TiAC4.png (PNG copy)>]
+) (./Chapters/Conclusions.tex [39 <./Figures/Testing/TiAC1.png (PNG copy)> <./Figures/Testing/TiAC2.png (PNG copy)>] [40 <./Figures/Testing/TiAC3.png (PNG copy)> <./Figures/Testing/TiAC4.png (PNG copy)>]
 Chapter 7.
-) (./Chapters/Recommendations.tex [39
+) (./Chapters/Recommendations.tex [41
 
 ]
 Chapter 8.
-) [40
+) [42
 
-] (./Main.bbl [41
+] (./Main.bbl [43
 
-] [42] [43]) [44] (./Main.aux)
+] [44] [45]) (./Appendices/AppendixA.tex [46]
+Appendix A.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+) (./Appendices/AppendixB.tex [47
+
+]
+Appendix B.
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+> Step: build the whole table.
+) (./Appendices/AppendixC.tex [48
+
+]
+Appendix C.
+<Figures/AI_Use/concept_overviews.png, id=1491, 786.94pt x 745.78625pt>
+File: Figures/AI_Use/concept_overviews.png Graphic file (type png)
+<use Figures/AI_Use/concept_overviews.png>
+Package pdftex.def Info: Figures/AI_Use/concept_overviews.png  used on input line 5.
+(pdftex.def)             Requested size: 386.95897pt x 366.713pt.
+<Figures/AI_Use/concept_overviews2.png, id=1492, 786.94pt x 553.06625pt>
+File: Figures/AI_Use/concept_overviews2.png Graphic file (type png)
+<use Figures/AI_Use/concept_overviews2.png>
+Package pdftex.def Info: Figures/AI_Use/concept_overviews2.png  used on input line 10.
+(pdftex.def)             Requested size: 386.95897pt x 271.95001pt.
+<Figures/AI_Use/research.png, id=1493, 542.025pt x 808.01875pt>
+File: Figures/AI_Use/research.png Graphic file (type png)
+<use Figures/AI_Use/research.png>
+Package pdftex.def Info: Figures/AI_Use/research.png  used on input line 15.
+(pdftex.def)             Requested size: 386.95897pt x 576.87831pt.
+<Figures/AI_Use/research1.png, id=1494, 749.80125pt x 773.89125pt>
+File: Figures/AI_Use/research1.png Graphic file (type png)
+<use Figures/AI_Use/research1.png>
+Package pdftex.def Info: Figures/AI_Use/research1.png  used on input line 20.
+(pdftex.def)             Requested size: 386.95897pt x 399.39095pt.
+<Figures/AI_Use/latex_help.png, id=1495, 791.95876pt x 718.685pt>
+File: Figures/AI_Use/latex_help.png Graphic file (type png)
+<use Figures/AI_Use/latex_help.png>
+Package pdftex.def Info: Figures/AI_Use/latex_help.png  used on input line 25.
+(pdftex.def)             Requested size: 386.95897pt x 351.1608pt.
+<Figures/AI_Use/code_completion.png, id=1496, 903.375pt x 213.79875pt>
+File: Figures/AI_Use/code_completion.png Graphic file (type png)
+<use Figures/AI_Use/code_completion.png>
+Package pdftex.def Info: Figures/AI_Use/code_completion.png  used on input line 30.
+(pdftex.def)             Requested size: 386.95897pt x 91.5826pt.
+<Figures/AI_Use/cite_helping.png, id=1497, 777.90625pt x 539.01375pt>
+File: Figures/AI_Use/cite_helping.png Graphic file (type png)
+<use Figures/AI_Use/cite_helping.png>
+Package pdftex.def Info: Figures/AI_Use/cite_helping.png  used on input line 35.
+(pdftex.def)             Requested size: 386.95897pt x 268.13268pt.
+<Figures/AI_Use/bibtex_citing.png, id=1498, 777.90625pt x 529.98pt>
+File: Figures/AI_Use/bibtex_citing.png Graphic file (type png)
+<use Figures/AI_Use/bibtex_citing.png>
+Package pdftex.def Info: Figures/AI_Use/bibtex_citing.png  used on input line 40.
+(pdftex.def)             Requested size: 386.95897pt x 263.63884pt.
+) [49
+
+ <./Figures/AI_Use/concept_overviews.png>] [50 <./Figures/AI_Use/concept_overviews2.png>] [51 <./Figures/AI_Use/research.png>] [52 <./Figures/AI_Use/research1.png>] [53 <./Figures/AI_Use/latex_help.png> <./Figures/AI_Use/code_completion.png>] [54 <./Figures/AI_Use/cite_helping.png> <./Figures/AI_Use/bibtex_citing.png>] (./Main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -1538,21 +1598,21 @@ L3 programming layer <2024-02-20>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Main.out' has not changed.
-(rerunfilecheck)             Checksum: 4A9174B7D4E41771B5A21A9528C0A688;9432.
+(rerunfilecheck)             Checksum: 6E7DFB7C06E062B11A841D416AA6E273;9887.
  ) 
 Here is how much of TeX's memory you used:
- 37879 strings out of 474116
- 746416 string characters out of 5743682
- 1971187 words of memory out of 5000000
- 59130 multiletter control sequences out of 15000+600000
- 646286 words of font info for 247 fonts, out of 8000000 for 9000
+ 38106 strings out of 474116
+ 752066 string characters out of 5743682
+ 1972187 words of memory out of 5000000
+ 59323 multiletter control sequences out of 15000+600000
+ 650098 words of font info for 254 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 114i,12n,110p,2495b,1187s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 114i,12n,113p,2495b,1436s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/dejavu/DejaVuSansMono.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on Main.pdf (53 pages, 93971674 bytes).
+Output written on Main.pdf (64 pages, 94680462 bytes).
 PDF statistics:
- 1418 PDF objects out of 1440 (max. 8388607)
- 1160 compressed objects within 12 object streams
- 248 named destinations out of 1000 (max. 500000)
- 56451 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 1673 PDF objects out of 1728 (max. 8388607)
+ 1322 compressed objects within 14 object streams
+ 276 named destinations out of 1000 (max. 500000)
+ 56515 words of extra memory for PDF output out of 61914 (max. 10000000)
 

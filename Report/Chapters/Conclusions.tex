@@ -1,18 +1,21 @@
 % ----------------------------------------------------
 % Conclusions
 % ----------------------------------------------------
-\chapter{Conclusions} \label{ch:conclusions}
+\chapter{Conclusions}\label{ch:conclusions}
 
-The purpose of this project was to...
+This project presented the development of a prototype electrical conductivity-based sensor and investigated its feasibility.
+The prototype was successfully designed and constructed with a separate probe for taking measurements and a controller for user inputs and displaying results.
+The probe was able to measure resistance with high accuracy, and it successfully demonstrated a controller-probe communication protocol.
 
-This report began with...
+The probe investigated three methods of measuring the electrical conductivity of a solution: voltage sweeps, \gls{ac} voltage, and individual measurements.
+Voltage sweep measurements were subject to drift due to the individual measurement altering the solution and affecting the subsequent measurements.
+This caused difficulties in determining the salinity of the solution and required further investigation and tests to assess its viability.
 
-The literature review was followed in Chapter...
+\gls{ac} voltage measurements were unsuccessful as the probe was optimised for \gls{dc} measurements, causing the response of the saltwater sample to be interfered with by a capacitor on the probe.
+The probe could not be adjusted due to it being cast in epoxy.
+Thus, the feasibility of \gls{ac} tests requires further investigation.
 
-The bulk of the work for this project followed next, in Chapter... 
+Individual measurements were shown to be the most accurate, reporting salinities within $3$ \gls{psu} of the expected value.        
+However, this method was vulnerable to noise and errors and has poor repeatability.
 
-In Chapter...
-
-Finally, Chapter... attempted to... 
-
-In summary, the project achieved the goals that were set out, by designing and demonstrating...
+In conclusion, this project proved critical concepts of the probe's and controller's design and communication, and the investigation into the conductivity measurement methods provided valuable insights into the challenges and potential solutions for the probe's future development.
