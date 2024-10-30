@@ -4,7 +4,8 @@
     "files.associations": {
         "*.tc": "java",
         "tim.h": "c",
-        "spi.h": "c"
+        "spi.h": "c",
+        "string.h": "c"
     },
     "cortex-debug.variableUseNaturalFormat": true
 }

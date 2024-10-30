@@ -45,6 +45,8 @@ typedef enum
     TASK_MEASURE_CONDUCTIVITY = 0x04,
     TASK_MEASURE_SALINITY = 0x05,
     TASK_WAITING_FOR_CONFIG = 0x06,
+    TASK_WAITING_FOR_CALIB_SALINITY = 0x07,
+    TASK_CALIBRATING = 0x08,
 } Task;
 
 typedef enum
@@ -74,7 +76,8 @@ typedef enum
 Task current_task = TASK_NONE;
 uint8_t rx_buffer[CONFIG_PACKET_SIZE];
 RS485_Status status = STATUS_IDLE;
-ProbeConfig_TypeDef probe_config = {Au, R1_100, BIDIRECTIONAL, 93, 868, 10, 2, STANARD_CONDUCTIVITY, 12};
+ProbeConfig_TypeDef probe_config = {Au_Shielded, R1_100, BIDIRECTIONAL, 512, 512, 1, 2, STANARD_CONDUCTIVITY, 50};
+double calib_salinity = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -131,7 +134,6 @@ int main(void)
     MX_NVIC_Init();
     /* USER CODE BEGIN 2 */
     voltage_init();
-    HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
     /* USER CODE END 2 */
 
     /* Infinite loop */
@@ -140,85 +142,15 @@ int main(void)
     VoltageSample_TypeDef voltage_samples[MAX_SAMPLES];
     ResistanceSample_TypeDef resistance_samples[MAX_SAMPLES];
     memset(voltage_samples, 0, sizeof(voltage_samples));
-    HAL_Delay(5000);
-
-    // GPIOSW->BSRR = SW_Ti1_GND_Pin | SW_Ti2_GND_Pin;
-    // GPIOSW->BSRR = SW_Ti_Pin_Msk << 16;
-    // for (uint16_t i = 0; i < 20; i++)
-    // {
-    //     measure_ac_sweep(
-    //         voltage_samples,
-    //         R1_10k,
-    //         Ti,
-    //         4,
-    //         256,
-    //         50);
-    // }
-    // transmit_sample_data_binary(voltage_samples, 256, SAMPLE_VOLTAGE);
-
-    // measure_voltage_sweep(
-    //     voltage_samples,
-    //     BIDIRECTIONAL,
-    //     R1_100,
-    //     Au_Shielded,
-    //     V_MIN,
-    //     V_MAX,
-    //     5,
-    //     5,
-    //     10,
-    //     0);
-    // HAL_Delay(2000);
-
-    measure_voltage_sweep(
-        voltage_samples,
-        BIDIRECTIONAL,
-        R1_100,
-        Au_Shielded,
-        512,
-        512,
-        1,
-        5,
-        100,
-        0);
-    transmit_sample_data_binary(voltage_samples, 1, SAMPLE_VOLTAGE);
-    temperature = measure_temperature();
-    transmit_sample_data_readable(&temperature, 1, VALUE_TEMPERATURE);
-
     rs485_receive_IT(1);
 
     while (1)
     {
 
-        // HAL_UART_Transmit(&huart6, (uint8_t *)PACKET_START, sizeof(PACKET_START), 1000);
-
-        // VoltageSample_TypeDef votlage_samples[NUM_SAMPLES];
-        // measure_voltage_sweep(votlage_samples, BIDIRECTIONAL, R1_100, Ti, VOLTAGE_START, VOLTAGE_END, NUM_SAMPLES, ADC_SAMPLES);
-        // transmit_sample_data_readable(votlage_samples, NUM_SAMPLES, SAMPLE_VOLTAGE);
-
-        // ResistanceSample_TypeDef resistance_samples[NUM_SAMPLES];
-        // calculate_resistance(votlage_samples, resistance_samples, NUM_SAMPLES);
-        // transmit_sample_data_readable(resistance_samples, NUM_SAMPLES, SAMPLE_RESISTANCE);
-
-        // double conductivity = calculate_conductivity(Au_Shielded, resistance_samples, NUM_SAMPLES);
-        // transmit_sample_data_readable(&conductivity, 1, VALUE_CONDUCTIVITY);
-
-        // double temperature = measure_temperature();
-        // transmit_sample_data_readable(&temperature, 1, VALUE_TEMPERATURE);
-
-        // double pressure = measure_pressure();
-        // transmit_sample_data_readable(&pressure, 1, VALUE_PRESSURE);
-
-        // double salinity = calculate_salinity(conductivity, temperature, pressure);
-        // transmit_sample_data_readable(&salinity, 1, VALUE_SALINITY);
-
-        // HAL_UART_Transmit(&huart6, (uint8_t *)PACKET_END, sizeof(PACKET_END), 1000);
-
-        // HAL_Delay(5000);
-
         switch (current_task)
         {
         case TASK_NONE:
-            // __WFI();
+            HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_RESET);
             break;
         case TASK_MEASURE_TEMPERATURE:
             status = STATUS_BUSY;
@@ -320,7 +252,52 @@ int main(void)
             status = STATUS_IDLE;
             rs485_receive_IT(1);
             break;
-        case TASK_WAITING_FOR_CONFIG:
+        case TASK_CALIBRATING:
+            status = STATUS_BUSY;
+            current_task = TASK_NONE;
+
+            measure_voltage_sweep(
+                voltage_samples,
+                probe_config.direction,
+                probe_config.r1,
+                probe_config.electrode,
+                probe_config.voltage_start,
+                probe_config.voltage_end,
+                probe_config.num_samples,
+                probe_config.adc_samples,
+                probe_config.voltage_settle_time,
+                0);
+            calculate_resistance(voltage_samples, resistance_samples, probe_config.num_samples);
+
+            conductivity = calculate_conductivity(probe_config.electrode, resistance_samples, probe_config.num_samples);
+            temperature = measure_temperature();
+            pressure = measure_pressure();
+
+            double standard_conductivity = STANARD_CONDUCTIVITY/1e6;
+            double change = 1;
+            while (calib_salinity > calculate_salinity(conductivity, temperature, pressure, standard_conductivity))
+            {
+                standard_conductivity /= 2;
+            }
+            while (change > ((double) 1/256))
+            {
+                if (calculate_salinity(conductivity, temperature, pressure, standard_conductivity) > calib_salinity)
+                {
+                    standard_conductivity += change;
+                }
+                else
+                {
+                    standard_conductivity -= change;
+                    change /= 2;
+                }
+            }
+            
+            HAL_UART_Abort_IT(&huart1);
+            probe_config.stardard_conductivity = (uint32_t) (standard_conductivity * 1e6);
+            rs485_transmit((uint8_t *) &probe_config.stardard_conductivity, sizeof(uint32_t));
+
+            status = STATUS_IDLE;
+            rs485_receive_IT(1);
             break;
         default:
             break;
@@ -391,7 +368,7 @@ static void MX_NVIC_Init(void)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
-    HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+    HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
     uint8_t response;
     if (huart->Instance == USART1)
     {
@@ -404,6 +381,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
             memcpy(&probe_config, rx_buffer, sizeof(ProbeConfig_TypeDef));
 
             rs485_receive_IT(1);
+        }
+        else if (current_task == TASK_WAITING_FOR_CALIB_SALINITY)
+        {
+            current_task = TASK_CALIBRATING;
+            uint16_t calib = *((uint16_t*) rx_buffer);
+            calib_salinity = (double) calib / 10; 
         }
         else
         {
@@ -438,6 +421,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
                 response = RESPONSE_ACK;
                 rs485_transmit(&response, 1);
                 rs485_receive_IT(CONFIG_PACKET_SIZE);
+                break;
+            case COMMAND_CALIBRATE:
+                current_task = TASK_WAITING_FOR_CALIB_SALINITY;
+                response = RESPONSE_ACK;
+                rs485_transmit(&response, 1);
+                rs485_receive_IT(2);
                 break;
             case COMMAND_RESET:
                 HAL_NVIC_SystemReset();

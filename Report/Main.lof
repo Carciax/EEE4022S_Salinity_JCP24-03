@@ -1,0 +1,60 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Global salinity map generated using satellite data~\cite {esa_mapping_salty_waters_2019}.}}{6}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces The schematic of a \gls {ctd} probe developed by researchers at Uppsala University in Sweden which design contains (a) a temperature sensor, (b) three relatively small electrodes for pH and Cl- concentration, (c) conductivity electrodes, and (d) a strain gauge for the pressure membrane sensor. The design is $7.5 \times 3.5 mm$ in size~\cite {jonsson_chip_based_salinity_2013}.}}{8}{figure.caption.9}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The gold electrode \gls {pcb} design.}}{14}{figure.caption.10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces A simplified representation of the resistance measuring circuit.}}{16}{figure.caption.11}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces A simplified representation of the resistance measurement circuit using the gold electrodes with the fringe guard.}}{17}{figure.caption.12}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The probe PCB with the gold electrodes attached and some adjustments made}}{20}{figure.caption.13}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces The controller PCB with the rotary switch caps attached}}{21}{figure.caption.14}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The flowchart for the probe code that measures salinity.}}{23}{figure.caption.15}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces The flowchart for the board-to-board communication protocol denoting the four transaction types. The arrows denote the direction of the packets being sent over the \gls {rs485} link.}}{24}{figure.caption.16}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces A top view of the probe casting mould, the controller and the connecting cable.}}{25}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces A side view of the probe casting mould showing the gold electrode spacers.}}{25}{figure.caption.17}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces The probe after the epoxy casting process with the titanium electrodes and pressure sensor's flexible membrane attached.}}{26}{figure.caption.18}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces A close-up of the titanium electrode with the copper wire attached.}}{26}{figure.caption.18}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces The salinometer probe with multimeter cables attached to a test point and ground.}}{28}{figure.caption.19}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces The bench multimeter used for the tests displaying a voltage reading.}}{28}{figure.caption.19}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces The input voltage versus the output voltage of the \gls {dac} with no load.}}{29}{figure.caption.20}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces The input voltage versus the output voltage of the \gls {dac} with the maximum load of $100\Omega $.}}{29}{figure.caption.20}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces The voltage output by the \gls {dac} measured by a multimeter versus by the \gls {adc}.}}{30}{figure.caption.21}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces The resistance measuring test.}}{31}{figure.caption.22}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces The resistance measuring test using the corrected equation.}}{31}{figure.caption.22}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Voltage sweep repeatability test 1 with gold electrodes and the fringe shield, a voltage range of $0-2,6V$, and 50 samples taken of salt water sample of unknown salinity.}}{32}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Voltage sweep repeatability test 2 with draining and resetting the \gls {dac} between each voltage sample.}}{32}{figure.caption.23}%
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Voltage sweep repeatability test 3 with 25 priming measurements taken before the actual measurement.}}{33}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Voltage sweep repeatability test 4 with a varying number of priming measurements and the actual measurement taken as reverse voltage sweeps with 500 voltage samples.}}{33}{figure.caption.24}%
+\contentsline {figure}{\numberline {6.12}{\ignorespaces Voltage sweep repeatability test 5 with a varying amount of relaxation time before each measurement was taken and 50 samples.}}{34}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.13}{\ignorespaces Voltage sweep repeatability test 6 with the difference between the titanium and gold electrodes.}}{34}{figure.caption.25}%
+\contentsline {figure}{\numberline {6.14}{\ignorespaces Voltage sweep repeatability test 7 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{35}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.15}{\ignorespaces Voltage sweep repeatability test 8 with 4 identical tests of 20 samples with 2s of relaxation time between measurements.}}{35}{figure.caption.26}%
+\contentsline {figure}{\numberline {6.16}{\ignorespaces Conductivity mapping test 1 with 4 tests using the gold electrodes and the fringe guard taken of a $34,8$ \gls {psu} sample at $15,0\degree C$.}}{36}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.17}{\ignorespaces Conductivity mapping test 2 with 4 tests using the titanium electrodes taken of a $34,8$ \gls {psu} sample at $15,0\degree C$.}}{36}{figure.caption.27}%
+\contentsline {figure}{\numberline {6.18}{\ignorespaces Conductivity mapping test 3 with 4 tests using the gold electrodes and the fringe guard taken of a $24,4$ \gls {psu} sample at $21,7\degree C$.}}{36}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.19}{\ignorespaces Conductivity mapping test 4 with 4 tests using the titanium electrodes taken of a $24,4$ \gls {psu} sample at $21,7\degree C$.}}{36}{figure.caption.28}%
+\contentsline {figure}{\numberline {6.20}{\ignorespaces Conductivity mapping test 5 with 4 tests using the gold electrodes and the fringe guard taken of a $29,1$ \gls {psu} sample at $20,2\degree C$.}}{37}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.21}{\ignorespaces Conductivity mapping test 6 with 4 tests using the titanium electrodes taken of a $29,1$ \gls {psu} sample at $20,2\degree C$.}}{37}{figure.caption.29}%
+\contentsline {figure}{\numberline {6.22}{\ignorespaces The gold electrode tests of known samples with hyperbolic curves of best fit generated.}}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.23}{\ignorespaces The titanium electrode tests of known samples with hyperbolic curves of best fit generated.}}{37}{figure.caption.30}%
+\contentsline {figure}{\numberline {6.24}{\ignorespaces \gls {ac} test 1 with a 4 sine waves centred at $0V$.}}{39}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.25}{\ignorespaces \gls {ac} test 1 with a 4 sine waves centred at $1,65V$ and 4 sine waves centred at $-1,65V$.}}{39}{figure.caption.31}%
+\contentsline {figure}{\numberline {6.26}{\ignorespaces \gls {ac} test 1 with a 4 $250Hz$ sine waves centred at $0V$ on a $34,8$ \gls {psu} sample.}}{40}{figure.caption.32}%
+\contentsline {figure}{\numberline {6.27}{\ignorespaces \gls {ac} test 1 with a 4 $250Hz$ sine waves centred at $0V$ on a $24,4$ \gls {psu} sample.}}{40}{figure.caption.32}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces AI Use for Concept Overviews}}{47}{figure.caption.34}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces AI Use for Concept Overviews}}{48}{figure.caption.35}%
+\contentsline {figure}{\numberline {A.3}{\ignorespaces AI Use for Research Overview}}{49}{figure.caption.36}%
+\contentsline {figure}{\numberline {A.4}{\ignorespaces AI Use for Research Overview}}{50}{figure.caption.37}%
+\contentsline {figure}{\numberline {A.5}{\ignorespaces AI Use for \LaTeX commands and code}}{51}{figure.caption.38}%
+\contentsline {figure}{\numberline {A.6}{\ignorespaces AI Use for \LaTeX commands and code}}{51}{figure.caption.39}%
+\contentsline {figure}{\numberline {A.7}{\ignorespaces AI Use for BibTeX citations}}{52}{figure.caption.40}%
+\contentsline {figure}{\numberline {A.8}{\ignorespaces AI Use for BibTeX citations}}{52}{figure.caption.41}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }

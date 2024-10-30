@@ -28,6 +28,8 @@
 /* USER CODE BEGIN Includes */
 #include "RS485.h"
 #include "ProbeConfig.h"
+#include <stdio.h>
+#include <string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -114,8 +116,9 @@ uint8_t temperature[DATA_PACKET_SIZE] = {0, 0, 0},
         salinity[DATA_PACKET_SIZE] = {0, 0, 0},
         resistance[DATA_PACKET_SIZE] = {0, 0, 0},
         conductivity[DATA_PACKET_SIZE] = {0, 0, 0};
-uint16_t v_start = 0, v_end = 329;
-ProbeConfig_TypeDef probe_config = {Au, R1_100, BIDIRECTIONAL, 0, 0, 10, 2, STANARD_CONDUCTIVITY, 5};
+uint16_t calib_salinity = 35 * 10;
+uint16_t v_start = 165, v_end = 165;
+ProbeConfig_TypeDef probe_config = {Au_Shielded, R1_100, BIDIRECTIONAL, 512, 512, 1, 2, STANARD_CONDUCTIVITY, 50};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -124,6 +127,7 @@ static void MX_NVIC_Init(void);
 /* USER CODE BEGIN PFP */
 uint8_t get_digit(uint8_t digit_number);
 int8_t get_change(uint8_t value, uint8_t *prev_val);
+void update_buffer_with_salinity(uint32_t *buffer, uint16_t salinity);
 void update_buffer_with_voltage(uint32_t *buffer, uint16_t voltage);
 void update_buffer_with_int(uint32_t *buffer, uint16_t value);
 void update_buffer(uint32_t *buffer, uint8_t *data);
@@ -189,6 +193,11 @@ int main(void)
     HAL_DMA_Start(&hdma_tim17_ch1_up, (uint32_t)depth_dma_buff, (uint32_t) & (GPIO_DEPTH->BSRR), 3);
     HAL_TIM_Base_Start(&htim17);
     __HAL_TIM_ENABLE_DMA(&htim17, TIM_DMA_CC1);
+
+    expecting_response = EXPECTING_CONFIG_READY;
+    uint8_t command[] = {COMMAND_SET_CONFIG};
+    rs485_transmit(command, 1);
+    rs485_receive_IT(1);
     /* USER CODE END 2 */
 
     /* Infinite loop */
@@ -266,7 +275,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
     if (huart->Instance == USART1)
     {
-        HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+        HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
         switch (expecting_response)
         {
         case EXPECTING_SALINITY_DEPTH:
@@ -327,18 +336,28 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
                 update_buffer(depth_dma_buff, resistance);
             }
             break;
-        case EXPECTING_STANARD_CONDUCTIVITY:
-            // write std cnd to sd card.
-            break;
 
         case EXPECTING_CONFIG_READY:
             if (rx_buffer[0] == RESPONSE_ACK)
             {
                 expecting_response = EXPECTING_ACK;
                 rs485_transmit((uint8_t *)&probe_config, CONFIG_PACKET_SIZE);
-                rs485_receive_IT(1);
             }
             break;
+        case EXPECTING_CALIB_READY:
+            if (rx_buffer[0] == RESPONSE_ACK)
+            {
+                expecting_response = EXPECTING_STANARD_CONDUCTIVITY;
+                rs485_transmit((uint8_t *)&calib_salinity, 2);
+                rs485_receive_IT(sizeof(uint32_t));
+            }
+            break;
+        case EXPECTING_STANARD_CONDUCTIVITY:
+            uint32_t standard_conductivity = *((uint32_t *)rx_buffer);
+            probe_config.stardard_conductivity = standard_conductivity;
+            // write std cnd to sd card.
+            break;
+
         case EXPECTING_ACK:
             if (rx_buffer[0] == RESPONSE_ACK)
             {
@@ -415,10 +434,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
             update_buffer(depth_dma_buff, data);
             break;
         case DISPLAY_CONFIG_SEND:
-        case DISPLAY_CALIB:
             depth_dma_buff[0] = 0xffff0000 | DIGIT_1_MASK | NEGATIVE_SIGN_MASK;
             depth_dma_buff[1] = 0xffff0000 | DIGIT_2_MASK | NEGATIVE_SIGN_MASK;
             depth_dma_buff[2] = 0xffff0000 | DIGIT_3_MASK | NEGATIVE_SIGN_MASK;
+            break;
+        case DISPLAY_CALIB:
+            update_buffer_with_salinity(depth_dma_buff, calib_salinity);
             break;
         default:
             break;
@@ -461,6 +482,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         case DISPLAY_CONFIG_VOLTAGE_SETTLE_TIME:
             probe_config.voltage_settle_time = (probe_config.voltage_settle_time + change * 10) % 1000;
             update_buffer_with_int(depth_dma_buff, probe_config.voltage_settle_time);
+        case DISPLAY_CALIB:
+            calib_salinity = (calib_salinity + change * 10) % 1000;
+            update_buffer_with_salinity(depth_dma_buff, calib_salinity);
         default:
             break;
         }
@@ -490,11 +514,18 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
         case DISPLAY_CONFIG_VOLTAGE_SETTLE_TIME:
             probe_config.voltage_settle_time = (probe_config.voltage_settle_time + change) % 1000;
             update_buffer_with_int(depth_dma_buff, probe_config.voltage_settle_time);
+        case DISPLAY_CALIB:
+            calib_salinity = (calib_salinity + change) % 1000;
+            update_buffer_with_salinity(depth_dma_buff, calib_salinity);
         default:
             break;
         }
         break;
     case SW1_Pin:
+        // if (expecting_response != EXPECTING_NONE)
+        // {
+        //     return;
+        // }
         switch (display_mode)
         {
         case DISPLAY_SALINITY_DEPTH:
@@ -547,10 +578,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
             rs485_receive_IT(1);
             break;
         case DISPLAY_CALIB:
-            expecting_response = EXPECTING_STANARD_CONDUCTIVITY;
-            command[0] = COMMNAD_GET_STANDARD_CONDUCTIVITY;
+            expecting_response = EXPECTING_CALIB_READY;
+            command[0] = COMMAND_CALIBRATE;
             rs485_transmit(command, 1);
-            rs485_receive_IT(sizeof(uint32_t));
+            rs485_receive_IT(1);
             break;
         default:
             break;
@@ -610,6 +641,16 @@ int8_t get_change(uint8_t value, uint8_t *prev_val)
     return change;
 }
 
+void update_buffer_with_salinity(uint32_t *buffer, uint16_t salinity)
+{
+    // salinity is x10
+    uint8_t data[3] = {0, 0, 0};
+    data[0] = salinity / 100;
+    data[1] = ((salinity % 100) / 10) | DECIMAL_POINT;
+    data[2] = salinity % 10;
+    update_buffer(buffer, data);
+}
+
 void update_buffer_with_voltage(uint32_t *buffer, uint16_t voltage)
 {
     // voltage is 10 bit
@@ -651,6 +692,7 @@ void update_buffer(uint32_t *buffer, uint8_t *data)
 
 void rs485_transmit(uint8_t *data, uint16_t size)
 {
+    HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_RESET);
     HAL_GPIO_WritePin(RS485_DE_GPIO_Port, RS485_DE_Pin, GPIO_PIN_SET);
     if (HAL_HalfDuplex_EnableTransmitter(&huart1) != HAL_OK)
     {
